@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { dataSource } from "@/lib/dataSource";
 import { useQuery } from "@tanstack/react-query";
+import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -155,6 +156,7 @@ function Shell() {
           {meta.data?.disclaimer ?? "Patterns reflect opinionated design judgment on observable UX."}
         </div>
       </footer>
+      <Toaster />
     </div>
   );
 }
