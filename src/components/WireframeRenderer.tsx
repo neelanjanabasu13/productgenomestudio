@@ -786,14 +786,14 @@ const screens: Record<string, Builder> = {
           ))}
         </div>
         <div className="flex-1 rounded-lg border border-border/60 bg-background/40 p-2 font-mono text-[9px] leading-relaxed overflow-hidden">
-          <div className="text-foreground/40 truncate">// {p.header}</div>
-          <div className="truncate"><span className="text-primary">const</span> v = <span className="text-foreground/80">"{row(p, 3)}"</span></div>
-          <div className="mt-1 truncate"><span className="text-primary">export function</span> Page() {"{"}</div>
-          <div className="pl-3 truncate"><span className="text-primary">return</span> {"<View />"}</div>
-          <div>{"}"}</div>
-          <div className="mt-2 text-foreground/40 truncate">// {p.metric}</div>
+          <div className="text-foreground/40 truncate">{p.header}</div>
+          <div className="truncate text-primary">{row(p, 0)}</div>
+          <div className="mt-1 truncate text-foreground/80">{row(p, 1)}</div>
+          <div className="pl-3 truncate">{row(p, 2)}</div>
+          <div className="truncate">{row(p, 3)}</div>
+          <div className="mt-2 text-foreground/40 truncate">{p.metric}</div>
         </div>
-        <div className="flex justify-between text-[9px] font-mono text-foreground/55 gap-2"><span className="truncate">{p.cta}</span><span className="text-primary shrink-0">● live</span></div>
+        <div className="flex justify-between text-[9px] font-mono text-foreground/55 gap-2"><span className="truncate">{p.cta}</span><span className="text-primary shrink-0 truncate max-w-[80px]">{p.company}</span></div>
       </Frame>
     ),
     pins: [
@@ -808,12 +808,12 @@ const screens: Record<string, Builder> = {
       <Frame>
         <StatusBar title={title(p)} />
         <div className="font-display text-[18px] leading-tight truncate">{p.header}</div>
-        <div className="text-[9px] font-mono text-foreground/55 uppercase tracking-wider">To</div>
+        <div className="text-[9px] font-mono text-foreground/55 uppercase tracking-wider truncate">{p.header}</div>
         <div className="h-10 rounded-xl border border-border bg-background/40 flex items-center px-3 gap-2">
           <div className="w-6 h-6 rounded-full bg-foreground/20 shrink-0" />
           <div className="text-[11px] flex-1 truncate">{row(p, 0)}</div>
         </div>
-        <div className="text-[9px] font-mono text-foreground/55 uppercase tracking-wider">Amount</div>
+        <div className="text-[9px] font-mono text-foreground/55 uppercase tracking-wider truncate">{p.metric}</div>
         <div className="rounded-xl border border-border bg-background/40 px-3 py-3 text-center">
           <div className="font-display text-[24px] leading-none truncate">{p.metric}</div>
           <div className="text-[10px] text-foreground/55 mt-1 truncate">{row(p, 1)}</div>
