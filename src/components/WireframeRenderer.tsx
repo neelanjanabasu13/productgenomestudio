@@ -7504,6 +7504,738 @@ Object.assign(screens, {
   })) as Builder,
 });
 
+// ============================================================
+// EDTECH — 20 brand-evocative screens
+// ============================================================
+const EduBar = () => (
+  <div className="flex items-center justify-between text-[9px] font-mono text-foreground/50 -mt-1">
+    <span>9:41</span>
+    <span className="tracking-[0.18em]">●●●</span>
+    <span>100%</span>
+  </div>
+);
+
+Object.assign(screens, {
+  // 1. Duolingo — Goal + first lesson
+  eduDuoGoal: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <EduBar />
+        <div className="text-center">
+          <div className="text-[28px]">🦉</div>
+          <div className="font-display text-[14px] text-[#58CC02]">Why are you learning Spanish?</div>
+        </div>
+        <div className="flex flex-col gap-1.5">
+          {[["🎓","Boost my education"],["🌎","Prep for travel",true],["🧠","Just for fun"],["💼","Career"]].map(([e,t,sel],i)=>(
+            <div key={i} className={`flex items-center gap-2 p-2 rounded-xl border-2 ${sel?"border-[#58CC02] bg-[#58CC02]/8":"border-border/60"}`}>
+              <div className="text-[16px]">{e}</div>
+              <div className="text-[10.5px] font-semibold">{t}</div>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-xl bg-[#58CC02]/10 border border-[#58CC02]/40 p-2 text-center">
+          <div className="text-[8.5px] uppercase tracking-wider text-[#58CC02]">Your first lesson</div>
+          <div className="text-[10.5px] font-semibold mt-0.5">Order a coffee in Spanish ☕</div>
+          <div className="text-[8.5px] text-foreground/55">3 min · 5 XP</div>
+        </div>
+        <div className="flex-1" />
+        <CTA>Let's go!</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "Pick a goal" },
+      { n: 2, x: "50%", y: "50%", label: "Friendly options" },
+      { n: 3, x: "50%", y: "75%", label: "Jump into lesson 1" },
+    ],
+  })) as Builder,
+
+  // 2. Coursera — Goal + path
+  eduCourseraPath: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <EduBar />
+        <div className="text-[10px] text-foreground/55">Your goal</div>
+        <div className="text-[12px] font-semibold">Become a Data Analyst</div>
+        <div className="rounded-md bg-[#0056D2]/10 border border-[#0056D2]/40 p-2">
+          <div className="text-[8.5px] uppercase tracking-wider text-[#0056D2]">Google Data Analytics</div>
+          <div className="text-[10px] font-medium">Professional Certificate · 6 months</div>
+          <div className="text-[8.5px] text-foreground/60">8 courses · 4.8★ · 1.2M enrolled</div>
+        </div>
+        <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Your learning path</div>
+        <div className="flex flex-col gap-1 flex-1 overflow-hidden">
+          {[
+            ["1","Foundations","in progress","#0056D2"],
+            ["2","Ask Questions w/ Data","",""],
+            ["3","Prepare Data","",""],
+            ["4","Process Data","",""],
+            ["5","Analyze + Visualize","",""],
+            ["6","Capstone Project","",""],
+          ].map(([n,t,s,c],i)=>(
+            <div key={i} className="flex items-center gap-2">
+              <div className={`w-6 h-6 rounded-full grid place-items-center text-[10px] font-semibold ${i===0?"bg-[#0056D2] text-white":"bg-foreground/8 text-foreground/60"}`}>{n}</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] font-medium truncate">{t}</div>
+                {s && <div className="text-[8.5px] text-[#0056D2]">{s}</div>}
+              </div>
+              {i<5 && <div className="text-foreground/30 text-[10px]">→</div>}
+            </div>
+          ))}
+        </div>
+        <CTA>Start path</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "Outcome goal" },
+      { n: 2, x: "50%", y: "32%", label: "Specialization" },
+      { n: 3, x: "50%", y: "60%", label: "Structured path" },
+    ],
+  })) as Builder,
+
+  // 3. Khan — Diagnostic
+  eduKhanDiagnostic: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <EduBar />
+        <div className="flex items-center justify-between">
+          <div className="text-[11px] font-semibold text-[#14BF96]">Quick check</div>
+          <div className="text-[9px] text-foreground/55">Q 4 of 8</div>
+        </div>
+        <div className="h-1.5 bg-foreground/10 rounded-full overflow-hidden"><div className="h-full w-1/2 bg-[#14BF96]" /></div>
+        <div className="text-[8.5px] uppercase tracking-wider text-foreground/55 mt-1">Algebra · Equations</div>
+        <div className="text-[12px] font-medium leading-snug">If 3x + 5 = 20, what is x?</div>
+        <div className="grid grid-cols-2 gap-1.5">
+          {[["A","3"],["B","5",true],["C","7"],["D","15"]].map(([k,v,sel],i)=>(
+            <div key={i} className={`p-2 rounded-md border ${sel?"border-2 border-[#14BF96] bg-[#14BF96]/8":"border-border/60"}`}>
+              <div className="text-[8.5px] text-foreground/55">{k}</div>
+              <div className="text-[12px] font-display">{v}</div>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-md bg-foreground/[0.04] p-1.5 text-[8.5px] text-foreground/60">No grade — we'll place you at the right level.</div>
+        <div className="flex-1" />
+        <CTA>Next question</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "85%", y: "13%", label: "Diagnostic progress" },
+      { n: 2, x: "50%", y: "35%", label: "Placement question" },
+      { n: 3, x: "50%", y: "75%", label: "No-stakes copy" },
+    ],
+  })) as Builder,
+
+  // 4. MasterClass — Inspire reel
+  eduMcReel: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <div className="absolute inset-0 bg-gradient-to-b from-foreground/20 via-foreground/5 to-background pointer-events-none" />
+        <EduBar />
+        <div className="relative flex-1 rounded-lg overflow-hidden">
+          <Photo seed={2} className="absolute inset-0" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+          <div className="absolute top-2 left-2 text-[10px] uppercase tracking-[0.2em] text-white/90 font-display">MasterClass</div>
+          <div className="absolute inset-x-3 bottom-3 text-white">
+            <div className="text-[8.5px] uppercase tracking-wider opacity-80">Featured</div>
+            <div className="font-display text-[18px] leading-tight">Aaron Sorkin teaches Screenwriting</div>
+            <div className="text-[9px] opacity-80 mt-0.5">35 lessons · 6 hours · 4K cinematic</div>
+          </div>
+          <div className="absolute inset-0 grid place-items-center">
+            <div className="w-12 h-12 rounded-full bg-white/95 grid place-items-center text-black text-[18px]">▶</div>
+          </div>
+        </div>
+        <div className="text-[9px] text-center text-foreground/60">100+ instructors · From $10/mo</div>
+        <div className="h-11 rounded-md bg-foreground text-background grid place-items-center text-[12px] font-semibold tracking-wide">Watch intro reel</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "40%", label: "Cinematic still" },
+      { n: 2, x: "50%", y: "60%", label: "Star instructor" },
+      { n: 3, x: "50%", y: "92%", label: "Play reel" },
+    ],
+  })) as Builder,
+
+  // 5. Coursera — Outcome filters
+  eduCourseraFilters: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <EduBar />
+        <div className="text-[11px] font-semibold">Find your course</div>
+        <div className="h-7 rounded-md bg-foreground/[0.06] border border-border/60 px-2 grid items-center text-[10px] text-foreground/55">Search 7,000+ courses</div>
+        <div className="flex gap-1 flex-wrap">
+          {["Skill: SQL","Credential","4★+","Beginner"].map((f,i)=>(<Chip key={i} accent={i<2}>{f}</Chip>))}
+        </div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["IBM Data Science","Professional Certificate","4.6★ · 142k","Earn credential"],
+            ["Google UX Design","Professional Certificate","4.8★ · 89k","Earn credential"],
+            ["Excel to MySQL","Specialization · Duke","4.6★ · 24k","Skill: SQL"],
+          ].map(([t,k,r,o],i)=>(
+            <div key={i} className="flex gap-2 p-1.5 rounded-md border border-border/60">
+              <Photo seed={i} className="w-10 h-10 rounded shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] font-medium truncate">{t}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{k} · {r}</div>
+                <div className="text-[8.5px] text-[#0056D2] mt-0.5">{o}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <CTA>Apply filters</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Outcome filters" },
+      { n: 2, x: "50%", y: "55%", label: "Credentialed courses" },
+      { n: 3, x: "85%", y: "55%", label: "Ratings + scale" },
+    ],
+  })) as Builder,
+
+  // 6. Udemy — Ratings + sales
+  eduUdemyDeals: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <EduBar />
+        <div className="flex items-center justify-between">
+          <div className="text-[11px] font-semibold">Top courses</div>
+          <Chip accent>🔥 Flash sale</Chip>
+        </div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["The Complete Web Dev Bootcamp","Dr. Angela Yu","4.7","312,841","$84.99","$13.99"],
+            ["Python for Data Science","Jose Portilla","4.6","198,432","$94.99","$15.99"],
+            ["UX/UI Figma Masterclass","Daniel W.","4.7","42,109","$74.99","$11.99"],
+            ["AWS Certified Solutions","Stéphane M.","4.7","256,712","$94.99","$13.99"],
+          ].map(([t,a,r,n,old,sale],i)=>(
+            <div key={i} className="flex gap-2 p-1.5 rounded-md border border-border/60">
+              <Photo seed={i} className="w-12 h-9 rounded shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] font-medium truncate">{t}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{a}</div>
+                <div className="flex items-center gap-1 text-[8.5px]">
+                  <span className="text-amber-500">★ {r}</span>
+                  <span className="text-foreground/55">({n})</span>
+                </div>
+              </div>
+              <div className="text-right">
+                <div className="text-[11px] font-semibold text-[#A435F0]">{sale}</div>
+                <div className="text-[8.5px] text-foreground/40 line-through">{old}</div>
+                <div className="text-[7.5px] text-red-600">85% off</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[8.5px] text-center text-foreground/55">Ends in 2 days · Sale price</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "82%", y: "12%", label: "Flash sale" },
+      { n: 2, x: "82%", y: "42%", label: "Sale price" },
+      { n: 3, x: "50%", y: "42%", label: "Ratings + reviews" },
+    ],
+  })) as Builder,
+
+  // 7. MasterClass — Star instructors
+  eduMcInstructors: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <EduBar />
+        <div className="text-[10px] uppercase tracking-[0.2em] font-display">Instructors</div>
+        <div className="grid grid-cols-2 gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Gordon Ramsay","Cooking"],
+            ["Serena Williams","Tennis"],
+            ["Aaron Sorkin","Writing"],
+            ["Neil deGrasse Tyson","Science"],
+          ].map(([n,c],i)=>(
+            <div key={i} className="relative rounded-md overflow-hidden border border-border/60">
+              <Photo seed={i} className="aspect-[3/4]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 to-transparent" />
+              <div className="absolute inset-x-1.5 bottom-1.5 text-white">
+                <div className="text-[8px] uppercase tracking-wider opacity-80">{c}</div>
+                <div className="font-display text-[11px] leading-tight">{n}</div>
+              </div>
+              <div className="absolute top-1.5 right-1.5 w-5 h-5 rounded-full bg-white/95 text-black grid place-items-center text-[10px]">▶</div>
+            </div>
+          ))}
+        </div>
+        <div className="h-10 rounded-md bg-foreground text-background grid place-items-center text-[11px] font-semibold tracking-wide">Browse all 200+</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "25%", y: "40%", label: "Famous instructor" },
+      { n: 2, x: "75%", y: "40%", label: "Cinematic card" },
+      { n: 3, x: "50%", y: "92%", label: "Browse all" },
+    ],
+  })) as Builder,
+
+  // 8. Khan — Subject tree
+  eduKhanTree: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <EduBar />
+        <div className="text-[11px] font-semibold text-[#14BF96]">Math</div>
+        <div className="flex flex-col gap-0.5 flex-1 overflow-hidden text-[10px]">
+          <div className="font-semibold py-1">▾ Algebra 1</div>
+          <div className="pl-4 py-0.5 text-foreground/70">▾ Solving equations</div>
+          <div className="pl-8 py-0.5 flex items-center justify-between"><span>One-step equations</span><span className="text-[#14BF96] text-[8.5px]">✓ Mastered</span></div>
+          <div className="pl-8 py-0.5 flex items-center justify-between"><span>Two-step equations</span><span className="text-amber-500 text-[8.5px]">In progress</span></div>
+          <div className="pl-8 py-0.5 flex items-center justify-between text-foreground/60"><span>Multi-step equations</span><span className="text-[8.5px]">Locked</span></div>
+          <div className="pl-4 py-0.5 text-foreground/70">▸ Linear functions</div>
+          <div className="pl-4 py-0.5 text-foreground/70">▸ Inequalities</div>
+          <div className="font-semibold py-1">▸ Geometry</div>
+          <div className="font-semibold py-1">▸ Algebra 2</div>
+          <div className="font-semibold py-1">▸ Trigonometry</div>
+          <div className="font-semibold py-1">▸ Calculus</div>
+        </div>
+        <div className="rounded-md bg-[#14BF96]/10 border border-[#14BF96]/40 p-1.5 text-[8.5px] text-foreground/65">Structured K-12 tree · learn at your pace</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "20%", y: "40%", label: "Subject tree" },
+      { n: 2, x: "80%", y: "32%", label: "Mastery state" },
+      { n: 3, x: "50%", y: "88%", label: "Self-paced" },
+    ],
+  })) as Builder,
+
+  // 9. Duolingo — Bite-size interactive
+  eduDuoLesson: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <EduBar />
+        <div className="flex items-center gap-2">
+          <div className="text-[14px]">✕</div>
+          <div className="flex-1 h-2 bg-foreground/10 rounded-full overflow-hidden"><div className="h-full w-2/5 bg-[#58CC02]" /></div>
+          <div className="text-[11px]">❤ 5</div>
+        </div>
+        <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Translate this sentence</div>
+        <div className="rounded-xl bg-foreground/[0.04] border border-border/60 p-2.5">
+          <div className="flex items-center gap-2">
+            <div className="text-[24px]">🦉</div>
+            <div className="text-[13px] font-display">"Yo bebo agua."</div>
+          </div>
+        </div>
+        <div className="flex flex-wrap gap-1">
+          {["I","drink","water"].map((w,i)=>(
+            <div key={i} className="px-2 py-1 rounded-md border-2 border-[#58CC02] bg-[#58CC02]/8 text-[11px] font-semibold">{w}</div>
+          ))}
+        </div>
+        <div className="flex flex-wrap gap-1 mt-1">
+          {["eat","you","milk","they"].map((w,i)=>(
+            <div key={i} className="px-2 py-1 rounded-md border-b-4 border-border bg-background text-[11px]">{w}</div>
+          ))}
+        </div>
+        <div className="rounded-md bg-[#58CC02]/15 border border-[#58CC02]/50 p-1.5 text-[10px] text-[#58CC02] font-semibold">✓ Excellent! +10 XP</div>
+        <div className="flex-1" />
+        <div className="h-10 rounded-xl bg-[#58CC02] text-white grid place-items-center text-[12px] font-bold">CONTINUE</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "12%", label: "Hearts + progress" },
+      { n: 2, x: "50%", y: "40%", label: "Bite-size exercise" },
+      { n: 3, x: "50%", y: "70%", label: "Instant feedback" },
+    ],
+  })) as Builder,
+
+  // 10. Khan — Video + practice
+  eduKhanVideo: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <EduBar />
+        <div className="relative aspect-video rounded-md overflow-hidden bg-foreground/10 border border-border/60">
+          <Photo seed={1} className="absolute inset-0" />
+          <div className="absolute inset-0 grid place-items-center"><div className="w-10 h-10 rounded-full bg-white/95 grid place-items-center text-black text-[14px]">▶</div></div>
+          <div className="absolute bottom-1 left-1.5 right-1.5 flex items-center gap-1.5 text-white text-[8.5px]">
+            <span>4:12</span><div className="flex-1 h-0.5 bg-white/30 rounded-full overflow-hidden"><div className="h-full w-1/3 bg-[#14BF96]" /></div><span>12:48</span>
+          </div>
+        </div>
+        <div className="text-[10.5px] font-semibold">Solving two-step equations</div>
+        <div className="text-[8.5px] text-foreground/55">Sal Khan · 12 min</div>
+        <div className="rounded-md border-2 border-[#14BF96]/40 bg-[#14BF96]/8 p-2">
+          <div className="text-[8.5px] uppercase tracking-wider text-[#14BF96]">Now: Practice</div>
+          <div className="text-[10.5px] font-medium mt-0.5">Solve: 2x + 4 = 14</div>
+          <div className="grid grid-cols-2 gap-1 mt-1.5">
+            {["x = 3","x = 5","x = 7","x = 9"].map((a,i)=>(
+              <div key={i} className={`text-center py-1 rounded border text-[10px] ${i===1?"border-[#14BF96] bg-[#14BF96]/10 font-semibold":"border-border/60"}`}>{a}</div>
+            ))}
+          </div>
+        </div>
+        <div className="flex-1" />
+        <CTA>Check answer</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "25%", label: "Video lesson" },
+      { n: 2, x: "50%", y: "65%", label: "Pair with practice" },
+      { n: 3, x: "50%", y: "92%", label: "Check answer" },
+    ],
+  })) as Builder,
+
+  // 11. Coursera — Lecture + quiz
+  eduCourseraLecture: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <EduBar />
+        <div className="relative aspect-video rounded-md overflow-hidden bg-foreground/15 border border-border/60">
+          <Photo seed={3} className="absolute inset-0" />
+          <div className="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-[#0056D2] text-white text-[8px]">Week 3 · Lecture 4</div>
+          <div className="absolute bottom-1.5 left-1.5 right-1.5 flex items-center gap-1.5 text-white text-[8.5px]">
+            <span>▶</span><span>10:24 / 18:02</span><div className="flex-1" /><span>1.25×</span><span>CC</span>
+          </div>
+        </div>
+        <div className="text-[10.5px] font-semibold">Regression in Practice</div>
+        <div className="text-[8.5px] text-foreground/55">Prof. M. Chen · Duke University</div>
+        <div className="rounded-md border border-[#0056D2]/40 bg-[#0056D2]/5 p-2">
+          <div className="flex items-center justify-between">
+            <div className="text-[8.5px] uppercase tracking-wider text-[#0056D2]">Up next: Quiz</div>
+            <div className="text-[8.5px] text-foreground/55">5 questions · graded</div>
+          </div>
+          <div className="text-[10.5px] font-medium mt-0.5">Module 3 Quiz</div>
+          <div className="h-1 bg-foreground/10 rounded-full mt-1 overflow-hidden"><div className="h-full w-1/4 bg-[#0056D2]" /></div>
+        </div>
+        <div className="flex-1" />
+        <CTA>Start graded quiz</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "25%", label: "University lecture" },
+      { n: 2, x: "50%", y: "65%", label: "Graded quiz after" },
+      { n: 3, x: "50%", y: "92%", label: "Continue to quiz" },
+    ],
+  })) as Builder,
+
+  // 12. MasterClass — Cinematic video
+  eduMcVideo: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <EduBar />
+        <div className="relative flex-1 rounded-md overflow-hidden">
+          <Photo seed={0} className="absolute inset-0" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/40" />
+          <div className="absolute top-2 left-2 text-white">
+            <div className="text-[8px] uppercase tracking-[0.2em] opacity-80 font-display">MasterClass</div>
+            <div className="text-[10px] opacity-90">Lesson 4 of 35</div>
+          </div>
+          <div className="absolute inset-0 grid place-items-center"><div className="w-14 h-14 rounded-full bg-white/95 grid place-items-center text-black text-[20px]">▶</div></div>
+          <div className="absolute inset-x-3 bottom-3 text-white">
+            <div className="font-display text-[15px] leading-tight">Crafting the Opening Scene</div>
+            <div className="text-[8.5px] opacity-80">Aaron Sorkin · 14:22 · 4K</div>
+            <div className="mt-1.5 flex items-center gap-1.5 text-[8.5px]">
+              <span>03:14</span>
+              <div className="flex-1 h-0.5 bg-white/30 rounded-full overflow-hidden"><div className="h-full w-1/5 bg-white" /></div>
+              <span>14:22</span>
+            </div>
+          </div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Cinematic shot" },
+      { n: 2, x: "50%", y: "70%", label: "Famous instructor" },
+      { n: 3, x: "85%", y: "70%", label: "4K production" },
+    ],
+  })) as Builder,
+
+  // 13. Duolingo — Streaks + XP
+  eduDuoStreak: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <EduBar />
+        <div className="text-center">
+          <div className="text-[36px]">🔥</div>
+          <div className="font-display text-[28px] text-[#FF9600] leading-none">142</div>
+          <div className="text-[10px] text-foreground/60">day streak</div>
+        </div>
+        <div className="grid grid-cols-7 gap-1">
+          {["M","T","W","T","F","S","S"].map((d,i)=>(
+            <div key={i} className="text-center">
+              <div className="text-[8.5px] text-foreground/55">{d}</div>
+              <div className={`mx-auto mt-0.5 w-6 h-6 rounded-full grid place-items-center text-[11px] ${i<5?"bg-[#FF9600] text-white":"bg-foreground/8"}`}>{i<5?"🔥":""}</div>
+            </div>
+          ))}
+        </div>
+        <div className="grid grid-cols-2 gap-1.5">
+          <div className="rounded-md border border-border/60 p-1.5 text-center">
+            <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">XP today</div>
+            <div className="font-display text-[16px] text-[#58CC02]">85</div>
+          </div>
+          <div className="rounded-md border border-border/60 p-1.5 text-center">
+            <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">League</div>
+            <div className="font-display text-[12px]">💎 Diamond</div>
+            <div className="text-[8.5px] text-foreground/55">Rank 4 of 30</div>
+          </div>
+        </div>
+        <div className="flex-1" />
+        <CTA>Earn XP now</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "Streak counter" },
+      { n: 2, x: "50%", y: "45%", label: "Daily flame grid" },
+      { n: 3, x: "75%", y: "70%", label: "League rank" },
+    ],
+  })) as Builder,
+
+  // 14. Coursera — Certificates
+  eduCourseraCerts: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <EduBar />
+        <div className="text-[11px] font-semibold">Your credentials</div>
+        <div className="text-[8.5px] text-foreground/55">3 earned · share on LinkedIn</div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Google Data Analytics","Professional Certificate","Issued Mar 2026","#0056D2"],
+            ["Meta Front-End Developer","Professional Certificate","Issued Jan 2026","#0056D2"],
+            ["Excel to MySQL","Specialization · Duke","Issued Oct 2025","#0056D2"],
+          ].map(([t,k,d,c],i)=>(
+            <div key={i} className="rounded-md border-2 border-[#0056D2]/30 bg-gradient-to-br from-[#0056D2]/8 to-transparent p-2">
+              <div className="flex items-start gap-2">
+                <div className="w-8 h-10 rounded bg-[#0056D2] text-white grid place-items-center text-[12px]">🎓</div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-[10.5px] font-semibold truncate">{t}</div>
+                  <div className="text-[8.5px] text-foreground/55 truncate">{k}</div>
+                  <div className="text-[8.5px] text-[#0056D2] mt-0.5">{d}</div>
+                </div>
+                <div className="text-[8.5px] text-[#0056D2]">Share</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <CTA>Add to LinkedIn</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "Credentials earned" },
+      { n: 2, x: "50%", y: "50%", label: "Certificate card" },
+      { n: 3, x: "50%", y: "92%", label: "Share to LinkedIn" },
+    ],
+  })) as Builder,
+
+  // 15. Khan — Mastery bars
+  eduKhanMastery: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <EduBar />
+        <div className="text-[11px] font-semibold text-[#14BF96]">Algebra 1 mastery</div>
+        <div className="rounded-md bg-[#14BF96]/10 border border-[#14BF96]/40 p-2 text-center">
+          <div className="text-[8.5px] uppercase tracking-wider text-foreground/60">Course mastery</div>
+          <div className="font-display text-[22px] text-[#14BF96]">68%</div>
+        </div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Solving equations",95,"Mastered"],
+            ["Linear functions",78,"Proficient"],
+            ["Inequalities",55,"Familiar"],
+            ["Systems of equations",30,"Attempted"],
+            ["Functions",10,"Not started"],
+          ].map(([t,v,lbl],i)=>(
+            <div key={i}>
+              <div className="flex justify-between text-[9.5px]"><span>{t}</span><span className="text-foreground/55 text-[8.5px]">{lbl}</span></div>
+              <div className="h-2 bg-foreground/10 rounded-full overflow-hidden mt-0.5 flex">
+                <div className="h-full bg-[#14BF96]" style={{width:`${v}%`}} />
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[8.5px] text-foreground/55 text-center">Mastery grows as you practice</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "25%", label: "Course mastery" },
+      { n: 2, x: "50%", y: "55%", label: "Per-skill bars" },
+      { n: 3, x: "80%", y: "50%", label: "Mastery levels" },
+    ],
+  })) as Builder,
+
+  // 16. Udemy — Completion %
+  eduUdemyProgress: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <EduBar />
+        <div className="text-[11px] font-semibold">My learning</div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Web Dev Bootcamp","Angela Yu","68",185,"of 65 hours"],
+            ["Python for DS","Jose Portilla","32",95,"of 22 hours"],
+            ["Figma Masterclass","Daniel W.","100",100,"of 14 hours"],
+          ].map(([t,a,pct,n,u],i)=>(
+            <div key={i} className="p-2 rounded-md border border-border/60">
+              <div className="flex items-start gap-2">
+                <Photo seed={i} className="w-10 h-7 rounded shrink-0" />
+                <div className="flex-1 min-w-0">
+                  <div className="text-[10px] font-medium truncate">{t}</div>
+                  <div className="text-[8.5px] text-foreground/55 truncate">{a} · {u}</div>
+                </div>
+                <div className="text-[12px] font-mono text-[#A435F0]">{pct}%</div>
+              </div>
+              <div className="h-1.5 bg-foreground/10 rounded-full overflow-hidden mt-1.5"><div className="h-full bg-[#A435F0]" style={{width:`${pct}%`}} /></div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[8.5px] text-foreground/55 text-center">Pick up where you left off</div>
+        <CTA>Resume course</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "85%", y: "32%", label: "% complete" },
+      { n: 2, x: "50%", y: "42%", label: "Progress bar" },
+      { n: 3, x: "50%", y: "92%", label: "Resume" },
+    ],
+  })) as Builder,
+
+  // 17. Duolingo — Streak reminder
+  eduDuoReminder: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <EduBar />
+        <div className="rounded-2xl bg-gradient-to-br from-[#FF9600]/20 to-foreground/[0.03] border-2 border-[#FF9600]/40 p-3 text-center">
+          <div className="text-[48px] leading-none">🔥</div>
+          <div className="font-display text-[14px] text-[#FF9600]">Don't lose your streak!</div>
+          <div className="text-[9px] text-foreground/65">You're 1 lesson away from saving your 142-day streak.</div>
+          <div className="mt-2 inline-flex items-center gap-1 px-2 py-1 rounded-full bg-foreground/5 text-[9px]"><span>⏱</span>Expires in 2h 18m</div>
+        </div>
+        <div className="rounded-md border border-border/60 p-2 text-[9.5px] flex items-center gap-2">
+          <div className="text-[16px]">🦉</div>
+          <div>"Hey, this is your owl. I'm watching you."</div>
+        </div>
+        <div className="rounded-md bg-foreground/[0.04] p-2">
+          <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Quickest save</div>
+          <div className="text-[10px] font-medium">Greetings · 2 min · 5 XP</div>
+        </div>
+        <div className="flex-1" />
+        <div className="h-10 rounded-xl bg-[#58CC02] text-white grid place-items-center text-[12px] font-bold">SAVE MY STREAK</div>
+        <div className="text-[9px] text-center text-foreground/40">No thanks</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "22%", label: "Streak in jeopardy" },
+      { n: 2, x: "50%", y: "35%", label: "Countdown" },
+      { n: 3, x: "50%", y: "85%", label: "One-tap save" },
+    ],
+  })) as Builder,
+
+  // 18. Coursera — Deadlines
+  eduCourseraDeadlines: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <EduBar />
+        <div className="flex items-center justify-between">
+          <div className="text-[11px] font-semibold">Upcoming</div>
+          <Chip accent>2 overdue</Chip>
+        </div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Today","Module 3 Quiz","Data Analytics","red"],
+            ["Thu","Peer review · 3 due","UX Design","amber"],
+            ["Sun","Capstone draft","Data Analytics","amber"],
+            ["Apr 28","Final exam","ML Specialization",""],
+            ["May 4","Project submission","Front-End",""],
+          ].map(([d,t,c,col],i)=>(
+            <div key={i} className="flex items-center gap-2 p-1.5 rounded-md border border-border/60">
+              <div className={`w-10 text-center rounded p-1 text-[8.5px] font-mono ${col==="red"?"bg-red-500/15 text-red-600":col==="amber"?"bg-amber-500/15 text-amber-600":"bg-foreground/8 text-foreground/65"}`}>{d}</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] font-medium truncate">{t}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{c}</div>
+              </div>
+              <div className="text-foreground/40 text-[12px]">›</div>
+            </div>
+          ))}
+        </div>
+        <CTA>Sync to Google Calendar</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "82%", y: "13%", label: "Overdue alert" },
+      { n: 2, x: "15%", y: "32%", label: "Due dates" },
+      { n: 3, x: "50%", y: "92%", label: "Sync schedule" },
+    ],
+  })) as Builder,
+
+  // 19. MasterClass — New classes
+  eduMcNew: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <EduBar />
+        <div className="text-[10px] uppercase tracking-[0.2em] font-display">New this month</div>
+        <div className="relative h-24 rounded-md overflow-hidden">
+          <Photo seed={2} className="absolute inset-0" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 to-transparent" />
+          <div className="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-red-600 text-white text-[8px] uppercase tracking-wider">New</div>
+          <div className="absolute inset-x-2 bottom-2 text-white">
+            <div className="text-[8px] uppercase tracking-wider opacity-80">Cinema</div>
+            <div className="font-display text-[13px] leading-tight">Christopher Nolan: Filmmaking</div>
+          </div>
+        </div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Just released","Hans Zimmer · Scoring II"],
+            ["Coming Apr 28","Issa Rae · Writing for TV"],
+            ["Back catalog","Wolfgang Puck · Cooking"],
+          ].map(([tag,t],i)=>(
+            <div key={i} className="flex gap-2 items-center">
+              <Photo seed={i+1} className="w-12 h-10 rounded shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">{tag}</div>
+                <div className="text-[10px] font-medium truncate">{t}</div>
+              </div>
+              <div className="text-[10px]">▶</div>
+            </div>
+          ))}
+        </div>
+        <div className="h-10 rounded-md bg-foreground text-background grid place-items-center text-[11px] font-semibold">Watch what's new</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "28%", label: "Fresh release" },
+      { n: 2, x: "15%", y: "27%", label: "NEW badge" },
+      { n: 3, x: "50%", y: "65%", label: "Re-engage list" },
+    ],
+  })) as Builder,
+
+  // 20. Udemy — Sales emails / promo
+  eduUdemySale: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <EduBar />
+        <div className="rounded-xl bg-gradient-to-br from-[#A435F0] to-[#5d1690] text-white p-3 text-center">
+          <div className="text-[8.5px] uppercase tracking-[0.2em] opacity-80">Flash sale · 48 hours</div>
+          <div className="font-display text-[22px] leading-tight">Courses from $9.99</div>
+          <div className="text-[10px] opacity-90 mt-0.5">Up to 85% off · today only</div>
+          <div className="mt-2 inline-flex gap-1 font-mono text-[12px]">
+            <span className="px-1.5 py-0.5 rounded bg-white/15">02</span>:
+            <span className="px-1.5 py-0.5 rounded bg-white/15">14</span>:
+            <span className="px-1.5 py-0.5 rounded bg-white/15">38</span>
+          </div>
+        </div>
+        <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Picked for you</div>
+        <div className="flex flex-col gap-1 flex-1 overflow-hidden">
+          {[
+            ["Web Dev Bootcamp","$84.99","$9.99"],
+            ["Python Bootcamp","$94.99","$11.99"],
+            ["React — The Complete Guide","$84.99","$9.99"],
+          ].map(([t,old,sale],i)=>(
+            <div key={i} className="flex items-center gap-2 p-1.5 rounded-md border border-border/60">
+              <Photo seed={i} className="w-10 h-7 rounded shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] truncate">{t}</div>
+              </div>
+              <div className="text-right">
+                <div className="text-[10.5px] font-semibold text-[#A435F0]">{sale}</div>
+                <div className="text-[8px] text-foreground/40 line-through">{old}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <CTA>Claim the discount</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "22%", label: "Big promo" },
+      { n: 2, x: "50%", y: "35%", label: "Countdown" },
+      { n: 3, x: "85%", y: "62%", label: "Slashed prices" },
+    ],
+  })) as Builder,
+});
+
 export function renderScreen(screen: string | undefined, ctx: RenderCtx, preview?: Preview): RenderedScreen {
   const p = safePreview(preview, ctx);
   const b = (screen && screens[screen]) || fallback;
