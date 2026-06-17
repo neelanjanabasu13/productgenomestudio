@@ -138,8 +138,8 @@ function HexTile({
         } as React.CSSProperties
       }
     >
-      <span className="hex-shape" aria-hidden />
-      <span className="hex-outline" aria-hidden />
+      <span className="hex-border" aria-hidden />
+      <span className="hex-fill" aria-hidden />
       <div className="hex-inner">
         <span className="hex-index font-mono text-[11px] tracking-[0.22em]">
           {String(index).padStart(2, "0")}
