@@ -4475,6 +4475,818 @@ Object.assign(screens, {
   })) as Builder,
 });
 
+// ============================================================
+// FINTECH — 20 brand-evocative screens
+// ============================================================
+const FinBar = () => (
+  <div className="flex items-center justify-between text-[9px] font-mono text-foreground/50 -mt-1">
+    <span>9:41</span>
+    <span className="tracking-[0.18em]">●●●</span>
+    <span>100%</span>
+  </div>
+);
+
+Object.assign(screens, {
+  // 1. Monzo — Human KYC
+  finMonzoKyc: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div className="flex items-center gap-2">
+          <div className="w-7 h-7 rounded-full bg-[#FF4F40] grid place-items-center text-white text-[11px] font-bold">M</div>
+          <div className="text-[10px] text-foreground/55">Hey Maya 👋</div>
+        </div>
+        <div className="font-display text-[15px] leading-tight">Let's get you set up — takes about 3 minutes.</div>
+        <div className="flex items-center gap-1.5 text-[8.5px] text-foreground/60">
+          <span>Step 2 of 4</span>
+          <div className="flex-1 h-1 rounded-full bg-foreground/10 overflow-hidden">
+            <div className="h-full w-[50%] bg-[#FF4F40] rounded-full" />
+          </div>
+          <span>50%</span>
+        </div>
+        <div className="flex flex-col gap-1.5 flex-1">
+          {[
+            ["✓","Tell us about you","30s"],
+            ["●","Snap your ID","Now — front + back"],
+            ["○","Take a quick selfie","20s"],
+            ["○","Pick a card colour","Almost there"],
+          ].map(([m,t,d],i)=>(
+            <div key={i} className={`flex items-center gap-2 p-1.5 rounded-md ${i===1?"bg-[#FF4F40]/10 border border-[#FF4F40]/40":"border border-border/40"}`}>
+              <div className={`w-5 h-5 rounded-full grid place-items-center text-[10px] shrink-0 ${i===0?"bg-green-500 text-white":i===1?"bg-[#FF4F40] text-white":"bg-foreground/10"}`}>{m}</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] font-medium truncate">{t}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{d}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <CTA>Snap your ID</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Warm progress bar" },
+      { n: 2, x: "50%", y: "55%", label: "Friendly steps" },
+      { n: 3, x: "50%", y: "94%", label: "One step at a time" },
+    ],
+  })) as Builder,
+
+  // 2. Revolut — Quick multi-step
+  finRevolutMultiStep: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div className="flex gap-1">
+          {[1,1,1,0,0].map((on,i)=>(
+            <div key={i} className={`flex-1 h-1 rounded-full ${on?"bg-foreground":"bg-foreground/15"}`} />
+          ))}
+        </div>
+        <div className="text-[8.5px] text-foreground/55">Step 3 of 5</div>
+        <div className="font-display text-[16px] leading-tight">Pick your home currency</div>
+        <div className="flex flex-col gap-1">
+          {[
+            ["GBP","£ British Pound",true],
+            ["EUR","€ Euro",false],
+            ["USD","$ US Dollar",false],
+            ["CHF","Fr Swiss Franc",false],
+          ].map(([c,n,sel],i)=>(
+            <div key={i} className={`flex items-center gap-2 p-1.5 rounded-md ${sel?"bg-foreground text-background":"border border-border/60"}`}>
+              <div className="text-[10px] font-mono">{c}</div>
+              <div className="text-[10px] flex-1 truncate">{n}</div>
+              {sel && <div className="text-[10px]">✓</div>}
+            </div>
+          ))}
+        </div>
+        <div className="rounded-lg bg-gradient-to-br from-foreground/10 to-foreground/5 border border-border/60 p-2 mt-1">
+          <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Up next</div>
+          <div className="text-[10.5px] font-medium">Hold 30+ currencies</div>
+          <div className="text-[8.5px] text-foreground/55">Exchange at the real rate</div>
+        </div>
+        <div className="flex-1" />
+        <CTA>Continue</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "12%", label: "Multi-step progress" },
+      { n: 2, x: "50%", y: "50%", label: "Quick choice step" },
+      { n: 3, x: "50%", y: "78%", label: "Feature highlight between steps" },
+    ],
+  })) as Builder,
+
+  // 3. Cash App — Minimal signup
+  finCashAppMinimal: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div className="flex-1 flex flex-col items-center justify-center gap-3 px-3">
+          <div className="w-12 h-12 rounded-xl bg-green-500 grid place-items-center text-white text-[18px] font-bold">$</div>
+          <div className="font-display text-[16px] text-center">Sign up for Cash App</div>
+          <div className="w-full">
+            <div className="h-10 rounded-lg border border-border/60 px-3 grid items-center text-[12px] text-foreground/55">+1 (555) 123-4567</div>
+          </div>
+          <div className="w-full">
+            <div className="h-10 rounded-lg border border-border/60 px-3 grid items-center text-[12px] text-foreground/55">$cashtag</div>
+          </div>
+          <div className="text-[8.5px] text-foreground/50 text-center">By continuing you agree to our Terms.</div>
+        </div>
+        <div className="h-11 rounded-full bg-green-500 text-white grid place-items-center text-[12px] font-semibold">Continue</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Single screen" },
+      { n: 2, x: "50%", y: "55%", label: "Phone + $cashtag only" },
+      { n: 3, x: "50%", y: "94%", label: "One CTA" },
+    ],
+  })) as Builder,
+
+  // 4. Wise — Transparent setup
+  finWiseTransparent: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded bg-[#9FE870] grid place-items-center text-[10px] font-bold">W</div>
+          <div className="text-[11px] font-medium">Wise Account</div>
+        </div>
+        <div className="font-display text-[14px]">No surprises. Here's exactly what you'll pay.</div>
+        <div className="rounded-md border border-border/60 p-2 space-y-1 text-[9.5px]">
+          <div className="flex justify-between"><span>Open account</span><span className="font-mono text-green-600">Free</span></div>
+          <div className="flex justify-between"><span>Hold 50+ currencies</span><span className="font-mono text-green-600">Free</span></div>
+          <div className="flex justify-between"><span>Send £1,000 → EUR</span><span className="font-mono">£3.65</span></div>
+          <div className="flex justify-between text-foreground/55"><span>Mid-market rate</span><span className="font-mono">1.1742</span></div>
+          <div className="flex justify-between"><span>Debit card (one-time)</span><span className="font-mono">£7.00</span></div>
+        </div>
+        <div className="rounded-md bg-[#9FE870]/15 border border-[#9FE870]/40 p-2 text-[9.5px]">
+          <div className="font-medium">You'll always see fees before you pay.</div>
+          <div className="text-foreground/60 text-[8.5px]">No hidden markup on exchange rates.</div>
+        </div>
+        <div className="flex-1" />
+        <CTA>Create my account</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Fees up front" },
+      { n: 2, x: "50%", y: "55%", label: "Mid-market rate" },
+      { n: 3, x: "50%", y: "78%", label: "Transparency promise" },
+    ],
+  })) as Builder,
+
+  // 5. Revolut — Balance + quick actions
+  finRevolutDash: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div className="flex items-center justify-between">
+          <div className="w-7 h-7 rounded-full bg-foreground text-background grid place-items-center text-[10px] font-bold">R</div>
+          <div className="flex gap-1 text-[9px]">
+            <Chip>GBP</Chip><Chip>EUR</Chip><Chip>USD</Chip>
+          </div>
+        </div>
+        <div>
+          <div className="text-[8.5px] text-foreground/55 uppercase tracking-wider">Personal · GBP</div>
+          <div className="font-display text-[22px] leading-none">£4,218.<span className="text-[14px]">52</span></div>
+        </div>
+        <div className="grid grid-cols-4 gap-1.5">
+          {[
+            ["↑","Send"],["+","Add"],["⇄","Exchange"],["↗","Invest"],
+          ].map(([ic,l],i)=>(
+            <div key={i} className="aspect-square rounded-lg bg-foreground/8 border border-border/60 flex flex-col items-center justify-center gap-0.5">
+              <div className="text-[14px]">{ic}</div>
+              <div className="text-[8.5px]">{l}</div>
+            </div>
+          ))}
+        </div>
+        <div className="grid grid-cols-2 gap-1.5 flex-1">
+          {[
+            ["Stocks","+2.4%","#0080FF"],
+            ["Crypto","BTC £52k","#F7931A"],
+            ["Vaults","£820 saved","#22c55e"],
+            ["Insurance","Active","#a855f7"],
+          ].map(([t,s,c],i)=>(
+            <div key={i} className="rounded-lg border border-border/40 p-1.5">
+              <div className="w-4 h-4 rounded" style={{background:c as string}} />
+              <div className="text-[10px] font-medium mt-1 truncate">{t}</div>
+              <div className="text-[8.5px] text-foreground/55 truncate">{s}</div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "25%", label: "Balance header" },
+      { n: 2, x: "50%", y: "45%", label: "Quick-action tiles" },
+      { n: 3, x: "50%", y: "78%", label: "Feature cards" },
+    ],
+  })) as Builder,
+
+  // 6. Monzo — Balance + Pots
+  finMonzoDash: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div className="flex items-center justify-between">
+          <div className="text-[10px]">Hey Maya 👋</div>
+          <div className="w-7 h-7 rounded-full bg-[#FF4F40] grid place-items-center text-white text-[10px] font-bold">M</div>
+        </div>
+        <div>
+          <div className="text-[8.5px] text-foreground/55 uppercase tracking-wider">Current account</div>
+          <div className="font-display text-[22px] leading-none">£2,184.<span className="text-[14px]">07</span></div>
+        </div>
+        <div className="flex items-center justify-between">
+          <div className="text-[10px] font-medium">Pots</div>
+          <div className="text-[8.5px] text-foreground/55">£3,420 saved</div>
+        </div>
+        <div className="flex gap-1.5 overflow-hidden">
+          {[
+            ["Holiday","£820","🏖️","#FFD23F"],
+            ["Rainy day","£1,400","☔","#5BB0FF"],
+            ["New bike","£600","🚲","#22c55e"],
+            ["Emergency","£600","🆘","#FF4F40"],
+          ].map(([n,a,e,c],i)=>(
+            <div key={i} className="w-[28%] shrink-0 rounded-xl p-2 text-foreground" style={{background:`${c}22`,border:`1px solid ${c}55`}}>
+              <div className="text-[14px]">{e}</div>
+              <div className="text-[9px] font-medium truncate">{n}</div>
+              <div className="text-[9px] font-mono">{a}</div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[10px] font-medium">Recent</div>
+        <div className="flex flex-col gap-0.5 flex-1 overflow-hidden">
+          {[
+            ["☕","Pret","−£3.40"],
+            ["🛒","Sainsbury's","−£28.10"],
+            ["💸","From Jordan","+£20.00"],
+          ].map(([e,n,a],i)=>(
+            <div key={i} className="flex items-center gap-2 py-0.5 text-[10px]">
+              <span>{e}</span><span className="flex-1 truncate">{n}</span><span className="font-mono">{a}</span>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "25%", label: "Balance" },
+      { n: 2, x: "50%", y: "55%", label: "Pots savings" },
+      { n: 3, x: "50%", y: "85%", label: "Friendly feed" },
+    ],
+  })) as Builder,
+
+  // 7. Cash App — Big send button
+  finCashAppDash: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div className="flex items-center justify-between">
+          <div className="text-[10px] font-medium">$maya</div>
+          <div className="flex gap-1.5 text-[12px]">⚙️ 🔔</div>
+        </div>
+        <div className="flex-1 flex flex-col items-center justify-center gap-2">
+          <div className="text-[9px] uppercase tracking-[0.2em] text-foreground/55">Cash balance</div>
+          <div className="font-display text-[34px] leading-none">$124<span className="text-[20px]">.50</span></div>
+          <div className="flex gap-1.5 mt-1">
+            <Chip>Add Cash</Chip><Chip>Cash Out</Chip>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-1.5">
+          <div className="h-12 rounded-full bg-green-500 text-white grid place-items-center text-[13px] font-semibold">Pay</div>
+          <div className="h-12 rounded-full border border-green-500 text-green-600 grid place-items-center text-[13px] font-semibold">Request</div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "45%", label: "Balance dominates" },
+      { n: 2, x: "50%", y: "90%", label: "Big Pay button" },
+      { n: 3, x: "50%", y: "10%", label: "$cashtag header" },
+    ],
+  })) as Builder,
+
+  // 8. Robinhood — Portfolio first
+  finRobinhoodDash: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div>
+          <div className="text-[8.5px] text-foreground/55 uppercase tracking-wider">Investing</div>
+          <div className="font-display text-[22px] leading-none">$12,840.<span className="text-[14px]">22</span></div>
+          <div className="text-[10px] text-green-500">▲ $241.18 (+1.92%) today</div>
+        </div>
+        <div className="relative h-20 rounded-md overflow-hidden">
+          <svg viewBox="0 0 200 80" preserveAspectRatio="none" className="w-full h-full">
+            <path d="M0,60 L20,55 L40,58 L60,42 L80,48 L100,35 L120,28 L140,32 L160,18 L180,22 L200,10" fill="none" stroke="rgb(34,197,94)" strokeWidth="1.5" />
+            <path d="M0,60 L20,55 L40,58 L60,42 L80,48 L100,35 L120,28 L140,32 L160,18 L180,22 L200,10 L200,80 L0,80 Z" fill="rgba(34,197,94,0.12)" />
+          </svg>
+        </div>
+        <div className="flex gap-1 text-[8.5px] justify-between text-foreground/55">
+          {["1D","1W","1M","3M","1Y","ALL"].map((p,i)=>(
+            <span key={i} className={i===0?"text-green-500 font-medium":""}>{p}</span>
+          ))}
+        </div>
+        <div className="text-[10px] font-medium mt-1">Holdings</div>
+        <div className="flex flex-col gap-0.5 flex-1 overflow-hidden">
+          {[
+            ["AAPL","12 sh","$2,184","+1.4%","up"],
+            ["TSLA","4 sh","$890","−0.8%","down"],
+            ["VTI","18 sh","$4,210","+0.6%","up"],
+            ["BTC","0.04","$2,624","+2.1%","up"],
+          ].map(([s,sh,v,c,d],i)=>(
+            <div key={i} className="flex items-center text-[10px] py-0.5 border-b border-border/30">
+              <div className="w-12 font-semibold">{s}</div>
+              <div className="flex-1 text-foreground/55 text-[8.5px]">{sh}</div>
+              <div className="w-14 text-right font-mono">{v}</div>
+              <div className={`w-12 text-right font-mono ${d==="up"?"text-green-500":"text-red-500"}`}>{c}</div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "Portfolio value" },
+      { n: 2, x: "50%", y: "45%", label: "Performance chart" },
+      { n: 3, x: "50%", y: "80%", label: "Holdings list" },
+    ],
+  })) as Builder,
+
+  // 9. Cash App — $cashtag send
+  finCashAppSend: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div className="text-[10px] text-center text-foreground/55">To $jordan</div>
+        <div className="flex-1 flex flex-col items-center justify-center gap-2">
+          <div className="font-display text-[42px] leading-none">$24</div>
+          <div className="text-[9px] text-foreground/55">For coffee ☕</div>
+        </div>
+        <div className="grid grid-cols-3 gap-1">
+          {["1","2","3","4","5","6","7","8","9",".","0","⌫"].map((k,i)=>(
+            <div key={i} className="h-9 rounded-md bg-foreground/[0.04] grid place-items-center text-[14px] font-medium">{k}</div>
+          ))}
+        </div>
+        <div className="grid grid-cols-2 gap-1.5">
+          <div className="h-10 rounded-full bg-green-500 text-white grid place-items-center text-[12px] font-semibold">Pay</div>
+          <div className="h-10 rounded-full border border-green-500 text-green-600 grid place-items-center text-[12px] font-semibold">Request</div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "10%", label: "$cashtag recipient" },
+      { n: 2, x: "50%", y: "30%", label: "Big amount" },
+      { n: 3, x: "50%", y: "62%", label: "Keypad" },
+    ],
+  })) as Builder,
+
+  // 10. Wise — Transparent FX
+  finWiseFx: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div className="text-[11px] font-medium">You send</div>
+        <div className="rounded-md border border-border/60 p-2 flex items-center justify-between">
+          <div className="font-display text-[18px]">1,000.00</div>
+          <div className="text-[11px] font-mono">🇬🇧 GBP</div>
+        </div>
+        <div className="text-[8.5px] text-foreground/55 px-1 space-y-0.5">
+          <div className="flex justify-between"><span>− Fee</span><span className="font-mono">3.65 GBP</span></div>
+          <div className="flex justify-between"><span>= 996.35 GBP × rate</span><span className="font-mono">1.17420</span></div>
+        </div>
+        <div className="text-[11px] font-medium">Recipient gets</div>
+        <div className="rounded-md border border-[#9FE870] bg-[#9FE870]/15 p-2 flex items-center justify-between">
+          <div className="font-display text-[18px]">1,169.91</div>
+          <div className="text-[11px] font-mono">🇪🇺 EUR</div>
+        </div>
+        <div className="rounded-md bg-foreground/[0.04] p-2 text-[9.5px] space-y-0.5">
+          <div className="flex justify-between"><span>Mid-market rate</span><span className="font-mono">1.17420</span></div>
+          <div className="flex justify-between"><span>Arrives</span><span className="font-medium">in ~22 min</span></div>
+          <div className="flex justify-between text-green-600"><span>You save vs banks</span><span className="font-mono">£11.40</span></div>
+        </div>
+        <CTA>Continue · £1,000 → €1,169.91</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "32%", label: "Real rate shown" },
+      { n: 2, x: "50%", y: "55%", label: "Recipient amount" },
+      { n: 3, x: "50%", y: "80%", label: "Arrival + savings" },
+    ],
+  })) as Builder,
+
+  // 11. Revolut — Multi-currency
+  finRevolutMulti: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div className="text-[11px] font-medium">Exchange</div>
+        <div className="rounded-md border border-border/60 p-2">
+          <div className="text-[8.5px] text-foreground/55">From</div>
+          <div className="flex items-center justify-between">
+            <div className="font-display text-[18px]">£ 500.00</div>
+            <div className="text-[10px] font-mono">GBP · £4,218</div>
+          </div>
+        </div>
+        <div className="text-center text-[14px]">⇅</div>
+        <div className="rounded-md border border-border/60 p-2">
+          <div className="text-[8.5px] text-foreground/55">To</div>
+          <div className="flex items-center justify-between">
+            <div className="font-display text-[18px]">€ 587.10</div>
+            <div className="text-[10px] font-mono">EUR · €120</div>
+          </div>
+        </div>
+        <div className="text-[10px] font-medium mt-1">Your currencies</div>
+        <div className="flex flex-col gap-1 flex-1 overflow-hidden">
+          {[
+            ["GBP","🇬🇧","£4,218.52"],
+            ["EUR","🇪🇺","€120.00"],
+            ["USD","🇺🇸","$840.10"],
+            ["CHF","🇨🇭","Fr 60.00"],
+            ["JPY","🇯🇵","¥18,400"],
+          ].map(([c,f,b],i)=>(
+            <div key={i} className="flex items-center justify-between py-1 border-b border-border/30 text-[10px]">
+              <span>{f} {c}</span>
+              <span className="font-mono text-foreground/75">{b}</span>
+            </div>
+          ))}
+        </div>
+        <CTA>Exchange · 1 GBP = 1.1742 EUR</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "From currency" },
+      { n: 2, x: "50%", y: "40%", label: "To currency" },
+      { n: 3, x: "50%", y: "75%", label: "All balances" },
+    ],
+  })) as Builder,
+
+  // 12. Monzo — Split & request
+  finMonzoSplit: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div className="text-[11px] font-medium">Split the bill</div>
+        <div className="rounded-md border border-border/60 p-2 flex items-center gap-2">
+          <div className="w-8 h-8 rounded bg-foreground/10 grid place-items-center text-[14px]">🍝</div>
+          <div className="flex-1 min-w-0">
+            <div className="text-[10px] font-medium truncate">Trattoria San — dinner</div>
+            <div className="text-[8.5px] text-foreground/55">Last night · 4 people</div>
+          </div>
+          <div className="font-mono text-[12px]">£96.00</div>
+        </div>
+        <div className="text-[10px] font-medium">Request from</div>
+        <div className="flex flex-col gap-1 flex-1 overflow-hidden">
+          {[
+            ["Jordan","✓","£24.00"],
+            ["Aisha","✓","£24.00"],
+            ["Sam","✓","£24.00"],
+            ["Maya (you)","—","£24.00"],
+          ].map(([n,s,a],i)=>(
+            <div key={i} className="flex items-center gap-2 p-1.5 border border-border/40 rounded-md">
+              <div className="w-7 h-7 rounded-full bg-foreground/10 grid place-items-center text-[10px]">{(n as string)[0]}</div>
+              <div className="flex-1 text-[10px] truncate">{n}</div>
+              <div className={`w-5 h-5 rounded-full grid place-items-center text-[10px] ${s==="✓"?"bg-[#FF4F40] text-white":"bg-foreground/10 text-foreground/55"}`}>{s}</div>
+              <div className="font-mono text-[10px] w-12 text-right">{a}</div>
+            </div>
+          ))}
+        </div>
+        <CTA>Send 3 requests · £72.00</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "22%", label: "Bill to split" },
+      { n: 2, x: "50%", y: "55%", label: "Contacts" },
+      { n: 3, x: "50%", y: "94%", label: "Request money" },
+    ],
+  })) as Builder,
+
+  // 13. Monzo — Auto-categorized + Pots
+  finMonzoInsights: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div className="flex items-baseline justify-between">
+          <div className="text-[11px] font-medium">Spending · April</div>
+          <div className="text-[9px] text-foreground/55">£1,284 of £1,800</div>
+        </div>
+        <div className="h-2 rounded-full bg-foreground/10 overflow-hidden flex">
+          <div className="h-full w-[28%] bg-[#FF4F40]" />
+          <div className="h-full w-[18%] bg-[#FFD23F]" />
+          <div className="h-full w-[14%] bg-[#5BB0FF]" />
+          <div className="h-full w-[10%] bg-[#22c55e]" />
+          <div className="h-full w-[8%] bg-[#a855f7]" />
+        </div>
+        <div className="flex flex-col gap-1">
+          {[
+            ["🍔","Eating out","£360","#FF4F40"],
+            ["🛒","Groceries","£228","#FFD23F"],
+            ["🚌","Transport","£180","#5BB0FF"],
+            ["🎬","Entertainment","£130","#22c55e"],
+            ["🛍️","Shopping","£100","#a855f7"],
+          ].map(([e,n,a,c],i)=>(
+            <div key={i} className="flex items-center gap-2 text-[10px] py-0.5 border-b border-border/30">
+              <div className="w-5 h-5 rounded-full grid place-items-center text-[11px]" style={{background:`${c}22`}}>{e}</div>
+              <span className="flex-1 truncate">{n}</span>
+              <span className="font-mono">{a}</span>
+            </div>
+          ))}
+        </div>
+        <div className="text-[10px] font-medium mt-1">Pots</div>
+        <div className="flex gap-1.5 overflow-hidden">
+          {[["Holiday","£820","🏖️"],["Rainy","£1,400","☔"],["Bike","£600","🚲"]].map(([n,a,e],i)=>(
+            <div key={i} className="flex-1 rounded-lg p-1.5 bg-foreground/[0.04] border border-border/40">
+              <div className="text-[12px]">{e}</div>
+              <div className="text-[9px] truncate">{n}</div>
+              <div className="text-[9px] font-mono">{a}</div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "22%", label: "Auto stacked bar" },
+      { n: 2, x: "50%", y: "55%", label: "By merchant type" },
+      { n: 3, x: "50%", y: "88%", label: "Pots beside spend" },
+    ],
+  })) as Builder,
+
+  // 14. Revolut — Analytics charts
+  finRevolutAnalytics: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div className="flex items-baseline justify-between">
+          <div className="font-display text-[16px]">£1,284.<span className="text-[11px]">20</span></div>
+          <div className="text-[8.5px] text-foreground/55">Apr · vs Mar −8%</div>
+        </div>
+        <div className="flex items-end gap-1 h-16">
+          {[40,55,30,62,48,72,35,58,44,68,50,42].map((h,i)=>(
+            <div key={i} className="flex-1 rounded-sm" style={{height:`${h}%`,background:i===5?"hsl(var(--primary))":"hsl(var(--foreground)/0.15)"}} />
+          ))}
+        </div>
+        <div className="text-[8.5px] text-foreground/55 flex justify-between"><span>Mon</span><span>Sun</span></div>
+        <div className="text-[10px] font-medium">By category</div>
+        <div className="relative w-20 h-20 self-center">
+          <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
+            <circle cx="18" cy="18" r="14" fill="none" stroke="hsl(var(--foreground)/0.1)" strokeWidth="6" />
+            <circle cx="18" cy="18" r="14" fill="none" stroke="#FF4F40" strokeWidth="6" strokeDasharray="22 88" />
+            <circle cx="18" cy="18" r="14" fill="none" stroke="#5BB0FF" strokeWidth="6" strokeDasharray="18 88" strokeDashoffset="-22" />
+            <circle cx="18" cy="18" r="14" fill="none" stroke="#22c55e" strokeWidth="6" strokeDasharray="14 88" strokeDashoffset="-40" />
+            <circle cx="18" cy="18" r="14" fill="none" stroke="#a855f7" strokeWidth="6" strokeDasharray="10 88" strokeDashoffset="-54" />
+          </svg>
+        </div>
+        <div className="grid grid-cols-2 gap-x-2 gap-y-0.5 text-[9px]">
+          {[["#FF4F40","Eating","25%"],["#5BB0FF","Transport","20%"],["#22c55e","Shopping","16%"],["#a855f7","Other","11%"]].map(([c,n,p],i)=>(
+            <div key={i} className="flex items-center gap-1">
+              <div className="w-2 h-2 rounded-full" style={{background:c}} />
+              <span className="flex-1 truncate">{n}</span><span className="font-mono">{p}</span>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Daily spend chart" },
+      { n: 2, x: "50%", y: "62%", label: "Category donut" },
+      { n: 3, x: "50%", y: "90%", label: "Breakdown" },
+    ],
+  })) as Builder,
+
+  // 15. Wise — Fee breakdown
+  finWiseFees: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div className="text-[11px] font-medium">Transfer breakdown</div>
+        <div className="text-[9px] text-foreground/55">£1,000.00 → EUR · Apr 12</div>
+        <div className="rounded-md border border-border/60 p-2 text-[10px] space-y-1.5">
+          <div className="flex justify-between"><span>You send</span><span className="font-mono">£1,000.00</span></div>
+          <div className="flex justify-between text-foreground/60"><span>Fixed fee</span><span className="font-mono">£1.50</span></div>
+          <div className="flex justify-between text-foreground/60"><span>Variable fee (0.21%)</span><span className="font-mono">£2.15</span></div>
+          <div className="flex justify-between pt-1 border-t border-border/40"><span>Total fee</span><span className="font-mono">£3.65</span></div>
+          <div className="flex justify-between text-foreground/60"><span>Amount converted</span><span className="font-mono">£996.35</span></div>
+          <div className="flex justify-between text-foreground/60"><span>× Mid-market rate</span><span className="font-mono">1.17420</span></div>
+          <div className="flex justify-between font-medium pt-1 border-t border-border/40"><span>Recipient gets</span><span className="font-mono">€1,169.91</span></div>
+        </div>
+        <div className="rounded-md bg-[#9FE870]/15 border border-[#9FE870]/40 p-2 text-[9.5px]">
+          <div className="flex justify-between"><span>Bank would charge</span><span className="font-mono line-through">£15.05</span></div>
+          <div className="flex justify-between text-green-700 font-medium"><span>You saved</span><span className="font-mono">£11.40</span></div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "40%", label: "Itemized fees" },
+      { n: 2, x: "50%", y: "68%", label: "Mid-market rate" },
+      { n: 3, x: "50%", y: "90%", label: "Bank comparison" },
+    ],
+  })) as Builder,
+
+  // 16. Robinhood — Gain/loss focus
+  finRobinhoodGains: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div>
+          <div className="text-[8.5px] text-foreground/55 uppercase tracking-wider">Total return</div>
+          <div className="font-display text-[24px] leading-none text-green-500">+$1,842.18</div>
+          <div className="text-[10px] text-green-500">+16.7% all time</div>
+        </div>
+        <div className="rounded-md border border-border/60 p-2 flex gap-2 text-[10px]">
+          <div className="flex-1">
+            <div className="text-foreground/55 text-[8.5px]">Today</div>
+            <div className="text-green-500 font-mono">+$24.18</div>
+          </div>
+          <div className="flex-1">
+            <div className="text-foreground/55 text-[8.5px]">Week</div>
+            <div className="text-red-500 font-mono">−$58.42</div>
+          </div>
+          <div className="flex-1">
+            <div className="text-foreground/55 text-[8.5px]">Month</div>
+            <div className="text-green-500 font-mono">+$312.10</div>
+          </div>
+        </div>
+        <div className="text-[10px] font-medium">Best & worst</div>
+        <div className="flex flex-col gap-0.5 flex-1 overflow-hidden">
+          {[
+            ["NVDA","+$842","+42.1%","up"],
+            ["AAPL","+$218","+11.4%","up"],
+            ["VTI","+$120","+3.8%","up"],
+            ["TSLA","−$98","−4.2%","down"],
+            ["META","−$42","−2.1%","down"],
+          ].map(([s,v,p,d],i)=>(
+            <div key={i} className="flex items-center text-[10px] py-1 border-b border-border/30">
+              <div className={`w-1 h-5 rounded-full ${d==="up"?"bg-green-500":"bg-red-500"}`} />
+              <div className="w-12 font-semibold pl-2">{s}</div>
+              <div className={`flex-1 text-right font-mono ${d==="up"?"text-green-500":"text-red-500"}`}>{v}</div>
+              <div className={`w-14 text-right font-mono ${d==="up"?"text-green-500":"text-red-500"}`}>{p}</div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "18%", label: "Total return" },
+      { n: 2, x: "50%", y: "42%", label: "Day/week/month" },
+      { n: 3, x: "50%", y: "75%", label: "Red/green movers" },
+    ],
+  })) as Builder,
+
+  // 17. Monzo — Goals & nudges
+  finMonzoGoals: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div className="text-[11px] font-medium">Savings goals</div>
+        <div className="flex flex-col gap-1.5">
+          {[
+            ["🏖️","Holiday in Lisbon","£820","£1,500","#FFD23F",55],
+            ["🚲","New road bike","£600","£900","#22c55e",67],
+            ["☔","Rainy day fund","£1,400","£2,000","#5BB0FF",70],
+          ].map(([e,n,c,t,col,pct],i)=>(
+            <div key={i} className="rounded-lg p-2 border border-border/40">
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-full grid place-items-center text-[14px]" style={{background:`${col}22`}}>{e}</div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-[10px] font-medium truncate">{n}</div>
+                  <div className="text-[8.5px] text-foreground/55">{c} of {t}</div>
+                </div>
+                <div className="text-[9px] font-mono">{pct}%</div>
+              </div>
+              <div className="h-1.5 rounded-full bg-foreground/10 mt-1 overflow-hidden">
+                <div className="h-full rounded-full" style={{width:`${pct}%`,background:col as string}} />
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-md bg-[#FF4F40]/10 border border-[#FF4F40]/30 p-2 mt-1">
+          <div className="text-[10px] font-medium">Add £40 to hit Lisbon by July 🎉</div>
+          <div className="text-[8.5px] text-foreground/60">Round-ups would get you there in 6 weeks.</div>
+        </div>
+        <div className="flex-1" />
+        <CTA>Add to a goal</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Goal progress" },
+      { n: 2, x: "50%", y: "70%", label: "Goal stack" },
+      { n: 3, x: "50%", y: "85%", label: "Gentle nudge" },
+    ],
+  })) as Builder,
+
+  // 18. Revolut — Tiers & perks
+  finRevolutTiers: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div className="text-[11px] font-medium">Your plan</div>
+        <div className="flex flex-col gap-1.5 flex-1">
+          {[
+            ["Standard","Free","Free FX up to £1k/mo","#9ca3af",false],
+            ["Premium","£6.99/mo","Unlimited FX · travel insurance","#3b82f6",true],
+            ["Metal","£12.99/mo","1% cashback · metal card · lounge","#1f2937",false],
+            ["Ultra","£45/mo","Concierge · best rates · airport lounges","#c9a84c",false],
+          ].map(([t,p,pe,c,cur],i)=>(
+            <div key={i} className={`rounded-lg p-2 ${cur?"border-2":"border"} border-border/60 relative`} style={cur?{borderColor:c as string}:{}}>
+              {cur && <div className="absolute -top-1.5 right-2 text-[7.5px] px-1.5 py-0.5 rounded-full text-white" style={{background:c as string}}>CURRENT</div>}
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="text-[10.5px] font-semibold">{t}</div>
+                  <div className="text-[8.5px] text-foreground/55 truncate">{pe}</div>
+                </div>
+                <div className="text-[10px] font-mono" style={{color:c as string}}>{p}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <CTA>Upgrade to Metal</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "35%", label: "Tier ladder" },
+      { n: 2, x: "50%", y: "55%", label: "Current tier" },
+      { n: 3, x: "50%", y: "94%", label: "Upgrade path" },
+    ],
+  })) as Builder,
+
+  // 19. Cash App — Boosts
+  finCashAppBoosts: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div className="flex items-center justify-between">
+          <div className="text-[11px] font-medium">Boosts</div>
+          <div className="text-[8.5px] text-foreground/55">1 active</div>
+        </div>
+        <div className="rounded-lg bg-gradient-to-br from-green-500/25 to-green-500/5 border border-green-500/40 p-2">
+          <div className="text-[8.5px] text-green-600 uppercase tracking-wider">Active boost</div>
+          <div className="text-[12px] font-semibold mt-0.5">15% off at Starbucks ☕</div>
+          <div className="text-[8.5px] text-foreground/60">Up to $7 off · expires in 4 days</div>
+        </div>
+        <div className="text-[10px] font-medium mt-1">Pick a boost</div>
+        <div className="grid grid-cols-2 gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["10% off","Chipotle","🌯","#A81612"],
+            ["$1 off","DoorDash","🥡","#FF3008"],
+            ["5% back","Whole Foods","🥬","#00674B"],
+            ["15% off","Spotify","🎧","#1DB954"],
+            ["$2 off","Uber","🚗","#000000"],
+            ["8% back","Lyft","🚕","#FF00BF"],
+          ].map(([d,b,e,c],i)=>(
+            <div key={i} className="rounded-lg p-1.5 border border-border/40 flex flex-col gap-0.5">
+              <div className="w-6 h-6 rounded-md grid place-items-center text-[12px]" style={{background:`${c}22`}}>{e}</div>
+              <div className="text-[9.5px] font-semibold">{d}</div>
+              <div className="text-[8.5px] text-foreground/55 truncate">at {b}</div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "25%", label: "Active boost" },
+      { n: 2, x: "50%", y: "65%", label: "Boost grid" },
+      { n: 3, x: "50%", y: "85%", label: "Cashback offers" },
+    ],
+  })) as Builder,
+
+  // 20. Robinhood — Streaks & alerts
+  finRobinhoodAlerts: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FinBar />
+        <div className="rounded-lg p-2 bg-gradient-to-br from-green-500/25 to-green-500/5 border border-green-500/40">
+          <div className="text-[8.5px] uppercase tracking-wider text-green-600">Streak</div>
+          <div className="flex items-baseline gap-2">
+            <div className="font-display text-[22px]">12</div>
+            <div className="text-[9px] text-foreground/65">days logged in 🔥</div>
+          </div>
+          <div className="flex gap-1 mt-1">
+            {Array.from({length:7}).map((_,i)=>(
+              <div key={i} className={`flex-1 h-1.5 rounded-full ${i<5?"bg-green-500":"bg-foreground/15"}`} />
+            ))}
+          </div>
+        </div>
+        <div className="text-[10px] font-medium mt-1">Market alerts</div>
+        <div className="flex flex-col gap-1 flex-1 overflow-hidden">
+          {[
+            ["🔔","NVDA hit $850 target","2m ago","up"],
+            ["📈","S&P 500 +1.2% today","12m ago","up"],
+            ["📉","TSLA down 5% — your alert","1h ago","down"],
+            ["💰","Earnings: AAPL after close","3h ago","neutral"],
+            ["🔔","BTC crossed $52k","yesterday","up"],
+          ].map(([e,t,when,d],i)=>(
+            <div key={i} className="flex items-start gap-2 p-1.5 rounded-md border border-border/40">
+              <div className="w-6 h-6 rounded-full bg-foreground/8 grid place-items-center text-[11px] shrink-0">{e}</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] font-medium truncate">{t}</div>
+                <div className="text-[8.5px] text-foreground/55">{when}</div>
+              </div>
+              <div className={`w-1.5 h-1.5 rounded-full mt-1.5 ${d==="up"?"bg-green-500":d==="down"?"bg-red-500":"bg-foreground/30"}`} />
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "Login streak" },
+      { n: 2, x: "50%", y: "55%", label: "Market alerts" },
+      { n: 3, x: "90%", y: "55%", label: "Up/down dot" },
+    ],
+  })) as Builder,
+});
+
 export function renderScreen(screen: string | undefined, ctx: RenderCtx, preview?: Preview): RenderedScreen {
   const p = safePreview(preview, ctx);
   const b = (screen && screens[screen]) || fallback;
