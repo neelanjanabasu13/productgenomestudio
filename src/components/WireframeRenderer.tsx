@@ -240,17 +240,25 @@ const screens: Record<string, Builder> = {
       <Frame>
         <StatusBar title={title(p)} />
         <div className="flex flex-col items-center gap-2 pt-3 text-center px-2">
-          <div className="w-24 h-24 rounded-full bg-primary text-primary-foreground grid place-items-center font-display text-2xl shadow-[0_10px_40px_-10px_var(--primary)] px-2 text-center leading-tight">{p.metric}</div>
-          <div className="font-display text-[16px] leading-tight">{p.header}</div>
-          <div className="text-[10px] font-mono text-foreground/55 truncate max-w-full">{row(p, 0)}</div>
-          <Chip accent>{row(p, 1)}</Chip>
+          <div className="w-24 h-24 rounded-full bg-primary text-primary-foreground grid place-items-center shadow-[0_10px_40px_-10px_var(--primary)] overflow-hidden">
+            <div className="flex flex-col items-center leading-none">
+              <span className="font-display text-[34px] leading-none">{(() => { const m = (p.rows.join(" ").match(/(\d+\.\d)/) || [])[1]; return m || "9.4"; })()}</span>
+              <span className="text-[8px] font-mono opacity-80 mt-0.5">/ 10</span>
+            </div>
+          </div>
+          <div className="text-[10px] font-mono text-foreground/55 truncate max-w-full">{(() => { const n = ((p.company.length * 137) % 9000) + 1200; return `${n.toLocaleString()} reviews`; })()}</div>
+          <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-destructive/15 border border-destructive/40 text-destructive text-[10px] font-mono">
+            <span className="w-1.5 h-1.5 rounded-full bg-destructive animate-pulse" />
+            Only {((p.company.length % 4) + 1)} left at this price
+          </div>
+          <div className="text-[10px] text-foreground/70 truncate max-w-full">{row(p, 0)}</div>
         </div>
         <div className="mt-auto"><CTA>{p.cta}</CTA></div>
       </Frame>
     ),
     pins: [
-      { n: 1, x: "50%", y: "22%", label: "Headline metric" },
-      { n: 2, x: "50%", y: "55%", label: "Supporting line" },
+      { n: 1, x: "50%", y: "22%", label: "Trust score" },
+      { n: 2, x: "50%", y: "60%", label: "Urgency cue" },
       { n: 3, x: "50%", y: "90%", label: "Commit CTA" },
     ],
   }),
@@ -290,14 +298,26 @@ const screens: Record<string, Builder> = {
       <Frame>
         <StatusBar title={title(p)} />
         <div className="font-display text-[18px] leading-tight truncate">{p.header}</div>
-        <div className="flex gap-2 flex-wrap pt-1">{p.rows.slice(0, 4).map((c, i) => <Chip key={i} accent>{c}</Chip>)}</div>
-        <div className="text-[11px] text-foreground/70 leading-snug mt-1">{p.metric}</div>
+        <div className="grid grid-cols-2 gap-2 pt-1">
+          {[
+            { icon: "🛡", label: "Best price guarantee" },
+            { icon: "↺", label: "Free cancellation" },
+            { icon: "✓", label: "Verified listing" },
+            { icon: "☎", label: "24/7 support" },
+          ].map((b, i) => (
+            <div key={i} className="flex items-center gap-2 p-2 rounded-xl border border-primary/30 bg-primary/5">
+              <div className="w-7 h-7 rounded-full bg-primary text-primary-foreground grid place-items-center text-[12px] shrink-0">{b.icon}</div>
+              <div className="text-[10px] font-medium leading-tight truncate">{b.label}</div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[10px] text-foreground/60 leading-snug truncate">{p.metric}</div>
         <div className="mt-auto"><CTA>{p.cta}</CTA></div>
       </Frame>
     ),
     pins: [
-      { n: 1, x: "50%", y: "30%", label: "Trust chips" },
-      { n: 2, x: "50%", y: "55%", label: "Assurance line" },
+      { n: 1, x: "30%", y: "35%", label: "Feature badge" },
+      { n: 2, x: "70%", y: "55%", label: "Guarantee badge" },
       { n: 3, x: "50%", y: "90%", label: "Commit CTA" },
     ],
   }),
@@ -312,13 +332,19 @@ const screens: Record<string, Builder> = {
             <div key={i} className="h-10 rounded-xl border border-border bg-background/40 flex items-center px-3 text-[11px] text-foreground/60 truncate">{l}</div>
           ))}
         </div>
-        <div className="text-[10px] p-2 rounded-lg bg-primary/10 border border-primary/30 text-foreground/80 truncate">{p.metric}</div>
+        <div className="p-2.5 rounded-xl bg-primary/10 border border-primary/40 flex items-center gap-2">
+          <div className="w-7 h-7 rounded-full bg-primary text-primary-foreground grid place-items-center text-[12px] shrink-0">↺</div>
+          <div className="min-w-0">
+            <div className="text-[11px] font-medium text-foreground truncate">Free cancellation</div>
+            <div className="text-[9px] text-foreground/65 truncate">No charge until check-in</div>
+          </div>
+        </div>
         <div className="mt-auto"><CTA>{p.cta}</CTA></div>
       </Frame>
     ),
     pins: [
       { n: 1, x: "50%", y: "25%", label: "Minimal fields" },
-      { n: 2, x: "50%", y: "62%", label: "Reassurance" },
+      { n: 2, x: "50%", y: "62%", label: "Free cancellation" },
       { n: 3, x: "50%", y: "90%", label: "Single CTA" },
     ],
   }),
@@ -352,17 +378,17 @@ const screens: Record<string, Builder> = {
       <Frame>
         <StatusBar title={title(p)} />
         <div className="font-display text-[18px] leading-tight truncate">{p.header}</div>
-        <div className="text-[10px] p-2 rounded-lg bg-primary/10 border border-primary/30 text-foreground/80">{p.metric}</div>
+        <div className="text-[10px] p-2 rounded-lg bg-primary/10 border border-primary/30 text-foreground/80 truncate">You won't be charged yet · {p.metric}</div>
         {p.rows.slice(0, 2).map((l, i) => (
           <div key={i} className={`rounded-xl border border-border bg-background/40 px-3 ${i === 0 ? "h-10 flex items-center" : "h-20 pt-2"} text-[11px] text-foreground/60 truncate`}>{l}</div>
         ))}
-        <div className="mt-auto"><CTA>{p.cta}</CTA></div>
+        <div className="mt-auto"><CTA>Request to book</CTA></div>
       </Frame>
     ),
     pins: [
       { n: 1, x: "50%", y: "22%", label: "Calm framing" },
       { n: 2, x: "50%", y: "55%", label: "Personal note" },
-      { n: 3, x: "50%", y: "90%", label: "Low-pressure CTA" },
+      { n: 3, x: "50%", y: "90%", label: "Request CTA" },
     ],
   }),
 
@@ -417,26 +443,32 @@ const screens: Record<string, Builder> = {
     node: (
       <Frame>
         <StatusBar title={title(p)} />
-        <div className="flex items-center gap-2"><Chip accent>{p.metric}</Chip></div>
         <div className="font-display text-[18px] leading-tight truncate">{p.header}</div>
-        <div className="space-y-1.5">
-          {p.rows.slice(0, 3).map((c, i) => (
-            <div key={i} className="flex items-center gap-2 p-2 rounded-lg border border-border/60">
-              <div className="w-2 h-2 rounded-full bg-primary shrink-0" />
-              <div className="flex-1 text-[11px] truncate">{c}</div>
-              <span className="text-[9px] font-mono text-primary shrink-0 truncate max-w-[72px]">{p.cta}</span>
+        <div className="text-[10px] font-mono text-foreground/55 -mt-1 truncate">{p.metric}</div>
+        <div className="space-y-1.5 flex-1">
+          {[
+            { name: "Level 1 · Genius", perk: "10% off select stays", active: true, done: true },
+            { name: "Level 2 · Genius", perk: "15% off + free breakfast", active: true, done: false },
+            { name: "Level 3 · Genius", perk: "20% off + room upgrade", active: false, done: false },
+          ].map((t, i) => (
+            <div key={i} className={`flex items-center gap-2 p-2 rounded-lg border ${t.active ? "border-primary/50 bg-primary/5" : "border-dashed border-border/70 opacity-60"}`}>
+              <div className={`w-7 h-7 rounded-full grid place-items-center text-[10px] font-mono shrink-0 ${t.done ? "bg-primary text-primary-foreground" : t.active ? "border border-primary text-primary" : "border border-border text-foreground/50"}`}>
+                {t.done ? "✓" : i + 1}
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[11px] font-medium truncate">{t.name}</div>
+                <div className="text-[9px] text-foreground/65 truncate">{t.perk}</div>
+              </div>
+              {t.done && <span className="text-[8px] font-mono text-primary shrink-0">UNLOCKED</span>}
             </div>
           ))}
-          <div className="flex items-center gap-2 p-2 rounded-lg border border-dashed border-border/80 opacity-60">
-            <div className="w-2 h-2 rounded-full bg-foreground/30 shrink-0" />
-            <div className="flex-1 text-[11px] truncate">{row(p, 3)}</div>
-          </div>
         </div>
+        <div className="text-[9px] font-mono text-foreground/55 truncate">2 stays until Level 3</div>
       </Frame>
     ),
     pins: [
-      { n: 1, x: "20%", y: "12%", label: "Tier badge" },
-      { n: 2, x: "78%", y: "45%", label: "Unlocked perk" },
+      { n: 1, x: "20%", y: "30%", label: "Current tier" },
+      { n: 2, x: "78%", y: "55%", label: "Unlocked perk" },
       { n: 3, x: "50%", y: "82%", label: "Next-tier hook" },
     ],
   }),
