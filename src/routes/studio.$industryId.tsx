@@ -11,7 +11,8 @@ import {
 } from "@/lib/engine";
 import type { Concept, GoalId, Picks } from "@/data/genome.types";
 import { PhoneFrame } from "@/components/PhoneFrame";
-import { WireframeRenderer } from "@/components/WireframeRenderer";
+import { WireframeRenderer, renderScreen } from "@/components/WireframeRenderer";
+import { composePurpose, composeStrength } from "@/lib/engine";
 
 export const Route = createFileRoute("/studio/$industryId")({
   head: ({ params }) => ({
@@ -86,6 +87,17 @@ function Studio() {
     [industry, picks, goal]
   );
 
+  const screenTypes = meta.data?.screenTypes;
+  const rendered = useMemo(() => {
+    if (!chosenOption || !stage || !industry) return null;
+    return renderScreen(chosenOption.screen, {
+      industryId: industry.id,
+      stage: stage.stage,
+      pattern: chosenOption.pattern,
+      company: chosenOption.company,
+    });
+  }, [chosenOption, stage, industry]);
+
   function pick(stageName: string, optId: string) {
     setPicks((p) => ({ ...p, [stageName]: p[stageName] === optId ? "" : optId }));
   }
@@ -157,18 +169,47 @@ function Studio() {
       <div className="mt-6 grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-8">
         {/* PHONE */}
         <div className="flex flex-col items-center">
-          <PhoneFrame>
-            {chosenOption ? (
-              <WireframeRenderer screen={chosenOption.screen} label={stage.stage} />
-            ) : (
-              <div className="h-full grid place-items-center text-center px-6">
-                <div>
-                  <div className="text-3xl mb-2">↗</div>
-                  <div className="text-sm text-muted-foreground">Pick a pattern to preview the {stage.stage.toLowerCase()} screen.</div>
+          <div className="relative">
+            <PhoneFrame>
+              {chosenOption && industry ? (
+                <WireframeRenderer
+                  screen={chosenOption.screen}
+                  ctx={{
+                    industryId: industry.id,
+                    stage: stage.stage,
+                    pattern: chosenOption.pattern,
+                    company: chosenOption.company,
+                  }}
+                />
+              ) : (
+                <div className="h-full grid place-items-center text-center px-6">
+                  <div>
+                    <div className="text-3xl mb-2">↗</div>
+                    <div className="text-sm text-muted-foreground">Pick a pattern to preview the {stage.stage.toLowerCase()} screen.</div>
+                  </div>
                 </div>
+              )}
+            </PhoneFrame>
+            {/* Numbered pin overlay — positioned over the phone screen area (inset-2 + top pt-6 of PhoneFrame) */}
+            {rendered && (
+              <div className="absolute pointer-events-none" style={{ left: 8, right: 8, top: 8 + 24, bottom: 8 }}>
+                {rendered.pins.map((p) => (
+                  <div
+                    key={p.n}
+                    className="absolute -translate-x-1/2 -translate-y-1/2 animate-scale-in"
+                    style={{ left: p.x, top: p.y }}
+                  >
+                    <div className="relative">
+                      <div className="absolute inset-0 rounded-full bg-primary/30 blur-[6px]" />
+                      <div className="relative w-5 h-5 rounded-full bg-primary text-primary-foreground grid place-items-center text-[10px] font-mono ring-2 ring-background shadow-md">
+                        {p.n}
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             )}
-          </PhoneFrame>
+          </div>
           {chosenOption && (
             <div className="mt-4 text-center max-w-[290px]">
               <div className="text-xs uppercase tracking-wider text-muted-foreground">{stage.stage}</div>
@@ -176,6 +217,37 @@ function Studio() {
               <div className="text-xs text-muted-foreground">after {chosenOption.company}</div>
             </div>
           )}
+
+          {/* Callout panel — Purpose / Strength / Weakness */}
+          <div className="mt-5 w-full max-w-[290px]">
+            {chosenOption && rendered ? (
+              <div className="rounded-2xl border border-border bg-card p-4 space-y-3">
+                <div className="text-[9px] font-mono uppercase tracking-[0.18em] text-muted-foreground">Annotation</div>
+                <CalloutRow
+                  n={rendered.pins[0]?.n ?? 1}
+                  label="Purpose"
+                  text={composePurpose(chosenOption, screenTypes, stage.stage)}
+                  tone="primary"
+                />
+                <CalloutRow
+                  n={rendered.pins[1]?.n ?? 2}
+                  label="Strength"
+                  text={composeStrength(chosenOption)}
+                  tone="primary"
+                />
+                <CalloutRow
+                  n={rendered.pins[2]?.n ?? 3}
+                  label="Weakness — tradeoff"
+                  text={chosenOption.tradeoff}
+                  tone="amber"
+                />
+              </div>
+            ) : (
+              <div className="rounded-2xl border border-dashed border-border p-4 text-xs text-muted-foreground text-center">
+                Pick a pattern to see how it works.
+              </div>
+            )}
+          </div>
         </div>
 
         {/* CONTROLS */}
@@ -306,6 +378,34 @@ function GoalChip({ active, onClick, children }: { active: boolean; onClick: () 
     >
       {children}
     </button>
+  );
+}
+
+function CalloutRow({
+  n,
+  label,
+  text,
+  tone,
+}: {
+  n: number;
+  label: string;
+  text: string;
+  tone: "primary" | "amber";
+}) {
+  const borderCls = tone === "primary" ? "border-primary" : "border-amber-400/80";
+  const chipCls =
+    tone === "primary"
+      ? "bg-primary text-primary-foreground"
+      : "bg-amber-400 text-background";
+  const labelCls = tone === "primary" ? "text-primary" : "text-amber-400";
+  return (
+    <div className={`pl-3 border-l-2 ${borderCls}`}>
+      <div className="flex items-center gap-1.5">
+        <span className={`w-4 h-4 rounded-full grid place-items-center text-[9px] font-mono ${chipCls}`}>{n}</span>
+        <span className={`text-[9px] font-mono uppercase tracking-[0.16em] ${labelCls}`}>{label}</span>
+      </div>
+      <p className="mt-1.5 text-[12px] leading-snug text-foreground/85">{text}</p>
+    </div>
   );
 }
 

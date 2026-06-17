@@ -1,94 +1,47 @@
+## Goal
+Make the in-Studio phone preview feel like a real product screen, with teal numbered annotations and a matching callout panel that updates live with selection.
 
-# Product Genome Studio — Build Plan
+## 1. Realistic content sampler (`src/lib/sampleContent.ts`, new)
+Pure helpers that produce believable sample copy per industry, keyed by `industry.id`:
+- `placesFor(industryId)` — e.g. travel: "Lisbon Loft", "Kyoto Ryokan"; food: "Sunda Thai", "Roman & Co."; ai: "Draft brief", "Refactor util"; shopping: "Linen Shirt — $48", etc.
+- `pricesFor(industryId)`, `ratingsFor`, `ctaFor(stage)`, `metricsFor`, `chatFor(industryId)`, `messagesFor`, `categoriesFor`.
+- Returns deterministic arrays (no randomness — index by element position) so the preview is stable across re-renders.
+- All copy is generic/original (no real brand names beyond what's already in industry.companies as labels).
 
-A polished, editorial-feeling interactive simulator that renders entirely from the supplied dataset, with a pluggable async `dataSource` layer ready for a future live API.
+## 2. Higher-fidelity `WireframeRenderer.tsx` (rewrite)
+- Each `screen` builder is now `(ctx) => { node, pins }` where `ctx = { stage, pattern, company, industryId }`.
+- Replace skeleton `<Bar>` placeholders with real text: titles, place names, prices, ratings ("4.9 ★ · 312"), prominent CTAs ("Reserve", "Send", "Continue", etc.), labels in JetBrains Mono for chips, Playfair Display for headlines, body in DM Sans.
+- Keep palette monochrome (foreground / muted) with `--primary` (teal) for CTAs, badges, key numbers; preserve dark-mode tokens.
+- For each screen type, define 2–3 `pins`: `{ n: 1|2|3, x: '12%', y: '34%', label?: 'Hero', emphasis?: 'cta'|'meta'|'trust' }`. Pin coordinates target meaningful elements (e.g. photoGrid → pin 1 on first tile, pin 2 on price chip, pin 3 on heart).
+- `WireframeRenderer` returns `{ frame: ReactNode, pins: Pin[] }` (export type `Pin`).
+- New export: `getScreenPurpose(screen, screenTypes)` — pulls `meta.screenTypes[screen]` and converts to a one-line "Purpose" sentence (e.g. "Lets people browse visually with quick price/save signals.").
 
-## 1. Asset & data setup
-- Copy the uploaded JSON into `src/data/genome.json` (bundled with the app, single source of truth).
-- Add `src/data/genome.types.ts` with TypeScript types for `Industry`, `Stage`, `Option`, `Goal`, `Picks`, `Concept`, `Conflict`, `Source`.
+## 3. Pin overlay + callout panel (`studio.$industryId.tsx`)
+Phone column layout becomes phone + callout panel side-by-side at wider widths (stacked under phone on narrow).
 
-## 2. Data layer (`src/lib/dataSource/`)
-- `index.ts` exports a singleton `dataSource` chosen by `MODE: 'static' | 'live'` constant. `live` wraps `static` and falls back on any error.
-- `static.ts` implements: `listIndustries()`, `getIndustry(id)`, `generateIndustry(name)`, `synthesizeConcept(industryId, picks, goal)`, `addEntry(obj)`, `submitCorrection(obj)`. All async (Promises).
-- Merges bundled seed (`source:'seed'`) with `localStorage` entries (`source:'community'|'ai'`) under keys `pgs:industries`, `pgs:corrections`.
-- `generateIndustry` in static mode rejects with "coming soon".
-- `synthesizeConcept` in static mode delegates to the pure engine.
+- Render `<PhoneFrame>` with `WireframeRenderer` inside; on top of the phone screen overlay numbered pins absolutely positioned per pin coords. Pin = small (18px) teal circle with white "1/2/3" in JetBrains Mono, soft halo (ring-2 ring-primary/30), subtle scale-in animation per selection change.
+- Callout panel beside (or below) phone, ~290px wide:
+  - Header: `font-mono` "ANNOTATION" + chosen `pattern` name.
+  - Three rows, each with a leading numbered chip matching the pin and a left-border accent (`border-l-2`):
+    1. PURPOSE — teal border. Text: derived purpose from `screenTypes[opt.screen]` (via `getScreenPurpose`); if missing, compose from pattern + traits (e.g. "Emphasizes exploration and emotional pull.").
+    2. STRENGTH — teal border. Composed line: purpose + dominant trait → e.g. "Best at fast visual scanning and saving favorites." Built from traits axes (`ex/em/si` highest magnitude) + pattern words.
+    3. WEAKNESS — amber border (`border-amber-400/70`, label color `text-amber-400`). Uses `opt.tradeoff` verbatim.
+  - Labels (`PURPOSE` / `STRENGTH` / `WEAKNESS — TRADEOFF`) in `font-mono text-[10px] tracking-wider`; body in DM Sans `text-sm leading-snug`.
+- When no option is picked yet, callout shows a quiet "Pick a pattern to see how it works." placeholder; no pins rendered.
+- All three pieces (phone content, pins, callout) re-render together via React state — already driven by `chosenOption`.
 
-## 3. Pure engine (`src/lib/engine.ts`)
-- `recommendFor(goal, stage)` → option id from `stage.recommend[goal]`.
-- `detectConflicts(industry, picks)` → walks each axis `ex|em|si`; flags pairs where one chosen trait ≥ 2 and another ≤ -2, returns plain-language messages ("Explore-heavy browse clashes with precise checkout").
-- `score(industry, picks)` → consistency % (100 minus 15 per conflict, floored), goalMatch count vs current goal, trait totals.
-- `synthesizeConceptLocal(industry, picks, goal)` → derives product name (industry + dominant trait adjective), positioning sentence, UX direction bullets, critique listing tensions.
-- `matchGoalFromText(text, goals)` → keyword scan.
+## 4. Helpers
+- `composeStrength(opt)` — picks the strongest trait axis (`Math.abs` max of `ex/em/si`) and maps to a short phrase (`ex+` → "rewards exploration", `em-` → "feels precise and transactional", etc.), prepended with "Best at ".
+- `composePurpose(opt, screenTypes)` — `screenTypes[opt.screen]` cleaned to a sentence; fallback "Presents the {stage} step as a {pattern.toLowerCase()}."
+- Both live in `src/lib/engine.ts` (close to existing scoring helpers) and are pure.
 
-## 4. Routing (TanStack Start, file-based)
-- `src/routes/__root.tsx`: shell with header (logo wordmark "Product Genome Studio"), theme toggle, footer showing dataset `disclaimer`.
-- `src/routes/index.tsx`: **Home** — search input, industry card grid (emoji, name, "{n} companies"), filter by industry/company name, "✨ Generate with AI" CTA when no match.
-- `src/routes/studio.$industryId.tsx`: **Studio**.
-- `src/routes/add.tsx`: **Add/Correct** form.
-- Each route sets distinct `head()` meta.
+## 5. Scope guardrails
+- Frontend-only. No data file edits, no engine scoring changes, no new dependencies.
+- Keeps existing PhoneFrame, theme tokens, type scale, and teal accent.
+- Mobile: callout stacks below phone; pins remain at same relative coords.
 
-## 5. Studio screen (the centerpiece)
-Two-column desktop layout, stacks on mobile.
-
-**Left — Phone preview**
-- `<PhoneFrame>` (rounded notch, 0.5px border). Renders the currently active stage's chosen option via `<WireframeRenderer screen={...} />`.
-- `src/components/wireframes/` — one small component per `screenType` (photoGrid, dealList, searchBox, filterList, mapView, listRows, scoreBadge, profileTrust, badgeRow, guestForm, oneClick, reassureForm, stampCard, savedGrid, tierList, feedFull, composer, chatThread, dashboard, carousel, onboardChecklist, insightsCards, playerView, lessonCard, progressRings, kanban, templateGallery, codeCanvas, sendForm) + `Generic` fallback. Clean placeholder tiles/bars/chips, no logos. Fade/scale transition on change.
-- Empty state: "Pick a pattern →".
-
-**Right — Controls**
-- Goal bar: text input + chips from `goals[]` + "No goal"; typing maps via keywords.
-- Stage tabs with filled dot when chosen.
-- Option cards for active stage: pattern + company; star + "Suggested for {goal}" when matches `recommend[goal]`; selecting reveals tradeoff with warning icon.
-- "Use suggested set" button (visible when goal set) fills all stages with recommendations.
-- **Genome panel**: consistency % progress ring, goal-match count, conflict list.
-- When every stage has a pick → **Synthesize concept** button opens a modal/section showing name, positioning, UX direction, critique.
-
-State lives in Studio component via `useReducer`; picks stored as `Record<stageName, optionId>` per industry in `localStorage` key `pgs:picks:{industryId}` so refresh keeps progress.
-
-## 6. Add / Correct
-- Form to add an industry: name, emoji, companies (comma list), funnel builder (stage name + options with pattern/company/tradeoff/screen select/traits sliders/goalsServed). Validate, `addEntry({...source:'community'})`.
-- "Suggest correction" affordance on any option card in Studio → opens form pre-filled → `submitCorrection`.
-
-## 7. Design system
-- Tailwind v4 tokens in `src/styles.css` under `@theme inline` mapped to `:root` variables. Deep-teal accent (`oklch(0.55 0.09 200)` light / brighter in dark). Neutral warm-gray surfaces, 0.5px hairline borders via `--color-border`, generous radii (`--radius: 18px`).
-- Typography: load Fraunces (display) + Inter (body) via `<link>` in `__root.tsx`; expose `--font-display`, `--font-sans` in `@theme`.
-- Full dark mode via class-based `@custom-variant dark`. Smooth `transition-colors`/`transition-transform` defaults.
-- Mobile-first responsive; phone preview centered on small screens, side-by-side ≥ lg.
-
-## 8. Misc
-- Footer (every page): small muted text with the dataset `disclaimer`.
-- No backend; everything client-side. No Lovable Cloud.
-
-## Technical notes
-- Components NEVER import the JSON directly — only `dataSource`.
-- `MODE` exported from `src/lib/dataSource/index.ts`; flipping to `'live'` later only requires implementing `live.ts`.
-- Engine functions are pure and unit-test-friendly (no I/O).
-- All wireframe sub-components are presentational, take no props beyond optional accent, so they render identically for any industry.
-
-## Files (high-level)
-```
-src/
-  data/genome.json
-  data/genome.types.ts
-  lib/dataSource/{index,static,live}.ts
-  lib/engine.ts
-  lib/goals.ts
-  components/
-    PhoneFrame.tsx
-    WireframeRenderer.tsx
-    wireframes/*.tsx
-    IndustryCard.tsx
-    GoalBar.tsx
-    StageTabs.tsx
-    OptionCard.tsx
-    GenomePanel.tsx
-    ConceptDialog.tsx
-    ThemeToggle.tsx
-    Footer.tsx
-  routes/__root.tsx
-  routes/index.tsx
-  routes/studio.$industryId.tsx
-  routes/add.tsx
-  styles.css
-```
+## Files
+- New: `src/lib/sampleContent.ts`
+- Edited: `src/components/WireframeRenderer.tsx` (rewrite of screens + pin metadata + purpose helper export)
+- Edited: `src/lib/engine.ts` (add `composePurpose`, `composeStrength`)
+- Edited: `src/routes/studio.$industryId.tsx` (pin overlay + callout panel; pass `ctx`; new layout)
