@@ -382,7 +382,8 @@ function FlowReelModal({
         const optId = picks[s.stage];
         const opt = optId ? s.options.find((o) => o.id === optId) : undefined;
         if (!opt) return null;
-        return { stage: s.stage, pattern: opt.pattern, company: opt.company, screen: opt.screen, preview: opt.preview };
+        const step: FlowStep = { stage: s.stage, pattern: opt.pattern, company: opt.company, screen: opt.screen, preview: opt.preview };
+        return step;
       })
       .filter((x): x is FlowStep => !!x);
   }, [industry, picks]);
