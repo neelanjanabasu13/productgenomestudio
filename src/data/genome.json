@@ -289,7 +289,7 @@
        "company": "Kayak",
        "pattern": "Compare grid",
        "tradeoff": "Thorough but dense",
-       "screen": "listRows",
+       "screen": "compareGrid",
        "traits": {
         "ex": -1,
         "em": -1,
