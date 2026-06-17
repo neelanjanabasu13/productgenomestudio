@@ -564,7 +564,7 @@ const screens: Record<string, Builder> = {
         <div className="text-[10px] font-mono text-foreground/55 -mt-1 uppercase tracking-wider truncate">{p.metric}</div>
         {[0, 1].map((row_i) => (
           <div key={row_i}>
-            <div className="text-[10px] font-mono text-foreground/55 uppercase tracking-wider mb-1.5">{NEUTRAL[row_i]}</div>
+            <div className="text-[10px] font-mono text-foreground/55 uppercase tracking-wider mb-1.5 truncate">{detail(p, row_i)}</div>
             <div className="flex gap-2 overflow-hidden">
               {[0, 1, 2, 3].map((i) => (
                 <div key={i} className="w-[68px] shrink-0">
@@ -620,7 +620,7 @@ const screens: Record<string, Builder> = {
         <div className="grid grid-cols-2 gap-2">
           {p.rows.slice(0, 4).map((c, i) => (
             <div key={i} className="p-2.5 rounded-xl border border-border/60">
-              <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 truncate">{NEUTRAL[i % NEUTRAL.length]}</div>
+              <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 truncate">{detail(p, i)}</div>
               <div className="text-[14px] font-display mt-0.5 leading-tight line-clamp-2">{c}</div>
               <div className="h-5 mt-1.5 flex items-end gap-0.5">
                 {[3, 5, 4, 6, 5, 7, 6].map((h, hi) => <div key={hi} className="flex-1 bg-primary/40 rounded-sm" style={{ height: `${h * 12}%` }} />)}
@@ -698,7 +698,7 @@ const screens: Record<string, Builder> = {
               <div className="relative w-14 h-14 rounded-full" style={{ background: `conic-gradient(var(--primary) ${pct * 3.6}deg, var(--muted) 0)` }}>
                 <div className="absolute inset-1.5 rounded-full bg-card grid place-items-center text-[10px] font-mono font-medium">{pct}%</div>
               </div>
-              <div className="text-[9px] font-mono text-foreground/55 uppercase tracking-wider truncate max-w-[60px]">{NEUTRAL[i]}</div>
+              <div className="text-[9px] font-mono text-foreground/55 uppercase tracking-wider truncate max-w-[60px]">{detail(p, i)}</div>
             </div>
           ))}
         </div>
