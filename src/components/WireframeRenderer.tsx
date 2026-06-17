@@ -1344,33 +1344,55 @@ Object.assign(screens, {
     node: (
       <Frame>
         <PhoneBar />
-        <div className="flex-1 flex gap-2">
-          <div className="flex-1 rounded-xl bg-gradient-to-b from-foreground/20 to-foreground/50 relative overflow-hidden">
-            <div className="absolute top-2 left-2 right-2 flex items-center gap-2">
-              <div className="w-6 h-6 rounded-full bg-background/80 shrink-0" />
-              <div className="text-[10px] font-medium text-background truncate">@maya.makes</div>
-              <span className="ml-auto text-[9px] font-mono text-background/80 px-1.5 py-0.5 rounded-full bg-background/20">Follow</span>
-            </div>
-            <div className="absolute bottom-3 left-3 right-12">
-              <div className="text-[11px] font-medium text-background leading-snug line-clamp-2">three minutes that change how you think about color theory</div>
-              <div className="text-[10px] text-background/80 mt-0.5 truncate">♪ original sound — maya.makes</div>
-            </div>
-          </div>
-          <div className="flex flex-col gap-3 items-center justify-end pb-3">
-            {[["♥", "24.1k"], ["💬", "812"], ["↗", "Share"], ["⋯", ""]].map(([i, n], idx) => (
-              <div key={idx} className="flex flex-col items-center">
-                <div className="w-9 h-9 rounded-full bg-foreground/15 grid place-items-center text-sm">{i}</div>
-                {n && <div className="text-[9px] font-mono text-foreground/70 mt-0.5 max-w-[44px] truncate">{n}</div>}
-              </div>
-            ))}
-          </div>
+        <div className="font-display text-[15px] leading-tight">What are you into?</div>
+        <div className="text-[10px] text-foreground/60 -mt-1">Pick 3+ — we'll tune your For You</div>
+        <div className="flex items-center gap-1 text-[9px] font-mono text-foreground/55">
+          <div className="flex-1 h-1 rounded-full bg-foreground/15 overflow-hidden"><div className="h-full w-[60%] bg-primary" /></div>
+          <span>5 / 3</span>
         </div>
+        <div className="flex flex-wrap gap-1.5 flex-1 content-start">
+          {[
+            { l: "Design",       e: "🎨", on: true  },
+            { l: "Comedy",       e: "😂", on: false },
+            { l: "Cooking",      e: "🍳", on: true  },
+            { l: "DIY",          e: "🛠", on: false },
+            { l: "Coding",       e: "💻", on: true  },
+            { l: "Dance",        e: "💃", on: false },
+            { l: "Gaming",       e: "🎮", on: false },
+            { l: "Books",        e: "📚", on: true  },
+            { l: "Travel",       e: "✈️", on: false },
+            { l: "Fitness",      e: "🏋", on: false },
+            { l: "Music",        e: "🎧", on: true  },
+            { l: "Pets",         e: "🐶", on: false },
+            { l: "Fashion",      e: "👗", on: false },
+            { l: "Photography",  e: "📷", on: false },
+            { l: "ASMR",         e: "🔊", on: false },
+            { l: "Storytime",    e: "🎙",  on: false },
+          ].map((t, i) => (
+            <span key={i} className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] truncate ${t.on ? "bg-primary text-primary-foreground" : "bg-foreground/[0.06] text-foreground/75 border border-border/60"}`}>
+              <span className="text-[11px] leading-none">{t.e}</span>{t.l}
+              {t.on && <span className="text-[9px] opacity-80">✓</span>}
+            </span>
+          ))}
+        </div>
+        <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55">Because you picked Design</div>
+        <div className="flex gap-1.5 overflow-hidden">
+          {[0,1,2,3].map(i => (
+            <div key={i} className="w-14 shrink-0">
+              <Photo seed={i} className="w-full h-16 rounded-md relative">
+                <span className="absolute bottom-1 left-1 text-[8px] font-mono text-background bg-background/20 px-1 rounded">▶ {(i+1)*42}k</span>
+              </Photo>
+              <div className="text-[8px] truncate mt-0.5">#typography</div>
+            </div>
+          ))}
+        </div>
+        <CTA>Build my feed</CTA>
       </Frame>
     ),
     pins: [
-      { n: 1, x: "40%", y: "50%", label: "Full-bleed video" },
-      { n: 2, x: "85%", y: "40%", label: "Side actions" },
-      { n: 3, x: "40%", y: "85%", label: "Caption + sound" },
+      { n: 1, x: "50%", y: "16%", label: "Pick interests" },
+      { n: 2, x: "30%", y: "45%", label: "Selected node" },
+      { n: 3, x: "50%", y: "80%", label: "Live preview" },
     ],
   })) as Builder,
 
