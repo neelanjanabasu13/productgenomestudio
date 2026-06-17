@@ -290,6 +290,14 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes reel-in {
+  0% { opacity: 0; transform: translateX(18px); filter: blur(4px); }
+  100% { opacity: 1; transform: translateX(0); filter: blur(0); }
+}
+.animate-reel-in {
+  animation: reel-in 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hex-tile,
   .hex-grid {
