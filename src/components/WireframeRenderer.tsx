@@ -61,20 +61,18 @@ const CTA = ({ children }: { children: ReactNode }) => (
 
 type Builder = (ctx: RenderCtx, p: Preview) => RenderedScreen;
 
-// neutral fallback word pool — generic, industry-agnostic
-const NEUTRAL = ["Featured", "Top pick", "Recent", "Saved", "Trending", "Online", "Verified", "Trusted", "Now"];
-
 const safePreview = (p: Preview | undefined, ctx: RenderCtx): Preview => ({
-  company: p?.company ?? ctx.company ?? "",
-  pattern: p?.pattern ?? ctx.pattern ?? "",
+  company: p?.company ?? "",
+  pattern: p?.pattern ?? "",
   header: p?.header ?? "",
   metric: p?.metric ?? "",
-  rows: p?.rows && p.rows.length ? p.rows : ["", "", "", ""],
-  cta: p?.cta ?? "Continue",
+  rows: p?.rows && p.rows.length ? p.rows : [p?.header ?? "", p?.metric ?? "", p?.cta ?? "", p?.pattern ?? ""],
+  cta: p?.cta ?? "",
 });
 
 const title = (p: Preview) => `${p.company} · ${p.pattern}`;
 const row = (p: Preview, i: number) => p.rows[i % p.rows.length];
+const detail = (p: Preview, i: number) => [p.metric, p.header, p.cta, p.company, p.pattern][i % 5];
 
 const screens: Record<string, Builder> = {
   photoGrid: (ctx, p) => ({
