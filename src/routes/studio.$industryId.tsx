@@ -381,6 +381,34 @@ function GoalChip({ active, onClick, children }: { active: boolean; onClick: () 
   );
 }
 
+function CalloutRow({
+  n,
+  label,
+  text,
+  tone,
+}: {
+  n: number;
+  label: string;
+  text: string;
+  tone: "primary" | "amber";
+}) {
+  const borderCls = tone === "primary" ? "border-primary" : "border-amber-400/80";
+  const chipCls =
+    tone === "primary"
+      ? "bg-primary text-primary-foreground"
+      : "bg-amber-400 text-background";
+  const labelCls = tone === "primary" ? "text-primary" : "text-amber-400";
+  return (
+    <div className={`pl-3 border-l-2 ${borderCls}`}>
+      <div className="flex items-center gap-1.5">
+        <span className={`w-4 h-4 rounded-full grid place-items-center text-[9px] font-mono ${chipCls}`}>{n}</span>
+        <span className={`text-[9px] font-mono uppercase tracking-[0.16em] ${labelCls}`}>{label}</span>
+      </div>
+      <p className="mt-1.5 text-[12px] leading-snug text-foreground/85">{text}</p>
+    </div>
+  );
+}
+
 function ConceptModal({ concept, onClose }: { concept: Concept; onClose: () => void }) {
   return (
     <div className="fixed inset-0 z-50 grid place-items-center bg-foreground/40 backdrop-blur-sm p-4" onClick={onClose}>
