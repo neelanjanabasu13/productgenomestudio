@@ -949,6 +949,342 @@ const screens: Record<string, Builder> = {
   }),
 };
 
+// Appended specialized screens
+Object.assign(screens, {
+  onboardFlow: ((ctx, p) => ({
+    node: (
+      <Frame>
+        <StatusBar title={title(p)} />
+        <div className="font-display text-[16px] leading-tight truncate">Welcome — let's get going</div>
+        <div className="flex items-center gap-1 -mt-1">
+          {[0,1,2,3].map(i => (
+            <div key={i} className={`h-1 flex-1 rounded-full ${i <= 1 ? "bg-primary" : "bg-foreground/15"}`} />
+          ))}
+        </div>
+        <div className="text-[10px] font-mono text-foreground/55 uppercase tracking-wider">Step 2 of 4</div>
+        <div className="space-y-2 flex-1">
+          {[
+            { t: "Name your workspace", v: p.rows[0], done: true },
+            { t: "Invite teammates", v: "2 added · alex@, sam@", done: true },
+            { t: "Pick a use case", v: "Product roadmap", done: false, active: true },
+            { t: "Create first project", v: "Skip for now", done: false },
+          ].map((s, i) => (
+            <div key={i} className={`flex items-center gap-2 p-2 rounded-lg border ${s.active ? "border-primary bg-primary/5" : s.done ? "border-border/50 bg-foreground/[0.03]" : "border-border/40"}`}>
+              <div className={`w-5 h-5 rounded-full grid place-items-center text-[9px] shrink-0 ${s.done ? "bg-primary text-primary-foreground" : s.active ? "border-2 border-primary text-primary" : "border border-border text-foreground/50"}`}>{s.done ? "✓" : i + 1}</div>
+              <div className="flex-1 min-w-0">
+                <div className={`text-[11px] font-medium truncate ${s.done ? "text-foreground/60" : ""}`}>{s.t}</div>
+                <div className="text-[9px] text-foreground/55 truncate">{s.v}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-auto"><CTA>Continue → Step 3</CTA></div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "18%", label: "Progress stepper" },
+      { n: 2, x: "50%", y: "55%", label: "Current step" },
+      { n: 3, x: "50%", y: "92%", label: "Move forward" },
+    ],
+  })) as Builder,
+
+  richTask: ((ctx, p) => ({
+    node: (
+      <Frame>
+        <StatusBar title={title(p)} />
+        <div className="font-display text-[15px] leading-tight line-clamp-2">{p.rows[0]}</div>
+        <div className="flex gap-1 flex-wrap -mt-1">
+          <Chip accent>In progress</Chip>
+          <Chip>High</Chip>
+          <Chip>Design</Chip>
+        </div>
+        <div className="space-y-1.5 flex-1">
+          {[
+            { k: "Assignee", v: "● Sam Patel" },
+            { k: "Due date", v: "Fri, Jun 27" },
+            { k: "Project", v: p.rows[1] },
+            { k: "Dependencies", v: "Blocked by #214" },
+            { k: "Estimate", v: "3 d · 60% done" },
+            { k: "Custom: Impact", v: "★★★★☆" },
+          ].map((f, i) => (
+            <div key={i} className="flex items-center justify-between gap-2 py-1 border-b border-border/40">
+              <span className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 truncate">{f.k}</span>
+              <span className="text-[10px] font-medium truncate max-w-[55%] text-right">{f.v}</span>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-lg border border-border/60 p-1.5 text-[10px] text-foreground/65 line-clamp-2">📎 spec.pdf · brief.fig · 4 subtasks</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "16%", label: "Task title" },
+      { n: 2, x: "50%", y: "55%", label: "Rich field list" },
+      { n: 3, x: "50%", y: "92%", label: "Attachments" },
+    ],
+  })) as Builder,
+
+  databaseRows: ((ctx, p) => ({
+    node: (
+      <Frame>
+        <StatusBar title={title(p)} />
+        <div className="flex items-baseline justify-between gap-2">
+          <div className="font-display text-[15px] truncate">Tasks DB</div>
+          <div className="text-[9px] font-mono text-foreground/55 truncate shrink-0">Table · Filter · Sort</div>
+        </div>
+        <div className="grid grid-cols-[1fr_46px_42px_38px] gap-x-1 text-[8px] font-mono uppercase tracking-wider text-foreground/55 border-b border-border/60 pb-1">
+          <span className="truncate">Name</span><span className="truncate">Status</span><span className="truncate">Owner</span><span className="truncate">Due</span>
+        </div>
+        <div className="flex-1 divide-y divide-border/40">
+          {[
+            { s: "Todo", c: "bg-foreground/15 text-foreground/70", o: "SP", d: "Jun 22" },
+            { s: "Doing", c: "bg-primary/20 text-primary", o: "AL", d: "Jun 24" },
+            { s: "Review", c: "bg-amber-500/20 text-amber-500", o: "MK", d: "Jun 26" },
+            { s: "Blocked", c: "bg-destructive/20 text-destructive", o: "JT", d: "—" },
+            { s: "Done", c: "bg-emerald-500/20 text-emerald-500", o: "SP", d: "Jun 18" },
+          ].map((r, i) => (
+            <div key={i} className="grid grid-cols-[1fr_46px_42px_38px] gap-x-1 items-center py-1.5">
+              <span className="text-[10px] truncate">{p.rows[i % p.rows.length].split("·")[0]?.trim()}</span>
+              <span className={`text-[8px] font-mono px-1 py-0.5 rounded text-center truncate ${r.c}`}>{r.s}</span>
+              <span className="w-5 h-5 rounded-full bg-foreground/15 grid place-items-center text-[8px] font-mono">{r.o}</span>
+              <span className="text-[9px] font-mono text-foreground/65 truncate">{r.d}</span>
+            </div>
+          ))}
+        </div>
+        <div className="text-[9px] font-mono text-foreground/45 truncate">+ New row</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "16%", label: "Column headers" },
+      { n: 2, x: "50%", y: "55%", label: "Typed rows" },
+      { n: 3, x: "30%", y: "92%", label: "Inline add" },
+    ],
+  })) as Builder,
+
+  mentionsThread: ((ctx, p) => ({
+    node: (
+      <Frame>
+        <StatusBar title={title(p)} />
+        <div className="flex items-center gap-2 pb-1.5 border-b border-border/60">
+          <Photo seed={1} className="w-7 h-7 rounded-md shrink-0" />
+          <div className="flex-1 min-w-0">
+            <div className="text-[11px] font-medium truncate">{p.rows[0]}</div>
+            <div className="text-[9px] font-mono text-foreground/55 truncate">4 in thread</div>
+          </div>
+        </div>
+        <div className="flex-1 space-y-2 overflow-hidden">
+          {[
+            { who: "Sam", color: "bg-primary/20 text-primary", text: <><span className="font-medium text-primary">@alex</span> can you take this before Friday? Blocking the launch.</> },
+            { who: "Alex", color: "bg-amber-500/20 text-amber-500", text: <>On it. Pulling in <span className="font-medium text-primary">@mira</span> for the copy review.</> },
+            { who: "Mira", color: "bg-emerald-500/20 text-emerald-500", text: <>Drafted. <span className="font-medium text-primary">@sam</span> see comment on line 3.</> },
+          ].map((m, i) => (
+            <div key={i} className="flex gap-2">
+              <div className={`w-6 h-6 rounded-full grid place-items-center text-[9px] font-mono shrink-0 ${m.color}`}>{m.who[0]}</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[9px] font-mono text-foreground/55">{m.who} · 2m</div>
+                <div className="text-[10px] leading-snug">{m.text}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="h-9 rounded-lg border border-border bg-background/40 flex items-center px-2 text-[10px] text-foreground/55 gap-1">
+          <span className="text-primary font-medium">@</span><span className="truncate">Mention someone…</span>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "30%", y: "12%", label: "Task header" },
+      { n: 2, x: "60%", y: "45%", label: "@mention" },
+      { n: 3, x: "30%", y: "92%", label: "@-composer" },
+    ],
+  })) as Builder,
+
+  inlineComments: ((ctx, p) => ({
+    node: (
+      <Frame>
+        <StatusBar title={title(p)} />
+        <div className="font-display text-[15px] leading-tight truncate">Launch brief</div>
+        <div className="space-y-1 text-[10px] leading-snug">
+          <p className="text-foreground/85">We're shipping the new onboarding to a 10% cohort on Friday.</p>
+          <p className="text-foreground/85">
+            Success criteria:{" "}
+            <span className="bg-amber-400/25 rounded px-0.5 border-b-2 border-amber-400">activation &gt; 42%</span>
+            {" "}within day 3.
+          </p>
+          <div className="ml-3 pl-2 border-l-2 border-primary bg-primary/5 rounded-r p-1.5 space-y-1">
+            <div className="flex items-center gap-1 text-[9px] font-mono text-primary"><span className="w-3 h-3 rounded-full bg-primary text-primary-foreground grid place-items-center text-[7px]">S</span>Sam · just now</div>
+            <div className="text-[10px]">Shouldn't this be 45% based on last test?</div>
+            <div className="flex items-center gap-1 text-[9px] font-mono text-foreground/55"><span className="w-3 h-3 rounded-full bg-foreground/30 text-background grid place-items-center text-[7px]">A</span>Alex · 1m</div>
+            <div className="text-[10px]">42 is the floor — happy to raise.</div>
+            <div className="h-6 rounded border border-border bg-background/60 flex items-center px-1.5 text-[9px] text-foreground/50">Reply…</div>
+          </div>
+          <p className="text-foreground/85">Rollback plan: feature flag <span className="font-mono bg-foreground/10 rounded px-0.5">onb_v3</span> off via dashboard.</p>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "26%", label: "Highlighted passage" },
+      { n: 2, x: "55%", y: "55%", label: "Inline thread" },
+      { n: 3, x: "55%", y: "78%", label: "Reply in place" },
+    ],
+  })) as Builder,
+
+  linearIssues: ((ctx, p) => ({
+    node: (
+      <Frame>
+        <StatusBar title={title(p)} />
+        <div className="flex items-baseline justify-between gap-2">
+          <div className="font-display text-[15px] truncate">Cycle 24 · active</div>
+          <div className="text-[9px] font-mono text-primary truncate shrink-0">12 / 18</div>
+        </div>
+        <div className="flex gap-1 -mt-1">
+          <Chip accent>All</Chip><Chip>Mine</Chip><Chip>Triage</Chip>
+        </div>
+        <div className="flex-1 divide-y divide-border/40">
+          {[
+            { id: "ENG-214", t: p.rows[0], s: "In Progress", sc: "text-amber-500", p: "P1", a: "SP" },
+            { id: "ENG-218", t: p.rows[1], s: "In Review", sc: "text-primary", p: "P2", a: "AL" },
+            { id: "ENG-221", t: p.rows[2], s: "Todo", sc: "text-foreground/60", p: "P1", a: "MK" },
+            { id: "ENG-225", t: p.rows[3], s: "Done", sc: "text-emerald-500", p: "P3", a: "JT" },
+            { id: "ENG-227", t: "Patch crash on logout", s: "Backlog", sc: "text-foreground/45", p: "P2", a: "SP" },
+          ].map((r, i) => (
+            <div key={i} className="flex items-center gap-2 py-1.5">
+              <span className={`text-[8px] font-mono shrink-0 w-2.5 h-2.5 rounded-full ${r.sc.replace("text-","bg-")}`} />
+              <span className="text-[9px] font-mono text-foreground/50 shrink-0">{r.id}</span>
+              <span className="text-[10px] flex-1 truncate">{(r.t || "").split("·")[0]?.trim()}</span>
+              <span className="text-[8px] font-mono text-foreground/55 shrink-0">{r.p}</span>
+              <span className="w-4 h-4 rounded-full bg-foreground/15 grid place-items-center text-[7px] font-mono shrink-0">{r.a}</span>
+            </div>
+          ))}
+        </div>
+        <div className="text-[8px] font-mono text-foreground/45 truncate">⌘K · Press . to assign · ⇧E to edit</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "16%", label: "Cycle progress" },
+      { n: 2, x: "50%", y: "50%", label: "Dense row" },
+      { n: 3, x: "50%", y: "92%", label: "Keyboard hints" },
+    ],
+  })) as Builder,
+
+  speedSignal: ((ctx, p) => ({
+    node: (
+      <Frame>
+        <StatusBar title={title(p)} />
+        <div className="font-display text-[16px] leading-tight truncate">Built for speed</div>
+        <div className="grid grid-cols-3 gap-2">
+          {[
+            { k: "Open", v: "42ms" },
+            { k: "Search", v: "18ms" },
+            { k: "Sync", v: "live" },
+          ].map((m, i) => (
+            <div key={i} className="p-2 rounded-lg border border-border/60 bg-card/60">
+              <div className="text-[9px] font-mono uppercase text-foreground/55 truncate">{m.k}</div>
+              <div className="font-display text-[16px] leading-none mt-0.5 text-primary truncate">{m.v}</div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55">Recent actions</div>
+        <div className="flex-1 space-y-1">
+          {[
+            { k: "⌘K", a: "Jump to issue", t: "0.04s" },
+            { k: "C", a: "Create issue", t: "0.05s" },
+            { k: "⇧S", a: "Change status", t: "0.03s" },
+            { k: "⌘/", a: "Toggle sidebar", t: "0.02s" },
+          ].map((r, i) => (
+            <div key={i} className="flex items-center gap-2 py-1 border-b border-border/40">
+              <span className="px-1.5 py-0.5 rounded bg-foreground/10 font-mono text-[9px] shrink-0">{r.k}</span>
+              <span className="text-[10px] flex-1 truncate">{r.a}</span>
+              <span className="text-[9px] font-mono text-primary shrink-0">{r.t}</span>
+            </div>
+          ))}
+        </div>
+        <div className="h-1.5 rounded-full bg-foreground/10 overflow-hidden"><div className="h-full w-[92%] bg-primary" /></div>
+        <div className="text-[9px] font-mono text-foreground/55 -mt-1 truncate">92nd percentile speed this week</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "22%", label: "Latency stats" },
+      { n: 2, x: "60%", y: "55%", label: "Shortcut log" },
+      { n: 3, x: "50%", y: "92%", label: "Speed percentile" },
+    ],
+  })) as Builder,
+
+  reminders: ((ctx, p) => ({
+    node: (
+      <Frame>
+        <StatusBar title={title(p)} />
+        <div className="font-display text-[16px] leading-tight truncate">Reminders</div>
+        <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 -mt-1">Today · Mon Jun 17</div>
+        <div className="space-y-1.5 flex-1">
+          {[
+            { t: "9:00", k: "📌", a: p.rows[0], s: "in 1h", urg: true },
+            { t: "11:30", k: "🔁", a: "Standup with design", s: "recurring", urg: false },
+            { t: "14:00", k: "⏰", a: "Review PR #421", s: "snoozed 2×", urg: false },
+            { t: "17:00", k: "🔔", a: p.rows[1], s: "due today", urg: true },
+          ].map((r, i) => (
+            <div key={i} className={`flex items-center gap-2 p-2 rounded-lg border ${r.urg ? "border-primary/50 bg-primary/5" : "border-border/50"}`}>
+              <div className="w-10 text-[10px] font-mono text-foreground/65 shrink-0">{r.t}</div>
+              <div className="text-[14px] shrink-0">{r.k}</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[11px] font-medium truncate">{r.a}</div>
+                <div className={`text-[9px] font-mono truncate ${r.urg ? "text-primary" : "text-foreground/55"}`}>{r.s}</div>
+              </div>
+              <button className="text-[9px] font-mono text-foreground/55 shrink-0">Snooze</button>
+            </div>
+          ))}
+        </div>
+        <div className="p-2 rounded-lg bg-foreground/[0.04] border border-border/50 flex items-center gap-2">
+          <div className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0" />
+          <div className="text-[10px] truncate">Daily digest at 8:00 · Slack + Email</div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "30%", y: "18%", label: "Today timeline" },
+      { n: 2, x: "50%", y: "50%", label: "Urgent reminder" },
+      { n: 3, x: "50%", y: "92%", label: "Digest channel" },
+    ],
+  })) as Builder,
+
+  notionPage: ((ctx, p) => ({
+    node: (
+      <Frame>
+        <StatusBar title={title(p)} />
+        <div className="text-[8px] font-mono text-foreground/45 truncate">Workspace / Engineering / {p.rows[0]?.split("·")[0]?.trim()}</div>
+        <div className="flex items-center gap-1.5">
+          <span className="text-[16px]">📘</span>
+          <div className="font-display text-[16px] leading-tight truncate flex-1">{p.rows[0]?.split("·")[0]?.trim() || "Project hub"}</div>
+        </div>
+        <div className="text-[9px] text-foreground/55 -mt-1 truncate">Owner ● Sam · Updated 2m ago</div>
+        <div className="space-y-1.5 flex-1 text-[10px] leading-snug">
+          <div className="font-medium text-[11px]">Overview</div>
+          <p className="text-foreground/80">A single page that links every doc, task, and decision for this initiative.</p>
+          <div className="font-medium text-[11px] pt-1">Sub-pages</div>
+          {[
+            { i: "📄", t: "Spec v2", m: "12 blocks" },
+            { i: "🗂", t: "Tasks database", m: "32 rows" },
+            { i: "🧭", t: "Decisions log", m: "8 entries" },
+          ].map((s, i) => (
+            <div key={i} className="flex items-center gap-2 py-1 border-b border-border/40">
+              <span className="text-[12px] shrink-0">{s.i}</span>
+              <span className="flex-1 text-[10px] truncate underline decoration-foreground/30 underline-offset-2">{s.t}</span>
+              <span className="text-[9px] font-mono text-foreground/55 shrink-0">{s.m}</span>
+            </div>
+          ))}
+          <div className="font-medium text-[11px] pt-1">Toggle ▸ Backlog</div>
+          <div className="text-[10px] text-foreground/55 pl-3 truncate">▸ 14 ideas captured</div>
+        </div>
+        <div className="text-[8px] font-mono text-foreground/45 truncate">+ Add a block / · type "/" for commands</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "30%", y: "12%", label: "Breadcrumb path" },
+      { n: 2, x: "50%", y: "55%", label: "Nested sub-pages" },
+      { n: 3, x: "50%", y: "92%", label: "Slash commands" },
+    ],
+  })) as Builder,
+});
+
 const fallback: Builder = (ctx, p) => ({
   node: (
     <Frame>
