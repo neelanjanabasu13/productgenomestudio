@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "product": "Product Genome Studio",
-  "tagline": "Design a product by choosing real patterns at each journey stage \u2014 with tradeoffs, conflicts, and a goal-guided assist.",
-  "disclaimer": "Patterns and winners reflect opinionated design judgment on observable UX, not internal metrics. Built to be extended \u2014 add or AI-generate more industries.",
+  "tagline": "Design a product by choosing real patterns at each journey stage - with tradeoffs, conflicts, and a goal-guided assist.",
+  "disclaimer": "Patterns and winners reflect opinionated design judgment on observable UX, not internal metrics. Built to be extended - add or AI-generate more industries.",
   "goals": [
     {
       "id": "conversion",
