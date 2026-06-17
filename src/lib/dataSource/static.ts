@@ -59,7 +59,7 @@ function withOptionPreviewText(industry: Industry): Industry {
           preview: {
             company: option.company,
             pattern: option.pattern,
-            header: option.purpose || industry.name,
+            header: "",
             metric: `${option.company} · ${stage.stage}`,
             rows,
             cta: preview?.cta && !["Continue", "Get started"].includes(preview.cta)
