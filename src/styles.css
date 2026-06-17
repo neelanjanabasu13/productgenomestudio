@@ -242,7 +242,7 @@
 }
 
 .hex-tile:hover {
-  animation-play-state: paused;
+  animation: none;
   transform: scale(1.05);
   z-index: 2;
 }
