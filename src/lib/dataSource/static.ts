@@ -35,7 +35,40 @@ function allIndustries(): Industry[] {
     ...i,
     source: i.source ?? ("seed" as const),
   }));
-  return [...seedTagged, ...extras];
+  return [...seedTagged, ...extras].map(withOptionPreviewText);
+}
+
+function withOptionPreviewText(industry: Industry): Industry {
+  return {
+    ...industry,
+    funnel: industry.funnel.map((stage) => ({
+      ...stage,
+      options: stage.options.map((option) => {
+        const preview = option.preview;
+        const baseRows = preview?.rows?.length
+          ? preview.rows
+          : [option.purpose, option.tradeoff, industry.name, stage.stage].filter(Boolean);
+        const rows = [0, 1, 2, 3].map((index) => {
+          const value = baseRows[index % baseRows.length] ?? option.pattern;
+          return `${option.company} · ${value}`;
+        });
+
+        return {
+          ...option,
+          preview: {
+            company: option.company,
+            pattern: option.pattern,
+            header: option.pattern,
+            metric: `${option.company} · ${stage.stage}`,
+            rows,
+            cta: preview?.cta && !["Continue", "Get started"].includes(preview.cta)
+              ? preview.cta
+              : option.pattern,
+          },
+        };
+      }),
+    })),
+  };
 }
 
 export const staticDataSource = {

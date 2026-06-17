@@ -27,9 +27,9 @@ const Frame = ({ children }: { children: ReactNode }) => (
 
 const StatusBar = ({ title }: { title: string }) => (
   <div className="flex items-center justify-between text-[9px] font-mono text-foreground/50 -mt-1 gap-2">
-    <span>9:41</span>
+    <span className="truncate max-w-[70px]">{title.split(" · ")[0]}</span>
     <span className="tracking-[0.18em] uppercase truncate">{title}</span>
-    <span>●●●</span>
+    <span className="truncate max-w-[70px]">{title.split(" · ")[1] ?? title}</span>
   </div>
 );
 
@@ -263,7 +263,7 @@ const screens: Record<string, Builder> = {
           <Photo seed={2} className="w-14 h-14 rounded-full shrink-0" />
           <div className="flex-1 min-w-0">
             <div className="font-display text-[16px] truncate">{p.header}</div>
-            <div className="flex gap-1 mt-0.5"><Chip>Verified</Chip><Chip>Trusted</Chip></div>
+            <div className="flex gap-1 mt-0.5"><Chip>{row(p, 0)}</Chip><Chip>{p.cta}</Chip></div>
           </div>
         </div>
         <div className="text-[10px] text-foreground/70 truncate">{p.metric}</div>
@@ -726,7 +726,7 @@ const screens: Record<string, Builder> = {
         <div className="font-display text-[16px] leading-tight truncate">{p.header}</div>
         <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 truncate">{p.metric}</div>
         <div className="grid grid-cols-3 gap-1.5 flex-1">
-            {[
+          {[
             { col: p.header, items: [p.rows[0], p.rows[1]] },
             { col: p.metric, items: [p.rows[2]] },
             { col: p.cta, items: [p.rows[3]] },
