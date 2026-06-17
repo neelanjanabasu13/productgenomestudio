@@ -17,7 +17,7 @@ import { SketchIcon } from "@/components/SketchIcons";
 export const Route = createFileRoute("/studio/$industryId")({
   head: ({ params }) => ({
     meta: [
-      { title: `Studio · ${params.industryId} — Product Genome Studio` },
+      { title: `Studio · ${params.industryId} - Product Genome Studio` },
       { name: "description", content: "Pick UX patterns at every stage and watch a live phone preview." },
     ],
   }),
@@ -272,7 +272,7 @@ function Studio() {
                 <div>
                   <div className="text-xs text-muted-foreground">Goal match</div>
                   <div className="mt-1 text-3xl font-display">
-                    {goal ? `${scored.goalMatches}/${scored.totalStages}` : "—"}
+                    {goal ? `${scored.goalMatches}/${scored.totalStages}` : "-"}
                   </div>
                   <div className="mt-2 text-xs text-muted-foreground">
                     {goal ? goals.find((g) => g.id === goal)?.label : "No goal selected"}
@@ -434,7 +434,7 @@ function FlowReelModal({
         onClick={(e) => e.stopPropagation()}
         className="relative w-full max-w-md max-h-[calc(100dvh-2rem)] overflow-y-auto flex flex-col items-center px-2 py-3"
       >
-        {/* Top bar — always reachable, never clipped */}
+        {/* Top bar - always reachable, never clipped */}
         <div className="sticky top-0 z-20 w-full flex items-center justify-between mb-3 -mx-2 px-2 py-2 bg-background/70 backdrop-blur rounded-xl">
           <button
             onClick={onClose}

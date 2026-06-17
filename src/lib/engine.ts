@@ -47,7 +47,7 @@ export function detectConflicts(industry: Industry, picks: Picks): Conflict[] {
           conflicts.push({
             axis,
             stages: [posStage, negStage],
-            message: `${posStage} feels ${posLabel}, but ${negStage} is ${negLabel} — friction between the two.`,
+            message: `${posStage} feels ${posLabel}, but ${negStage} is ${negLabel} - friction between the two.`,
           });
         }
       }
@@ -137,7 +137,7 @@ export function synthesizeConceptLocal(
   const tag = industry.name.split(/[\s&/]+/)[0] ?? "Studio";
   const name = `${namePrefix[chosen.length % namePrefix.length]} ${tag}`;
 
-  const positioning = `A ${tEm}, ${tEx} take on ${industry.name.toLowerCase()} — ${tSi} on the surface, built around ${chosen
+  const positioning = `A ${tEm}, ${tEx} take on ${industry.name.toLowerCase()} - ${tSi} on the surface, built around ${chosen
     .slice(0, 2)
     .map((c) => c.option.pattern.toLowerCase())
     .join(" and ")}.`;
@@ -148,7 +148,7 @@ export function synthesizeConceptLocal(
 
   const critique: string[] = [];
   if (s.conflicts.length === 0) {
-    critique.push("The picks line up on every axis — coherent product DNA.");
+    critique.push("The picks line up on every axis - coherent product DNA.");
   } else {
     s.conflicts.forEach((c) => critique.push(c.message));
     critique.push(

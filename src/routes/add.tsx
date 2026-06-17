@@ -8,7 +8,7 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/add")({
   head: () => ({
     meta: [
-      { title: "Add an industry — Product Genome Studio" },
+      { title: "Add an industry - Product Genome Studio" },
       { name: "description", content: "Contribute a new industry to Product Genome Studio." },
     ],
   }),

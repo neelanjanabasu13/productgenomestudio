@@ -9,7 +9,7 @@ import { HexIndustryPicker } from "@/components/HexIndustryPicker";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Product Genome Studio — Design a product by choosing patterns" },
+      { title: "Product Genome Studio - Design a product by choosing patterns" },
       { name: "description", content: "Hands-on product design simulator. Pick real UX patterns at every funnel stage and watch a live phone preview." },
       { property: "og:title", content: "Product Genome Studio" },
       { property: "og:description", content: "Design a product by choosing real UX patterns at every funnel stage." },
@@ -54,7 +54,7 @@ function Home() {
           Design a product by <em className="text-primary not-italic">choosing patterns</em>.
         </h1>
         <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
-          {meta.data?.tagline ?? "Design a product by choosing real patterns at each journey stage — with tradeoffs, conflicts, and a goal-guided assist."}
+          {meta.data?.tagline ?? "Design a product by choosing real patterns at each journey stage - with tradeoffs, conflicts, and a goal-guided assist."}
         </p>
       </div>
 
