@@ -5175,7 +5175,7 @@
               "company": "Hinge",
               "pattern": "Prompt-based",
               "tradeoff": "Personality but effortful",
-              "screen": "composer",
+              "screen": "dateHingePrompts",
               "traits": {
                 "ex": 1,
                 "em": 2,
@@ -5204,7 +5204,7 @@
               "company": "OkCupid",
               "pattern": "Question depth",
               "tradeoff": "Compatible but long",
-              "screen": "onboardChecklist",
+              "screen": "dateOkcQuestions",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -5231,7 +5231,7 @@
               "company": "Tinder",
               "pattern": "Photo-first",
               "tradeoff": "Fast but shallow",
-              "screen": "photoGrid",
+              "screen": "dateTinderPhoto",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -5261,7 +5261,7 @@
               "company": "Bumble",
               "pattern": "Guided profile",
               "tradeoff": "Balanced but templated",
-              "screen": "composer",
+              "screen": "dateBumbleGuided",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -5298,7 +5298,7 @@
               "company": "Tinder",
               "pattern": "Swipe one-at-a-time",
               "tradeoff": "Flowy but superficial",
-              "screen": "photoGrid",
+              "screen": "dateTinderSwipe",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -5327,7 +5327,7 @@
               "company": "Hinge",
               "pattern": "Curated likes",
               "tradeoff": "Quality but slow",
-              "screen": "feedFull",
+              "screen": "dateHingeLikes",
               "traits": {
                 "ex": 1,
                 "em": 2,
@@ -5356,7 +5356,7 @@
               "company": "Coffee Meets Bagel",
               "pattern": "Daily curated",
               "tradeoff": "Less overwhelm but scarce",
-              "screen": "listRows",
+              "screen": "dateCmbDaily",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -5383,7 +5383,7 @@
               "company": "Bumble",
               "pattern": "Swipe + filters",
               "tradeoff": "Controlled but samey",
-              "screen": "photoGrid",
+              "screen": "dateBumbleSwipe",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -5422,7 +5422,7 @@
               "company": "Hinge",
               "pattern": "Like a detail",
               "tradeoff": "Specific but slow",
-              "screen": "chatThread",
+              "screen": "dateHingeMatch",
               "traits": {
                 "ex": 1,
                 "em": 2,
@@ -5451,7 +5451,7 @@
               "company": "Bumble",
               "pattern": "Mutual + timer",
               "tradeoff": "Fixes norms but pressured",
-              "screen": "chatThread",
+              "screen": "dateBumbleTimer",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -5478,7 +5478,7 @@
               "company": "Tinder",
               "pattern": "Instant match",
               "tradeoff": "Exciting but flaky",
-              "screen": "feedFull",
+              "screen": "dateTinderMatch",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -5508,7 +5508,7 @@
               "company": "Coffee Meets Bagel",
               "pattern": "Curated intro",
               "tradeoff": "Thoughtful but few",
-              "screen": "chatThread",
+              "screen": "dateCmbIntro",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -5545,7 +5545,7 @@
               "company": "Bumble",
               "pattern": "Women first, 24h",
               "tradeoff": "Empowering but pressured",
-              "screen": "chatThread",
+              "screen": "dateBumbleChat",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -5572,7 +5572,7 @@
               "company": "Hinge",
               "pattern": "Comment to start",
               "tradeoff": "Warm but slow",
-              "screen": "chatThread",
+              "screen": "dateHingeComment",
               "traits": {
                 "ex": 1,
                 "em": 2,
@@ -5601,7 +5601,7 @@
               "company": "Tinder",
               "pattern": "Open chat",
               "tradeoff": "Easy but spammy",
-              "screen": "chatThread",
+              "screen": "dateTinderChat",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -5631,7 +5631,7 @@
               "company": "OkCupid",
               "pattern": "Compatibility chat",
               "tradeoff": "Deep but niche",
-              "screen": "chatThread",
+              "screen": "dateOkcChat",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -5668,7 +5668,7 @@
               "company": "Bumble",
               "pattern": "Verify + detect",
               "tradeoff": "Safe but gated",
-              "screen": "badgeRow",
+              "screen": "dateBumbleSafety",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -5697,7 +5697,7 @@
               "company": "Hinge",
               "pattern": "Report + block",
               "tradeoff": "Solid but reactive",
-              "screen": "badgeRow",
+              "screen": "dateHingeReport",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -5724,7 +5724,7 @@
               "company": "Tinder",
               "pattern": "Photo verify",
               "tradeoff": "Basic but present",
-              "screen": "badgeRow",
+              "screen": "dateTinderVerify",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -5754,7 +5754,7 @@
               "company": "OkCupid",
               "pattern": "Privacy controls",
               "tradeoff": "Granular but complex",
-              "screen": "badgeRow",
+              "screen": "dateOkcPrivacy",
               "traits": {
                 "ex": -1,
                 "em": 0,
