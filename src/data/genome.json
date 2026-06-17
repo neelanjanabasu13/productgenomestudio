@@ -3278,7 +3278,7 @@
               "company": "Monzo",
               "pattern": "Human, fast KYC",
               "tradeoff": "Friendly but still KYC",
-              "screen": "onboardChecklist",
+              "screen": "finMonzoKyc",
               "traits": {
                 "ex": 0,
                 "em": 2,
@@ -3307,7 +3307,7 @@
               "company": "Revolut",
               "pattern": "Quick multi-step",
               "tradeoff": "Slick but feature-pushy",
-              "screen": "onboardChecklist",
+              "screen": "finRevolutMultiStep",
               "traits": {
                 "ex": -1,
                 "em": 0,
@@ -3334,7 +3334,7 @@
               "company": "Cash App",
               "pattern": "Minimal signup",
               "tradeoff": "Instant but thin",
-              "screen": "onboardChecklist",
+              "screen": "finCashAppMinimal",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -3364,7 +3364,7 @@
               "company": "Wise",
               "pattern": "Transparent setup",
               "tradeoff": "Clear but form-heavy",
-              "screen": "guestForm",
+              "screen": "finWiseTransparent",
               "traits": {
                 "ex": -1,
                 "em": 0,
@@ -3401,7 +3401,7 @@
               "company": "Revolut",
               "pattern": "Balance + quick actions",
               "tradeoff": "Clean but feature-dense",
-              "screen": "dashboard",
+              "screen": "finRevolutDash",
               "traits": {
                 "ex": -1,
                 "em": -1,
@@ -3430,7 +3430,7 @@
               "company": "Monzo",
               "pattern": "Balance + Pots",
               "tradeoff": "Friendly but simple",
-              "screen": "dashboard",
+              "screen": "finMonzoDash",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -3459,7 +3459,7 @@
               "company": "Cash App",
               "pattern": "Big send button",
               "tradeoff": "Focused but bare",
-              "screen": "dashboard",
+              "screen": "finCashAppDash",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -3488,7 +3488,7 @@
               "company": "Robinhood",
               "pattern": "Portfolio first",
               "tradeoff": "Engaging but risky framing",
-              "screen": "dashboard",
+              "screen": "finRobinhoodDash",
               "traits": {
                 "ex": -1,
                 "em": -1,
@@ -3525,7 +3525,7 @@
               "company": "Cash App",
               "pattern": "$cashtag send",
               "tradeoff": "Effortless but US-centric",
-              "screen": "sendForm",
+              "screen": "finCashAppSend",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -3555,7 +3555,7 @@
               "company": "Wise",
               "pattern": "Transparent FX",
               "tradeoff": "Trustworthy but slower",
-              "screen": "sendForm",
+              "screen": "finWiseFx",
               "traits": {
                 "ex": -1,
                 "em": 0,
@@ -3582,7 +3582,7 @@
               "company": "Revolut",
               "pattern": "Multi-currency",
               "tradeoff": "Powerful but complex",
-              "screen": "sendForm",
+              "screen": "finRevolutMulti",
               "traits": {
                 "ex": -1,
                 "em": -1,
@@ -3611,7 +3611,7 @@
               "company": "Monzo",
               "pattern": "Split & request",
               "tradeoff": "Social but basic",
-              "screen": "sendForm",
+              "screen": "finMonzoSplit",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -3648,7 +3648,7 @@
               "company": "Monzo",
               "pattern": "Auto-categorized + Pots",
               "tradeoff": "Meaningful but simple",
-              "screen": "insightsCards",
+              "screen": "finMonzoInsights",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -3678,7 +3678,7 @@
               "company": "Revolut",
               "pattern": "Analytics charts",
               "tradeoff": "Rich but overwhelming",
-              "screen": "insightsCards",
+              "screen": "finRevolutAnalytics",
               "traits": {
                 "ex": -1,
                 "em": -1,
@@ -3705,7 +3705,7 @@
               "company": "Wise",
               "pattern": "Fee breakdown",
               "tradeoff": "Honest but narrow",
-              "screen": "insightsCards",
+              "screen": "finWiseFees",
               "traits": {
                 "ex": -1,
                 "em": 0,
@@ -3732,7 +3732,7 @@
               "company": "Robinhood",
               "pattern": "Gain / loss focus",
               "tradeoff": "Engaging but anxiety-inducing",
-              "screen": "insightsCards",
+              "screen": "finRobinhoodGains",
               "traits": {
                 "ex": -1,
                 "em": -2,
@@ -3771,7 +3771,7 @@
               "company": "Monzo",
               "pattern": "Goals & nudges",
               "tradeoff": "Caring but nudgy",
-              "screen": "progressRings",
+              "screen": "finMonzoGoals",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -3800,7 +3800,7 @@
               "company": "Revolut",
               "pattern": "Tiers & perks",
               "tradeoff": "Sticky but upsell-heavy",
-              "screen": "tierList",
+              "screen": "finRevolutTiers",
               "traits": {
                 "ex": -1,
                 "em": -1,
@@ -3827,7 +3827,7 @@
               "company": "Cash App",
               "pattern": "Boosts / rewards",
               "tradeoff": "Fun but small",
-              "screen": "tierList",
+              "screen": "finCashAppBoosts",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -3856,7 +3856,7 @@
               "company": "Robinhood",
               "pattern": "Streaks & alerts",
               "tradeoff": "Engaging but gamifies risk",
-              "screen": "progressRings",
+              "screen": "finRobinhoodAlerts",
               "traits": {
                 "ex": -1,
                 "em": -2,
