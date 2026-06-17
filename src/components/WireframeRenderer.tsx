@@ -5287,6 +5287,805 @@ Object.assign(screens, {
   })) as Builder,
 });
 
+// ============================================================
+// STREAMING — 20 brand-evocative screens
+// ============================================================
+const StreamBar = () => (
+  <div className="flex items-center justify-between text-[9px] font-mono text-foreground/50 -mt-1">
+    <span>9:41</span>
+    <span className="tracking-[0.18em]">●●●</span>
+    <span>100%</span>
+  </div>
+);
+
+Object.assign(screens, {
+  // 1. Netflix — Pick titles
+  streamNetflixPickTitles: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <StreamBar />
+        <div className="font-display text-[14px] text-red-600">Pick 3 you love</div>
+        <div className="text-[9px] text-foreground/60">We'll build your recommendations.</div>
+        <div className="grid grid-cols-3 gap-1.5 flex-1 overflow-hidden">
+          {Array.from({length:9}).map((_,i)=>(
+            <div key={i} className={`relative rounded overflow-hidden border ${i===0||i===4||i===7?"border-red-600 border-2":"border-border/40"}`}>
+              <Photo seed={i} className="w-full h-full min-h-[44px]" />
+              <div className="absolute bottom-0 inset-x-0 bg-background/80 text-[8px] px-1 truncate">{["Stranger Things","The Crown","Squid Game","Wednesday","Bridgerton","Witcher","Dark","Ozark","Mindhunter"][i]}</div>
+              {(i===0||i===4||i===7) && <div className="absolute top-0.5 right-0.5 w-4 h-4 rounded-full bg-red-600 text-white text-[9px] grid place-items-center">✓</div>}
+            </div>
+          ))}
+        </div>
+        <div className="text-[9px] text-center text-foreground/55">3 of 3 selected</div>
+        <CTA>Continue</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "12%", label: "Pick favourites" },
+      { n: 2, x: "50%", y: "50%", label: "Poster grid" },
+      { n: 3, x: "50%", y: "82%", label: "Counter" },
+    ],
+  })) as Builder,
+
+  // 2. Spotify — Pick artists
+  streamSpotifyArtists: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <StreamBar />
+        <div className="font-display text-[14px] text-[#1DB954]">Tap 5 artists you like</div>
+        <div className="h-7 rounded-full bg-foreground/8 px-2 grid items-center text-[10px] text-foreground/55">Search artists</div>
+        <div className="grid grid-cols-3 gap-2 flex-1 overflow-hidden">
+          {[
+            "Radiohead","Frank Ocean","Tame Impala","SZA","Mac DeMarco",
+            "Phoebe Bridgers","Caroline P.","Big Thief","Beach House","Khruangbin",
+            "Mitski","Bon Iver"
+          ].map((n,i)=>{
+            const sel = [0,2,5,8,10].includes(i);
+            return (
+              <div key={i} className="flex flex-col items-center gap-0.5">
+                <div className={`relative w-12 h-12 rounded-full overflow-hidden ${sel?"ring-2 ring-[#1DB954]":""}`}>
+                  <Photo seed={i} className="w-full h-full" />
+                  {sel && <div className="absolute inset-0 bg-[#1DB954]/40 grid place-items-center text-white text-[14px]">✓</div>}
+                </div>
+                <div className="text-[8.5px] truncate w-full text-center">{n}</div>
+              </div>
+            );
+          })}
+        </div>
+        <CTA>Done · 5 picked</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "12%", label: "Pick artists" },
+      { n: 2, x: "50%", y: "55%", label: "Artist circles" },
+      { n: 3, x: "20%", y: "55%", label: "Tap to select" },
+    ],
+  })) as Builder,
+
+  // 3. YouTube — Infer from history
+  streamYouTubeInfer: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <StreamBar />
+        <div className="flex items-center gap-2">
+          <div className="w-7 h-7 rounded grid place-items-center bg-red-600 text-white text-[11px]">▶</div>
+          <div className="text-[11px] font-medium">Setting up your feed</div>
+        </div>
+        <div className="text-[9.5px] text-foreground/65">We'll learn from what you watch — no quiz needed.</div>
+        <div className="rounded-md bg-foreground/[0.04] border border-border/60 p-2">
+          <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Detected from watch history</div>
+          <div className="flex gap-1 flex-wrap mt-1">
+            {["Web dev","Lo-fi","Cooking","F1","Standup","Synth"].map((c,i)=>(
+              <Chip key={i} accent={i<3}>{c}</Chip>
+            ))}
+          </div>
+        </div>
+        <div className="text-[10px] font-medium mt-1">Recommended for you</div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Build a TanStack app","Theo · 12 min","320K"],
+            ["Lo-fi study mix","Chillhop · 1:02:14","2.4M"],
+            ["30-min weeknight dinner","Bon Appétit · 8:42","890K"],
+          ].map(([t,ch,v],i)=>(
+            <div key={i} className="flex gap-1.5">
+              <Photo seed={i} className="w-14 h-9 rounded shrink-0" />
+              <div className="min-w-0">
+                <div className="text-[9.5px] truncate">{t}</div>
+                <div className="text-[8px] text-foreground/55 truncate">{ch} · {v} views</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <CTA>Looks good</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "22%", label: "No quiz needed" },
+      { n: 2, x: "50%", y: "40%", label: "Inferred topics" },
+      { n: 3, x: "50%", y: "75%", label: "Recommendations live" },
+    ],
+  })) as Builder,
+
+  // 4. Disney+ — Brand hubs
+  streamDisneyHubs: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <StreamBar />
+        <div className="font-display text-[15px]">What do you love?</div>
+        <div className="text-[9px] text-foreground/55">Pick brand hubs to follow.</div>
+        <div className="grid grid-cols-2 gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Disney","#0066CC","castle"],
+            ["Pixar","#FFCC00","lamp"],
+            ["Marvel","#EC1D24","★"],
+            ["Star Wars","#000000","✦"],
+            ["National Geographic","#FFCC00","◧"],
+            ["Star","#1A1A2E","✷"],
+          ].map(([n,c,ic],i)=>(
+            <div key={i} className="relative rounded-lg overflow-hidden flex flex-col items-center justify-center gap-1 text-white aspect-[3/2]" style={{background:`linear-gradient(135deg, ${c}, ${c}88)`}}>
+              <div className="text-[18px]">{ic}</div>
+              <div className="font-display text-[11px] tracking-wider uppercase">{n}</div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "12%", label: "Brand hubs" },
+      { n: 2, x: "30%", y: "55%", label: "Pixar/Marvel etc" },
+      { n: 3, x: "70%", y: "80%", label: "Tap to follow" },
+    ],
+  })) as Builder,
+
+  // 5. Netflix — Personalized rows
+  streamNetflixRows: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <div className="flex items-center justify-between -mx-3.5 -mt-3 px-3.5 py-1.5">
+          <div className="text-red-600 font-display text-[13px] tracking-wider">NETFLIX</div>
+          <div className="flex gap-2 text-[9px] text-foreground/70">TV · Movies · My List</div>
+        </div>
+        <Photo seed={1} className="h-20 -mx-3.5 flex items-end p-2">
+          <div>
+            <div className="font-display text-[14px] text-white drop-shadow">Stranger Things 5</div>
+            <div className="text-[8.5px] text-white/80">▶ Play · + My List</div>
+          </div>
+        </Photo>
+        <div className="text-[10px] font-medium">Because you watched Dark</div>
+        <div className="flex gap-1 overflow-hidden">
+          {[0,1,2,3,4].map(i=>(
+            <Photo key={i} seed={i} className="w-12 h-16 rounded shrink-0" />
+          ))}
+        </div>
+        <div className="text-[10px] font-medium">Trending now</div>
+        <div className="flex gap-1 overflow-hidden">
+          {[2,3,4,0,1].map((s,i)=>(
+            <div key={i} className="relative">
+              <Photo seed={s} className="w-12 h-16 rounded" />
+              <div className="absolute -bottom-1 -left-1 font-display text-[20px] text-foreground/80 drop-shadow">{i+1}</div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[10px] font-medium">Critically acclaimed dramas</div>
+        <div className="flex gap-1 overflow-hidden">
+          {[1,3,2,4,0].map((s,i)=>(
+            <Photo key={i} seed={s} className="w-12 h-16 rounded shrink-0" />
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Hero billboard" },
+      { n: 2, x: "50%", y: "55%", label: "Because you watched…" },
+      { n: 3, x: "50%", y: "78%", label: "Top 10 ranks" },
+    ],
+  })) as Builder,
+
+  // 6. Spotify — Named playlists
+  streamSpotifyPlaylists: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <StreamBar />
+        <div className="font-display text-[14px]">Good evening</div>
+        <div className="grid grid-cols-2 gap-1.5">
+          {[
+            ["Discover Weekly","#7873F5"],
+            ["Daily Mix 1","#1DB954"],
+            ["Daylist · sunset","#FF6B6B"],
+            ["Release Radar","#F472B6"],
+          ].map(([n,c],i)=>(
+            <div key={i} className="h-9 rounded-md overflow-hidden flex items-center gap-1.5 pr-2 bg-foreground/[0.04]">
+              <div className="w-9 h-9" style={{background:`linear-gradient(135deg, ${c}, ${c}55)`}} />
+              <div className="text-[9.5px] font-medium truncate">{n}</div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[10px] font-medium mt-1">Made for Maya</div>
+        <div className="flex gap-1.5 overflow-hidden flex-1">
+          {[
+            ["Discover Weekly","Your weekly mixtape","#7873F5"],
+            ["Daylist · golden hour","Indie · mellow","#F59E0B"],
+            ["Release Radar","New from artists you follow","#F472B6"],
+            ["Mix · Phoebe Bridgers","Indie folk","#1DB954"],
+          ].map(([n,d,c],i)=>(
+            <div key={i} className="w-[42%] shrink-0 rounded-md overflow-hidden">
+              <div className="aspect-square w-full" style={{background:`linear-gradient(135deg, ${c}, ${c}33)`}}>
+                <div className="p-1.5 font-display text-[10px] text-white leading-tight">{n}</div>
+              </div>
+              <div className="text-[8.5px] text-foreground/55 mt-0.5 truncate">{d}</div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Named playlists" },
+      { n: 2, x: "50%", y: "70%", label: "Cover art" },
+      { n: 3, x: "50%", y: "85%", label: "Made for you" },
+    ],
+  })) as Builder,
+
+  // 7. Disney+ — Franchise tiles
+  streamDisneyFranchise: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <StreamBar />
+        <div className="font-display text-[13px]">Browse by universe</div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Marvel Cinematic Universe","33 films · 12 series","#EC1D24","★"],
+            ["Star Wars Galaxy","11 films · 8 series","#000000","✦"],
+            ["Pixar Vault","27 features · 18 shorts","#FFCC00","💡"],
+            ["Walt Disney Animation","60+ classics","#0066CC","🏰"],
+          ].map(([t,c,col,ic],i)=>(
+            <div key={i} className="relative rounded-lg overflow-hidden h-12 flex items-center p-2 gap-2 text-white" style={{background:`linear-gradient(90deg, ${col}, ${col}66)`}}>
+              <div className="text-[18px]">{ic}</div>
+              <div className="min-w-0">
+                <div className="font-display text-[11px] tracking-wider uppercase truncate">{t}</div>
+                <div className="text-[8px] opacity-80 truncate">{c}</div>
+              </div>
+              <div className="ml-auto text-[14px]">›</div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "Franchise tiles" },
+      { n: 2, x: "50%", y: "55%", label: "Browse by universe" },
+      { n: 3, x: "85%", y: "55%", label: "Drill in" },
+    ],
+  })) as Builder,
+
+  // 8. Twitch — Live now
+  streamTwitchLive: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <StreamBar />
+        <div className="flex items-center gap-1.5">
+          <div className="w-4 h-4 rounded bg-[#9146FF]" />
+          <div className="text-[11px] font-medium">Live now</div>
+        </div>
+        <div className="grid grid-cols-2 gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["pokimane","Just Chatting","42.1K"],
+            ["shroud","Valorant","28.7K"],
+            ["xqc","GTA RP","61.3K"],
+            ["sodapoppin","Among Us","14.2K"],
+            ["lirik","Helldivers 2","19.8K"],
+            ["amouranth","IRL","22.5K"],
+          ].map(([who,cat,v],i)=>(
+            <div key={i} className="rounded-md overflow-hidden border border-border/40 flex flex-col">
+              <Photo seed={i} className="flex-1 min-h-[44px] relative">
+                <div className="absolute top-1 left-1 bg-red-600 text-white text-[7.5px] font-bold px-1 rounded">● LIVE</div>
+                <div className="absolute bottom-1 left-1 bg-background/80 text-[8px] px-1 rounded">👥 {v}</div>
+              </Photo>
+              <div className="px-1.5 py-1">
+                <div className="text-[9.5px] font-medium truncate">{who}</div>
+                <div className="text-[8px] text-foreground/55 truncate">{cat}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "20%", y: "30%", label: "LIVE badge" },
+      { n: 2, x: "30%", y: "50%", label: "Viewer count" },
+      { n: 3, x: "70%", y: "75%", label: "Streamer + game" },
+    ],
+  })) as Builder,
+
+  // 9. YouTube — Predictive at scale
+  streamYouTubeSearch: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <StreamBar />
+        <div className="h-8 rounded-full bg-foreground/8 px-2 flex items-center gap-1.5 text-[10px]">
+          <span>🔍</span><span className="flex-1">how to make </span><span className="text-foreground/45">🎤</span>
+        </div>
+        <div className="flex flex-col flex-1 overflow-hidden">
+          {[
+            ["how to make sourdough bread","48M results"],
+            ["how to make sourdough starter","12M results"],
+            ["how to make pizza dough","21M results"],
+            ["how to make a tanstack start app","320K results"],
+            ["how to make money online","98M results"],
+            ["how to make pasta from scratch","8.4M results"],
+            ["how to make cold brew coffee","3.2M results"],
+            ["how to make ramen","6.1M results"],
+          ].map(([q,r],i)=>(
+            <div key={i} className="flex items-center justify-between py-1 border-b border-border/30 text-[10px]">
+              <div className="flex items-center gap-1.5 min-w-0">
+                <span className="text-foreground/45">🔍</span>
+                <span className="truncate"><b>how to make </b>{q.replace('how to make ','')}</span>
+              </div>
+              <span className="text-[8px] text-foreground/45 shrink-0">{r}</span>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "12%", label: "Predictive bar" },
+      { n: 2, x: "50%", y: "50%", label: "Huge catalog" },
+      { n: 3, x: "85%", y: "50%", label: "Result counts" },
+    ],
+  })) as Builder,
+
+  // 10. Netflix — Title + genre
+  streamNetflixSearch: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <StreamBar />
+        <div className="h-8 rounded-md bg-foreground/8 px-2 flex items-center gap-1.5 text-[10px]">
+          <span>🔍</span><span className="flex-1">Search titles, people, genres</span>
+        </div>
+        <div className="flex gap-1 overflow-hidden">
+          {["Thrillers","Comedy","K-drama","Sci-Fi","Anime","Docs"].map((g,i)=>(
+            <Chip key={i} accent={i===0}>{g}</Chip>
+          ))}
+        </div>
+        <div className="text-[10px] font-medium">Top searches</div>
+        <div className="grid grid-cols-3 gap-1 flex-1 overflow-hidden">
+          {Array.from({length:9}).map((_,i)=>(
+            <div key={i} className="relative">
+              <Photo seed={i} className="w-full h-full min-h-[36px] rounded" />
+              <div className="absolute inset-x-0 bottom-0 text-[8px] bg-background/80 px-1 truncate">{["Wednesday","Dark","Ozark","The Crown","Bridgerton","Witcher","Squid Game","Beef","Mindhunter"][i]}</div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "12%", label: "Search bar" },
+      { n: 2, x: "50%", y: "22%", label: "Genre chips" },
+      { n: 3, x: "50%", y: "65%", label: "Top searches" },
+    ],
+  })) as Builder,
+
+  // 11. Spotify — Songs + podcasts tabs
+  streamSpotifySearch: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <StreamBar />
+        <div className="h-8 rounded-md bg-foreground/8 px-2 flex items-center gap-1.5 text-[10px]">
+          <span>🔍</span><span className="flex-1">phoebe bridgers</span>
+        </div>
+        <div className="flex gap-3 text-[10px] border-b border-border/60">
+          {["Top","Songs","Artists","Albums","Podcasts","Playlists"].map((t,i)=>(
+            <span key={i} className={i===1?"font-medium border-b-2 border-[#1DB954] pb-1 -mb-px":"text-foreground/55 pb-1"}>{t}</span>
+          ))}
+        </div>
+        <div className="flex flex-col gap-1 flex-1 overflow-hidden">
+          {[
+            ["♪","Motion Sickness","Phoebe Bridgers · 4:03"],
+            ["♪","Kyoto","Phoebe Bridgers · 3:04"],
+            ["♪","Scott Street","Phoebe Bridgers · 5:11"],
+            ["🎙️","The Phoebe Pod","Podcast · 42 ep"],
+            ["♪","I Know The End","Phoebe Bridgers · 5:43"],
+            ["♪","Funeral","Phoebe Bridgers · 4:11"],
+          ].map(([ic,t,d],i)=>(
+            <div key={i} className="flex items-center gap-2 py-0.5">
+              <div className="w-8 h-8 rounded bg-foreground/10 grid place-items-center text-[12px]">{ic}</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] font-medium truncate">{t}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{d}</div>
+              </div>
+              <span className="text-[12px] text-foreground/50">⋯</span>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "22%", label: "Songs/podcasts tabs" },
+      { n: 2, x: "30%", y: "22%", label: "Active tab" },
+      { n: 3, x: "50%", y: "60%", label: "Mixed results" },
+    ],
+  })) as Builder,
+
+  // 12. Twitch — Categories / games
+  streamTwitchCategories: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <StreamBar />
+        <div className="text-[11px] font-medium">Browse</div>
+        <div className="flex gap-1 overflow-hidden">
+          {["Categories","Streams","Esports"].map((c,i)=>(
+            <Chip key={i} accent={i===0}>{c}</Chip>
+          ))}
+        </div>
+        <div className="grid grid-cols-2 gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Just Chatting","248K viewers"],
+            ["League of Legends","182K viewers"],
+            ["Valorant","138K viewers"],
+            ["GTA V","98K viewers"],
+            ["Fortnite","76K viewers"],
+            ["Minecraft","54K viewers"],
+          ].map(([g,v],i)=>(
+            <div key={i} className="rounded-md overflow-hidden border border-border/40 flex">
+              <Photo seed={i} className="w-10 h-14 shrink-0" />
+              <div className="p-1.5 min-w-0 flex-1">
+                <div className="text-[9.5px] font-medium truncate">{g}</div>
+                <div className="text-[8px] text-foreground/55 truncate">👥 {v}</div>
+                <div className="flex gap-0.5 mt-0.5">
+                  <Chip>FPS</Chip>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "22%", label: "Browse by category" },
+      { n: 2, x: "30%", y: "55%", label: "Game tiles" },
+      { n: 3, x: "70%", y: "75%", label: "Viewer counts" },
+    ],
+  })) as Builder,
+
+  // 13. YouTube — Speed / captions / PiP
+  streamYouTubePlayer: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <div className="relative -mx-3.5 -mt-3 aspect-video bg-foreground/90 grid place-items-center">
+          <div className="text-background text-[24px]">▶</div>
+          <div className="absolute top-1.5 right-1.5 flex gap-1 text-background text-[10px]">
+            <div className="w-5 h-5 rounded grid place-items-center bg-foreground/60">⊟</div>
+            <div className="w-5 h-5 rounded grid place-items-center bg-foreground/60">CC</div>
+            <div className="w-5 h-5 rounded grid place-items-center bg-foreground/60">⚙</div>
+          </div>
+          <div className="absolute bottom-0 inset-x-0 px-1.5 pb-1">
+            <div className="h-0.5 bg-red-600 w-[40%]" />
+            <div className="h-0.5 bg-foreground/30" />
+          </div>
+        </div>
+        <div className="text-[10.5px] font-medium mt-1">Build a TanStack Start app from scratch</div>
+        <div className="text-[8.5px] text-foreground/55">Theo · 320K views · 2 days ago</div>
+        <div className="rounded-md border border-border/60 p-2 text-[9.5px] space-y-1">
+          <div className="flex justify-between"><span>Speed</span><span className="font-medium">1.5×</span></div>
+          <div className="flex justify-between"><span>Captions</span><span className="font-medium">English (auto)</span></div>
+          <div className="flex justify-between"><span>Quality</span><span className="font-medium">1080p</span></div>
+          <div className="flex justify-between"><span>Picture-in-picture</span><span className="font-medium">On</span></div>
+        </div>
+        <div className="text-[10px] font-medium mt-1">Up next</div>
+        <div className="flex gap-1.5">
+          <Photo seed={2} className="w-14 h-9 rounded shrink-0" />
+          <div className="text-[9px] truncate">Server functions deep dive · Theo</div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "85%", y: "15%", label: "Speed/CC/PiP" },
+      { n: 2, x: "50%", y: "55%", label: "Player controls" },
+      { n: 3, x: "50%", y: "85%", label: "Up next" },
+    ],
+  })) as Builder,
+
+  // 14. Netflix — Autoplay next
+  streamNetflixAutoplay: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <div className="relative -mx-3.5 -mt-3 aspect-video bg-foreground/90 grid place-items-center">
+          <div className="text-background text-[22px]">▶</div>
+          <div className="absolute bottom-0 inset-x-0 h-0.5 bg-red-600 w-[97%]" />
+          <div className="absolute bottom-2 right-2 bg-background/95 rounded-md p-1.5 flex items-center gap-1.5 max-w-[58%]">
+            <Photo seed={2} className="w-9 h-12 rounded shrink-0" />
+            <div className="min-w-0">
+              <div className="text-[7px] text-foreground/55 uppercase tracking-wider">Up next in 8s</div>
+              <div className="text-[9px] font-medium truncate">E04 · The Vanishing</div>
+              <div className="flex gap-1 mt-0.5">
+                <div className="text-[7px] px-1 py-0.5 rounded bg-foreground text-background">Play now</div>
+                <div className="text-[7px] px-1 py-0.5 rounded border border-border">Cancel</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="text-[10.5px] font-medium mt-1">Stranger Things · S5 E03</div>
+        <div className="text-[8.5px] text-foreground/55">The Disappearance of Will Byers</div>
+        <div className="text-[10px] font-medium mt-1">Episodes</div>
+        <div className="flex flex-col gap-1 flex-1 overflow-hidden">
+          {[
+            ["E03 · The Disappearance","48m","now"],
+            ["E04 · The Vanishing","52m","next"],
+            ["E05 · The Flea & the Acrobat","49m","—"],
+          ].map(([t,d,s],i)=>(
+            <div key={i} className={`flex items-center gap-2 p-1 rounded border ${i===0?"border-red-600":"border-border/30"}`}>
+              <Photo seed={i} className="w-12 h-7 rounded shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="text-[9.5px] truncate">{t}</div>
+                <div className="text-[8px] text-foreground/55">{d} · {s}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "70%", y: "25%", label: "Autoplay overlay" },
+      { n: 2, x: "85%", y: "30%", label: "Countdown" },
+      { n: 3, x: "50%", y: "85%", label: "Episode queue" },
+    ],
+  })) as Builder,
+
+  // 15. Spotify — Queue + now playing
+  streamSpotifyQueue: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <StreamBar />
+        <Photo seed={2} className="w-32 h-32 rounded self-center" />
+        <div className="text-center">
+          <div className="font-display text-[14px]">Motion Sickness</div>
+          <div className="text-[9px] text-foreground/55">Phoebe Bridgers · Stranger in the Alps</div>
+        </div>
+        <div className="flex items-center gap-2 text-[8px] font-mono text-foreground/55">
+          <span>1:42</span>
+          <div className="flex-1 h-0.5 rounded-full bg-foreground/15 relative">
+            <div className="absolute inset-y-0 left-0 w-[42%] bg-[#1DB954] rounded-full" />
+            <div className="absolute -top-1 left-[42%] w-2.5 h-2.5 rounded-full bg-[#1DB954]" />
+          </div>
+          <span>4:03</span>
+        </div>
+        <div className="flex justify-center gap-4 text-[14px] text-foreground/75">⤺ ⏮ <span className="text-[20px]">⏯</span> ⏭ ⤻</div>
+        <div className="rounded-md border border-border/60 p-1.5 text-[9px]">
+          <div className="flex justify-between text-foreground/55"><span>Crossfade</span><span>6s</span></div>
+        </div>
+        <div className="text-[10px] font-medium">Queue · Next up</div>
+        <div className="flex flex-col gap-0.5 flex-1 overflow-hidden">
+          {[
+            ["Kyoto","Phoebe Bridgers"],
+            ["Scott Street","Phoebe Bridgers"],
+            ["I Know The End","Phoebe Bridgers"],
+          ].map(([t,a],i)=>(
+            <div key={i} className="flex items-center gap-2 py-0.5 text-[9.5px]">
+              <span className="text-foreground/45">≡</span>
+              <span className="flex-1 truncate">{t}</span>
+              <span className="text-foreground/55 text-[8.5px] truncate">{a}</span>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "40%", label: "Now playing" },
+      { n: 2, x: "50%", y: "70%", label: "Crossfade" },
+      { n: 3, x: "50%", y: "88%", label: "Queue" },
+    ],
+  })) as Builder,
+
+  // 16. Twitch — Live chat overlay
+  streamTwitchChat: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <div className="relative -mx-3.5 -mt-3 aspect-video bg-foreground/90 grid place-items-center">
+          <div className="text-background text-[20px]">▶</div>
+          <div className="absolute top-1.5 left-1.5 bg-red-600 text-white text-[8px] font-bold px-1.5 py-0.5 rounded">● LIVE</div>
+          <div className="absolute top-1.5 right-1.5 bg-background/70 text-foreground text-[8px] px-1.5 py-0.5 rounded">👥 42.1K</div>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <div className="w-6 h-6 rounded-full bg-[#9146FF]" />
+          <div className="text-[10px] font-medium truncate flex-1">pokimane</div>
+          <div className="text-[8.5px] px-1.5 py-0.5 rounded bg-[#9146FF] text-white">Follow</div>
+        </div>
+        <div className="text-[9px] text-foreground/55 truncate">Just Chatting · 4 hrs</div>
+        <div className="rounded-md border border-border/60 flex-1 flex flex-col overflow-hidden">
+          <div className="text-[8.5px] px-2 py-1 border-b border-border/40 font-medium">Stream chat</div>
+          <div className="flex-1 px-2 py-1 flex flex-col gap-0.5 overflow-hidden text-[9px]">
+            {[
+              ["maya_92","#FF4F40","PogChamp"],
+              ["jordan.k","#5BB0FF","first time here, love this"],
+              ["aisha","#22c55e","LULW LULW"],
+              ["sam","#a855f7","KEKW"],
+              ["chillvibes","#F472B6","poki when stream tonight?"],
+              ["xrunner","#FFD23F","Kappa Kappa Kappa"],
+              ["mod_bot","#9146FF","Welcome to the stream!"],
+            ].map(([u,c,m],i)=>(
+              <div key={i} className="truncate">
+                <span className="font-semibold" style={{color:c}}>{u}</span>
+                <span className="text-foreground/65">: {m}</span>
+              </div>
+            ))}
+          </div>
+          <div className="h-6 border-t border-border/40 px-2 grid items-center text-[9px] text-foreground/45">Send a message…</div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "Live video" },
+      { n: 2, x: "50%", y: "65%", label: "Live chat" },
+      { n: 3, x: "50%", y: "92%", label: "Send message" },
+    ],
+  })) as Builder,
+
+  // 17. Netflix — New & Popular
+  streamNetflixNewRow: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <div className="flex items-center gap-2">
+          <div className="text-red-600 font-display text-[12px] tracking-wider">NETFLIX</div>
+          <div className="text-[9.5px] font-medium">New & Popular</div>
+        </div>
+        <div className="flex gap-2 text-[9px] text-foreground/70 border-b border-border/60">
+          <span className="font-medium border-b-2 border-white pb-1 -mb-px">Coming soon</span>
+          <span className="pb-1 text-foreground/55">Everyone's watching</span>
+          <span className="pb-1 text-foreground/55">Top 10</span>
+        </div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Apr 28","Wednesday S2","Mystery · Comedy"],
+            ["May 02","Bridgerton S4","Drama · Romance"],
+            ["May 10","Squid Game S3","Thriller"],
+            ["May 15","Stranger Things 5","Sci-fi · Drama"],
+          ].map(([d,t,g],i)=>(
+            <div key={i} className="flex gap-2">
+              <div className="w-10 text-center">
+                <div className="text-[8px] text-foreground/55 uppercase">{(d as string).split(' ')[0]}</div>
+                <div className="font-display text-[16px] leading-none">{(d as string).split(' ')[1]}</div>
+              </div>
+              <Photo seed={i} className="w-20 h-12 rounded shrink-0" />
+              <div className="min-w-0">
+                <div className="text-[10px] font-medium truncate">{t}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{g}</div>
+                <div className="text-[8px] text-red-600 mt-0.5">🔔 Remind me</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "New & Popular tab" },
+      { n: 2, x: "50%", y: "55%", label: "Fresh releases" },
+      { n: 3, x: "75%", y: "75%", label: "Remind me" },
+    ],
+  })) as Builder,
+
+  // 18. Spotify — Wrapped & daylist
+  streamSpotifyWrapped: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <div className="rounded-xl p-3 -mx-1 bg-gradient-to-br from-[#7873F5] via-[#F472B6] to-[#FFD23F] text-white flex-1 flex flex-col gap-2">
+          <div className="text-[8.5px] uppercase tracking-[0.2em]">Your 2024 Wrapped</div>
+          <div className="font-display text-[24px] leading-none">You listened to <br/>42,180 mins</div>
+          <div className="rounded-lg bg-white/15 backdrop-blur p-2 text-[10px]">
+            <div className="opacity-80 text-[8.5px] uppercase tracking-wider">Top artist</div>
+            <div className="font-display text-[14px]">Phoebe Bridgers</div>
+            <div className="text-[8.5px] opacity-80">You're in her top 0.1%</div>
+          </div>
+          <div className="rounded-lg bg-white/15 backdrop-blur p-2 text-[10px]">
+            <div className="opacity-80 text-[8.5px] uppercase tracking-wider">Top song</div>
+            <div className="font-display text-[14px]">Motion Sickness</div>
+            <div className="text-[8.5px] opacity-80">Played 142 times</div>
+          </div>
+          <div className="mt-auto rounded-lg bg-black/30 p-1.5 text-[9px] flex items-center gap-1.5">
+            <div className="w-6 h-6 rounded bg-[#FF6B6B]" />
+            <div className="min-w-0">
+              <div className="text-[8px] uppercase tracking-wider opacity-80">Today's daylist</div>
+              <div className="font-medium truncate">sunset indie folk mellow</div>
+            </div>
+          </div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "Wrapped recap" },
+      { n: 2, x: "50%", y: "50%", label: "Top artist/song" },
+      { n: 3, x: "50%", y: "88%", label: "Daylist tie-in" },
+    ],
+  })) as Builder,
+
+  // 19. YouTube — Subscriptions feed
+  streamYouTubeSubs: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <StreamBar />
+        <div className="flex items-center gap-1.5">
+          <div className="w-4 h-4 rounded grid place-items-center bg-red-600 text-white text-[9px]">▶</div>
+          <div className="text-[11px] font-medium">Subscriptions</div>
+        </div>
+        <div className="flex gap-1.5 overflow-hidden">
+          {["All","Theo","Fireship","BA","MKBHD","NPR"].map((c,i)=>(
+            <div key={i} className="flex flex-col items-center gap-0.5 shrink-0">
+              <div className={`w-8 h-8 rounded-full ${i===0?"bg-foreground/15":"bg-foreground/10"} border ${i===0?"border-foreground":"border-border/40"}`} />
+              <div className="text-[7.5px] truncate w-10 text-center">{c}</div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[8.5px] text-foreground/55">Today</div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["TanStack Start v2 first look","Theo","12 min · 1h ago","120K"],
+            ["100 seconds of Rust","Fireship","2:12 · 4h ago","240K"],
+            ["30-min weeknight pasta","Bon Appétit","8:42 · 6h ago","98K"],
+            ["The iPad Pro M5 review","MKBHD","14:30 · 8h ago","1.2M"],
+          ].map(([t,ch,meta,v],i)=>(
+            <div key={i} className="flex gap-1.5">
+              <Photo seed={i} className="w-16 h-10 rounded shrink-0" />
+              <div className="min-w-0">
+                <div className="text-[9.5px] truncate">{t}</div>
+                <div className="text-[8px] text-foreground/55 truncate">{ch} · {v} views</div>
+                <div className="text-[8px] text-foreground/45 truncate">{meta}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "22%", label: "Channel avatars" },
+      { n: 2, x: "50%", y: "55%", label: "New uploads" },
+      { n: 3, x: "50%", y: "85%", label: "From your subs" },
+    ],
+  })) as Builder,
+
+  // 20. Twitch — Subs & emotes
+  streamTwitchSubs: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <StreamBar />
+        <div className="flex items-center gap-2">
+          <div className="w-9 h-9 rounded-full bg-[#9146FF]" />
+          <div className="min-w-0">
+            <div className="text-[11px] font-medium truncate">pokimane</div>
+            <div className="text-[8.5px] text-foreground/55">9.2M followers</div>
+          </div>
+          <div className="ml-auto text-[8.5px] px-2 py-0.5 rounded bg-[#9146FF] text-white">Following</div>
+        </div>
+        <div className="font-display text-[13px]">Subscribe to pokimane</div>
+        <div className="flex flex-col gap-1.5">
+          {[
+            ["Tier 1","$4.99/mo","Ad-free · 1 emote slot · sub badge","#9146FF",true],
+            ["Tier 2","$9.99/mo","All tier 1 perks · extra emotes","#7d3eff",false],
+            ["Tier 3","$24.99/mo","All perks · exclusive emotes · gold badge","#5b1ec4",false],
+          ].map(([t,p,pe,c,cur],i)=>(
+            <div key={i} className={`rounded-md p-2 border ${cur?"border-2":""}`} style={cur?{borderColor:c as string}:{borderColor:"hsl(var(--border))"}}>
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="text-[10px] font-semibold">{t}</div>
+                  <div className="text-[8.5px] text-foreground/55 truncate max-w-[140px]">{pe}</div>
+                </div>
+                <div className="text-[10px] font-mono" style={{color:c as string}}>{p}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[10px] font-medium mt-1">Sub emotes</div>
+        <div className="grid grid-cols-6 gap-1">
+          {["pokiHi","pokiW","pokiL","pokiH","pokiP","pokiS","pokiK","pokiR","pokiT","pokiM","pokiG","pokiB"].map((e,i)=>(
+            <div key={i} className="aspect-square rounded bg-foreground/8 grid place-items-center text-[7px] font-mono text-foreground/65">{e}</div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Sub tiers" },
+      { n: 2, x: "50%", y: "55%", label: "Tier perks" },
+      { n: 3, x: "50%", y: "88%", label: "Sub emotes" },
+    ],
+  })) as Builder,
+});
+
 export function renderScreen(screen: string | undefined, ctx: RenderCtx, preview?: Preview): RenderedScreen {
   const p = safePreview(preview, ctx);
   const b = (screen && screens[screen]) || fallback;
