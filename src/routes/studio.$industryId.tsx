@@ -133,7 +133,9 @@ function Studio() {
       <div className="flex items-end justify-between flex-wrap gap-3">
         <div>
           <div className="flex items-center gap-3">
-            <span className="text-4xl">{industry.emoji}</span>
+            <div className="w-10 h-10 text-foreground/80">
+              <SketchIcon id={industry.id} />
+            </div>
             <h1 className="font-display text-4xl tracking-tight">{industry.name}</h1>
           </div>
           <p className="mt-1 text-sm text-muted-foreground">
