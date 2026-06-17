@@ -2891,6 +2891,798 @@ Object.assign(screens, {
   })) as Builder,
 });
 
+// ============================================================
+// FOOD DELIVERY — 20 brand-evocative screens
+// Neutral copy. Do not echo p.company / p.pattern / p.metric.
+// ============================================================
+const FoodBar = () => (
+  <div className="flex items-center justify-between text-[9px] font-mono text-foreground/50 -mt-1">
+    <span>9:41</span>
+    <span className="tracking-[0.18em]">●●●</span>
+    <span>100%</span>
+  </div>
+);
+
+Object.assign(screens, {
+  // 1. Uber Eats — Imagery carousels
+  foodImageryCarousels: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="flex items-center justify-between">
+          <div className="text-[10px] text-foreground/60">📍 Mission St</div>
+          <div className="w-6 h-6 rounded-full bg-foreground/10 grid place-items-center text-[10px]">👤</div>
+        </div>
+        <div className="text-[11px] font-medium">Near you</div>
+        <div className="flex gap-1.5 overflow-hidden">
+          {[0,1,2].map(i => (
+            <Photo key={i} seed={i} className="w-[58%] h-16 rounded-lg shrink-0 flex items-end p-1.5">
+              <span className="text-[9px] text-foreground/80 bg-background/70 px-1 rounded">Sushi · 4.8</span>
+            </Photo>
+          ))}
+        </div>
+        <div className="text-[11px] font-medium">Trending</div>
+        <div className="flex gap-1.5 overflow-hidden">
+          {[2,0,1].map(i => (
+            <Photo key={i} seed={i+1} className="w-[58%] h-16 rounded-lg shrink-0 flex items-end p-1.5">
+              <span className="text-[9px] text-foreground/80 bg-background/70 px-1 rounded">Tacos · 4.7</span>
+            </Photo>
+          ))}
+        </div>
+        <div className="text-[11px] font-medium">Late night</div>
+        <div className="flex gap-1.5 overflow-hidden">
+          {[1,2,0].map(i => (
+            <Photo key={i} seed={i} className="w-[58%] h-14 rounded-lg shrink-0" />
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "Cuisine carousels" },
+      { n: 2, x: "50%", y: "55%", label: "Appetizing imagery" },
+      { n: 3, x: "50%", y: "85%", label: "Themed rails" },
+    ],
+  })) as Builder,
+
+  // 2. DoorDash — Popular near you (ranked)
+  foodPopularNear: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="text-[11px] font-medium">Popular near you</div>
+        <div className="flex gap-1.5 text-[9px]">
+          <Chip accent>All</Chip><Chip>Fastest</Chip><Chip>Top rated</Chip>
+        </div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["1","Pho 88","4.9","20–30 min","$0 fee"],
+            ["2","Margherita Pizza","4.8","25–35 min","$1.99"],
+            ["3","Pad Thai House","4.8","15–25 min","$0 fee"],
+            ["4","Falafel Wrap","4.7","20–30 min","$2.49"],
+            ["5","Ramen Ya","4.7","30–40 min","$1.99"],
+          ].map(([r,n,rt,t,f],i)=>(
+            <div key={i} className="flex items-center gap-2">
+              <div className="text-[10px] font-mono text-foreground/50 w-3">{r}</div>
+              <Photo seed={i} className="w-9 h-9 rounded-md shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="text-[10.5px] font-medium truncate">{n}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">★ {rt} · {t} · {f}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "10%", y: "30%", label: "Ranked list" },
+      { n: 2, x: "70%", y: "50%", label: "Rating + ETA" },
+      { n: 3, x: "85%", y: "70%", label: "Delivery fee" },
+    ],
+  })) as Builder,
+
+  // 3. Grubhub — Local breadth list (many)
+  foodBreadthList: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="h-7 rounded-md bg-foreground/8 px-2 grid items-center text-[10px] text-foreground/55">Search 320+ restaurants</div>
+        <div className="flex gap-1 overflow-hidden text-[8.5px]">
+          {["Pizza","Sushi","Thai","Indian","Vegan","Burgers","Mex"].map((c,i)=>(
+            <Chip key={i}>{c}</Chip>
+          ))}
+        </div>
+        <div className="flex flex-col flex-1 overflow-hidden">
+          {[
+            ["Joe's Pizza","Italian · Pizza","$","25m"],
+            ["Sushi Nori","Japanese · Sushi","$$","30m"],
+            ["Pad See Ew","Thai · Noodles","$","20m"],
+            ["Curry House","Indian · Curry","$$","35m"],
+            ["Green Bowl","Vegan · Salads","$","15m"],
+            ["Burger Bros","American","$","25m"],
+            ["Taco Loco","Mexican · Tacos","$","20m"],
+            ["Falafel Wrap","Med · Wraps","$","30m"],
+          ].map(([n,c,p,t],i)=>(
+            <div key={i} className="flex items-center justify-between py-1 border-b border-border/40">
+              <div className="min-w-0">
+                <div className="text-[10px] truncate">{n}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{c}</div>
+              </div>
+              <div className="text-[8.5px] font-mono text-foreground/60">{p} · {t}</div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "12%", label: "Search 320+" },
+      { n: 2, x: "50%", y: "25%", label: "Many cuisines" },
+      { n: 3, x: "50%", y: "65%", label: "Long breadth list" },
+    ],
+  })) as Builder,
+
+  // 4. Instacart — Store-first browse (grocery)
+  foodStoreFirst: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="flex items-center justify-between">
+          <div className="text-[11px] font-medium">Shop stores</div>
+          <div className="text-[9px] text-foreground/55">📍 94110</div>
+        </div>
+        <div className="grid grid-cols-3 gap-1.5">
+          {[
+            ["Safeway","45m"],
+            ["Costco","2hr"],
+            ["Whole Fds","30m"],
+            ["Target","1hr"],
+            ["CVS","30m"],
+            ["Trader J","1hr"],
+          ].map(([n,t],i)=>(
+            <div key={i} className="aspect-square rounded-lg border border-border/60 bg-foreground/[0.04] p-1.5 flex flex-col justify-between">
+              <div className="w-7 h-7 rounded-md bg-gradient-to-br from-primary/30 to-foreground/10 grid place-items-center text-[10px] font-medium">{(n as string)[0]}</div>
+              <div>
+                <div className="text-[9.5px] font-medium truncate">{n}</div>
+                <div className="text-[8px] text-foreground/55">⏱ {t}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[10px] font-medium mt-1">Popular brands</div>
+        <div className="flex gap-1.5 overflow-hidden">
+          {["Coca","Lay's","Oreo","Tide"].map((b,i)=>(
+            <div key={i} className="px-2 py-1 rounded-full border border-border/60 text-[9px] shrink-0">{b}</div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "12%", label: "Store-first" },
+      { n: 2, x: "50%", y: "45%", label: "Grocery grid" },
+      { n: 3, x: "50%", y: "85%", label: "Brand shortcuts" },
+    ],
+  })) as Builder,
+
+  // 5. DoorDash — Popular items first
+  foodPopularItems: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="flex items-center gap-1">
+          <span className="text-[10px]">←</span>
+          <div className="text-[11px] font-medium truncate">Joe's Pizza</div>
+        </div>
+        <div className="text-[8.5px] text-foreground/55">★ 4.8 · 20–30 min · $</div>
+        <div className="rounded-md bg-primary/10 border border-primary/30 px-2 py-1 text-[9.5px] font-medium">🔥 Most ordered</div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Margherita","#1 · 312 today","$14"],
+            ["Pepperoni","#2 · 248 today","$15"],
+            ["Garlic Knots","#3 · 190 today","$6"],
+          ].map(([n,o,pr],i)=>(
+            <div key={i} className="flex items-center gap-2 p-1 rounded-md border border-border/40">
+              <Photo seed={i} className="w-10 h-10 rounded-md shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="text-[10.5px] font-medium truncate">{n}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{o}</div>
+              </div>
+              <div className="text-[10px] font-mono">{pr}</div>
+            </div>
+          ))}
+          <div className="text-[10px] font-medium mt-1">Menu</div>
+          {["Caesar Salad · $9","Tiramisu · $7"].map((t,i)=>(
+            <div key={i} className="text-[9.5px] text-foreground/70 py-0.5 border-b border-border/30">{t}</div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "22%", label: "Most ordered" },
+      { n: 2, x: "50%", y: "45%", label: "Ranked + counts" },
+      { n: 3, x: "50%", y: "85%", label: "Rest of menu" },
+    ],
+  })) as Builder,
+
+  // 6. Deliveroo — Photo menu grid
+  foodPhotoMenu: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="flex items-center gap-1">
+          <span className="text-[10px]">←</span>
+          <div className="text-[11px] font-medium truncate">Ramen Ya</div>
+        </div>
+        <div className="grid grid-cols-2 gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Tonkotsu","£14"],
+            ["Spicy Miso","£13"],
+            ["Shoyu","£12"],
+            ["Gyoza 6pc","£7"],
+            ["Karaage","£8"],
+            ["Matcha Soft","£5"],
+          ].map(([n,pr],i)=>(
+            <div key={i} className="rounded-lg overflow-hidden border border-border/40 flex flex-col">
+              <Photo seed={i} className="flex-1 min-h-[44px]" />
+              <div className="px-1.5 py-1">
+                <div className="text-[9.5px] font-medium truncate">{n}</div>
+                <div className="text-[8.5px] text-foreground/55">{pr}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "15%", label: "Photo-led menu" },
+      { n: 2, x: "30%", y: "50%", label: "Large dish images" },
+      { n: 3, x: "70%", y: "80%", label: "Price below" },
+    ],
+  })) as Builder,
+
+  // 7. Uber Eats — Category tabs sticky
+  foodCategoryTabs: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="flex items-center gap-1">
+          <span className="text-[10px]">←</span>
+          <div className="text-[11px] font-medium truncate">Bistro Lyon</div>
+        </div>
+        <div className="flex gap-3 text-[10px] border-b border-border/60 -mx-0.5 px-0.5">
+          <span className="font-medium border-b-2 border-primary pb-1 -mb-px">Starters</span>
+          <span className="text-foreground/55 pb-1">Mains</span>
+          <span className="text-foreground/55 pb-1">Sides</span>
+          <span className="text-foreground/55 pb-1">Drinks</span>
+          <span className="text-foreground/55 pb-1">Desserts</span>
+        </div>
+        <div className="text-[10px] font-medium">Starters</div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Onion Soup","$8"],
+            ["Escargots","$11"],
+            ["Pâté maison","$9"],
+            ["Salade verte","$7"],
+          ].map(([n,pr],i)=>(
+            <div key={i} className="flex items-center justify-between py-1 border-b border-border/40">
+              <div className="text-[10px] truncate pr-2">{n}</div>
+              <div className="text-[9.5px] font-mono text-foreground/65">{pr}</div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "22%", label: "Sticky category tabs" },
+      { n: 2, x: "20%", y: "22%", label: "Active section" },
+      { n: 3, x: "50%", y: "65%", label: "Items in section" },
+    ],
+  })) as Builder,
+
+  // 8. Instacart — Search items
+  foodSearchItems: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="h-8 rounded-md bg-foreground/8 px-2 flex items-center gap-1.5 text-[10px]">
+          <span>🔍</span>
+          <span className="flex-1">milk</span>
+          <span className="text-foreground/45">✕</span>
+        </div>
+        <div className="text-[9px] text-foreground/55">42 results in Safeway</div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Organic Whole Milk","1 gal","$5.49"],
+            ["2% Reduced Fat","1 gal","$4.29"],
+            ["Oat Milk Original","64 oz","$4.99"],
+            ["Almond Milk Unsw.","64 oz","$3.79"],
+            ["Lactose-Free 2%","1/2 gal","$4.59"],
+          ].map(([n,sz,pr],i)=>(
+            <div key={i} className="flex items-center gap-2 p-1 rounded-md border border-border/40">
+              <Photo seed={i} className="w-9 h-9 rounded-md shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] font-medium truncate">{n}</div>
+                <div className="text-[8.5px] text-foreground/55">{sz} · {pr}</div>
+              </div>
+              <div className="w-6 h-6 rounded-full bg-primary text-primary-foreground grid place-items-center text-[12px] shrink-0">+</div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "12%", label: "Item search bar" },
+      { n: 2, x: "50%", y: "50%", label: "Item results" },
+      { n: 3, x: "90%", y: "50%", label: "Quick add" },
+    ],
+  })) as Builder,
+
+  // 9. Deliveroo — Live total + mods
+  foodLiveTotalMods: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="text-[11px] font-medium">Your basket</div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["1× Tonkotsu Ramen","£14.00",["+ Extra chashu £2.00","No green onions"]],
+            ["2× Gyoza 6pc","£14.00",["Pan-fried"]],
+            ["1× Matcha Soft","£5.00",[]],
+          ].map(([n,pr,mods],i)=>(
+            <div key={i} className="border-b border-border/40 pb-1">
+              <div className="flex items-center justify-between text-[10px]">
+                <span className="truncate pr-2">{n as string}</span>
+                <span className="font-mono">{pr as string}</span>
+              </div>
+              {(mods as string[]).map((m,j)=>(
+                <div key={j} className="text-[8.5px] text-foreground/55 pl-2">↳ {m}</div>
+              ))}
+            </div>
+          ))}
+        </div>
+        <div className="rounded-md bg-foreground/[0.04] p-1.5 text-[9.5px] space-y-0.5">
+          <div className="flex justify-between"><span>Subtotal</span><span className="font-mono">£35.00</span></div>
+          <div className="flex justify-between text-foreground/60"><span>Delivery</span><span className="font-mono">£2.49</span></div>
+          <div className="flex justify-between font-medium text-[10.5px] pt-0.5 border-t border-border/40"><span>Total</span><span className="font-mono">£37.49</span></div>
+        </div>
+        <CTA>Checkout · £37.49</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "35%", label: "Item modifiers" },
+      { n: 2, x: "50%", y: "75%", label: "Live-updating total" },
+      { n: 3, x: "50%", y: "94%", label: "Total in CTA" },
+    ],
+  })) as Builder,
+
+  // 10. Uber Eats — Upsell add-ons
+  foodUpsellAddons: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="text-[11px] font-medium">Cart · 2 items</div>
+        <div className="flex flex-col gap-1.5">
+          {[
+            ["1× Margherita Pizza","$14"],
+            ["1× Caesar Salad","$9"],
+          ].map(([n,pr],i)=>(
+            <div key={i} className="flex items-center justify-between text-[10px] py-1 border-b border-border/40">
+              <span className="truncate pr-2">{n}</span>
+              <span className="font-mono">{pr}</span>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-lg border border-primary/40 bg-primary/5 p-1.5">
+          <div className="text-[10px] font-medium">Add a drink or dessert?</div>
+          <div className="flex gap-1.5 mt-1 overflow-hidden">
+            {[
+              ["Coke","$3"],
+              ["Tiramisu","$7"],
+              ["Sparkling","$3"],
+              ["Garlic Knot","$6"],
+            ].map(([n,pr],i)=>(
+              <div key={i} className="rounded-md border border-border/60 bg-background p-1 shrink-0 w-[60px]">
+                <Photo seed={i} className="w-full h-8 rounded" />
+                <div className="text-[8.5px] mt-0.5 truncate">{n}</div>
+                <div className="text-[8.5px] flex items-center justify-between">
+                  <span className="font-mono text-foreground/65">{pr}</span>
+                  <span className="w-3.5 h-3.5 rounded-full bg-primary text-primary-foreground grid place-items-center text-[9px]">+</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="flex-1" />
+        <div className="text-[9.5px] flex justify-between"><span>Subtotal</span><span className="font-mono">$23.00</span></div>
+        <CTA>Go to checkout</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "32%", label: "Cart items" },
+      { n: 2, x: "50%", y: "55%", label: "Add-on upsell" },
+      { n: 3, x: "50%", y: "95%", label: "Checkout" },
+    ],
+  })) as Builder,
+
+  // 11. DoorDash — Group order
+  foodGroupOrder: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="flex items-center justify-between">
+          <div className="text-[11px] font-medium">Group order</div>
+          <div className="text-[9px] text-foreground/55">4 people</div>
+        </div>
+        <div className="flex -space-x-1.5">
+          {["M","A","J","S"].map((l,i)=>(
+            <div key={i} className="w-6 h-6 rounded-full border-2 border-background bg-foreground/15 grid place-items-center text-[9px]">{l}</div>
+          ))}
+        </div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Maya",["Margherita Pizza · $14","Coke · $3"],"$17.00"],
+            ["Alex",["Pepperoni · $15"],"$15.00"],
+            ["Jordan",["Caesar Salad · $9","Sparkling · $3"],"$12.00"],
+            ["Sam",["Garlic Knots · $6"],"$6.00"],
+          ].map(([who,items,sub],i)=>(
+            <div key={i} className="rounded-md border border-border/40 p-1.5">
+              <div className="flex items-center justify-between text-[10px]">
+                <span className="font-medium">{who}</span>
+                <span className="font-mono text-foreground/65">{sub as string}</span>
+              </div>
+              {(items as string[]).map((it,j)=>(
+                <div key={j} className="text-[8.5px] text-foreground/60 truncate">· {it}</div>
+              ))}
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-between text-[10px] font-medium"><span>Group total</span><span className="font-mono">$50.00</span></div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "18%", label: "Participants" },
+      { n: 2, x: "50%", y: "55%", label: "Split per person" },
+      { n: 3, x: "50%", y: "94%", label: "Group total" },
+    ],
+  })) as Builder,
+
+  // 12. Grubhub — Simple cart
+  foodSimpleCart: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="text-[11px] font-medium">Your cart</div>
+        <div className="flex flex-col gap-2 flex-1">
+          {[
+            ["1× Falafel Wrap","$8.00"],
+            ["1× Hummus + Pita","$6.00"],
+            ["1× Mint Lemonade","$4.00"],
+          ].map(([n,pr],i)=>(
+            <div key={i} className="flex items-center justify-between text-[10.5px] py-1.5 border-b border-border/40">
+              <span className="truncate pr-2">{n}</span>
+              <span className="font-mono">{pr}</span>
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-between text-[11px] font-medium pt-1 border-t border-border/60">
+          <span>Subtotal</span><span className="font-mono">$18.00</span>
+        </div>
+        <CTA>Checkout</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Items" },
+      { n: 2, x: "50%", y: "82%", label: "Subtotal" },
+      { n: 3, x: "50%", y: "94%", label: "Checkout" },
+    ],
+  })) as Builder,
+
+  // 13. Uber Eats — One-tap reorder
+  foodOneTapReorder: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="text-[11px] font-medium">Checkout</div>
+        <div className="rounded-md border border-border/60 p-1.5 flex items-center gap-2">
+          <span className="text-[12px]">📍</span>
+          <div className="flex-1 min-w-0">
+            <div className="text-[10px] font-medium truncate">Home · 220 Mission St</div>
+            <div className="text-[8.5px] text-foreground/55">Leave at door</div>
+          </div>
+          <span className="text-[9px] text-foreground/55">Change</span>
+        </div>
+        <div className="rounded-md border border-border/60 p-1.5 flex items-center gap-2">
+          <div className="w-8 h-5 rounded bg-foreground/15 grid place-items-center text-[8px]">VISA</div>
+          <div className="flex-1 text-[10px]">•••• 4242</div>
+          <span className="text-[9px] text-foreground/55">Change</span>
+        </div>
+        <div className="rounded-md bg-foreground/[0.04] p-1.5 text-[9.5px] space-y-0.5">
+          <div className="flex justify-between"><span>Subtotal</span><span className="font-mono">$23.00</span></div>
+          <div className="flex justify-between font-medium pt-0.5 border-t border-border/40"><span>Total</span><span className="font-mono">$27.49</span></div>
+        </div>
+        <CTA>Place order · $27.49</CTA>
+        <div className="rounded-md border border-dashed border-border/60 p-1.5 flex items-center gap-2">
+          <Photo seed={1} className="w-8 h-8 rounded" />
+          <div className="flex-1 min-w-0">
+            <div className="text-[10px] truncate">Reorder Joe's Pizza</div>
+            <div className="text-[8.5px] text-foreground/55">Same as last time</div>
+          </div>
+          <div className="text-[9px] px-2 py-1 rounded-full bg-foreground/10">Reorder</div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Saved address" },
+      { n: 2, x: "50%", y: "45%", label: "Saved payment" },
+      { n: 3, x: "50%", y: "92%", label: "1-tap reorder" },
+    ],
+  })) as Builder,
+
+  // 14. DoorDash — Saved + DashPass
+  foodDashPass: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="text-[11px] font-medium">Checkout</div>
+        <div className="rounded-md p-1.5 bg-gradient-to-r from-red-500/20 to-red-500/5 border border-red-500/30 flex items-center gap-2">
+          <div className="w-6 h-6 rounded-full bg-red-500 text-white grid place-items-center text-[9px] font-bold">DP</div>
+          <div className="flex-1 min-w-0">
+            <div className="text-[10px] font-medium">DashPass · Free delivery</div>
+            <div className="text-[8.5px] text-foreground/60">You saved $4.99 on this order</div>
+          </div>
+        </div>
+        <div className="rounded-md border border-border/60 p-1.5 flex items-center gap-2">
+          <span className="text-[12px]">📍</span>
+          <div className="flex-1 text-[10px] truncate">Home · 220 Mission St</div>
+          <span className="text-[9px] text-foreground/55">Edit</span>
+        </div>
+        <div className="rounded-md border border-border/60 p-1.5 flex items-center gap-2">
+          <div className="w-8 h-5 rounded bg-foreground/15 grid place-items-center text-[8px]">MC</div>
+          <div className="flex-1 text-[10px]">•••• 8121</div>
+          <span className="text-[9px] text-foreground/55">Edit</span>
+        </div>
+        <div className="rounded-md bg-foreground/[0.04] p-1.5 text-[9.5px] space-y-0.5">
+          <div className="flex justify-between"><span>Subtotal</span><span className="font-mono">$28.00</span></div>
+          <div className="flex justify-between text-foreground/60"><span>Delivery</span><span className="font-mono line-through">$4.99</span></div>
+          <div className="flex justify-between text-green-600"><span>DashPass</span><span className="font-mono">−$4.99</span></div>
+          <div className="flex justify-between font-medium pt-0.5 border-t border-border/40"><span>Total</span><span className="font-mono">$30.45</span></div>
+        </div>
+        <CTA>Place order</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "22%", label: "DashPass banner" },
+      { n: 2, x: "50%", y: "45%", label: "Saved details" },
+      { n: 3, x: "50%", y: "80%", label: "Delivery waived" },
+    ],
+  })) as Builder,
+
+  // 15. Deliveroo — Clear fees breakdown
+  foodClearFees: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="text-[11px] font-medium">Order summary</div>
+        <div className="flex flex-col gap-1 text-[10px]">
+          {[
+            ["1× Tonkotsu Ramen","£14.00"],
+            ["2× Gyoza 6pc","£14.00"],
+            ["1× Matcha Soft","£5.00"],
+          ].map(([n,pr],i)=>(
+            <div key={i} className="flex justify-between py-0.5 border-b border-border/30">
+              <span className="truncate pr-2">{n}</span>
+              <span className="font-mono">{pr}</span>
+            </div>
+          ))}
+        </div>
+        <div className="text-[10px] font-medium mt-1">Fees</div>
+        <div className="rounded-md border border-border/60 p-2 text-[9.5px] space-y-1">
+          <div className="flex justify-between"><span>Subtotal</span><span className="font-mono">£33.00</span></div>
+          <div className="flex justify-between"><span>Delivery fee</span><span className="font-mono">£2.49</span></div>
+          <div className="flex justify-between"><span>Service fee <span className="text-foreground/45">ⓘ</span></span><span className="font-mono">£1.20</span></div>
+          <div className="flex justify-between"><span>Small order fee</span><span className="font-mono">£0.00</span></div>
+          <div className="flex justify-between text-foreground/60"><span>VAT included</span><span className="font-mono">£6.10</span></div>
+          <div className="flex justify-between pt-1 border-t border-border/40 font-medium text-[10.5px]"><span>Total</span><span className="font-mono">£36.69</span></div>
+        </div>
+        <div className="text-[8.5px] text-foreground/55">No hidden fees — what you see is what you pay.</div>
+        <CTA>Confirm & pay · £36.69</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "55%", label: "Itemized fees" },
+      { n: 2, x: "50%", y: "75%", label: "Total breakdown" },
+      { n: 3, x: "50%", y: "85%", label: "Transparency note" },
+    ],
+  })) as Builder,
+
+  // 16. Grubhub — Guest checkout
+  foodGuestCheckout: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="text-[11px] font-medium">Checkout as guest</div>
+        <div className="text-[9px] text-foreground/55">No account needed</div>
+        <div className="flex flex-col gap-1.5 flex-1">
+          {[
+            ["Name","Maya Chen"],
+            ["Email","maya@example.com"],
+            ["Phone","(415) 555-0142"],
+            ["Address","220 Mission St, SF"],
+          ].map(([l,v],i)=>(
+            <div key={i}>
+              <div className="text-[8.5px] text-foreground/55 uppercase tracking-wider">{l}</div>
+              <div className="h-7 rounded border border-border/60 px-2 grid items-center text-[10px]">{v}</div>
+            </div>
+          ))}
+          <div>
+            <div className="text-[8.5px] text-foreground/55 uppercase tracking-wider">Card</div>
+            <div className="h-7 rounded border border-border/60 px-2 grid items-center text-[10px]">•••• 4242 · 09/28</div>
+          </div>
+        </div>
+        <div className="flex items-center gap-1.5 text-[9px] text-foreground/60">
+          <div className="w-3 h-3 rounded border border-border/60" />
+          <span>Create account later (optional)</span>
+        </div>
+        <CTA>Place order · $18.00</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "15%", label: "Guest checkout" },
+      { n: 2, x: "50%", y: "55%", label: "Just basics" },
+      { n: 3, x: "50%", y: "94%", label: "No signup" },
+    ],
+  })) as Builder,
+
+  // 17. Uber Eats — Reorder shelf
+  foodReorderShelf: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="text-[11px] font-medium">Order again</div>
+        <div className="text-[9px] text-foreground/55">From your last 30 days</div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Joe's Pizza","Margherita + Coke","2 days ago","$17"],
+            ["Sushi Nori","Salmon set · 8 pc","1 week ago","$24"],
+            ["Pho 88","Beef pho large","2 weeks ago","$14"],
+            ["Green Bowl","Quinoa power bowl","3 weeks ago","$13"],
+          ].map(([r,o,when,pr],i)=>(
+            <div key={i} className="flex items-center gap-2 p-1.5 rounded-md border border-border/40">
+              <Photo seed={i} className="w-10 h-10 rounded-md shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] font-medium truncate">{r}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{o} · {when}</div>
+              </div>
+              <div className="text-[9px] px-2 py-1 rounded-full bg-foreground/10 shrink-0">Reorder · {pr}</div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "15%", label: "Order again shelf" },
+      { n: 2, x: "30%", y: "50%", label: "Past orders" },
+      { n: 3, x: "85%", y: "50%", label: "One-tap reorder" },
+    ],
+  })) as Builder,
+
+  // 18. DoorDash — Subscription perks (DashPass)
+  foodSubscriptionPerks: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="rounded-lg p-2 bg-gradient-to-br from-red-500/25 to-red-500/5 border border-red-500/30">
+          <div className="text-[8.5px] tracking-wider text-red-500 font-medium">DASHPASS</div>
+          <div className="font-display text-[15px]">$9.99/mo</div>
+          <div className="text-[9px] text-foreground/65">You'd save ~$32/mo at your usage</div>
+        </div>
+        <div className="text-[10px] font-medium">Member perks</div>
+        <div className="flex flex-col gap-1 flex-1">
+          {[
+            ["🚚","$0 delivery","On eligible orders $12+"],
+            ["%","Reduced service fees","Up to 5% lower"],
+            ["⭐","Member-only offers","Weekly drops"],
+            ["🛒","Grocery + retail","Same perks on Safeway, Petco"],
+            ["↩️","Cancel anytime","First 30 days free"],
+          ].map(([ic,t,d],i)=>(
+            <div key={i} className="flex items-start gap-2 py-1 border-b border-border/30">
+              <div className="w-6 h-6 rounded-full bg-foreground/8 grid place-items-center text-[11px] shrink-0">{ic}</div>
+              <div className="min-w-0">
+                <div className="text-[10px] font-medium truncate">{t}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{d}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <CTA>Start 30-day free trial</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "18%", label: "Subscription tier" },
+      { n: 2, x: "50%", y: "55%", label: "Member perks" },
+      { n: 3, x: "50%", y: "94%", label: "Free trial CTA" },
+    ],
+  })) as Builder,
+
+  // 19. Grubhub — Points / perks
+  foodPointsPerks: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="text-[11px] font-medium">Rewards</div>
+        <div className="rounded-lg border border-border/60 p-2">
+          <div className="flex items-baseline justify-between">
+            <div className="font-display text-[18px]">1,240 <span className="text-[9px] font-normal text-foreground/55">pts</span></div>
+            <div className="text-[8.5px] text-foreground/55">260 to next</div>
+          </div>
+          <div className="h-1.5 mt-1 rounded-full bg-foreground/10 overflow-hidden">
+            <div className="h-full w-[82%] bg-primary rounded-full" />
+          </div>
+          <div className="text-[8.5px] text-foreground/55 mt-1">Earn 10 pts per $1</div>
+        </div>
+        <div className="text-[10px] font-medium">Redeem</div>
+        <div className="flex flex-col gap-1 flex-1">
+          {[
+            ["Free side","500 pts","Available now"],
+            ["Free drink","800 pts","Available now"],
+            ["Free entrée","1,500 pts","260 pts away"],
+            ["Free delivery x5","2,000 pts","Locked"],
+          ].map(([t,p,s],i)=>(
+            <div key={i} className="flex items-center justify-between py-1 border-b border-border/30">
+              <div className="min-w-0">
+                <div className="text-[10px] font-medium truncate">{t}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{s}</div>
+              </div>
+              <div className="text-[9px] font-mono">{p}</div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "25%", label: "Points balance" },
+      { n: 2, x: "50%", y: "38%", label: "Progress to free item" },
+      { n: 3, x: "50%", y: "75%", label: "Rewards ladder" },
+    ],
+  })) as Builder,
+
+  // 20. Deliveroo — Favorites
+  foodFavorites: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <FoodBar />
+        <div className="flex items-center justify-between">
+          <div className="text-[11px] font-medium">Favourites</div>
+          <div className="text-[9px] text-foreground/55">12 saved</div>
+        </div>
+        <div className="grid grid-cols-2 gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Ramen Ya","Japanese","20m"],
+            ["Bistro Lyon","French","30m"],
+            ["Pad See Ew","Thai","25m"],
+            ["Curry House","Indian","35m"],
+            ["Sushi Nori","Sushi","25m"],
+            ["Green Bowl","Vegan","15m"],
+          ].map(([n,c,t],i)=>(
+            <div key={i} className="rounded-lg overflow-hidden border border-border/40 flex flex-col">
+              <Photo seed={i} className="flex-1 min-h-[36px] flex items-start justify-end p-1">
+                <span className="text-[11px]">♥</span>
+              </Photo>
+              <div className="px-1.5 py-1">
+                <div className="text-[9.5px] font-medium truncate">{n}</div>
+                <div className="text-[8px] text-foreground/55 truncate">{c} · {t}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "12%", label: "Saved favourites" },
+      { n: 2, x: "80%", y: "35%", label: "Heart marker" },
+      { n: 3, x: "50%", y: "65%", label: "Go-to restaurants" },
+    ],
+  })) as Builder,
+});
+
 export function renderScreen(screen: string | undefined, ctx: RenderCtx, preview?: Preview): RenderedScreen {
   const p = safePreview(preview, ctx);
   const b = (screen && screens[screen]) || fallback;
