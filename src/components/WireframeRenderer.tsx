@@ -6086,6 +6086,724 @@ Object.assign(screens, {
   })) as Builder,
 });
 
+// ============================================================
+// MOBILITY — 20 brand-evocative screens
+// ============================================================
+const MobBar = ({ accent = "text-foreground/50" }: { accent?: string }) => (
+  <div className={`flex items-center justify-between text-[9px] font-mono ${accent} -mt-1`}>
+    <span>9:41</span>
+    <span className="tracking-[0.18em]">●●●</span>
+    <span>100%</span>
+  </div>
+);
+
+const MapBg = ({ tint = "from-emerald-500/15 to-sky-500/10" }: { tint?: string }) => (
+  <div className={`absolute inset-0 bg-gradient-to-br ${tint}`}>
+    <svg className="absolute inset-0 w-full h-full opacity-40" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <path d="M0 30 L40 35 L55 60 L100 70" stroke="currentColor" strokeWidth="0.6" fill="none" />
+      <path d="M20 0 L25 50 L60 55 L70 100" stroke="currentColor" strokeWidth="0.4" fill="none" />
+      <path d="M0 80 L100 20" stroke="currentColor" strokeWidth="0.3" fill="none" strokeDasharray="2 2" />
+    </svg>
+  </div>
+);
+
+Object.assign(screens, {
+  // 1. Uber — Predicted places
+  mobUberPredicted: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="font-display text-[14px]">Where to?</div>
+        <div className="h-8 rounded-md bg-foreground/[0.06] border border-border/60 px-2 grid items-center text-[10px] text-foreground/55">📍 Current location</div>
+        <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Suggested · Tue 8:42 AM</div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["🏠","Home","221 Baker St · usual 8:50 AM","12 min"],
+            ["💼","Work","Tech Park · usual weekday","18 min"],
+            ["🛫","SFO Airport","Recent","32 min"],
+            ["☕","Blue Bottle","Saturdays","6 min"],
+          ].map(([e,t,s,m],i)=>(
+            <div key={i} className={`flex items-center gap-2 p-1.5 rounded-md ${i<2?"bg-foreground/[0.05]":""}`}>
+              <div className="w-7 h-7 rounded-full bg-foreground/10 grid place-items-center text-[11px]">{e}</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[10.5px] font-medium truncate">{t}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{s}</div>
+              </div>
+              <div className="text-[9px] text-foreground/55">{m}</div>
+            </div>
+          ))}
+        </div>
+        <CTA>Confirm pickup</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Time-aware suggestion" },
+      { n: 2, x: "50%", y: "42%", label: "Home pinned top" },
+      { n: 3, x: "50%", y: "52%", label: "Work pinned next" },
+    ],
+  })) as Builder,
+
+  // 2. Lyft — Saved + recent
+  mobLyftSaved: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="font-display text-[14px] text-[#FF00BF]">Where to?</div>
+        <div className="h-8 rounded-full bg-foreground/[0.06] border border-border/60 px-3 grid items-center text-[10px] text-foreground/55">Search address</div>
+        <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Saved</div>
+        <div className="flex flex-col gap-1">
+          {[["🏠","Home","221 Baker St"],["💼","Work","Tech Park"],["⭐","Mom's","42 Elm Ave"]].map(([e,t,s],i)=>(
+            <div key={i} className="flex items-center gap-2 py-1">
+              <div className="w-6 h-6 rounded-full bg-[#FF00BF]/15 text-[#FF00BF] grid place-items-center text-[10px]">{e}</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] font-medium truncate">{t}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{s}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[8.5px] uppercase tracking-wider text-foreground/55 mt-1">Recent</div>
+        <div className="flex flex-col gap-1 flex-1 overflow-hidden">
+          {[["🕐","Trader Joe's","Sun 2:14 PM"],["🕐","SFO Term 2","Fri"],["🕐","The Fillmore","Last week"]].map(([e,t,s],i)=>(
+            <div key={i} className="flex items-center gap-2 py-1">
+              <div className="w-6 h-6 rounded-full bg-foreground/10 grid place-items-center text-[10px]">{e}</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] truncate">{t}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{s}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Saved places" },
+      { n: 2, x: "50%", y: "62%", label: "Recent trips" },
+      { n: 3, x: "12%", y: "35%", label: "Friendly icons" },
+    ],
+  })) as Builder,
+
+  // 3. Citymapper — Multimodal plan
+  mobCitymapperPlan: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="flex items-center gap-1.5">
+          <div className="w-5 h-5 rounded bg-[#0099CC] grid place-items-center text-white text-[10px]">C</div>
+          <div className="text-[11px] font-medium">Mission St → SFO</div>
+        </div>
+        <div className="text-[8.5px] text-foreground/55">Compare routes · Tue 8:42</div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["🚇","BART + walk","38 min","$4.40","Fastest transit"],
+            ["🚲","Bike + train","44 min","$2.95","Greenest"],
+            ["🚗","Uber/Lyft","26 min","$24-31","Fastest"],
+            ["🚶","Walk + bus","58 min","$2.50","Cheapest"],
+            ["🛴","Lime + BART","41 min","$6.20","Mixed"],
+          ].map(([e,t,m,c,tag],i)=>(
+            <div key={i} className={`flex items-center gap-2 p-1.5 rounded-md border ${i===2?"border-[#0099CC] bg-[#0099CC]/8":"border-border/60"}`}>
+              <div className="w-8 h-8 rounded-md bg-foreground/8 grid place-items-center text-[12px]">{e}</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] font-medium truncate">{t}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{tag}</div>
+              </div>
+              <div className="text-right">
+                <div className="text-[10px] font-mono">{m}</div>
+                <div className="text-[8.5px] text-foreground/55">{c}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <CTA>Go with Uber · 26 min</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "Trip planner" },
+      { n: 2, x: "50%", y: "50%", label: "Modes compared" },
+      { n: 3, x: "85%", y: "50%", label: "Time & cost" },
+    ],
+  })) as Builder,
+
+  // 4. Bolt — Quick entry
+  mobBoltQuick: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="flex items-center gap-1.5">
+          <div className="w-5 h-5 rounded bg-[#34D186] grid place-items-center text-white text-[11px] font-bold">⚡</div>
+          <div className="text-[11px] font-medium">Bolt</div>
+        </div>
+        <div className="flex-1 grid place-items-center">
+          <div className="w-full space-y-2">
+            <div className="font-display text-[18px] text-center">Where to?</div>
+            <div className="h-11 rounded-xl bg-foreground/[0.06] border-2 border-[#34D186]/60 px-3 grid items-center text-[12px] text-foreground/55">📍 Enter destination</div>
+            <div className="flex gap-1.5 justify-center">
+              <Chip>🏠 Home</Chip>
+              <Chip>💼 Work</Chip>
+            </div>
+          </div>
+        </div>
+        <CTA>Find a ride</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "40%", label: "One big input" },
+      { n: 2, x: "50%", y: "55%", label: "Minimal shortcuts" },
+      { n: 3, x: "50%", y: "88%", label: "Single CTA" },
+    ],
+  })) as Builder,
+
+  // 5. Uber — Tiers price + ETA
+  mobUberTiers: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="relative h-16 rounded-md overflow-hidden border border-border/60">
+          <MapBg tint="from-foreground/15 to-foreground/5" />
+          <div className="absolute inset-x-2 bottom-1 text-[8.5px] text-foreground/60">Mission St → SFO · 18 mi</div>
+        </div>
+        <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Choose a ride</div>
+        <div className="flex flex-col gap-1 flex-1 overflow-hidden">
+          {[
+            ["UberX","4 seats","3 min","$24.18"],
+            ["Comfort","Newer cars","5 min","$31.40"],
+            ["UberXL","6 seats","6 min","$38.90"],
+            ["Black","Luxury","8 min","$58.25"],
+          ].map(([t,s,eta,p],i)=>(
+            <div key={i} className={`flex items-center gap-2 p-1.5 rounded-md ${i===0?"bg-foreground/[0.06] border border-foreground/30":""}`}>
+              <div className="w-9 h-7 rounded bg-foreground/10 grid place-items-center text-[12px]">🚗</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] font-medium truncate">{t} · {eta}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{s}</div>
+              </div>
+              <div className="text-[11px] font-mono font-semibold">{p}</div>
+            </div>
+          ))}
+        </div>
+        <CTA>Confirm UberX</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "40%", label: "Tier list" },
+      { n: 2, x: "85%", y: "50%", label: "Price each" },
+      { n: 3, x: "55%", y: "50%", label: "ETA inline" },
+    ],
+  })) as Builder,
+
+  // 6. Bolt — Cheapest first
+  mobBoltCheapest: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="flex items-center justify-between">
+          <div className="text-[11px] font-medium">Choose a ride</div>
+          <Chip accent>↓ Cheapest</Chip>
+        </div>
+        <div className="flex flex-col gap-1 flex-1 overflow-hidden">
+          {[
+            ["Bolt","4 min","€6.20","Cheapest"],
+            ["Economy","6 min","€7.40",""],
+            ["XL","9 min","€11.80",""],
+            ["Comfort","5 min","€12.50",""],
+          ].map(([t,eta,p,tag],i)=>(
+            <div key={i} className={`flex items-center gap-2 p-1.5 rounded-md border ${i===0?"border-[#34D186] bg-[#34D186]/8":"border-border/60"}`}>
+              <div className="w-9 h-7 rounded bg-foreground/10 grid place-items-center text-[12px]">🚗</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] font-medium truncate">{t}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{eta} · {tag}</div>
+              </div>
+              <div className={`text-[12px] font-mono font-bold ${i===0?"text-[#34D186]":""}`}>{p}</div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[8.5px] text-center text-foreground/55">Save €1.20 vs. nearest competitor</div>
+        <CTA>Book Bolt · €6.20</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "82%", y: "15%", label: "Sorted by price" },
+      { n: 2, x: "85%", y: "32%", label: "Lowest first" },
+      { n: 3, x: "50%", y: "82%", label: "Savings nudge" },
+    ],
+  })) as Builder,
+
+  // 7. Lyft — Friendly tiers
+  mobLyftTiers: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="text-[11px] font-medium text-[#FF00BF]">Choose your Lyft</div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Lyft","Everyday ride","3 min","$22","🚗"],
+            ["Lyft XL","Up to 6 friends","6 min","$36","🚙"],
+            ["Lux","Treat yourself","8 min","$54","✨"],
+          ].map(([t,s,eta,p,e],i)=>(
+            <div key={i} className={`p-2 rounded-xl border ${i===0?"border-[#FF00BF] bg-[#FF00BF]/8":"border-border/60"}`}>
+              <div className="flex items-center gap-2">
+                <div className="w-9 h-9 rounded-lg bg-foreground/8 grid place-items-center text-[16px]">{e}</div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-[11px] font-semibold truncate">{t}</div>
+                  <div className="text-[8.5px] text-foreground/60 truncate">{s} · {eta} away</div>
+                </div>
+                <div className="text-[13px] font-display">{p}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <CTA>Request Lyft</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "12%", label: "Warm tone" },
+      { n: 2, x: "50%", y: "40%", label: "Card tiers" },
+      { n: 3, x: "50%", y: "60%", label: "Personality copy" },
+    ],
+  })) as Builder,
+
+  // 8. Citymapper — Compare modes
+  mobCitymapperCompare: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="text-[11px] font-medium">Mission → SFO</div>
+        <div className="grid grid-cols-3 gap-1.5">
+          {[
+            ["🚗","Ride","26m","$24","#0099CC"],
+            ["🚇","Transit","38m","$4.40","#22C55E"],
+            ["🚲","Bike","44m","$2.95","#F59E0B"],
+          ].map(([e,t,m,c,col],i)=>(
+            <div key={i} className={`p-1.5 rounded-md border ${i===0?"border-2":"border"} `} style={{borderColor: i===0 ? col as string : undefined}}>
+              <div className="text-[14px] text-center">{e}</div>
+              <div className="text-[9px] font-medium text-center">{t}</div>
+              <div className="text-[10px] font-mono text-center" style={{color: col as string}}>{m}</div>
+              <div className="text-[8.5px] text-foreground/55 text-center">{c}</div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Step-by-step (Ride)</div>
+        <div className="flex flex-col gap-1 flex-1 overflow-hidden text-[9.5px]">
+          <div>🚶 Walk 2 min to pickup</div>
+          <div>🚗 Uber 22 min via US-101</div>
+          <div>🚶 Walk 2 min to Term 2</div>
+        </div>
+        <CTA>Compare in detail</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "20%", y: "30%", label: "Ride mode" },
+      { n: 2, x: "50%", y: "30%", label: "Transit mode" },
+      { n: 3, x: "80%", y: "30%", label: "Bike mode" },
+    ],
+  })) as Builder,
+
+  // 9. Lyft — Warm match + ETA
+  mobLyftMatch: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="relative h-24 rounded-md overflow-hidden border border-border/60 text-[#FF00BF]">
+          <MapBg tint="from-[#FF00BF]/15 to-foreground/5" />
+          <div className="absolute top-2 left-2 w-3 h-3 rounded-full bg-[#FF00BF]" />
+          <div className="absolute bottom-3 right-3 w-4 h-4 rounded-full bg-foreground grid place-items-center text-[9px] text-background">🚗</div>
+        </div>
+        <div className="rounded-xl border border-[#FF00BF]/40 bg-[#FF00BF]/8 p-2 flex items-center gap-2">
+          <Photo seed={2} className="w-10 h-10 rounded-full" />
+          <div className="flex-1 min-w-0">
+            <div className="text-[11px] font-semibold truncate">Maria is on the way!</div>
+            <div className="text-[8.5px] text-foreground/60 truncate">★ 4.97 · 1,204 rides · Toyota Prius · 6KCD382</div>
+          </div>
+          <div className="text-right">
+            <div className="text-[14px] font-display text-[#FF00BF]">3</div>
+            <div className="text-[7.5px] text-foreground/55">min</div>
+          </div>
+        </div>
+        <div className="grid grid-cols-3 gap-1.5">
+          <Chip>💬 Message</Chip>
+          <Chip>📞 Call</Chip>
+          <Chip>📍 Share</Chip>
+        </div>
+        <div className="flex-1" />
+        <CTA>Say hi to Maria</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "45%", label: "Friendly driver card" },
+      { n: 2, x: "85%", y: "45%", label: "ETA badge" },
+      { n: 3, x: "50%", y: "85%", label: "Warm CTA" },
+    ],
+  })) as Builder,
+
+  // 10. Uber — Live map track
+  mobUberLiveMap: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="relative flex-1 rounded-md overflow-hidden border border-border/60 text-foreground/70">
+          <MapBg tint="from-foreground/15 to-foreground/5" />
+          <div className="absolute top-3 left-3 w-3 h-3 rounded-full bg-blue-500 ring-4 ring-blue-500/20" />
+          <div className="absolute bottom-6 right-6 w-5 h-5 rounded-md bg-foreground grid place-items-center text-[10px] text-background rotate-12">🚗</div>
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M10 12 Q40 30 75 78" stroke="currentColor" strokeWidth="1.2" fill="none" strokeDasharray="3 2" />
+          </svg>
+          <div className="absolute top-2 right-2 bg-background/90 rounded-md px-1.5 py-0.5 text-[9px] font-mono">ETA 3 min</div>
+        </div>
+        <div className="rounded-md bg-foreground text-background p-2 flex items-center gap-2">
+          <Photo seed={1} className="w-9 h-9 rounded-full shrink-0" />
+          <div className="flex-1 min-w-0">
+            <div className="text-[11px] font-semibold truncate">Sam · Toyota Camry</div>
+            <div className="text-[8.5px] opacity-70 truncate">★ 4.92 · Plate 7ABC123 · Silver</div>
+          </div>
+          <div className="text-[11px] font-mono">0.4 mi</div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "40%", label: "Live map" },
+      { n: 2, x: "78%", y: "55%", label: "Car approaching" },
+      { n: 3, x: "78%", y: "20%", label: "ETA badge" },
+    ],
+  })) as Builder,
+
+  // 11. Bolt — Basic match
+  mobBoltMatch: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="relative h-20 rounded-md overflow-hidden border border-border/60 text-[#34D186]">
+          <MapBg tint="from-[#34D186]/15 to-foreground/5" />
+          <div className="absolute bottom-3 right-3 w-4 h-4 rounded bg-foreground grid place-items-center text-[9px] text-background">🚗</div>
+        </div>
+        <div className="rounded-md border border-border/60 p-2">
+          <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Driver on the way</div>
+          <div className="flex items-center justify-between mt-1">
+            <div>
+              <div className="text-[11px] font-semibold">Andrei P.</div>
+              <div className="text-[8.5px] text-foreground/55">VW Passat · Black</div>
+            </div>
+            <div className="text-right">
+              <div className="text-[14px] font-display text-[#34D186]">4 min</div>
+            </div>
+          </div>
+          <div className="mt-1.5 inline-block px-2 py-0.5 bg-foreground text-background text-[11px] font-mono tracking-wider rounded">AB 123 CD</div>
+        </div>
+        <div className="flex-1" />
+        <div className="grid grid-cols-2 gap-2">
+          <Chip>📞 Call</Chip>
+          <Chip>✕ Cancel</Chip>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "55%", label: "Plate · ETA" },
+      { n: 2, x: "85%", y: "50%", label: "Just the basics" },
+      { n: 3, x: "50%", y: "88%", label: "Two actions" },
+    ],
+  })) as Builder,
+
+  // 12. Lime — Unlock nearby
+  mobLimeUnlock: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="relative flex-1 rounded-md overflow-hidden border border-border/60 text-[#00DD00]">
+          <MapBg tint="from-[#00DD00]/15 to-foreground/5" />
+          {[["20%","30%","🛴"],["55%","45%","🚲"],["35%","65%","🛴"],["72%","25%","🛴"],["80%","70%","🚲"]].map(([x,y,e],i)=>(
+            <div key={i} className="absolute -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-[#00DD00] text-white text-[11px] grid place-items-center shadow" style={{left:x as string, top:y as string}}>{e}</div>
+          ))}
+          <div className="absolute bottom-2 left-2 bg-background/90 rounded px-1.5 py-0.5 text-[8.5px] font-mono">5 nearby</div>
+        </div>
+        <div className="rounded-md border border-border/60 p-2 flex items-center gap-2">
+          <div className="w-8 h-8 rounded bg-[#00DD00]/15 text-[#00DD00] grid place-items-center text-[14px]">🛴</div>
+          <div className="flex-1 min-w-0">
+            <div className="text-[10.5px] font-medium">Scooter · 42m away</div>
+            <div className="text-[8.5px] text-foreground/55">Battery 78% · $1 to unlock</div>
+          </div>
+        </div>
+        <CTA>Scan to unlock</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "35%", label: "Nearby vehicles" },
+      { n: 2, x: "50%", y: "72%", label: "Selected vehicle" },
+      { n: 3, x: "50%", y: "92%", label: "Unlock action" },
+    ],
+  })) as Builder,
+
+  // 13. Uber — Share + safety kit
+  mobUberSafety: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="relative h-24 rounded-md overflow-hidden border border-border/60 text-foreground/70">
+          <MapBg tint="from-foreground/15 to-foreground/5" />
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M15 80 Q40 60 85 20" stroke="currentColor" strokeWidth="1.5" fill="none" />
+          </svg>
+          <div className="absolute top-2 right-2 bg-background/90 rounded-md px-1.5 py-0.5 text-[9px] font-mono">14 min to SFO</div>
+        </div>
+        <div className="grid grid-cols-2 gap-1.5">
+          <div className="rounded-md border border-border/60 p-1.5 flex items-center gap-1.5">
+            <div className="w-7 h-7 rounded-full bg-blue-500/15 text-blue-600 grid place-items-center text-[14px]">📍</div>
+            <div className="min-w-0">
+              <div className="text-[10px] font-medium">Share trip</div>
+              <div className="text-[8px] text-foreground/55 truncate">Live to contacts</div>
+            </div>
+          </div>
+          <div className="rounded-md border border-blue-500 bg-blue-500/8 p-1.5 flex items-center gap-1.5">
+            <div className="w-7 h-7 rounded-full bg-blue-600 text-white grid place-items-center text-[14px]">🛡️</div>
+            <div className="min-w-0">
+              <div className="text-[10px] font-semibold text-blue-700">Safety</div>
+              <div className="text-[8px] text-blue-600 truncate">911 · RideCheck</div>
+            </div>
+          </div>
+        </div>
+        <div className="rounded-md border border-border/60 p-2 flex-1">
+          <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Safety toolkit</div>
+          <div className="text-[9.5px] mt-1">📞 Emergency assistance · 🎙 Audio recording · 👮 Share with police</div>
+        </div>
+        <CTA>End trip</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "25%", y: "48%", label: "Share trip" },
+      { n: 2, x: "75%", y: "48%", label: "Safety toolkit" },
+      { n: 3, x: "50%", y: "72%", label: "Toolkit actions" },
+    ],
+  })) as Builder,
+
+  // 14. Lyft — Trip share
+  mobLyftShare: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="relative h-28 rounded-md overflow-hidden border border-border/60 text-[#FF00BF]">
+          <MapBg tint="from-[#FF00BF]/15 to-foreground/5" />
+          <div className="absolute top-3 left-3 w-3 h-3 rounded-full bg-[#FF00BF]" />
+          <div className="absolute bottom-3 right-3 w-3 h-3 rounded-full bg-foreground" />
+          <div className="absolute top-2 right-2 bg-background/90 rounded-md px-1.5 py-0.5 text-[9px] font-mono text-foreground">12 min left</div>
+        </div>
+        <div className="rounded-xl border border-[#FF00BF]/40 bg-[#FF00BF]/8 p-2">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-full bg-[#FF00BF] text-white grid place-items-center text-[14px]">💗</div>
+            <div className="flex-1 min-w-0">
+              <div className="text-[10.5px] font-semibold">Let someone know</div>
+              <div className="text-[8.5px] text-foreground/60">They'll see your live location until you arrive.</div>
+            </div>
+          </div>
+          <div className="flex gap-1 mt-1.5">
+            <Chip>Mom</Chip>
+            <Chip>Sam</Chip>
+            <Chip>+ Add</Chip>
+          </div>
+        </div>
+        <div className="flex-1" />
+        <CTA>Share status</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Trip in progress" },
+      { n: 2, x: "50%", y: "60%", label: "Share prompt" },
+      { n: 3, x: "50%", y: "90%", label: "Caring CTA" },
+    ],
+  })) as Builder,
+
+  // 15. Citymapper — Step navigation
+  mobCitymapperSteps: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="rounded-md bg-[#0099CC] text-white p-2">
+          <div className="text-[8.5px] uppercase tracking-wider opacity-80">Next</div>
+          <div className="text-[14px] font-semibold leading-tight">Board J Church at Powell</div>
+          <div className="text-[9.5px] opacity-90">In 3 min · Platform 2</div>
+        </div>
+        <div className="flex flex-col flex-1 overflow-hidden">
+          {[
+            ["🚶","Walk to Powell St","4 min","done"],
+            ["🚇","J Church · 6 stops","14 min","now"],
+            ["🚶","Walk to bus stop","2 min",""],
+            ["🚌","8 Bayshore · 4 stops","11 min",""],
+            ["🚶","Walk to gate","3 min",""],
+          ].map(([e,t,d,st],i)=>(
+            <div key={i} className="flex gap-2 items-start py-1">
+              <div className={`w-6 h-6 rounded-full grid place-items-center text-[12px] shrink-0 ${st==="done"?"bg-foreground/15 text-foreground/40":st==="now"?"bg-[#0099CC] text-white":"bg-foreground/8"}`}>{e}</div>
+              <div className="flex-1 min-w-0 border-b border-border/40 pb-1">
+                <div className={`text-[10px] truncate ${st==="done"?"text-foreground/40 line-through":"font-medium"}`}>{t}</div>
+                <div className="text-[8.5px] text-foreground/55">{d}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "18%", label: "Next step banner" },
+      { n: 2, x: "12%", y: "55%", label: "Step-by-step" },
+      { n: 3, x: "12%", y: "45%", label: "Mixed modes" },
+    ],
+  })) as Builder,
+
+  // 16. Lime — Ride timer
+  mobLimeTimer: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="relative h-20 rounded-md overflow-hidden border border-border/60 text-[#00DD00]">
+          <MapBg tint="from-[#00DD00]/20 to-foreground/5" />
+          <div className="absolute bottom-3 left-3 w-5 h-5 rounded-full bg-[#00DD00] text-white grid place-items-center text-[12px]">🛴</div>
+        </div>
+        <div className="rounded-xl border-2 border-[#00DD00]/40 bg-[#00DD00]/8 p-3 text-center">
+          <div className="text-[8.5px] uppercase tracking-wider text-foreground/60">Ride in progress</div>
+          <div className="font-display text-[28px] text-[#00DD00] leading-none mt-1">08:42</div>
+          <div className="text-[11px] font-mono mt-1">$3.65 so far</div>
+          <div className="text-[8.5px] text-foreground/55">$1.00 unlock + $0.32/min · Battery 64%</div>
+        </div>
+        <div className="flex-1" />
+        <div className="h-12 rounded-xl bg-foreground text-background grid place-items-center text-[12px] font-semibold">End ride</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "45%", label: "Live timer" },
+      { n: 2, x: "50%", y: "58%", label: "Cost so far" },
+      { n: 3, x: "50%", y: "90%", label: "End ride" },
+    ],
+  })) as Builder,
+
+  // 17. Uber — Invisible auto-charge
+  mobUberAutoCharge: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="flex-1 grid place-items-center">
+          <div className="text-center space-y-2">
+            <div className="w-14 h-14 rounded-full bg-emerald-500/15 text-emerald-600 grid place-items-center text-[28px] mx-auto">✓</div>
+            <div className="font-display text-[16px]">You've arrived</div>
+            <div className="text-[10px] text-foreground/60">Charged $24.18 to Visa •• 4242</div>
+          </div>
+        </div>
+        <div className="rounded-md border border-border/60 p-2 space-y-1 text-[9.5px]">
+          <div className="flex justify-between"><span className="text-foreground/55">Fare</span><span className="font-mono">$21.40</span></div>
+          <div className="flex justify-between"><span className="text-foreground/55">Booking + tolls</span><span className="font-mono">$2.78</span></div>
+          <div className="flex justify-between font-semibold border-t border-border/60 pt-1"><span>Total</span><span className="font-mono">$24.18</span></div>
+          <div className="text-[8.5px] text-foreground/55">Receipt sent to sam@email.com</div>
+        </div>
+        <div className="grid grid-cols-2 gap-2">
+          <Chip>Rate driver</Chip>
+          <Chip>Help</Chip>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "32%", label: "Auto-charged" },
+      { n: 2, x: "50%", y: "70%", label: "Instant receipt" },
+      { n: 3, x: "50%", y: "92%", label: "No checkout" },
+    ],
+  })) as Builder,
+
+  // 18. Lyft — Auto + tip prompt
+  mobLyftTip: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="text-center pt-1">
+          <Photo seed={2} className="w-12 h-12 rounded-full mx-auto" />
+          <div className="text-[11px] font-semibold mt-1">How was your ride with Maria?</div>
+          <div className="text-[14px] mt-1">★ ★ ★ ★ ★</div>
+        </div>
+        <div className="rounded-xl border border-[#FF00BF]/40 bg-[#FF00BF]/8 p-2">
+          <div className="text-[10px] font-semibold text-center mb-1.5">Add a tip for Maria</div>
+          <div className="grid grid-cols-4 gap-1">
+            {["$2","$3","$5","Other"].map((t,i)=>(
+              <div key={i} className={`h-9 rounded-md grid place-items-center text-[11px] font-medium ${i===1?"bg-[#FF00BF] text-white":"bg-background border border-border/60"}`}>{t}</div>
+            ))}
+          </div>
+          <div className="text-[8.5px] text-foreground/55 text-center mt-1">100% goes to your driver</div>
+        </div>
+        <div className="rounded-md border border-border/60 p-2 text-[9.5px] flex justify-between">
+          <span className="text-foreground/55">Charged to Apple Pay</span>
+          <span className="font-mono font-semibold">$22.40</span>
+        </div>
+        <div className="flex-1" />
+        <CTA>Submit · $25.40</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "Rate driver" },
+      { n: 2, x: "50%", y: "50%", label: "Tip prompt" },
+      { n: 3, x: "50%", y: "70%", label: "Auto-charged" },
+    ],
+  })) as Builder,
+
+  // 19. Bolt — Cash / card
+  mobBoltCash: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="text-[11px] font-medium">Payment method</div>
+        <div className="text-[8.5px] text-foreground/55">Estimated fare €6.20</div>
+        <div className="flex flex-col gap-1.5 flex-1">
+          <div className="rounded-xl border-2 border-[#34D186] bg-[#34D186]/8 p-2.5 flex items-center gap-2">
+            <div className="w-9 h-9 rounded-full bg-[#34D186] text-white grid place-items-center text-[16px]">💵</div>
+            <div className="flex-1 min-w-0">
+              <div className="text-[11px] font-semibold">Cash</div>
+              <div className="text-[8.5px] text-foreground/60">Pay driver in person · Most popular</div>
+            </div>
+            <div className="w-4 h-4 rounded-full border-2 border-[#34D186] bg-[#34D186] grid place-items-center text-white text-[9px]">✓</div>
+          </div>
+          <div className="rounded-xl border border-border/60 p-2.5 flex items-center gap-2">
+            <div className="w-9 h-9 rounded-full bg-foreground/8 grid place-items-center text-[16px]">💳</div>
+            <div className="flex-1 min-w-0">
+              <div className="text-[11px] font-semibold">Visa •• 8821</div>
+              <div className="text-[8.5px] text-foreground/60">Auto-charge after ride</div>
+            </div>
+            <div className="w-4 h-4 rounded-full border-2 border-border" />
+          </div>
+          <div className="rounded-xl border border-dashed border-border/60 p-2 text-[10px] text-foreground/55 text-center">+ Add new card</div>
+        </div>
+        <CTA>Confirm · Cash €6.20</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "32%", label: "Cash option" },
+      { n: 2, x: "50%", y: "55%", label: "Card option" },
+      { n: 3, x: "50%", y: "92%", label: "Confirm" },
+    ],
+  })) as Builder,
+
+  // 20. Lime — Per-minute receipt
+  mobLimeReceipt: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <MobBar />
+        <div className="text-center">
+          <div className="w-10 h-10 rounded-full bg-[#00DD00]/15 text-[#00DD00] grid place-items-center text-[20px] mx-auto">✓</div>
+          <div className="font-display text-[14px] mt-1">Thanks for riding Lime</div>
+          <div className="text-[8.5px] text-foreground/55">8 min 42 sec · 1.2 mi</div>
+        </div>
+        <div className="rounded-md border border-border/60 p-2 flex-1 overflow-hidden">
+          <div className="text-[8.5px] uppercase tracking-wider text-foreground/55 mb-1">Receipt</div>
+          <div className="space-y-0.5 text-[9.5px]">
+            <div className="flex justify-between"><span>Unlock fee</span><span className="font-mono">$1.00</span></div>
+            <div className="flex justify-between"><span>8 min × $0.32</span><span className="font-mono">$2.56</span></div>
+            <div className="flex justify-between text-foreground/55"><span className="pl-2">min 1-3</span><span className="font-mono">$0.96</span></div>
+            <div className="flex justify-between text-foreground/55"><span className="pl-2">min 4-6</span><span className="font-mono">$0.96</span></div>
+            <div className="flex justify-between text-foreground/55"><span className="pl-2">min 7-8</span><span className="font-mono">$0.64</span></div>
+            <div className="flex justify-between"><span>Tax</span><span className="font-mono">$0.09</span></div>
+            <div className="flex justify-between font-semibold border-t border-border/60 pt-1 mt-1"><span>Total</span><span className="font-mono text-[#00DD00]">$3.65</span></div>
+          </div>
+        </div>
+        <CTA>Email receipt</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Trip summary" },
+      { n: 2, x: "50%", y: "55%", label: "Per-minute breakdown" },
+      { n: 3, x: "85%", y: "72%", label: "Running total" },
+    ],
+  })) as Builder,
+});
+
 export function renderScreen(screen: string | undefined, ctx: RenderCtx, preview?: Preview): RenderedScreen {
   const p = safePreview(preview, ctx);
   const b = (screen && screens[screen]) || fallback;
