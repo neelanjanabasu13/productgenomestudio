@@ -1340,6 +1340,40 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
+  socialInterestGraph: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="flex-1 flex gap-2">
+          <div className="flex-1 rounded-xl bg-gradient-to-b from-foreground/20 to-foreground/50 relative overflow-hidden">
+            <div className="absolute top-2 left-2 right-2 flex items-center gap-2">
+              <div className="w-6 h-6 rounded-full bg-background/80 shrink-0" />
+              <div className="text-[10px] font-medium text-background truncate">@maya.makes</div>
+              <span className="ml-auto text-[9px] font-mono text-background/80 px-1.5 py-0.5 rounded-full bg-background/20">Follow</span>
+            </div>
+            <div className="absolute bottom-3 left-3 right-12">
+              <div className="text-[11px] font-medium text-background leading-snug line-clamp-2">three minutes that change how you think about color theory</div>
+              <div className="text-[10px] text-background/80 mt-0.5 truncate">♪ original sound — maya.makes</div>
+            </div>
+          </div>
+          <div className="flex flex-col gap-3 items-center justify-end pb-3">
+            {[["♥", "24.1k"], ["💬", "812"], ["↗", "Share"], ["⋯", ""]].map(([i, n], idx) => (
+              <div key={idx} className="flex flex-col items-center">
+                <div className="w-9 h-9 rounded-full bg-foreground/15 grid place-items-center text-sm">{i}</div>
+                {n && <div className="text-[9px] font-mono text-foreground/70 mt-0.5 max-w-[44px] truncate">{n}</div>}
+              </div>
+            ))}
+          </div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "40%", y: "50%", label: "Full-bleed video" },
+      { n: 2, x: "85%", y: "40%", label: "Side actions" },
+      { n: 3, x: "40%", y: "85%", label: "Caption + sound" },
+    ],
+  })) as Builder,
+
   socialFollowSuggest: ((_ctx, _p) => ({
     node: (
       <Frame>
