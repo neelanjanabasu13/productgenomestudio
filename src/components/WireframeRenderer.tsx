@@ -755,19 +755,25 @@ const screens: Record<string, Builder> = {
     node: (
       <Frame>
         <StatusBar title={title(p)} />
-        <div className="font-display text-[16px] leading-tight truncate">{p.header}</div>
-        <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 truncate">{p.metric}</div>
+        <div className="flex items-baseline justify-between gap-2">
+          <div className="font-display text-[16px] leading-tight truncate">Board</div>
+          <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 truncate shrink-0">{p.metric}</div>
+        </div>
         <div className="grid grid-cols-3 gap-1.5 flex-1">
           {[
-            { col: p.header, items: [p.rows[0], p.rows[1]] },
-            { col: p.metric, items: [p.rows[2]] },
-            { col: p.cta, items: [p.rows[3]] },
+            { col: "Todo", items: [p.rows[0], p.rows[1]] },
+            { col: "In progress", items: [p.rows[2]] },
+            { col: "Done", items: [p.rows[3]] },
           ].map((col, i) => (
             <div key={i} className="space-y-1.5">
-              <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 truncate">{col.col}</div>
+              <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 truncate flex items-center justify-between">
+                <span className="truncate">{col.col}</span>
+                <span className="opacity-60">{col.items.length}</span>
+              </div>
               {col.items.map((t, i) => (
-                <div key={i} className="rounded-lg border border-border/60 p-1.5 bg-card/70">
+                <div key={i} className={`rounded-lg border border-border/60 p-1.5 bg-card/70 ${i === 0 ? "ring-1 ring-primary/40" : ""}`}>
                   <div className="text-[10px] font-medium leading-tight line-clamp-3">{t}</div>
+                  <div className="text-[8px] font-mono text-foreground/45 mt-0.5">#{(i + 1) * 14}</div>
                 </div>
               ))}
             </div>
