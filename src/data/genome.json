@@ -115,7 +115,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Keep inputs fuzzy — invite browsing before forcing dates or filters.",
+       "preview": {
+        "company": "Airbnb",
+        "pattern": "Inspiration-led",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "Cliff Villa · $240/nt ★4.9",
+         "Lisbon Loft · $118/nt ★4.8",
+         "A-frame Cabin · $176 ★4.95",
+         "Riad Stay · $92 ★4.7"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o2",
@@ -130,7 +144,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Push price + scarcity up front to convert decided bargain-hunters fast.",
+       "preview": {
+        "company": "Booking.com",
+        "pattern": "Deal-led, urgent",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "Riad Stay · $92 ★4.7",
+         "Kyoto Ryokan · $210 ★4.9",
+         "Tulum Bungalow · $134 ★4.85",
+         "Alpine Chalet · $320 ★4.97"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o3",
@@ -145,7 +173,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Serve users who already know where and when — straight to results.",
+       "preview": {
+        "company": "Kayak",
+        "pattern": "Search-box first",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "Alpine Chalet · $320 ★4.97",
+         "Porto Flat · $88 ★4.6",
+         "Cliff Villa · $240/nt ★4.9",
+         "Lisbon Loft · $118/nt ★4.8"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o4",
@@ -158,7 +200,21 @@
         "em": -1,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Cross-sell flight+hotel+car to lift basket size and lock the trip.",
+       "preview": {
+        "company": "Expedia",
+        "pattern": "Bundle deals",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "Lisbon Loft · $118/nt ★4.8",
+         "A-frame Cabin · $176 ★4.95",
+         "Riad Stay · $92 ★4.7",
+         "Kyoto Ryokan · $210 ★4.9"
+        ],
+        "cta": "Explore"
+       }
       }
      ],
      "recommend": {
@@ -183,7 +239,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Give power-searchers control; live counts reward each refinement.",
+       "preview": {
+        "company": "Booking.com",
+        "pattern": "Filter-heavy + live counts",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "Kyoto Ryokan · $210 ★4.9",
+         "Tulum Bungalow · $134 ★4.85",
+         "Alpine Chalet · $320 ★4.97",
+         "Porto Flat · $88 ★4.6"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o6",
@@ -198,7 +268,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Let location drive discovery for explorers without fixed plans.",
+       "preview": {
+        "company": "Airbnb",
+        "pattern": "Map-first, flexible",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "Porto Flat · $88 ★4.6",
+         "Cliff Villa · $240/nt ★4.9",
+         "Lisbon Loft · $118/nt ★4.8",
+         "A-frame Cabin · $176 ★4.95"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o7",
@@ -211,7 +295,21 @@
         "em": -1,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Surface every option side by side for methodical comparison shoppers.",
+       "preview": {
+        "company": "Kayak",
+        "pattern": "Compare grid",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "A-frame Cabin · $176 ★4.95",
+         "Riad Stay · $92 ★4.7",
+         "Kyoto Ryokan · $210 ★4.9",
+         "Tulum Bungalow · $134 ★4.85"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o8",
@@ -226,7 +324,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Strip to one ranked list — least friction, fastest scan.",
+       "preview": {
+        "company": "Hotels.com",
+        "pattern": "Simple sorted list",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "Tulum Bungalow · $134 ★4.85",
+         "Alpine Chalet · $320 ★4.97",
+         "Porto Flat · $88 ★4.6",
+         "Cliff Villa · $240/nt ★4.9"
+        ],
+        "cta": "Explore"
+       }
       }
      ],
      "recommend": {
@@ -251,7 +363,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Borrow the crowd: scores + scarcity to overcome hesitation.",
+       "preview": {
+        "company": "Booking.com",
+        "pattern": "Quantified proof + urgency",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "Cliff Villa · $240/nt ★4.9",
+         "Lisbon Loft · $118/nt ★4.8",
+         "A-frame Cabin · $176 ★4.95",
+         "Riad Stay · $92 ★4.7"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o10",
@@ -266,7 +392,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Build human trust through a real face and specific reviews.",
+       "preview": {
+        "company": "Airbnb",
+        "pattern": "Host identity + reviews",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "Riad Stay · $92 ★4.7",
+         "Kyoto Ryokan · $210 ★4.9",
+         "Tulum Bungalow · $134 ★4.85",
+         "Alpine Chalet · $320 ★4.97"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o11",
@@ -279,7 +419,21 @@
         "em": -1,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Lean on the brand promise to reassure risk-averse buyers.",
+       "preview": {
+        "company": "Expedia",
+        "pattern": "Brand guarantee badges",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "Alpine Chalet · $320 ★4.97",
+         "Porto Flat · $88 ★4.6",
+         "Cliff Villa · $240/nt ★4.9",
+         "Lisbon Loft · $118/nt ★4.8"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o12",
@@ -294,7 +448,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Use the familiar star shorthand for instant, low-effort trust.",
+       "preview": {
+        "company": "Hotels.com",
+        "pattern": "Star rating + verified",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "Lisbon Loft · $118/nt ★4.8",
+         "A-frame Cabin · $176 ★4.95",
+         "Riad Stay · $92 ★4.7",
+         "Kyoto Ryokan · $210 ★4.9"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -319,7 +487,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Remove commitment fear at the decision point — book now, decide later.",
+       "preview": {
+        "company": "Booking.com",
+        "pattern": "Guest + free cancel",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "Kyoto Ryokan · $210 ★4.9",
+         "Tulum Bungalow · $134 ★4.85",
+         "Alpine Chalet · $320 ★4.97",
+         "Porto Flat · $88 ★4.6"
+        ],
+        "cta": "Confirm"
+       }
       },
       {
        "id": "o14",
@@ -334,7 +516,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Collapse a multi-item booking into one tap for repeat users.",
+       "preview": {
+        "company": "Expedia",
+        "pattern": "1-click bundle",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "Porto Flat · $88 ★4.6",
+         "Cliff Villa · $240/nt ★4.9",
+         "Lisbon Loft · $118/nt ★4.8",
+         "A-frame Cabin · $176 ★4.95"
+        ],
+        "cta": "Confirm"
+       }
       },
       {
        "id": "o15",
@@ -349,7 +545,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Calm the high-stakes moment with human, no-charge-yet framing.",
+       "preview": {
+        "company": "Airbnb",
+        "pattern": "Request + reassure",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "A-frame Cabin · $176 ★4.95",
+         "Riad Stay · $92 ★4.7",
+         "Kyoto Ryokan · $210 ★4.9",
+         "Tulum Bungalow · $134 ★4.85"
+        ],
+        "cta": "Confirm"
+       }
       },
       {
        "id": "o16",
@@ -362,7 +572,21 @@
         "em": -1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Stay neutral aggregator; let the provider own the final step.",
+       "preview": {
+        "company": "Kayak",
+        "pattern": "Hand-off to provider",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "Tulum Bungalow · $134 ★4.85",
+         "Alpine Chalet · $320 ★4.97",
+         "Porto Flat · $88 ★4.6",
+         "Cliff Villa · $240/nt ★4.9"
+        ],
+        "cta": "Confirm"
+       }
       }
      ],
      "recommend": {
@@ -387,7 +611,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Make the reward legible in one line so it actually motivates.",
+       "preview": {
+        "company": "Hotels.com",
+        "pattern": "Stamp-card loyalty",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "Cliff Villa · $240/nt ★4.9",
+         "Lisbon Loft · $118/nt ★4.8",
+         "A-frame Cabin · $176 ★4.95",
+         "Riad Stay · $92 ★4.7"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o18",
@@ -402,7 +640,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Capture intent early, then pull dreamers back emotionally.",
+       "preview": {
+        "company": "Airbnb",
+        "pattern": "Wishlists + re-engage",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "Riad Stay · $92 ★4.7",
+         "Kyoto Ryokan · $210 ★4.9",
+         "Tulum Bungalow · $134 ★4.85",
+         "Alpine Chalet · $320 ★4.97"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o19",
@@ -417,7 +669,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Reward frequency with status and better prices to drive repeat.",
+       "preview": {
+        "company": "Booking.com",
+        "pattern": "Genius tiers",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "Alpine Chalet · $320 ★4.97",
+         "Porto Flat · $88 ★4.6",
+         "Cliff Villa · $240/nt ★4.9",
+         "Lisbon Loft · $118/nt ★4.8"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o20",
@@ -430,7 +696,21 @@
         "em": -1,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Flexible currency keeps users in-ecosystem across trip types.",
+       "preview": {
+        "company": "Expedia",
+        "pattern": "Points + bundles",
+        "header": "Stays near you",
+        "metric": "Trip · 4 nights",
+        "rows": [
+         "Lisbon Loft · $118/nt ★4.8",
+         "A-frame Cabin · $176 ★4.95",
+         "Riad Stay · $92 ★4.7",
+         "Kyoto Ryokan · $210 ★4.9"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -439,7 +719,9 @@
       "simple": "o17"
      }
     }
-   ]
+   ],
+   "icon": "plane",
+   "index": "01"
   },
   {
    "id": "saas_pm",
@@ -469,7 +751,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Spark momentum with proven starting points, not a blank canvas.",
+       "preview": {
+        "company": "Notion",
+        "pattern": "Template gallery",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "Q3 Launch · In progress",
+         "Sprint 24 · Todo",
+         "Bug triage · Review",
+         "Website redesign · Done"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o22",
@@ -484,7 +780,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Opinionated defaults get teams productive before they get lost.",
+       "preview": {
+        "company": "Monday",
+        "pattern": "Guided use-case setup",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "Website redesign · Done",
+         "Onboarding flow · Todo",
+         "API v2 · Blocked",
+         "Design QA · In progress"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o23",
@@ -499,7 +809,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Strip onboarding so power users start immediately.",
+       "preview": {
+        "company": "Linear",
+        "pattern": "Minimal, get-to-work",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "Design QA · In progress",
+         "Roadmap sync · Done",
+         "Q3 Launch · In progress",
+         "Sprint 24 · Todo"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o24",
@@ -512,7 +836,21 @@
         "em": 1,
         "si": 2
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "One dead-simple board anyone grasps in seconds.",
+       "preview": {
+        "company": "Trello",
+        "pattern": "One board to start",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "Sprint 24 · Todo",
+         "Bug triage · Review",
+         "Website redesign · Done",
+         "Onboarding flow · Todo"
+        ],
+        "cta": "Get started"
+       }
       }
      ],
      "recommend": {
@@ -537,7 +875,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Friendly, visual setup lowers the barrier for non-technical teams.",
+       "preview": {
+        "company": "Monday",
+        "pattern": "Colorful templates",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "Onboarding flow · Todo",
+         "API v2 · Blocked",
+         "Design QA · In progress",
+         "Roadmap sync · Done"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o26",
@@ -550,7 +902,21 @@
         "em": 0,
         "si": -2
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Maximum flexibility for users who want to build their own system.",
+       "preview": {
+        "company": "Notion",
+        "pattern": "Blank + blocks",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "Roadmap sync · Done",
+         "Q3 Launch · In progress",
+         "Sprint 24 · Todo",
+         "Bug triage · Review"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o27",
@@ -565,7 +931,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Structured scaffolding keeps cross-functional work consistent.",
+       "preview": {
+        "company": "Asana",
+        "pattern": "Project from template",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "Bug triage · Review",
+         "Website redesign · Done",
+         "Onboarding flow · Todo",
+         "API v2 · Blocked"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o28",
@@ -580,7 +960,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "A simple spatial model that needs no explaining.",
+       "preview": {
+        "company": "Trello",
+        "pattern": "Lists & cards",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "API v2 · Blocked",
+         "Design QA · In progress",
+         "Roadmap sync · Done",
+         "Q3 Launch · In progress"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -605,7 +999,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Optimize the most repeated action for speed-obsessed users.",
+       "preview": {
+        "company": "Linear",
+        "pattern": "Keyboard-first, Cmd-K",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "Q3 Launch · In progress",
+         "Sprint 24 · Todo",
+         "Bug triage · Review",
+         "Website redesign · Done"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o30",
@@ -618,7 +1026,21 @@
         "em": 0,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Capture everything so nothing about a task is ambiguous.",
+       "preview": {
+        "company": "Asana",
+        "pattern": "Rich task fields",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "Website redesign · Done",
+         "Onboarding flow · Todo",
+         "API v2 · Blocked",
+         "Design QA · In progress"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o31",
@@ -634,7 +1056,21 @@
        "goalsServed": [
         "emotional",
         "simple"
-       ]
+       ],
+       "purpose": "Direct manipulation makes status changes effortless.",
+       "preview": {
+        "company": "Trello",
+        "pattern": "Drag a card",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "Design QA · In progress",
+         "Roadmap sync · Done",
+         "Q3 Launch · In progress",
+         "Sprint 24 · Todo"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o32",
@@ -647,7 +1083,21 @@
         "em": 0,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Treat tasks as data for flexible views and filtering.",
+       "preview": {
+        "company": "Notion",
+        "pattern": "Database row",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "Sprint 24 · Todo",
+         "Bug triage · Review",
+         "Website redesign · Done",
+         "Onboarding flow · Todo"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -670,7 +1120,21 @@
         "em": 1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Tie conversation to the unit of work, not a side channel.",
+       "preview": {
+        "company": "Asana",
+        "pattern": "Task threads + @mentions",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "Onboarding flow · Todo",
+         "API v2 · Blocked",
+         "Design QA · In progress",
+         "Roadmap sync · Done"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o34",
@@ -685,7 +1149,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Discuss in context, right where the work lives.",
+       "preview": {
+        "company": "Notion",
+        "pattern": "Inline comments",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "Roadmap sync · Done",
+         "Q3 Launch · In progress",
+         "Sprint 24 · Todo",
+         "Bug triage · Review"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o35",
@@ -700,7 +1178,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Keep the team aligned with terse, high-signal updates.",
+       "preview": {
+        "company": "Linear",
+        "pattern": "Tight issue updates",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "Bug triage · Review",
+         "Website redesign · Done",
+         "Onboarding flow · Todo",
+         "API v2 · Blocked"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o36",
@@ -715,7 +1207,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Make progress visible at a glance for managers.",
+       "preview": {
+        "company": "Monday",
+        "pattern": "Status pulse",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "API v2 · Blocked",
+         "Design QA · In progress",
+         "Roadmap sync · Done",
+         "Q3 Launch · In progress"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -741,7 +1247,21 @@
        "goalsServed": [
         "conversion",
         "simple"
-       ]
+       ],
+       "purpose": "Delight through speed so the tool feels effortless daily.",
+       "preview": {
+        "company": "Linear",
+        "pattern": "Speed & polish habit",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "Q3 Launch · In progress",
+         "Sprint 24 · Todo",
+         "Bug triage · Review",
+         "Website redesign · Done"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o38",
@@ -754,7 +1274,21 @@
         "em": 0,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Pull people back with visible status and nudges.",
+       "preview": {
+        "company": "Monday",
+        "pattern": "Dashboards & reminders",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "Website redesign · Done",
+         "Onboarding flow · Todo",
+         "API v2 · Blocked",
+         "Design QA · In progress"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o39",
@@ -769,7 +1303,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Become the place all knowledge lives, so leaving hurts.",
+       "preview": {
+        "company": "Notion",
+        "pattern": "Second-brain lock-in",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "Design QA · In progress",
+         "Roadmap sync · Done",
+         "Q3 Launch · In progress",
+         "Sprint 24 · Todo"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o40",
@@ -782,7 +1330,21 @@
         "em": 0,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Connect daily work to outcomes to sustain motivation.",
+       "preview": {
+        "company": "Asana",
+        "pattern": "Goal tracking",
+        "header": "Your workspace",
+        "metric": "18 open tasks",
+        "rows": [
+         "Sprint 24 · Todo",
+         "Bug triage · Review",
+         "Website redesign · Done",
+         "Onboarding flow · Todo"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -791,7 +1353,9 @@
       "simple": "o37"
      }
     }
-   ]
+   ],
+   "icon": "square-kanban",
+   "index": "02"
   },
   {
    "id": "social",
@@ -822,7 +1386,21 @@
        "goalsServed": [
         "emotional",
         "simple"
-       ]
+       ],
+       "purpose": "Infer taste from behavior — no setup, instant relevance.",
+       "preview": {
+        "company": "TikTok",
+        "pattern": "Watch-time interest graph",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@maya · 2h",
+         "@devpatel · 5h",
+         "@studio_ks · 1d",
+         "@lina.codes · 3h"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o42",
@@ -835,7 +1413,21 @@
         "em": 1,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Bootstrap a feed by seeding familiar accounts.",
+       "preview": {
+        "company": "Instagram",
+        "pattern": "Follow suggestions",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@lina.codes · 3h",
+         "@theo · 20m",
+         "@noor.design · 6h",
+         "@fieldnotes · 1d"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o43",
@@ -850,7 +1442,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Establish professional identity before consuming.",
+       "preview": {
+        "company": "LinkedIn",
+        "pattern": "Build profile first",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@fieldnotes · 1d",
+         "@cal_m · 45m",
+         "@maya · 2h",
+         "@devpatel · 5h"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o44",
@@ -863,7 +1469,21 @@
         "em": 0,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Anchor belonging in topics, not just people.",
+       "preview": {
+        "company": "Reddit",
+        "pattern": "Pick communities",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@devpatel · 5h",
+         "@studio_ks · 1d",
+         "@lina.codes · 3h",
+         "@theo · 20m"
+        ],
+        "cta": "Get started"
+       }
       }
      ],
      "recommend": {
@@ -889,7 +1509,21 @@
        "goalsServed": [
         "emotional",
         "simple"
-       ]
+       ],
+       "purpose": "One perfect item at a time — zero choice overload.",
+       "preview": {
+        "company": "TikTok",
+        "pattern": "Full-screen FYP",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@theo · 20m",
+         "@noor.design · 6h",
+         "@fieldnotes · 1d",
+         "@cal_m · 45m"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o46",
@@ -902,7 +1536,21 @@
         "em": 2,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Blend permanence and ephemerality to maximize time spent.",
+       "preview": {
+        "company": "Instagram",
+        "pattern": "Grid + stories",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@cal_m · 45m",
+         "@maya · 2h",
+         "@devpatel · 5h",
+         "@studio_ks · 1d"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o47",
@@ -915,7 +1563,21 @@
         "em": -1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Give users control over algorithm vs chronology.",
+       "preview": {
+        "company": "X",
+        "pattern": "For-you / latest toggle",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@studio_ks · 1d",
+         "@lina.codes · 3h",
+         "@theo · 20m",
+         "@noor.design · 6h"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o48",
@@ -930,7 +1592,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Reward substance through community voting.",
+       "preview": {
+        "company": "Reddit",
+        "pattern": "Ranked threads",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@noor.design · 6h",
+         "@fieldnotes · 1d",
+         "@cal_m · 45m",
+         "@maya · 2h"
+        ],
+        "cta": "Explore"
+       }
       }
      ],
      "recommend": {
@@ -955,7 +1631,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Bake polish into creation so anyone can post well.",
+       "preview": {
+        "company": "Instagram",
+        "pattern": "Camera + filters",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@maya · 2h",
+         "@devpatel · 5h",
+         "@studio_ks · 1d",
+         "@lina.codes · 3h"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o50",
@@ -968,7 +1658,21 @@
         "em": 2,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Trend-driven tools make creation fun and viral.",
+       "preview": {
+        "company": "TikTok",
+        "pattern": "Effects + sounds",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@lina.codes · 3h",
+         "@theo · 20m",
+         "@noor.design · 6h",
+         "@fieldnotes · 1d"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o51",
@@ -984,7 +1688,21 @@
        "goalsServed": [
         "conversion",
         "simple"
-       ]
+       ],
+       "purpose": "Lowest-friction expression for high-frequency posting.",
+       "preview": {
+        "company": "X",
+        "pattern": "Quick text post",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@fieldnotes · 1d",
+         "@cal_m · 45m",
+         "@maya · 2h",
+         "@devpatel · 5h"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o52",
@@ -997,7 +1715,21 @@
         "em": -1,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Reward depth for communities that value writing.",
+       "preview": {
+        "company": "Reddit",
+        "pattern": "Long-form markdown",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@devpatel · 5h",
+         "@studio_ks · 1d",
+         "@lina.codes · 3h",
+         "@theo · 20m"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -1022,7 +1754,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Frictionless reaction maximizes conversation volume.",
+       "preview": {
+        "company": "X",
+        "pattern": "Reply / quote / repost",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@theo · 20m",
+         "@noor.design · 6h",
+         "@fieldnotes · 1d",
+         "@cal_m · 45m"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o54",
@@ -1037,7 +1783,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Crowd-rank to surface the best, bury the worst.",
+       "preview": {
+        "company": "Reddit",
+        "pattern": "Up/downvote threads",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@cal_m · 45m",
+         "@maya · 2h",
+         "@devpatel · 5h",
+         "@studio_ks · 1d"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o55",
@@ -1052,7 +1812,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Warm, lightweight signals that drive return visits.",
+       "preview": {
+        "company": "Instagram",
+        "pattern": "Likes + DMs",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@studio_ks · 1d",
+         "@lina.codes · 3h",
+         "@theo · 20m",
+         "@noor.design · 6h"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o56",
@@ -1065,7 +1839,21 @@
         "em": 1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Built-in remixing turns viewers into creators.",
+       "preview": {
+        "company": "TikTok",
+        "pattern": "Duet / stitch",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@noor.design · 6h",
+         "@fieldnotes · 1d",
+         "@cal_m · 45m",
+         "@maya · 2h"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -1088,7 +1876,21 @@
         "em": -1,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Structure identity around career to fit the network's job.",
+       "preview": {
+        "company": "LinkedIn",
+        "pattern": "Resume profile",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@maya · 2h",
+         "@devpatel · 5h",
+         "@studio_ks · 1d",
+         "@lina.codes · 3h"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o58",
@@ -1103,7 +1905,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Let users craft an aspirational personal brand.",
+       "preview": {
+        "company": "Instagram",
+        "pattern": "Curated grid",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@lina.codes · 3h",
+         "@theo · 20m",
+         "@noor.design · 6h",
+         "@fieldnotes · 1d"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o59",
@@ -1119,7 +1935,21 @@
        "goalsServed": [
         "conversion",
         "simple"
-       ]
+       ],
+       "purpose": "Free expression with reputation but no real name.",
+       "preview": {
+        "company": "Reddit",
+        "pattern": "Pseudonymous karma",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@fieldnotes · 1d",
+         "@cal_m · 45m",
+         "@maya · 2h",
+         "@devpatel · 5h"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o60",
@@ -1132,7 +1962,21 @@
         "em": -1,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Punchy identity plus a trust signal for reach.",
+       "preview": {
+        "company": "X",
+        "pattern": "Bio + verification",
+        "header": "Your feed",
+        "metric": "1.2k followers",
+        "rows": [
+         "@devpatel · 5h",
+         "@studio_ks · 1d",
+         "@lina.codes · 3h",
+         "@theo · 20m"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -1141,7 +1985,9 @@
       "simple": "o59"
      }
     }
-   ]
+   ],
+   "icon": "message-circle",
+   "index": "03"
   },
   {
    "id": "food",
@@ -1172,7 +2018,21 @@
        "goalsServed": [
         "emotional",
         "simple"
-       ]
+       ],
+       "purpose": "Appetite is visual — lead with mouth-watering imagery.",
+       "preview": {
+        "company": "Uber Eats",
+        "pattern": "Imagery carousels",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Sushi Nori · $18",
+         "Green Bowl · $12",
+         "Taco Loco · $9",
+         "Pho 88 · $14"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o62",
@@ -1185,7 +2045,21 @@
         "em": 1,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Reduce decision fatigue with safe local bets.",
+       "preview": {
+        "company": "DoorDash",
+        "pattern": "Popular near you",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Pho 88 · $14",
+         "Margherita · $11",
+         "Pad Thai · $13",
+         "Falafel Wrap · $8"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o63",
@@ -1198,7 +2072,21 @@
         "em": 0,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Win on selection for users who want options.",
+       "preview": {
+        "company": "Grubhub",
+        "pattern": "Local breadth list",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Falafel Wrap · $8",
+         "Ramen Ya · $15",
+         "Sushi Nori · $18",
+         "Green Bowl · $12"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o64",
@@ -1213,7 +2101,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Practical entry for planned grocery-style orders.",
+       "preview": {
+        "company": "Instacart",
+        "pattern": "Store-first browse",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Green Bowl · $12",
+         "Taco Loco · $9",
+         "Pho 88 · $14",
+         "Margherita · $11"
+        ],
+        "cta": "Explore"
+       }
       }
      ],
      "recommend": {
@@ -1238,7 +2140,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Surface crowd-pleasers to speed the order.",
+       "preview": {
+        "company": "DoorDash",
+        "pattern": "Popular items first",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Margherita · $11",
+         "Pad Thai · $13",
+         "Falafel Wrap · $8",
+         "Ramen Ya · $15"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o66",
@@ -1253,7 +2169,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Tempt with photos when the dish sells itself.",
+       "preview": {
+        "company": "Deliveroo",
+        "pattern": "Photo menu",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Ramen Ya · $15",
+         "Sushi Nori · $18",
+         "Green Bowl · $12",
+         "Taco Loco · $9"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o67",
@@ -1266,7 +2196,21 @@
         "em": 0,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Organize big menus so nothing gets lost.",
+       "preview": {
+        "company": "Uber Eats",
+        "pattern": "Category tabs",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Taco Loco · $9",
+         "Pho 88 · $14",
+         "Margherita · $11",
+         "Pad Thai · $13"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o68",
@@ -1281,7 +2225,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Fast path for users who know what they want.",
+       "preview": {
+        "company": "Instacart",
+        "pattern": "Search items",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Pad Thai · $13",
+         "Falafel Wrap · $8",
+         "Ramen Ya · $15",
+         "Sushi Nori · $18"
+        ],
+        "cta": "Explore"
+       }
       }
      ],
      "recommend": {
@@ -1304,7 +2262,21 @@
         "em": 0,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Keep cost visible while customizing to avoid surprise.",
+       "preview": {
+        "company": "Deliveroo",
+        "pattern": "Live total + mods",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Sushi Nori · $18",
+         "Green Bowl · $12",
+         "Taco Loco · $9",
+         "Pho 88 · $14"
+        ],
+        "cta": "Confirm"
+       }
       },
       {
        "id": "o70",
@@ -1319,7 +2291,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Lift basket size by suggesting extras at the right moment.",
+       "preview": {
+        "company": "Uber Eats",
+        "pattern": "Upsell add-ons",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Pho 88 · $14",
+         "Margherita · $11",
+         "Pad Thai · $13",
+         "Falafel Wrap · $8"
+        ],
+        "cta": "Confirm"
+       }
       },
       {
        "id": "o71",
@@ -1334,7 +2320,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Make shared ordering social and easy to coordinate.",
+       "preview": {
+        "company": "DoorDash",
+        "pattern": "Group order",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Falafel Wrap · $8",
+         "Ramen Ya · $15",
+         "Sushi Nori · $18",
+         "Green Bowl · $12"
+        ],
+        "cta": "Confirm"
+       }
       },
       {
        "id": "o72",
@@ -1349,7 +2349,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Clear, no-frills cart for a fast confident checkout.",
+       "preview": {
+        "company": "Grubhub",
+        "pattern": "Simple cart",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Green Bowl · $12",
+         "Taco Loco · $9",
+         "Pho 88 · $14",
+         "Margherita · $11"
+        ],
+        "cta": "Confirm"
+       }
       }
      ],
      "recommend": {
@@ -1374,7 +2388,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Collapse repeat orders to a single tap.",
+       "preview": {
+        "company": "Uber Eats",
+        "pattern": "One-tap reorder",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Margherita · $11",
+         "Pad Thai · $13",
+         "Falafel Wrap · $8",
+         "Ramen Ya · $15"
+        ],
+        "cta": "Confirm"
+       }
       },
       {
        "id": "o74",
@@ -1387,7 +2415,21 @@
         "em": -1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Smooth checkout plus a subscription hook for loyalty.",
+       "preview": {
+        "company": "DoorDash",
+        "pattern": "Saved + DashPass",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Ramen Ya · $15",
+         "Sushi Nori · $18",
+         "Green Bowl · $12",
+         "Taco Loco · $9"
+        ],
+        "cta": "Confirm"
+       }
       },
       {
        "id": "o75",
@@ -1402,7 +2444,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Honest pricing builds trust even if it shows cost.",
+       "preview": {
+        "company": "Deliveroo",
+        "pattern": "Clear fees",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Taco Loco · $9",
+         "Pho 88 · $14",
+         "Margherita · $11",
+         "Pad Thai · $13"
+        ],
+        "cta": "Confirm"
+       }
       },
       {
        "id": "o76",
@@ -1417,7 +2473,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Lowest friction for first-time or occasional users.",
+       "preview": {
+        "company": "Grubhub",
+        "pattern": "Guest checkout",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Pad Thai · $13",
+         "Falafel Wrap · $8",
+         "Ramen Ya · $15",
+         "Sushi Nori · $18"
+        ],
+        "cta": "Confirm"
+       }
       }
      ],
      "recommend": {
@@ -1442,7 +2512,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Make the obvious next order effortless.",
+       "preview": {
+        "company": "Uber Eats",
+        "pattern": "Reorder shelf",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Sushi Nori · $18",
+         "Green Bowl · $12",
+         "Taco Loco · $9",
+         "Pho 88 · $14"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o78",
@@ -1457,7 +2541,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Lock in habit with members-only savings.",
+       "preview": {
+        "company": "DoorDash",
+        "pattern": "Subscription perks",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Pho 88 · $14",
+         "Margherita · $11",
+         "Pad Thai · $13",
+         "Falafel Wrap · $8"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o79",
@@ -1470,7 +2568,21 @@
         "em": 0,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Reward repeat ordering with accumulating value.",
+       "preview": {
+        "company": "Grubhub",
+        "pattern": "Points / perks",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Falafel Wrap · $8",
+         "Ramen Ya · $15",
+         "Sushi Nori · $18",
+         "Green Bowl · $12"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o80",
@@ -1485,7 +2597,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Let users save go-to spots for quick return.",
+       "preview": {
+        "company": "Deliveroo",
+        "pattern": "Favorites",
+        "header": "Order again",
+        "metric": "$34 cart",
+        "rows": [
+         "Green Bowl · $12",
+         "Taco Loco · $9",
+         "Pho 88 · $14",
+         "Margherita · $11"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -1494,7 +2620,9 @@
       "simple": "o77"
      }
     }
-   ]
+   ],
+   "icon": "utensils",
+   "index": "04"
   },
   {
    "id": "ecommerce",
@@ -1525,7 +2653,21 @@
        "goalsServed": [
         "conversion",
         "simple"
-       ]
+       ],
+       "purpose": "Never dead-end a search — always guide to something.",
+       "preview": {
+        "company": "Amazon",
+        "pattern": "Forgiving + autocomplete",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Linen Shirt · $48 ★4.6",
+         "Runner Sneaker · $120 ★4.8",
+         "Ceramic Mug · $22 ★4.9",
+         "Wool Throw · $65 ★4.7"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o82",
@@ -1538,7 +2680,21 @@
         "em": 1,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Fashion decisions are visual; scope to the right category.",
+       "preview": {
+        "company": "ASOS",
+        "pattern": "Visual + scoped",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Wool Throw · $65 ★4.7",
+         "Denim Jacket · $98 ★4.5",
+         "Desk Lamp · $54 ★4.8",
+         "Tote Bag · $34 ★4.7"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o83",
@@ -1551,7 +2707,21 @@
         "em": 1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Help uncertain buyers find the right product confidently.",
+       "preview": {
+        "company": "Sephora",
+        "pattern": "Guided beauty search",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Tote Bag · $34 ★4.7",
+         "Cotton Socks · $12 ★4.6",
+         "Linen Shirt · $48 ★4.6",
+         "Runner Sneaker · $120 ★4.8"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o84",
@@ -1566,7 +2736,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Inspire by room or use-case, not just SKUs.",
+       "preview": {
+        "company": "IKEA",
+        "pattern": "Room / category search",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Runner Sneaker · $120 ★4.8",
+         "Ceramic Mug · $22 ★4.9",
+         "Wool Throw · $65 ★4.7",
+         "Denim Jacket · $98 ★4.5"
+        ],
+        "cta": "Explore"
+       }
       }
      ],
      "recommend": {
@@ -1591,7 +2775,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Filter on what actually decides a fashion purchase.",
+       "preview": {
+        "company": "ASOS",
+        "pattern": "Fit / size filters",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Denim Jacket · $98 ★4.5",
+         "Desk Lamp · $54 ★4.8",
+         "Tote Bag · $34 ★4.7",
+         "Cotton Socks · $12 ★4.6"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o86",
@@ -1606,7 +2804,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Give power shoppers precise control over huge catalogs.",
+       "preview": {
+        "company": "Amazon",
+        "pattern": "Faceted filters",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Cotton Socks · $12 ★4.6",
+         "Linen Shirt · $48 ★4.6",
+         "Runner Sneaker · $120 ★4.8",
+         "Ceramic Mug · $22 ★4.9"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o87",
@@ -1619,7 +2831,21 @@
         "em": 1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Let social proof drive browsing for considered buys.",
+       "preview": {
+        "company": "Sephora",
+        "pattern": "Reviews-led grid",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Ceramic Mug · $22 ★4.9",
+         "Wool Throw · $65 ★4.7",
+         "Denim Jacket · $98 ★4.5",
+         "Desk Lamp · $54 ★4.8"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o88",
@@ -1634,7 +2860,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Show the product in context to reduce doubt.",
+       "preview": {
+        "company": "IKEA",
+        "pattern": "Room visualizer",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Desk Lamp · $54 ★4.8",
+         "Tote Bag · $34 ★4.7",
+         "Cotton Socks · $12 ★4.6",
+         "Linen Shirt · $48 ★4.6"
+        ],
+        "cta": "Explore"
+       }
       }
      ],
      "recommend": {
@@ -1657,7 +2897,21 @@
         "em": 1,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Answer the buyer's specific real-world question.",
+       "preview": {
+        "company": "Sephora",
+        "pattern": "Reviews by skin type",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Linen Shirt · $48 ★4.6",
+         "Runner Sneaker · $120 ★4.8",
+         "Ceramic Mug · $22 ★4.9",
+         "Wool Throw · $65 ★4.7"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o90",
@@ -1672,7 +2926,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Crowd-answer every doubt before purchase.",
+       "preview": {
+        "company": "Amazon",
+        "pattern": "Q&A + reviews",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Wool Throw · $65 ★4.7",
+         "Denim Jacket · $98 ★4.5",
+         "Desk Lamp · $54 ★4.8",
+         "Tote Bag · $34 ★4.7"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o91",
@@ -1688,7 +2956,21 @@
        "goalsServed": [
         "emotional",
         "simple"
-       ]
+       ],
+       "purpose": "Sell the brand and aspiration, not just specs.",
+       "preview": {
+        "company": "Nike",
+        "pattern": "Story + media",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Tote Bag · $34 ★4.7",
+         "Cotton Socks · $12 ★4.6",
+         "Linen Shirt · $48 ★4.6",
+         "Runner Sneaker · $120 ★4.8"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o92",
@@ -1701,7 +2983,21 @@
         "em": 1,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Erase 'will it fit?' by placing it in their space.",
+       "preview": {
+        "company": "IKEA",
+        "pattern": "AR in your room",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Runner Sneaker · $120 ★4.8",
+         "Ceramic Mug · $22 ★4.9",
+         "Wool Throw · $65 ★4.7",
+         "Denim Jacket · $98 ★4.5"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -1727,7 +3023,21 @@
        "goalsServed": [
         "conversion",
         "simple"
-       ]
+       ],
+       "purpose": "Remove every step between desire and purchase.",
+       "preview": {
+        "company": "Amazon",
+        "pattern": "1-click",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Denim Jacket · $98 ★4.5",
+         "Desk Lamp · $54 ★4.8",
+         "Tote Bag · $34 ★4.7",
+         "Cotton Socks · $12 ★4.6"
+        ],
+        "cta": "Confirm"
+       }
       },
       {
        "id": "o94",
@@ -1740,7 +3050,21 @@
         "em": 0,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Speed checkout with familiar one-tap payment.",
+       "preview": {
+        "company": "ASOS",
+        "pattern": "Express + wallets",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Cotton Socks · $12 ★4.6",
+         "Linen Shirt · $48 ★4.6",
+         "Runner Sneaker · $120 ★4.8",
+         "Ceramic Mug · $22 ★4.9"
+        ],
+        "cta": "Confirm"
+       }
       },
       {
        "id": "o95",
@@ -1755,7 +3079,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Trade a login for perks and retained data.",
+       "preview": {
+        "company": "Nike",
+        "pattern": "Member checkout",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Ceramic Mug · $22 ★4.9",
+         "Wool Throw · $65 ★4.7",
+         "Denim Jacket · $98 ★4.5",
+         "Desk Lamp · $54 ★4.8"
+        ],
+        "cta": "Confirm"
+       }
       },
       {
        "id": "o96",
@@ -1768,7 +3106,21 @@
         "em": 0,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Flexibility on fulfillment fits big-ticket logistics.",
+       "preview": {
+        "company": "IKEA",
+        "pattern": "Delivery / pickup choice",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Desk Lamp · $54 ★4.8",
+         "Tote Bag · $34 ★4.7",
+         "Cotton Socks · $12 ★4.6",
+         "Linen Shirt · $48 ★4.6"
+        ],
+        "cta": "Confirm"
+       }
       }
      ],
      "recommend": {
@@ -1794,7 +3146,21 @@
        "goalsServed": [
         "emotional",
         "simple"
-       ]
+       ],
+       "purpose": "De-risk the purchase so buyers commit.",
+       "preview": {
+        "company": "ASOS",
+        "pattern": "Free easy returns",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Linen Shirt · $48 ★4.6",
+         "Runner Sneaker · $120 ★4.8",
+         "Ceramic Mug · $22 ★4.9",
+         "Wool Throw · $65 ★4.7"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o98",
@@ -1809,7 +3175,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Make returns convenient enough to keep buyers loyal.",
+       "preview": {
+        "company": "Amazon",
+        "pattern": "Drop-off network",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Wool Throw · $65 ★4.7",
+         "Denim Jacket · $98 ★4.5",
+         "Desk Lamp · $54 ★4.8",
+         "Tote Bag · $34 ★4.7"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o99",
@@ -1822,7 +3202,21 @@
         "em": 1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Build trust by removing post-purchase regret.",
+       "preview": {
+        "company": "Sephora",
+        "pattern": "Generous returns",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Tote Bag · $34 ★4.7",
+         "Cotton Socks · $12 ★4.6",
+         "Linen Shirt · $48 ★4.6",
+         "Runner Sneaker · $120 ★4.8"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o100",
@@ -1835,7 +3229,21 @@
         "em": 0,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Bridge online and store for reliable returns.",
+       "preview": {
+        "company": "IKEA",
+        "pattern": "In-store returns",
+        "header": "Recommended for you",
+        "metric": "$190 cart",
+        "rows": [
+         "Runner Sneaker · $120 ★4.8",
+         "Ceramic Mug · $22 ★4.9",
+         "Wool Throw · $65 ★4.7",
+         "Denim Jacket · $98 ★4.5"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -1844,7 +3252,9 @@
       "simple": "o97"
      }
     }
-   ]
+   ],
+   "icon": "shopping-bag",
+   "index": "05"
   },
   {
    "id": "fintech",
@@ -1874,7 +3284,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Make required compliance feel quick and human.",
+       "preview": {
+        "company": "Monzo",
+        "pattern": "Human, fast KYC",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Coffee · −$4.20",
+         "Salary · +$3,200",
+         "Rent · −$1,450",
+         "Transfer · −$60"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o102",
@@ -1887,7 +3311,21 @@
         "em": 0,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Get through setup fast despite many features.",
+       "preview": {
+        "company": "Revolut",
+        "pattern": "Quick multi-step",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Transfer · −$60",
+         "Groceries · −$72",
+         "Refund · +$24",
+         "Gym · −$39"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o103",
@@ -1903,7 +3341,21 @@
        "goalsServed": [
         "conversion",
         "simple"
-       ]
+       ],
+       "purpose": "Instant start for a single core action.",
+       "preview": {
+        "company": "Cash App",
+        "pattern": "Minimal signup",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Gym · −$39",
+         "Dividend · +$15",
+         "Coffee · −$4.20",
+         "Salary · +$3,200"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o104",
@@ -1916,7 +3368,21 @@
         "em": 0,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Earn trust early by being clear about everything.",
+       "preview": {
+        "company": "Wise",
+        "pattern": "Transparent setup",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Salary · +$3,200",
+         "Rent · −$1,450",
+         "Transfer · −$60",
+         "Groceries · −$72"
+        ],
+        "cta": "Get started"
+       }
       }
      ],
      "recommend": {
@@ -1941,7 +3407,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Lead with balance and the few actions people repeat.",
+       "preview": {
+        "company": "Revolut",
+        "pattern": "Balance + quick actions",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Groceries · −$72",
+         "Refund · +$24",
+         "Gym · −$39",
+         "Dividend · +$15"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o106",
@@ -1956,7 +3436,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Friendly overview plus simple saving buckets.",
+       "preview": {
+        "company": "Monzo",
+        "pattern": "Balance + Pots",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Dividend · +$15",
+         "Coffee · −$4.20",
+         "Salary · +$3,200",
+         "Rent · −$1,450"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o107",
@@ -1971,7 +3465,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Focus the whole app on one core verb.",
+       "preview": {
+        "company": "Cash App",
+        "pattern": "Big send button",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Rent · −$1,450",
+         "Transfer · −$60",
+         "Groceries · −$72",
+         "Refund · +$24"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o108",
@@ -1984,7 +3492,21 @@
         "em": -1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Make holdings the hero to drive engagement.",
+       "preview": {
+        "company": "Robinhood",
+        "pattern": "Portfolio first",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Refund · +$24",
+         "Gym · −$39",
+         "Dividend · +$15",
+         "Coffee · −$4.20"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -2010,7 +3532,21 @@
        "goalsServed": [
         "emotional",
         "simple"
-       ]
+       ],
+       "purpose": "Reduce sending money to a name and an amount.",
+       "preview": {
+        "company": "Cash App",
+        "pattern": "$cashtag send",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Coffee · −$4.20",
+         "Salary · +$3,200",
+         "Rent · −$1,450",
+         "Transfer · −$60"
+        ],
+        "cta": "Confirm"
+       }
       },
       {
        "id": "o110",
@@ -2023,7 +3559,21 @@
         "em": 0,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Win trust with the real rate and exact fee.",
+       "preview": {
+        "company": "Wise",
+        "pattern": "Transparent FX",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Transfer · −$60",
+         "Groceries · −$72",
+         "Refund · +$24",
+         "Gym · −$39"
+        ],
+        "cta": "Confirm"
+       }
       },
       {
        "id": "o111",
@@ -2038,7 +3588,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Serve global users with many currencies at once.",
+       "preview": {
+        "company": "Revolut",
+        "pattern": "Multi-currency",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Gym · −$39",
+         "Dividend · +$15",
+         "Coffee · −$4.20",
+         "Salary · +$3,200"
+        ],
+        "cta": "Confirm"
+       }
       },
       {
        "id": "o112",
@@ -2051,7 +3615,21 @@
         "em": 1,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Make shared expenses social and effortless.",
+       "preview": {
+        "company": "Monzo",
+        "pattern": "Split & request",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Salary · +$3,200",
+         "Rent · −$1,450",
+         "Transfer · −$60",
+         "Groceries · −$72"
+        ],
+        "cta": "Confirm"
+       }
       }
      ],
      "recommend": {
@@ -2077,7 +3655,21 @@
        "goalsServed": [
         "emotional",
         "simple"
-       ]
+       ],
+       "purpose": "Turn raw transactions into meaning users act on.",
+       "preview": {
+        "company": "Monzo",
+        "pattern": "Auto-categorized + Pots",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Groceries · −$72",
+         "Refund · +$24",
+         "Gym · −$39",
+         "Dividend · +$15"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o114",
@@ -2090,7 +3682,21 @@
         "em": -1,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Give data-lovers deep spending visibility.",
+       "preview": {
+        "company": "Revolut",
+        "pattern": "Analytics charts",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Dividend · +$15",
+         "Coffee · −$4.20",
+         "Salary · +$3,200",
+         "Rent · −$1,450"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o115",
@@ -2103,7 +3709,21 @@
         "em": 0,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Radical fee clarity is itself the trust feature.",
+       "preview": {
+        "company": "Wise",
+        "pattern": "Fee breakdown",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Rent · −$1,450",
+         "Transfer · −$60",
+         "Groceries · −$72",
+         "Refund · +$24"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o116",
@@ -2118,7 +3738,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Keep investors engaged with performance front and center.",
+       "preview": {
+        "company": "Robinhood",
+        "pattern": "Gain / loss focus",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Refund · +$24",
+         "Gym · −$39",
+         "Dividend · +$15",
+         "Coffee · −$4.20"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -2143,7 +3777,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Sustain saving with gentle, caring prompts.",
+       "preview": {
+        "company": "Monzo",
+        "pattern": "Goals & nudges",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Coffee · −$4.20",
+         "Salary · +$3,200",
+         "Rent · −$1,450",
+         "Transfer · −$60"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o118",
@@ -2156,7 +3804,21 @@
         "em": -1,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Reward loyalty with status and better rates.",
+       "preview": {
+        "company": "Revolut",
+        "pattern": "Tiers & perks",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Transfer · −$60",
+         "Groceries · −$72",
+         "Refund · +$24",
+         "Gym · −$39"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o119",
@@ -2171,7 +3833,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Small fun rewards build a daily-use habit.",
+       "preview": {
+        "company": "Cash App",
+        "pattern": "Boosts / rewards",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Gym · −$39",
+         "Dividend · +$15",
+         "Coffee · −$4.20",
+         "Salary · +$3,200"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o120",
@@ -2186,7 +3862,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Drive return visits with timely, engaging signals.",
+       "preview": {
+        "company": "Robinhood",
+        "pattern": "Streaks & alerts",
+        "header": "Accounts",
+        "metric": "$4,820 balance",
+        "rows": [
+         "Salary · +$3,200",
+         "Rent · −$1,450",
+         "Transfer · −$60",
+         "Groceries · −$72"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -2195,7 +3885,9 @@
       "simple": "o119"
      }
     }
-   ]
+   ],
+   "icon": "credit-card",
+   "index": "06"
   },
   {
    "id": "streaming",
@@ -2226,7 +3918,21 @@
        "goalsServed": [
         "emotional",
         "simple"
-       ]
+       ],
+       "purpose": "A tiny cold-start ask unlocks personalization.",
+       "preview": {
+        "company": "Netflix",
+        "pattern": "Pick titles to seed",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "Midnight Drive",
+         "The Deep End",
+         "Lo-fi Focus",
+         "Studio Live"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o122",
@@ -2239,7 +3945,21 @@
         "em": 1,
         "si": 2
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Seed taste fast with a few favorite artists.",
+       "preview": {
+        "company": "Spotify",
+        "pattern": "Pick artists",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "Studio Live",
+         "Neon City",
+         "Quiet Hours",
+         "The Long Game"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o123",
@@ -2254,7 +3974,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Personalize seamlessly without asking anything.",
+       "preview": {
+        "company": "YouTube",
+        "pattern": "Infer from history",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "The Long Game",
+         "Afterglow",
+         "Midnight Drive",
+         "The Deep End"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o124",
@@ -2267,7 +4001,21 @@
         "em": 1,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Navigate by beloved franchises for instant familiarity.",
+       "preview": {
+        "company": "Disney+",
+        "pattern": "Brand hubs",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "The Deep End",
+         "Lo-fi Focus",
+         "Studio Live",
+         "Neon City"
+        ],
+        "cta": "Get started"
+       }
       }
      ],
      "recommend": {
@@ -2293,7 +4041,21 @@
        "goalsServed": [
         "conversion",
         "simple"
-       ]
+       ],
+       "purpose": "Organize abundance into legible, tailored lanes.",
+       "preview": {
+        "company": "Netflix",
+        "pattern": "Personalized rows",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "Neon City",
+         "Quiet Hours",
+         "The Long Game",
+         "Afterglow"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o126",
@@ -2308,7 +4070,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Package recommendations as a ritual users anticipate.",
+       "preview": {
+        "company": "Spotify",
+        "pattern": "Named playlists",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "Afterglow",
+         "Midnight Drive",
+         "The Deep End",
+         "Lo-fi Focus"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o127",
@@ -2321,7 +4097,21 @@
         "em": 1,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Clear, brand-led browsing for a focused catalog.",
+       "preview": {
+        "company": "Disney+",
+        "pattern": "Franchise tiles",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "Lo-fi Focus",
+         "Studio Live",
+         "Neon City",
+         "Quiet Hours"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o128",
@@ -2334,7 +4124,21 @@
         "em": 1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Urgency of live content drives immediate tune-in.",
+       "preview": {
+        "company": "Twitch",
+        "pattern": "Live now",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "Quiet Hours",
+         "The Long Game",
+         "Afterglow",
+         "Midnight Drive"
+        ],
+        "cta": "Explore"
+       }
       }
      ],
      "recommend": {
@@ -2359,7 +4163,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Search must scale gracefully to massive libraries.",
+       "preview": {
+        "company": "YouTube",
+        "pattern": "Predictive at scale",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "Midnight Drive",
+         "The Deep End",
+         "Lo-fi Focus",
+         "Studio Live"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o130",
@@ -2375,7 +4193,21 @@
        "goalsServed": [
         "emotional",
         "simple"
-       ]
+       ],
+       "purpose": "Simple search for a smaller, curated catalog.",
+       "preview": {
+        "company": "Netflix",
+        "pattern": "Title + genre",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "Studio Live",
+         "Neon City",
+         "Quiet Hours",
+         "The Long Game"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o131",
@@ -2388,7 +4220,21 @@
         "em": 0,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "One search across mixed audio content types.",
+       "preview": {
+        "company": "Spotify",
+        "pattern": "Songs + podcasts",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "The Long Game",
+         "Afterglow",
+         "Midnight Drive",
+         "The Deep End"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o132",
@@ -2401,7 +4247,21 @@
         "em": 0,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Browse by interest for a niche live audience.",
+       "preview": {
+        "company": "Twitch",
+        "pattern": "Categories / games",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "The Deep End",
+         "Lo-fi Focus",
+         "Studio Live",
+         "Neon City"
+        ],
+        "cta": "Explore"
+       }
       }
      ],
      "recommend": {
@@ -2426,7 +4286,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Give power users control without cluttering defaults.",
+       "preview": {
+        "company": "YouTube",
+        "pattern": "Speed / captions / PiP",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "Neon City",
+         "Quiet Hours",
+         "The Long Game",
+         "Afterglow"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o134",
@@ -2441,7 +4315,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Remove friction between episodes to drive bingeing.",
+       "preview": {
+        "company": "Netflix",
+        "pattern": "Autoplay next",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "Afterglow",
+         "Midnight Drive",
+         "The Deep End",
+         "Lo-fi Focus"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o135",
@@ -2454,7 +4342,21 @@
         "em": 1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Smooth, gapless listening that feels effortless.",
+       "preview": {
+        "company": "Spotify",
+        "pattern": "Queue + crossfade",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "Lo-fi Focus",
+         "Studio Live",
+         "Neon City",
+         "Quiet Hours"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o136",
@@ -2469,7 +4371,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Turn passive viewing into real-time belonging.",
+       "preview": {
+        "company": "Twitch",
+        "pattern": "Live chat overlay",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "Quiet Hours",
+         "The Long Game",
+         "Afterglow",
+         "Midnight Drive"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -2494,7 +4410,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Keep the catalog feeling fresh to fight churn.",
+       "preview": {
+        "company": "Netflix",
+        "pattern": "New-release rows",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "Midnight Drive",
+         "The Deep End",
+         "Lo-fi Focus",
+         "Studio Live"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o138",
@@ -2509,7 +4439,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Seasonal, personal moments that pull users back.",
+       "preview": {
+        "company": "Spotify",
+        "pattern": "Wrapped & daylist",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "Studio Live",
+         "Neon City",
+         "Quiet Hours",
+         "The Long Game"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o139",
@@ -2524,7 +4468,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Aggregate followed creators into a sticky home.",
+       "preview": {
+        "company": "YouTube",
+        "pattern": "Subscriptions feed",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "The Long Game",
+         "Afterglow",
+         "Midnight Drive",
+         "The Deep End"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o140",
@@ -2537,7 +4495,21 @@
         "em": 1,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Deepen loyalty through community status and identity.",
+       "preview": {
+        "company": "Twitch",
+        "pattern": "Subs & emotes",
+        "header": "Continue watching",
+        "metric": "Your list",
+        "rows": [
+         "The Deep End",
+         "Lo-fi Focus",
+         "Studio Live",
+         "Neon City"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -2546,7 +4518,9 @@
       "simple": "o137"
      }
     }
-   ]
+   ],
+   "icon": "clapperboard",
+   "index": "07"
   },
   {
    "id": "mobility",
@@ -2577,7 +4551,21 @@
        "goalsServed": [
         "conversion",
         "simple"
-       ]
+       ],
+       "purpose": "Anticipate the destination from time and history.",
+       "preview": {
+        "company": "Uber",
+        "pattern": "Predicted places",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "Home → Airport",
+         "UberX · 3 min away",
+         "Fare $18",
+         "Pool · 8 min"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o142",
@@ -2592,7 +4580,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Friendly shortcuts to the places you go often.",
+       "preview": {
+        "company": "Lyft",
+        "pattern": "Saved + recent",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "Pool · 8 min",
+         "Office → Home",
+         "Black · 5 min",
+         "ETA 12 min"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o143",
@@ -2605,7 +4607,21 @@
         "em": 0,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Serve the real goal — getting there — across modes.",
+       "preview": {
+        "company": "Citymapper",
+        "pattern": "Multimodal plan",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "ETA 12 min",
+         "Split fare",
+         "Home → Airport",
+         "UberX · 3 min away"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o144",
@@ -2618,7 +4634,21 @@
         "em": 0,
         "si": 2
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Strip to the essentials for a fast hail.",
+       "preview": {
+        "company": "Bolt",
+        "pattern": "Quick entry",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "UberX · 3 min away",
+         "Fare $18",
+         "Pool · 8 min",
+         "Office → Home"
+        ],
+        "cta": "Explore"
+       }
       }
      ],
      "recommend": {
@@ -2641,7 +4671,21 @@
         "em": -1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Let users trade price against speed at a glance.",
+       "preview": {
+        "company": "Uber",
+        "pattern": "Tiers price + ETA",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "Office → Home",
+         "Black · 5 min",
+         "ETA 12 min",
+         "Split fare"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o146",
@@ -2657,7 +4701,21 @@
        "goalsServed": [
         "conversion",
         "simple"
-       ]
+       ],
+       "purpose": "Lead with value for price-sensitive riders.",
+       "preview": {
+        "company": "Bolt",
+        "pattern": "Cheapest first",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "Split fare",
+         "Home → Airport",
+         "UberX · 3 min away",
+         "Fare $18"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o147",
@@ -2672,7 +4730,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Warm framing on a simple set of choices.",
+       "preview": {
+        "company": "Lyft",
+        "pattern": "Friendly tiers",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "Fare $18",
+         "Pool · 8 min",
+         "Office → Home",
+         "Black · 5 min"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o148",
@@ -2685,7 +4757,21 @@
         "em": 0,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Show transit, bike and ride side by side.",
+       "preview": {
+        "company": "Citymapper",
+        "pattern": "Compare modes",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "Black · 5 min",
+         "ETA 12 min",
+         "Split fare",
+         "Home → Airport"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -2711,7 +4797,21 @@
        "goalsServed": [
         "emotional",
         "simple"
-       ]
+       ],
+       "purpose": "Reassure during the wait with warmth and clarity.",
+       "preview": {
+        "company": "Lyft",
+        "pattern": "Warm match + ETA",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "Home → Airport",
+         "UberX · 3 min away",
+         "Fare $18",
+         "Pool · 8 min"
+        ],
+        "cta": "Say hi"
+       }
       },
       {
        "id": "o150",
@@ -2724,7 +4824,21 @@
         "em": 0,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Build trust with real-time location.",
+       "preview": {
+        "company": "Uber",
+        "pattern": "Live map track",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "Pool · 8 min",
+         "Office → Home",
+         "Black · 5 min",
+         "ETA 12 min"
+        ],
+        "cta": "Say hi"
+       }
       },
       {
        "id": "o151",
@@ -2739,7 +4853,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Fast, no-frills pairing to a driver.",
+       "preview": {
+        "company": "Bolt",
+        "pattern": "Basic match",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "ETA 12 min",
+         "Split fare",
+         "Home → Airport",
+         "UberX · 3 min away"
+        ],
+        "cta": "Say hi"
+       }
       },
       {
        "id": "o152",
@@ -2752,7 +4880,21 @@
         "em": 0,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Instant access to the closest available ride.",
+       "preview": {
+        "company": "Lime",
+        "pattern": "Unlock nearby",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "UberX · 3 min away",
+         "Fare $18",
+         "Pool · 8 min",
+         "Office → Home"
+        ],
+        "cta": "Say hi"
+       }
       }
      ],
      "recommend": {
@@ -2775,7 +4917,21 @@
         "em": 0,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Build trust during the most vulnerable moment.",
+       "preview": {
+        "company": "Uber",
+        "pattern": "Share + safety kit",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "Office → Home",
+         "Black · 5 min",
+         "ETA 12 min",
+         "Split fare"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o154",
@@ -2791,7 +4947,21 @@
        "goalsServed": [
         "emotional",
         "simple"
-       ]
+       ],
+       "purpose": "Caring touch that lets others follow along.",
+       "preview": {
+        "company": "Lyft",
+        "pattern": "Trip share",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "Split fare",
+         "Home → Airport",
+         "UberX · 3 min away",
+         "Fare $18"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o155",
@@ -2804,7 +4974,21 @@
         "em": 0,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Guide multimodal trips turn by turn.",
+       "preview": {
+        "company": "Citymapper",
+        "pattern": "Step navigation",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "Fare $18",
+         "Pool · 8 min",
+         "Office → Home",
+         "Black · 5 min"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o156",
@@ -2819,7 +5003,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Keep micromobility riders aware of running cost.",
+       "preview": {
+        "company": "Lime",
+        "pattern": "Ride timer",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "Black · 5 min",
+         "ETA 12 min",
+         "Split fare",
+         "Home → Airport"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -2845,7 +5043,21 @@
        "goalsServed": [
         "conversion",
         "simple"
-       ]
+       ],
+       "purpose": "End the trip with no checkout moment at all.",
+       "preview": {
+        "company": "Uber",
+        "pattern": "Invisible auto-charge",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "Home → Airport",
+         "UberX · 3 min away",
+         "Fare $18",
+         "Pool · 8 min"
+        ],
+        "cta": "Confirm"
+       }
       },
       {
        "id": "o158",
@@ -2860,7 +5072,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Smooth payment while supporting drivers.",
+       "preview": {
+        "company": "Lyft",
+        "pattern": "Auto + tip prompt",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "Pool · 8 min",
+         "Office → Home",
+         "Black · 5 min",
+         "ETA 12 min"
+        ],
+        "cta": "Confirm"
+       }
       },
       {
        "id": "o159",
@@ -2873,7 +5099,21 @@
         "em": -1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Flexible payment for varied markets.",
+       "preview": {
+        "company": "Bolt",
+        "pattern": "Cash / card",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "ETA 12 min",
+         "Split fare",
+         "Home → Airport",
+         "UberX · 3 min away"
+        ],
+        "cta": "Confirm"
+       }
       },
       {
        "id": "o160",
@@ -2886,7 +5126,21 @@
         "em": -1,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Transparent metered billing for short rides.",
+       "preview": {
+        "company": "Lime",
+        "pattern": "Per-minute receipt",
+        "header": "Where to?",
+        "metric": "ETA 12 min",
+        "rows": [
+         "UberX · 3 min away",
+         "Fare $18",
+         "Pool · 8 min",
+         "Office → Home"
+        ],
+        "cta": "Confirm"
+       }
       }
      ],
      "recommend": {
@@ -2895,7 +5149,9 @@
       "simple": "o157"
      }
     }
-   ]
+   ],
+   "icon": "car",
+   "index": "08"
   },
   {
    "id": "dating",
@@ -2925,7 +5181,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Scaffold real personality beyond a blank bio.",
+       "preview": {
+        "company": "Hinge",
+        "pattern": "Prompt-based",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Ava, 28",
+         "Noah, 31",
+         "Mia, 26",
+         "Sam, 29"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o162",
@@ -2938,7 +5208,21 @@
         "em": 1,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Match on compatibility through detailed answers.",
+       "preview": {
+        "company": "OkCupid",
+        "pattern": "Question depth",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Sam, 29",
+         "Priya, 27",
+         "Leo, 30",
+         "Jess, 25"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o163",
@@ -2954,7 +5238,21 @@
        "goalsServed": [
         "conversion",
         "simple"
-       ]
+       ],
+       "purpose": "Fast, visual judgment for high-volume browsing.",
+       "preview": {
+        "company": "Tinder",
+        "pattern": "Photo-first",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Jess, 25",
+         "Dan, 32",
+         "Ava, 28",
+         "Noah, 31"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o164",
@@ -2967,7 +5265,21 @@
         "em": 1,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Balanced setup that nudges better self-expression.",
+       "preview": {
+        "company": "Bumble",
+        "pattern": "Guided profile",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Noah, 31",
+         "Mia, 26",
+         "Sam, 29",
+         "Priya, 27"
+        ],
+        "cta": "Get started"
+       }
       }
      ],
      "recommend": {
@@ -2992,7 +5304,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "A single binary choice reduces overwhelm.",
+       "preview": {
+        "company": "Tinder",
+        "pattern": "Swipe one-at-a-time",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Priya, 27",
+         "Leo, 30",
+         "Jess, 25",
+         "Dan, 32"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o166",
@@ -3007,7 +5333,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Quality over quantity for intentional daters.",
+       "preview": {
+        "company": "Hinge",
+        "pattern": "Curated likes",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Dan, 32",
+         "Ava, 28",
+         "Noah, 31",
+         "Mia, 26"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o167",
@@ -3020,7 +5360,21 @@
         "em": 1,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Scarcity reduces fatigue and raises attention.",
+       "preview": {
+        "company": "Coffee Meets Bagel",
+        "pattern": "Daily curated",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Mia, 26",
+         "Sam, 29",
+         "Priya, 27",
+         "Leo, 30"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o168",
@@ -3035,7 +5389,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Controlled browsing with preference filters.",
+       "preview": {
+        "company": "Bumble",
+        "pattern": "Swipe + filters",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Leo, 30",
+         "Jess, 25",
+         "Dan, 32",
+         "Ava, 28"
+        ],
+        "cta": "Explore"
+       }
       }
      ],
      "recommend": {
@@ -3060,7 +5428,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Anchor the connection to something specific and real.",
+       "preview": {
+        "company": "Hinge",
+        "pattern": "Like a detail",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Ava, 28",
+         "Noah, 31",
+         "Mia, 26",
+         "Sam, 29"
+        ],
+        "cta": "Say hi"
+       }
       },
       {
        "id": "o170",
@@ -3073,7 +5455,21 @@
         "em": 1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "A constraint that repairs a broken first-move norm.",
+       "preview": {
+        "company": "Bumble",
+        "pattern": "Mutual + timer",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Sam, 29",
+         "Priya, 27",
+         "Leo, 30",
+         "Jess, 25"
+        ],
+        "cta": "Say hi"
+       }
       },
       {
        "id": "o171",
@@ -3089,7 +5485,21 @@
        "goalsServed": [
         "conversion",
         "simple"
-       ]
+       ],
+       "purpose": "Exciting immediacy that drives engagement.",
+       "preview": {
+        "company": "Tinder",
+        "pattern": "Instant match",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Jess, 25",
+         "Dan, 32",
+         "Ava, 28",
+         "Noah, 31"
+        ],
+        "cta": "Say hi"
+       }
       },
       {
        "id": "o172",
@@ -3102,7 +5512,21 @@
         "em": 1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Thoughtful, low-volume introductions.",
+       "preview": {
+        "company": "Coffee Meets Bagel",
+        "pattern": "Curated intro",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Noah, 31",
+         "Mia, 26",
+         "Sam, 29",
+         "Priya, 27"
+        ],
+        "cta": "Say hi"
+       }
       }
      ],
      "recommend": {
@@ -3125,7 +5549,21 @@
         "em": 1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Shift the dynamic and reduce unwanted messages.",
+       "preview": {
+        "company": "Bumble",
+        "pattern": "Women first, 24h",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Priya, 27",
+         "Leo, 30",
+         "Jess, 25",
+         "Dan, 32"
+        ],
+        "cta": "Say hi"
+       }
       },
       {
        "id": "o174",
@@ -3140,7 +5578,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Warm openers anchored to the profile.",
+       "preview": {
+        "company": "Hinge",
+        "pattern": "Comment to start",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Dan, 32",
+         "Ava, 28",
+         "Noah, 31",
+         "Mia, 26"
+        ],
+        "cta": "Say hi"
+       }
       },
       {
        "id": "o175",
@@ -3156,7 +5608,21 @@
        "goalsServed": [
         "conversion",
         "simple"
-       ]
+       ],
+       "purpose": "Frictionless messaging for fast conversations.",
+       "preview": {
+        "company": "Tinder",
+        "pattern": "Open chat",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Mia, 26",
+         "Sam, 29",
+         "Priya, 27",
+         "Leo, 30"
+        ],
+        "cta": "Say hi"
+       }
       },
       {
        "id": "o176",
@@ -3169,7 +5635,21 @@
         "em": 1,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Deeper conversations grounded in shared answers.",
+       "preview": {
+        "company": "OkCupid",
+        "pattern": "Compatibility chat",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Leo, 30",
+         "Jess, 25",
+         "Dan, 32",
+         "Ava, 28"
+        ],
+        "cta": "Say hi"
+       }
       }
      ],
      "recommend": {
@@ -3194,7 +5674,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Make safety a first-class, proactive feature.",
+       "preview": {
+        "company": "Bumble",
+        "pattern": "Verify + detect",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Ava, 28",
+         "Noah, 31",
+         "Mia, 26",
+         "Sam, 29"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o178",
@@ -3207,7 +5701,21 @@
         "em": 1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Solid baseline safety tools, always available.",
+       "preview": {
+        "company": "Hinge",
+        "pattern": "Report + block",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Sam, 29",
+         "Priya, 27",
+         "Leo, 30",
+         "Jess, 25"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o179",
@@ -3223,7 +5731,21 @@
        "goalsServed": [
         "conversion",
         "simple"
-       ]
+       ],
+       "purpose": "A basic trust signal that reduces catfishing.",
+       "preview": {
+        "company": "Tinder",
+        "pattern": "Photo verify",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Jess, 25",
+         "Dan, 32",
+         "Ava, 28",
+         "Noah, 31"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o180",
@@ -3236,7 +5758,21 @@
         "em": 0,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Granular control for privacy-conscious users.",
+       "preview": {
+        "company": "OkCupid",
+        "pattern": "Privacy controls",
+        "header": "Discover",
+        "metric": "5 new likes",
+        "rows": [
+         "Noah, 31",
+         "Mia, 26",
+         "Sam, 29",
+         "Priya, 27"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -3245,7 +5781,9 @@
       "simple": "o179"
      }
     }
-   ]
+   ],
+   "icon": "heart",
+   "index": "09"
   },
   {
    "id": "edtech",
@@ -3275,7 +5813,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Get to the first lesson before asking for anything.",
+       "preview": {
+        "company": "Duolingo",
+        "pattern": "Goal + first lesson",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "Intro to Python · 60%",
+         "Design Basics · 25%",
+         "Spanish A1 · 80%",
+         "Data 101 · 10%"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o182",
@@ -3290,7 +5842,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Anchor learning to a concrete outcome.",
+       "preview": {
+        "company": "Coursera",
+        "pattern": "Goal + path",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "Data 101 · 10%",
+         "Public Speaking · 45%",
+         "UX Research · 70%",
+         "Calculus · 30%"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o183",
@@ -3303,7 +5869,21 @@
         "em": 0,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Tailor the start to the learner's actual level.",
+       "preview": {
+        "company": "Khan Academy",
+        "pattern": "Diagnostic",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "Calculus · 30%",
+         "Guitar · 55%",
+         "Intro to Python · 60%",
+         "Design Basics · 25%"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o184",
@@ -3318,7 +5898,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Lead with aspiration to drive enrollment.",
+       "preview": {
+        "company": "MasterClass",
+        "pattern": "Inspire reel",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "Design Basics · 25%",
+         "Spanish A1 · 80%",
+         "Data 101 · 10%",
+         "Public Speaking · 45%"
+        ],
+        "cta": "Get started"
+       }
       }
      ],
      "recommend": {
@@ -3341,7 +5935,21 @@
         "em": -1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Help users judge value before committing time.",
+       "preview": {
+        "company": "Coursera",
+        "pattern": "Outcome filters",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "Public Speaking · 45%",
+         "UX Research · 70%",
+         "Calculus · 30%",
+         "Guitar · 55%"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o186",
@@ -3357,7 +5965,21 @@
        "goalsServed": [
         "conversion",
         "simple"
-       ]
+       ],
+       "purpose": "Breadth and social proof for bargain hunters.",
+       "preview": {
+        "company": "Udemy",
+        "pattern": "Ratings + sales",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "Guitar · 55%",
+         "Intro to Python · 60%",
+         "Design Basics · 25%",
+         "Spanish A1 · 80%"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o187",
@@ -3372,7 +5994,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Aspiration through marquee names.",
+       "preview": {
+        "company": "MasterClass",
+        "pattern": "Star instructors",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "Spanish A1 · 80%",
+         "Data 101 · 10%",
+         "Public Speaking · 45%",
+         "UX Research · 70%"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o188",
@@ -3385,7 +6021,21 @@
         "em": 0,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Structured map for systematic learners.",
+       "preview": {
+        "company": "Khan Academy",
+        "pattern": "Subject tree",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "UX Research · 70%",
+         "Calculus · 30%",
+         "Guitar · 55%",
+         "Intro to Python · 60%"
+        ],
+        "cta": "Explore"
+       }
       }
      ],
      "recommend": {
@@ -3410,7 +6060,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Micro-lessons plus instant feedback beat passive video.",
+       "preview": {
+        "company": "Duolingo",
+        "pattern": "Bite-size interactive",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "Intro to Python · 60%",
+         "Design Basics · 25%",
+         "Spanish A1 · 80%",
+         "Data 101 · 10%"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o190",
@@ -3423,7 +6087,21 @@
         "em": 0,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Pair explanation with doing for retention.",
+       "preview": {
+        "company": "Khan Academy",
+        "pattern": "Video + practice",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "Data 101 · 10%",
+         "Public Speaking · 45%",
+         "UX Research · 70%",
+         "Calculus · 30%"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o191",
@@ -3438,7 +6116,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Rigorous, credential-grade structure.",
+       "preview": {
+        "company": "Coursera",
+        "pattern": "Lecture + quiz",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "Calculus · 30%",
+         "Guitar · 55%",
+         "Intro to Python · 60%",
+         "Design Basics · 25%"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o192",
@@ -3453,7 +6145,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Inspire through production quality, not just content.",
+       "preview": {
+        "company": "MasterClass",
+        "pattern": "Cinematic video",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "Design Basics · 25%",
+         "Spanish A1 · 80%",
+         "Data 101 · 10%",
+         "Public Speaking · 45%"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -3479,7 +6185,21 @@
        "goalsServed": [
         "emotional",
         "simple"
-       ]
+       ],
+       "purpose": "Make invisible progress visible and a little social.",
+       "preview": {
+        "company": "Duolingo",
+        "pattern": "Streaks + XP",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "Public Speaking · 45%",
+         "UX Research · 70%",
+         "Calculus · 30%",
+         "Guitar · 55%"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o194",
@@ -3494,7 +6214,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Credible proof that motivates completion.",
+       "preview": {
+        "company": "Coursera",
+        "pattern": "Certificates",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "Guitar · 55%",
+         "Intro to Python · 60%",
+         "Design Basics · 25%",
+         "Spanish A1 · 80%"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o195",
@@ -3507,7 +6241,21 @@
         "em": 0,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Clear signal of what's learned and what's next.",
+       "preview": {
+        "company": "Khan Academy",
+        "pattern": "Mastery bars",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "Spanish A1 · 80%",
+         "Data 101 · 10%",
+         "Public Speaking · 45%",
+         "UX Research · 70%"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o196",
@@ -3520,7 +6268,21 @@
         "em": 0,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Simple progress to nudge finishing.",
+       "preview": {
+        "company": "Udemy",
+        "pattern": "Completion %",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "UX Research · 70%",
+         "Calculus · 30%",
+         "Guitar · 55%",
+         "Intro to Python · 60%"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -3545,7 +6307,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Habit loops that pull learners back daily.",
+       "preview": {
+        "company": "Duolingo",
+        "pattern": "Streak reminders",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "Intro to Python · 60%",
+         "Design Basics · 25%",
+         "Spanish A1 · 80%",
+         "Data 101 · 10%"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o198",
@@ -3558,7 +6334,21 @@
         "em": 0,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Structure and urgency to combat drop-off.",
+       "preview": {
+        "company": "Coursera",
+        "pattern": "Deadlines",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "Data 101 · 10%",
+         "Public Speaking · 45%",
+         "UX Research · 70%",
+         "Calculus · 30%"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o199",
@@ -3573,7 +6363,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Fresh aspirational content to re-engage.",
+       "preview": {
+        "company": "MasterClass",
+        "pattern": "New classes",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "Calculus · 30%",
+         "Guitar · 55%",
+         "Intro to Python · 60%",
+         "Design Basics · 25%"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o200",
@@ -3588,7 +6392,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Cheap, frequent pull back into the catalog.",
+       "preview": {
+        "company": "Udemy",
+        "pattern": "Sales emails",
+        "header": "Keep learning",
+        "metric": "12-day streak",
+        "rows": [
+         "Design Basics · 25%",
+         "Spanish A1 · 80%",
+         "Data 101 · 10%",
+         "Public Speaking · 45%"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -3597,7 +6415,9 @@
       "simple": "o197"
      }
     }
-   ]
+   ],
+   "icon": "graduation-cap",
+   "index": "10"
   },
   {
    "id": "design",
@@ -3628,7 +6448,21 @@
        "goalsServed": [
         "emotional",
         "simple"
-       ]
+       ],
+       "purpose": "Meet novices with a populated, guided start.",
+       "preview": {
+        "company": "Canva",
+        "pattern": "Template-first",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Brand Kit.fig",
+         "Landing v3",
+         "Mobile App",
+         "Icons.set"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o202",
@@ -3641,7 +6475,21 @@
         "em": 0,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Full power for pros willing to climb the curve.",
+       "preview": {
+        "company": "Figma",
+        "pattern": "Blank + tutorial",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Icons.set",
+         "Marketing site",
+         "Design system",
+         "Pitch deck"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o203",
@@ -3654,7 +6502,21 @@
         "em": 1,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Fast path from design to a live site.",
+       "preview": {
+        "company": "Framer",
+        "pattern": "Site template",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Pitch deck",
+         "Wireframes",
+         "Brand Kit.fig",
+         "Landing v3"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o204",
@@ -3669,7 +6531,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Precision and performance for Mac purists.",
+       "preview": {
+        "company": "Sketch",
+        "pattern": "Mac-native start",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Landing v3",
+         "Mobile App",
+         "Icons.set",
+         "Marketing site"
+        ],
+        "cta": "Get started"
+       }
       }
      ],
      "recommend": {
@@ -3695,7 +6571,21 @@
        "goalsServed": [
         "emotional",
         "simple"
-       ]
+       ],
+       "purpose": "Kill the blank canvas with abundant starting points.",
+       "preview": {
+        "company": "Canva",
+        "pattern": "Huge library",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Marketing site",
+         "Design system",
+         "Pitch deck",
+         "Wireframes"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o206",
@@ -3710,7 +6600,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Deep professional asset library at hand.",
+       "preview": {
+        "company": "Adobe",
+        "pattern": "Stock + assets",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Wireframes",
+         "Brand Kit.fig",
+         "Landing v3",
+         "Mobile App"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o207",
@@ -3723,7 +6627,21 @@
         "em": 1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Production-ready components, not just mockups.",
+       "preview": {
+        "company": "Framer",
+        "pattern": "Responsive kits",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Mobile App",
+         "Icons.set",
+         "Marketing site",
+         "Design system"
+        ],
+        "cta": "Explore"
+       }
       },
       {
        "id": "o208",
@@ -3736,7 +6654,21 @@
         "em": 1,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Vast crowd-sourced starting material.",
+       "preview": {
+        "company": "Figma",
+        "pattern": "Community files",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Design system",
+         "Pitch deck",
+         "Wireframes",
+         "Brand Kit.fig"
+        ],
+        "cta": "Explore"
+       }
       }
      ],
      "recommend": {
@@ -3759,7 +6691,21 @@
         "em": 0,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Pro-grade precision with zero install friction.",
+       "preview": {
+        "company": "Figma",
+        "pattern": "Precise vector",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Brand Kit.fig",
+         "Landing v3",
+         "Mobile App",
+         "Icons.set"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o210",
@@ -3772,7 +6718,21 @@
         "em": 0,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Crisp, exact tooling for detail-focused work.",
+       "preview": {
+        "company": "Sketch",
+        "pattern": "Native precision",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Icons.set",
+         "Marketing site",
+         "Design system",
+         "Pitch deck"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o211",
@@ -3788,7 +6748,21 @@
        "goalsServed": [
         "emotional",
         "simple"
-       ]
+       ],
+       "purpose": "Easy direct manipulation for non-designers.",
+       "preview": {
+        "company": "Canva",
+        "pattern": "Drag simple",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Pitch deck",
+         "Wireframes",
+         "Brand Kit.fig",
+         "Landing v3"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o212",
@@ -3803,7 +6777,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Heavyweight power for photo and complex art.",
+       "preview": {
+        "company": "Adobe",
+        "pattern": "Deep raster",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Landing v3",
+         "Mobile App",
+         "Icons.set",
+         "Marketing site"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -3828,7 +6816,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Visible presence makes collaboration feel alive.",
+       "preview": {
+        "company": "Figma",
+        "pattern": "Multiplayer live",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Marketing site",
+         "Design system",
+         "Pitch deck",
+         "Wireframes"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o214",
@@ -3843,7 +6845,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Simple feedback for casual collaborators.",
+       "preview": {
+        "company": "Canva",
+        "pattern": "Share + comment",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Wireframes",
+         "Brand Kit.fig",
+         "Landing v3",
+         "Mobile App"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o215",
@@ -3858,7 +6874,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Direct, technical bridge from design to code.",
+       "preview": {
+        "company": "Framer",
+        "pattern": "Handoff to dev",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Mobile App",
+         "Icons.set",
+         "Marketing site",
+         "Design system"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o216",
@@ -3871,7 +6901,21 @@
         "em": 0,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Reliable async sharing across the suite.",
+       "preview": {
+        "company": "Adobe",
+        "pattern": "Cloud sync",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Design system",
+         "Pitch deck",
+         "Wireframes",
+         "Brand Kit.fig"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -3897,7 +6941,21 @@
        "goalsServed": [
         "emotional",
         "simple"
-       ]
+       ],
+       "purpose": "Collapse design-to-production to near zero.",
+       "preview": {
+        "company": "Framer",
+        "pattern": "Publish live site",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Brand Kit.fig",
+         "Landing v3",
+         "Mobile App",
+         "Icons.set"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o218",
@@ -3910,7 +6968,21 @@
         "em": 0,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Clear specs for engineers, with setup.",
+       "preview": {
+        "company": "Figma",
+        "pattern": "Dev Mode specs",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Icons.set",
+         "Marketing site",
+         "Design system",
+         "Pitch deck"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o219",
@@ -3923,7 +6995,21 @@
         "em": 0,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Solid manual handoff for precise control.",
+       "preview": {
+        "company": "Sketch",
+        "pattern": "Inspector + export",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Pitch deck",
+         "Wireframes",
+         "Brand Kit.fig",
+         "Landing v3"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o220",
@@ -3938,7 +7024,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Flexible export for varied production needs.",
+       "preview": {
+        "company": "Adobe",
+        "pattern": "Asset export",
+        "header": "Recent files",
+        "metric": "4 files",
+        "rows": [
+         "Landing v3",
+         "Mobile App",
+         "Icons.set",
+         "Marketing site"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -3947,7 +7047,9 @@
       "simple": "o217"
      }
     }
-   ]
+   ],
+   "icon": "palette",
+   "index": "11"
   },
   {
    "id": "ai",
@@ -3978,7 +7080,21 @@
        "goalsServed": [
         "emotional",
         "simple"
-       ]
+       ],
+       "purpose": "The best assistant is the one already where you are.",
+       "preview": {
+        "company": "Meta AI",
+        "pattern": "In your chat apps",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Summarize this doc",
+         "Draft a reply",
+         "Plan my week",
+         "Explain this code"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o222",
@@ -3991,7 +7107,21 @@
         "em": 1,
         "si": 2
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "A single trusted destination for everything.",
+       "preview": {
+        "company": "ChatGPT",
+        "pattern": "One famous app",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Explain this code",
+         "Make a slide",
+         "Research a trip",
+         "Rewrite this"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o223",
@@ -4006,7 +7136,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Seamless help inside the tools you already use.",
+       "preview": {
+        "company": "Gemini",
+        "pattern": "In Google tools",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Rewrite this",
+         "Build a tracker",
+         "Summarize this doc",
+         "Draft a reply"
+        ],
+        "cta": "Get started"
+       }
       },
       {
        "id": "o224",
@@ -4019,7 +7163,21 @@
         "em": -1,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Go beyond answers to autonomously doing tasks.",
+       "preview": {
+        "company": "Manus",
+        "pattern": "Web agent",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Draft a reply",
+         "Plan my week",
+         "Explain this code",
+         "Make a slide"
+        ],
+        "cta": "Get started"
+       }
       }
      ],
      "recommend": {
@@ -4044,7 +7202,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Voice and judgment in output build lasting trust.",
+       "preview": {
+        "company": "Claude",
+        "pattern": "Nuanced reasoning",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Make a slide",
+         "Research a trip",
+         "Rewrite this",
+         "Build a tracker"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o226",
@@ -4057,7 +7229,21 @@
         "em": 1,
         "si": 1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "A broad generalist for any everyday question.",
+       "preview": {
+        "company": "ChatGPT",
+        "pattern": "Versatile chat",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Build a tracker",
+         "Summarize this doc",
+         "Draft a reply",
+         "Plan my week"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o227",
@@ -4072,7 +7258,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Speed-first responses for quick lookups.",
+       "preview": {
+        "company": "Gemini",
+        "pattern": "Fast answers",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Plan my week",
+         "Explain this code",
+         "Make a slide",
+         "Research a trip"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o228",
@@ -4087,7 +7287,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Friendly, lightweight help for everyday users.",
+       "preview": {
+        "company": "Meta AI",
+        "pattern": "Casual chat",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Research a trip",
+         "Rewrite this",
+         "Build a tracker",
+         "Summarize this doc"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -4112,7 +7326,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Meet users inside the data they already work in.",
+       "preview": {
+        "company": "Gemini",
+        "pattern": "Huge context + Workspace",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Summarize this doc",
+         "Draft a reply",
+         "Plan my week",
+         "Explain this code"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o230",
@@ -4127,7 +7355,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Deep, organized work across long context.",
+       "preview": {
+        "company": "Claude",
+        "pattern": "Projects + long docs",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Explain this code",
+         "Make a slide",
+         "Research a trip",
+         "Rewrite this"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o231",
@@ -4140,7 +7382,21 @@
         "em": 0,
         "si": 0
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Personalized, persistent, extensible assistance.",
+       "preview": {
+        "company": "ChatGPT",
+        "pattern": "Memory + GPTs",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Rewrite this",
+         "Build a tracker",
+         "Summarize this doc",
+         "Draft a reply"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o232",
@@ -4155,7 +7411,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Stay current by reaching the live internet.",
+       "preview": {
+        "company": "Manus",
+        "pattern": "Pulls live web",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Draft a reply",
+         "Plan my week",
+         "Explain this code",
+         "Make a slide"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -4180,7 +7450,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Let people talk and show, not just type.",
+       "preview": {
+        "company": "ChatGPT",
+        "pattern": "Voice + image + vision",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Make a slide",
+         "Research a trip",
+         "Rewrite this",
+         "Build a tracker"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o234",
@@ -4195,7 +7479,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Handle text, image and audio as one.",
+       "preview": {
+        "company": "Gemini",
+        "pattern": "Native multimodal",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Build a tracker",
+         "Summarize this doc",
+         "Draft a reply",
+         "Plan my week"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o235",
@@ -4210,7 +7508,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Creative output right inside the conversation.",
+       "preview": {
+        "company": "Meta AI",
+        "pattern": "Image gen in chat",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Plan my week",
+         "Explain this code",
+         "Make a slide",
+         "Research a trip"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o236",
@@ -4223,7 +7535,21 @@
         "em": 1,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Capable comprehension of files and visuals.",
+       "preview": {
+        "company": "Claude",
+        "pattern": "Doc + image read",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Research a trip",
+         "Rewrite this",
+         "Build a tracker",
+         "Summarize this doc"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -4248,7 +7574,21 @@
        },
        "goalsServed": [
         "emotional"
-       ]
+       ],
+       "purpose": "Turn conversation into usable, shareable artifacts.",
+       "preview": {
+        "company": "Claude",
+        "pattern": "Artifacts live output",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Summarize this doc",
+         "Draft a reply",
+         "Plan my week",
+         "Explain this code"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o238",
@@ -4263,7 +7603,21 @@
        },
        "goalsServed": [
         "simple"
-       ]
+       ],
+       "purpose": "Flexible workspace for drafting and exporting.",
+       "preview": {
+        "company": "ChatGPT",
+        "pattern": "Canvas + export",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Explain this code",
+         "Make a slide",
+         "Research a trip",
+         "Rewrite this"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o239",
@@ -4276,7 +7630,21 @@
         "em": -1,
         "si": -1
        },
-       "goalsServed": []
+       "goalsServed": [],
+       "purpose": "Hand back finished work, not just guidance.",
+       "preview": {
+        "company": "Manus",
+        "pattern": "Completed deliverables",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Rewrite this",
+         "Build a tracker",
+         "Summarize this doc",
+         "Draft a reply"
+        ],
+        "cta": "Continue"
+       }
       },
       {
        "id": "o240",
@@ -4291,7 +7659,21 @@
        },
        "goalsServed": [
         "conversion"
-       ]
+       ],
+       "purpose": "Drop results straight into familiar tools.",
+       "preview": {
+        "company": "Gemini",
+        "pattern": "Export to Docs",
+        "header": "Recent",
+        "metric": "New chat",
+        "rows": [
+         "Draft a reply",
+         "Plan my week",
+         "Explain this code",
+         "Make a slide"
+        ],
+        "cta": "Continue"
+       }
       }
      ],
      "recommend": {
@@ -4300,7 +7682,12 @@
       "simple": "o238"
      }
     }
-   ]
+   ],
+   "icon": "bot",
+   "index": "12"
   }
- ]
+ ],
+ "designDirection": "Editorial research-lab aesthetic: monochrome (near-black / off-white) with one restrained accent; grotesk + monospace type; UPPERCASE wide-tracked labels; index numbers; hairline rules; bracket [ ] and hexagon motifs. Use the per-industry icon (Lucide name) + index instead of emoji.",
+ "annotationSpec": "Each option carries purpose (why this layout / what it is good for), tradeoff (its weakness), company, pattern. Render the in-Studio preview as a higher-fidelity mock with numbered callouts: 1 PURPOSE, 2 STRENGTH (derive from purpose+traits), 3 WEAKNESS (=tradeoff). Where purpose is absent, compose one from pattern + traits.",
+ "previewSpec": "Render every phone preview ONLY from option.preview {company, pattern, header, metric, rows[4], cta}, laid out by option.screen. No hardcoded strings in any screen component. Title=company+pattern; section header=header; any stat=metric; all list/grid/card/chat/search items=rows; primary button=cta. Wallet chrome (balance/Send/Pay) allowed only when industry id is fintech, and its text must come from preview."
 }
