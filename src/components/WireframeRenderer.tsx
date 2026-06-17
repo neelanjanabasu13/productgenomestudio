@@ -114,7 +114,7 @@ const screens: Record<string, Builder> = {
               <Photo seed={i} className="w-10 h-10 rounded-md shrink-0" />
               <div className="flex-1 min-w-0">
                 <div className="text-[11px] font-medium truncate">{row(p, i)}</div>
-                <div className="text-[9px] text-foreground/55 truncate">{NEUTRAL[i % NEUTRAL.length]}</div>
+                <div className="text-[9px] text-foreground/55 truncate">{detail(p, i)}</div>
               </div>
               <Chip accent>{p.cta}</Chip>
             </div>
@@ -331,7 +331,7 @@ const screens: Record<string, Builder> = {
         <div className="p-3 rounded-xl border border-border/60 flex items-center gap-2">
           <div className="w-9 h-6 rounded bg-foreground/70 shrink-0" />
           <div className="flex-1 text-[11px] truncate">{row(p, 0)}</div>
-          <span className="text-[9px] font-mono text-foreground/55 shrink-0">DEFAULT</span>
+          <span className="text-[9px] font-mono text-foreground/55 shrink-0 truncate max-w-[80px]">{p.metric}</span>
         </div>
         <div className="p-3 rounded-xl border border-border/60 flex items-center gap-2">
           <div className="flex-1 text-[11px] truncate">{row(p, 1)}</div>
@@ -424,7 +424,7 @@ const screens: Record<string, Builder> = {
             <div key={i} className="flex items-center gap-2 p-2 rounded-lg border border-border/60">
               <div className="w-2 h-2 rounded-full bg-primary shrink-0" />
               <div className="flex-1 text-[11px] truncate">{c}</div>
-              <span className="text-[9px] font-mono text-primary shrink-0">UNLOCKED</span>
+              <span className="text-[9px] font-mono text-primary shrink-0 truncate max-w-[72px]">{p.cta}</span>
             </div>
           ))}
           <div className="flex items-center gap-2 p-2 rounded-lg border border-dashed border-border/80 opacity-60">
