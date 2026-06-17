@@ -1340,6 +1340,62 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
+  socialInterestGraph: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="font-display text-[15px] leading-tight">What are you into?</div>
+        <div className="text-[10px] text-foreground/60 -mt-1">Pick 3+ — we'll tune your For You</div>
+        <div className="flex items-center gap-1 text-[9px] font-mono text-foreground/55">
+          <div className="flex-1 h-1 rounded-full bg-foreground/15 overflow-hidden"><div className="h-full w-[60%] bg-primary" /></div>
+          <span>5 / 3</span>
+        </div>
+        <div className="flex flex-wrap gap-1.5 flex-1 content-start">
+          {[
+            { l: "Design",       e: "🎨", on: true  },
+            { l: "Comedy",       e: "😂", on: false },
+            { l: "Cooking",      e: "🍳", on: true  },
+            { l: "DIY",          e: "🛠", on: false },
+            { l: "Coding",       e: "💻", on: true  },
+            { l: "Dance",        e: "💃", on: false },
+            { l: "Gaming",       e: "🎮", on: false },
+            { l: "Books",        e: "📚", on: true  },
+            { l: "Travel",       e: "✈️", on: false },
+            { l: "Fitness",      e: "🏋", on: false },
+            { l: "Music",        e: "🎧", on: true  },
+            { l: "Pets",         e: "🐶", on: false },
+            { l: "Fashion",      e: "👗", on: false },
+            { l: "Photography",  e: "📷", on: false },
+            { l: "ASMR",         e: "🔊", on: false },
+            { l: "Storytime",    e: "🎙",  on: false },
+          ].map((t, i) => (
+            <span key={i} className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] truncate ${t.on ? "bg-primary text-primary-foreground" : "bg-foreground/[0.06] text-foreground/75 border border-border/60"}`}>
+              <span className="text-[11px] leading-none">{t.e}</span>{t.l}
+              {t.on && <span className="text-[9px] opacity-80">✓</span>}
+            </span>
+          ))}
+        </div>
+        <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55">Because you picked Design</div>
+        <div className="flex gap-1.5 overflow-hidden">
+          {[0,1,2,3].map(i => (
+            <div key={i} className="w-14 shrink-0">
+              <Photo seed={i} className="w-full h-16 rounded-md relative">
+                <span className="absolute bottom-1 left-1 text-[8px] font-mono text-background bg-background/20 px-1 rounded">▶ {(i+1)*42}k</span>
+              </Photo>
+              <div className="text-[8px] truncate mt-0.5">#typography</div>
+            </div>
+          ))}
+        </div>
+        <CTA>Build my feed</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "16%", label: "Pick interests" },
+      { n: 2, x: "30%", y: "45%", label: "Selected node" },
+      { n: 3, x: "50%", y: "80%", label: "Live preview" },
+    ],
+  })) as Builder,
+
   socialFollowSuggest: ((_ctx, _p) => ({
     node: (
       <Frame>

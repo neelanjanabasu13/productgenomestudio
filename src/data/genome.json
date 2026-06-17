@@ -1379,7 +1379,7 @@
               "company": "TikTok",
               "pattern": "Watch-time interest graph",
               "tradeoff": "Instant but opaque",
-              "screen": "socialFypFeed",
+              "screen": "socialInterestGraph",
               "traits": {
                 "ex": 1,
                 "em": 1,
