@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 import type { Preview } from "@/data/genome.types";
 
 export interface Pin {
