@@ -726,13 +726,13 @@ const screens: Record<string, Builder> = {
         <div className="font-display text-[16px] leading-tight truncate">{p.header}</div>
         <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 truncate">{p.metric}</div>
         <div className="grid grid-cols-3 gap-1.5 flex-1">
-          {[
-            { col: "Todo", items: [p.rows[0], p.rows[1]] },
-            { col: "Doing", items: [p.rows[2]] },
-            { col: "Done", items: [p.rows[3]] },
-          ].map((col) => (
-            <div key={col.col} className="space-y-1.5">
-              <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55">{col.col}</div>
+            {[
+            { col: p.header, items: [p.rows[0], p.rows[1]] },
+            { col: p.metric, items: [p.rows[2]] },
+            { col: p.cta, items: [p.rows[3]] },
+          ].map((col, i) => (
+            <div key={i} className="space-y-1.5">
+              <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 truncate">{col.col}</div>
               {col.items.map((t, i) => (
                 <div key={i} className="rounded-lg border border-border/60 p-1.5 bg-card/70">
                   <div className="text-[10px] font-medium leading-tight line-clamp-3">{t}</div>
@@ -762,7 +762,7 @@ const screens: Record<string, Builder> = {
               <Photo seed={i} className="aspect-[3/4]" />
               <div className="p-1.5">
                 <div className="text-[10px] font-medium truncate">{row(p, i)}</div>
-                <div className="text-[9px] text-foreground/55 truncate">{NEUTRAL[i % NEUTRAL.length]}</div>
+                <div className="text-[9px] text-foreground/55 truncate">{detail(p, i)}</div>
               </div>
             </div>
           ))}
@@ -842,7 +842,7 @@ const fallback: Builder = (ctx, p) => ({
             <Photo seed={i} className="w-10 h-10 rounded-md shrink-0" />
             <div className="flex-1 min-w-0">
               <div className="text-[11px] font-medium truncate">{row(p, i)}</div>
-              <div className="text-[9px] text-foreground/55 truncate">{NEUTRAL[i % NEUTRAL.length]}</div>
+              <div className="text-[9px] text-foreground/55 truncate">{detail(p, i)}</div>
             </div>
           </div>
         ))}
