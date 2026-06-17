@@ -48,8 +48,9 @@ function withOptionPreviewText(industry: Industry): Industry {
         const baseRows = preview?.rows?.length
           ? preview.rows
           : [option.purpose, option.tradeoff, industry.name, stage.stage].filter(Boolean);
+        const fallback = option.purpose || option.tradeoff || industry.name;
         const rows = [0, 1, 2, 3].map((index) => {
-          const value = baseRows[index % baseRows.length] ?? option.pattern;
+          const value = baseRows[index % baseRows.length] ?? fallback;
           return `${option.company} · ${value}`;
         });
 
@@ -58,12 +59,12 @@ function withOptionPreviewText(industry: Industry): Industry {
           preview: {
             company: option.company,
             pattern: option.pattern,
-            header: option.pattern,
+            header: option.purpose || industry.name,
             metric: `${option.company} · ${stage.stage}`,
             rows,
             cta: preview?.cta && !["Continue", "Get started"].includes(preview.cta)
               ? preview.cta
-              : option.pattern,
+              : (option.tradeoff || option.purpose || stage.stage),
           },
         };
       }),
