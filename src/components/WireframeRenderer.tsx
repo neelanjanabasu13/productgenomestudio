@@ -43,7 +43,7 @@ const Chip = ({ children, accent, mono = true }: { children: ReactNode; accent?:
   </span>
 );
 
-const Photo = ({ seed = 0, className = "" }: { seed?: number; className?: string }) => {
+const Photo = ({ seed = 0, className = "", children }: { seed?: number; className?: string; children?: ReactNode }) => {
   // Soft gradient stand-in for an image — varies by seed
   const hues = [
     "from-foreground/20 to-foreground/5",
@@ -51,7 +51,7 @@ const Photo = ({ seed = 0, className = "" }: { seed?: number; className?: string
     "from-foreground/15 to-foreground/0",
     "from-primary/15 to-foreground/10",
   ];
-  return <div className={`bg-gradient-to-br ${hues[seed % hues.length]} ${className}`} />;
+  return <div className={`bg-gradient-to-br ${hues[seed % hues.length]} ${className}`}>{children}</div>;
 };
 
 const CTA = ({ children }: { children: ReactNode }) => (
