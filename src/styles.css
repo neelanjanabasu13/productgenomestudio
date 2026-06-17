@@ -259,19 +259,25 @@
   opacity: 1;
 }
 
-/* Sketch draw-in animation */
-.sketch-svg path,
-.sketch-svg rect,
-.sketch-svg circle {
+/* Sketch draw-in animation (two passes for hand-drawn feel) */
+.sketch-svg .sketch-layer path,
+.sketch-svg .sketch-layer rect,
+.sketch-svg .sketch-layer circle {
   stroke-dasharray: 600;
   stroke-dashoffset: 600;
   transition: stroke-dashoffset 0s;
 }
-.hex-tile:hover .sketch-svg path,
-.hex-tile:hover .sketch-svg rect,
-.hex-tile:hover .sketch-svg circle {
+.hex-tile:hover .sketch-svg .sketch-main path,
+.hex-tile:hover .sketch-svg .sketch-main rect,
+.hex-tile:hover .sketch-svg .sketch-main circle {
   stroke-dashoffset: 0;
   transition: stroke-dashoffset 1100ms ease-out;
+}
+.hex-tile:hover .sketch-svg .sketch-ghost path,
+.hex-tile:hover .sketch-svg .sketch-ghost rect,
+.hex-tile:hover .sketch-svg .sketch-ghost circle {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1200ms ease-out 120ms;
 }
 
 @keyframes hex-float {
@@ -292,9 +298,9 @@
   .hex-tile:hover {
     transform: none;
   }
-  .sketch-svg path,
-  .sketch-svg rect,
-  .sketch-svg circle {
+  .sketch-svg .sketch-layer path,
+  .sketch-svg .sketch-layer rect,
+  .sketch-svg .sketch-layer circle {
     stroke-dasharray: none;
     stroke-dashoffset: 0;
   }
