@@ -6441,7 +6441,7 @@
               "company": "Canva",
               "pattern": "Template-first",
               "tradeoff": "Easy but generic",
-              "screen": "templateGallery",
+              "screen": "desCanvaTemplates",
               "traits": {
                 "ex": 0,
                 "em": 2,
@@ -6471,7 +6471,7 @@
               "company": "Figma",
               "pattern": "Blank + tutorial",
               "tradeoff": "Powerful but steep",
-              "screen": "codeCanvas",
+              "screen": "desFigmaBlank",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -6498,7 +6498,7 @@
               "company": "Framer",
               "pattern": "Site template",
               "tradeoff": "Fast site but narrow",
-              "screen": "templateGallery",
+              "screen": "desFramerSite",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -6525,7 +6525,7 @@
               "company": "Sketch",
               "pattern": "Mac-native start",
               "tradeoff": "Precise but install needed",
-              "screen": "codeCanvas",
+              "screen": "desSketchStart",
               "traits": {
                 "ex": -1,
                 "em": 0,
@@ -6564,7 +6564,7 @@
               "company": "Canva",
               "pattern": "Huge library",
               "tradeoff": "Abundant but samey",
-              "screen": "templateGallery",
+              "screen": "desCanvaLibrary",
               "traits": {
                 "ex": 0,
                 "em": 2,
@@ -6594,7 +6594,7 @@
               "company": "Adobe",
               "pattern": "Stock + assets",
               "tradeoff": "Rich but paywalled",
-              "screen": "templateGallery",
+              "screen": "desAdobeStock",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -6623,7 +6623,7 @@
               "company": "Framer",
               "pattern": "Responsive kits",
               "tradeoff": "Production-ready but rigid",
-              "screen": "templateGallery",
+              "screen": "desFramerKits",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -6650,7 +6650,7 @@
               "company": "Figma",
               "pattern": "Community files",
               "tradeoff": "Vast but variable",
-              "screen": "templateGallery",
+              "screen": "desFigmaCommunity",
               "traits": {
                 "ex": 1,
                 "em": 1,
@@ -6687,7 +6687,7 @@
               "company": "Figma",
               "pattern": "Precise vector",
               "tradeoff": "Pro but learning curve",
-              "screen": "codeCanvas",
+              "screen": "desFigmaCanvas",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -6714,7 +6714,7 @@
               "company": "Sketch",
               "pattern": "Native precision",
               "tradeoff": "Crisp but Mac-only",
-              "screen": "codeCanvas",
+              "screen": "desSketchCanvas",
               "traits": {
                 "ex": -1,
                 "em": 0,
@@ -6741,7 +6741,7 @@
               "company": "Canva",
               "pattern": "Drag simple",
               "tradeoff": "Easy but limited",
-              "screen": "codeCanvas",
+              "screen": "desCanvaDrag",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -6771,7 +6771,7 @@
               "company": "Adobe",
               "pattern": "Deep raster",
               "tradeoff": "Powerful but heavy",
-              "screen": "codeCanvas",
+              "screen": "desAdobeRaster",
               "traits": {
                 "ex": -1,
                 "em": -1,
@@ -6810,7 +6810,7 @@
               "company": "Figma",
               "pattern": "Multiplayer live",
               "tradeoff": "Alive but can crowd",
-              "screen": "codeCanvas",
+              "screen": "desFigmaMultiplayer",
               "traits": {
                 "ex": 1,
                 "em": 1,
@@ -6839,7 +6839,7 @@
               "company": "Canva",
               "pattern": "Share + comment",
               "tradeoff": "Simple but basic",
-              "screen": "chatThread",
+              "screen": "desCanvaShare",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -6868,7 +6868,7 @@
               "company": "Framer",
               "pattern": "Handoff to dev",
               "tradeoff": "Direct but technical",
-              "screen": "codeCanvas",
+              "screen": "desFramerHandoff",
               "traits": {
                 "ex": -1,
                 "em": -1,
@@ -6897,7 +6897,7 @@
               "company": "Adobe",
               "pattern": "Cloud sync",
               "tradeoff": "Reliable but async",
-              "screen": "dashboard",
+              "screen": "desAdobeCloud",
               "traits": {
                 "ex": -1,
                 "em": 0,
@@ -6934,7 +6934,7 @@
               "company": "Framer",
               "pattern": "Publish live site",
               "tradeoff": "Zero-handoff but opinionated",
-              "screen": "codeCanvas",
+              "screen": "desFramerPublish",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -6964,7 +6964,7 @@
               "company": "Figma",
               "pattern": "Dev Mode specs",
               "tradeoff": "Clear but needs setup",
-              "screen": "dashboard",
+              "screen": "desFigmaDevMode",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -6991,7 +6991,7 @@
               "company": "Sketch",
               "pattern": "Inspector + export",
               "tradeoff": "Solid but manual",
-              "screen": "dashboard",
+              "screen": "desSketchExport",
               "traits": {
                 "ex": -1,
                 "em": 0,
@@ -7018,7 +7018,7 @@
               "company": "Adobe",
               "pattern": "Asset export",
               "tradeoff": "Flexible but fiddly",
-              "screen": "dashboard",
+              "screen": "desAdobeExport",
               "traits": {
                 "ex": -1,
                 "em": -1,

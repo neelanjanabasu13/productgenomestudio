@@ -8236,6 +8236,791 @@ Object.assign(screens, {
   })) as Builder,
 });
 
+// ============================================================
+// DESIGN TOOLS — 20 brand-evocative screens
+// ============================================================
+const DesBar = () => (
+  <div className="flex items-center justify-between text-[9px] font-mono text-foreground/50 -mt-1">
+    <span>9:41</span>
+    <span className="tracking-[0.18em]">●●●</span>
+    <span>100%</span>
+  </div>
+);
+
+const TrafficLights = () => (
+  <div className="flex gap-1 items-center">
+    <span className="w-2 h-2 rounded-full bg-red-500" />
+    <span className="w-2 h-2 rounded-full bg-amber-400" />
+    <span className="w-2 h-2 rounded-full bg-emerald-500" />
+  </div>
+);
+
+Object.assign(screens, {
+  // 1. Canva — Template-first
+  desCanvaTemplates: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DesBar />
+        <div className="flex items-center gap-1.5">
+          <div className="w-5 h-5 rounded bg-gradient-to-br from-[#00C4CC] to-[#7D2AE8] grid place-items-center text-white text-[9px] font-bold">C</div>
+          <div className="text-[11px] font-semibold">What will you design?</div>
+        </div>
+        <div className="grid grid-cols-3 gap-1">
+          {["Insta post","Story","Presentation","Resume","Poster","Logo"].map((t,i)=>(
+            <div key={i} className={`p-1 rounded-md border text-center ${i===0?"border-[#7D2AE8] bg-[#7D2AE8]/8":"border-border/60"}`}>
+              <Photo seed={i} className="aspect-square rounded mb-0.5" />
+              <div className="text-[8.5px] truncate">{t}</div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Start from a template</div>
+        <div className="grid grid-cols-3 gap-1 flex-1 overflow-hidden">
+          {Array.from({length:6}).map((_,i)=>(
+            <div key={i} className="rounded-md overflow-hidden border border-border/60 relative">
+              <Photo seed={i+2} className="aspect-square" />
+              {i===2 && <div className="absolute top-0.5 right-0.5 text-[7.5px] bg-amber-400 text-black rounded px-1">Pro</div>}
+            </div>
+          ))}
+        </div>
+        <CTA>Browse all templates</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "Pick a format" },
+      { n: 2, x: "50%", y: "55%", label: "Template gallery" },
+      { n: 3, x: "50%", y: "92%", label: "Start instantly" },
+    ],
+  })) as Builder,
+
+  // 2. Figma — Blank + tutorial
+  desFigmaBlank: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <div className="flex items-center gap-1.5 -mt-1">
+          <TrafficLights />
+          <div className="flex gap-0.5 ml-1">
+            <div className="w-3 h-3 rounded-sm bg-red-500" />
+            <div className="w-3 h-3 rounded-sm bg-emerald-500" />
+            <div className="w-3 h-3 rounded-sm bg-blue-500" />
+            <div className="w-3 h-3 rounded-sm bg-purple-500" />
+          </div>
+          <div className="text-[9px] font-mono text-foreground/55 ml-auto">Untitled</div>
+        </div>
+        <div className="flex gap-1 flex-1">
+          <div className="w-12 rounded-md border border-border/60 p-1 text-[8.5px] space-y-0.5">
+            <div className="text-foreground/55">Layers</div>
+            <div>▸ Page 1</div>
+          </div>
+          <div className="relative flex-1 rounded-md border border-border/60 bg-[radial-gradient(circle,_currentColor_0.5px,_transparent_0.5px)] [background-size:8px_8px] text-foreground/20">
+            <div className="absolute inset-4 rounded-lg border-2 border-dashed border-foreground/25 grid place-items-center text-foreground/40 text-[10px]">Empty canvas</div>
+            <div className="absolute bottom-2 right-2 w-32 rounded-md bg-foreground text-background p-1.5 shadow-lg text-[8.5px]">
+              <div className="font-semibold mb-0.5">👋 Welcome to Figma</div>
+              <div className="opacity-80">Press R to draw a rectangle, T for text.</div>
+              <div className="mt-1 flex gap-1"><span className="px-1 rounded bg-white/15">1 of 5</span><span className="ml-auto">Next →</span></div>
+            </div>
+          </div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "40%", label: "Blank canvas" },
+      { n: 2, x: "78%", y: "75%", label: "Tutorial overlay" },
+      { n: 3, x: "78%", y: "85%", label: "Step 1 of 5" },
+    ],
+  })) as Builder,
+
+  // 3. Framer — Site template
+  desFramerSite: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DesBar />
+        <div className="text-[11px] font-semibold">Start a site</div>
+        <div className="flex gap-1 flex-wrap">
+          {["All","Portfolio","SaaS","Agency","Blog"].map((c,i)=>(<Chip key={i} accent={i===2}>{c}</Chip>))}
+        </div>
+        <div className="grid grid-cols-2 gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Vapor","SaaS · Animated"],
+            ["Atelier","Portfolio · Mono"],
+            ["Linear-ish","Startup"],
+            ["Editorial","Magazine"],
+          ].map(([n,t],i)=>(
+            <div key={i} className="rounded-md overflow-hidden border border-border/60 relative">
+              <div className="relative aspect-[4/5] bg-gradient-to-br from-foreground/15 to-foreground/5">
+                <Photo seed={i} className="absolute inset-0" />
+                <div className="absolute inset-x-1 bottom-1 bg-background/95 rounded px-1 py-0.5">
+                  <div className="text-[9px] font-semibold truncate">{n}</div>
+                  <div className="text-[8px] text-foreground/55 truncate">{t}</div>
+                </div>
+                <div className="absolute top-1 right-1 text-[7.5px] bg-foreground text-background rounded px-1">⚡ Responsive</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <CTA>Start with Vapor</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "Site templates" },
+      { n: 2, x: "82%", y: "40%", label: "Responsive badge" },
+      { n: 3, x: "50%", y: "92%", label: "Launch in editor" },
+    ],
+  })) as Builder,
+
+  // 4. Sketch — Mac-native start
+  desSketchStart: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <div className="flex items-center gap-1.5 -mt-1">
+          <TrafficLights />
+          <div className="text-[9px] font-mono text-foreground/60 ml-1">Sketch — New Document</div>
+        </div>
+        <div className="flex gap-1 flex-1">
+          <div className="w-16 rounded-md bg-foreground/[0.04] border border-border/60 p-1 text-[8.5px] space-y-0.5">
+            <div className="text-foreground/55 uppercase tracking-wider text-[7.5px]">Recent</div>
+            <div className="rounded bg-foreground/8 px-1 py-0.5">Recents</div>
+            <div className="px-1 py-0.5">Cloud</div>
+            <div className="px-1 py-0.5">Templates</div>
+            <div className="px-1 py-0.5">Trash</div>
+          </div>
+          <div className="flex-1 space-y-1">
+            <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Start a new document</div>
+            <div className="grid grid-cols-3 gap-1">
+              {[["iPhone 15","393×852"],["MacBook","1440×900"],["A4","595×842"],["iPad","1024×1366"],["Apple Watch","176×216"],["Custom","—"]].map(([n,s],i)=>(
+                <div key={i} className="rounded-md border border-border/60 p-1 text-center bg-background">
+                  <div className="h-7 grid place-items-center text-foreground/40 text-[14px]">▭</div>
+                  <div className="text-[8px] font-medium truncate">{n}</div>
+                  <div className="text-[7px] text-foreground/55 font-mono">{s}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="flex items-center justify-end gap-1">
+          <div className="text-[9px] px-2 py-1 rounded border border-border/60">Open…</div>
+          <div className="text-[9px] px-2 py-1 rounded bg-blue-500 text-white">Create</div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "12%", y: "12%", label: "Mac chrome" },
+      { n: 2, x: "55%", y: "50%", label: "Native sizes" },
+      { n: 3, x: "82%", y: "90%", label: "Create" },
+    ],
+  })) as Builder,
+
+  // 5. Canva — Huge library
+  desCanvaLibrary: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DesBar />
+        <div className="h-8 rounded-full bg-foreground/[0.06] border border-border/60 px-3 grid items-center text-[10px] text-foreground/55">🔔 Search 1M+ templates</div>
+        <div className="flex gap-1 overflow-hidden">
+          {["All","Social","Docs","Video","Print","Marketing","Edu"].map((c,i)=>(<Chip key={i} accent={i===1}>{c}</Chip>))}
+        </div>
+        <div className="grid grid-cols-3 gap-1 flex-1 overflow-hidden">
+          {Array.from({length:9}).map((_,i)=>(
+            <div key={i} className="rounded-md overflow-hidden border border-border/60 relative">
+              <Photo seed={i} className="aspect-[3/4]" />
+              {i%3===0 && <div className="absolute top-0.5 left-0.5 text-[7px] bg-amber-400 text-black rounded px-1">Pro</div>}
+              {i%4===1 && <div className="absolute top-0.5 left-0.5 text-[7px] bg-emerald-500 text-white rounded px-1">Free</div>}
+            </div>
+          ))}
+        </div>
+        <div className="text-[8.5px] text-center text-foreground/55">1,284,512 results · 9 of many</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "15%", label: "Search millions" },
+      { n: 2, x: "50%", y: "55%", label: "Vast library" },
+      { n: 3, x: "50%", y: "92%", label: "Result count" },
+    ],
+  })) as Builder,
+
+  // 6. Adobe — Stock + assets
+  desAdobeStock: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DesBar />
+        <div className="flex items-center gap-1.5">
+          <div className="w-5 h-5 rounded bg-red-600 grid place-items-center text-white text-[9px] font-bold">St</div>
+          <div className="text-[11px] font-semibold">Adobe Stock</div>
+        </div>
+        <div className="h-7 rounded bg-foreground/[0.06] border border-border/60 px-2 grid items-center text-[10px] text-foreground/55">"mountain sunset"</div>
+        <div className="flex gap-1">
+          {["Photos","Vectors","Videos","Templates","3D"].map((c,i)=>(<Chip key={i} accent={i===0}>{c}</Chip>))}
+        </div>
+        <div className="grid grid-cols-2 gap-1 flex-1 overflow-hidden">
+          {Array.from({length:4}).map((_,i)=>(
+            <div key={i} className="rounded overflow-hidden border border-border/60 relative">
+              <Photo seed={i+1} className="aspect-[4/3]" />
+              <div className="absolute top-0.5 left-0.5 text-[7px] bg-black/70 text-white rounded px-1 font-mono">5K</div>
+              <div className="absolute bottom-0 inset-x-0 bg-background/95 px-1 py-0.5 flex justify-between text-[8px]">
+                <span className="truncate">Mountain #4218</span>
+                <span className="text-red-600 font-semibold">License</span>
+              </div>
+            </div>
+          ))}
+        </div>
+        <CTA>License selected · 1 credit</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "Stock browser" },
+      { n: 2, x: "20%", y: "55%", label: "Resolution badge" },
+      { n: 3, x: "85%", y: "70%", label: "License" },
+    ],
+  })) as Builder,
+
+  // 7. Framer — Responsive kits
+  desFramerKits: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DesBar />
+        <div className="text-[11px] font-semibold">Component kits</div>
+        <div className="flex justify-center gap-1 text-[9px] text-foreground/55">
+          <span className="px-1.5 py-0.5 rounded bg-foreground/8">📱</span>
+          <span className="px-1.5 py-0.5 rounded bg-foreground text-background">💻</span>
+          <span className="px-1.5 py-0.5 rounded bg-foreground/8">🖥</span>
+        </div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Hero — Centered","Mobile · Tablet · Desktop"],
+            ["Pricing — 3 tier","Responsive grid"],
+            ["Nav — Sticky","Auto-collapses"],
+            ["Testimonial carousel","Touch + arrows"],
+          ].map(([t,s],i)=>(
+            <div key={i} className="p-1.5 rounded-md border border-border/60">
+              <div className="flex justify-between items-center">
+                <div className="min-w-0">
+                  <div className="text-[10px] font-medium truncate">{t}</div>
+                  <div className="text-[8.5px] text-foreground/55 truncate">{s}</div>
+                </div>
+                <div className="flex gap-0.5 text-[8px] text-foreground/55"><span>📱</span><span>💻</span><span>🖥</span></div>
+              </div>
+              <div className="grid grid-cols-3 gap-1 mt-1">
+                <Photo seed={i} className="aspect-video rounded" />
+                <Photo seed={i+1} className="aspect-video rounded col-span-2" />
+              </div>
+            </div>
+          ))}
+        </div>
+        <CTA>Insert into site</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "22%", label: "Device toggles" },
+      { n: 2, x: "82%", y: "40%", label: "Breakpoint icons" },
+      { n: 3, x: "50%", y: "55%", label: "Responsive previews" },
+    ],
+  })) as Builder,
+
+  // 8. Figma — Community files
+  desFigmaCommunity: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DesBar />
+        <div className="text-[11px] font-semibold">Figma Community</div>
+        <div className="h-7 rounded bg-foreground/[0.06] border border-border/60 px-2 grid items-center text-[10px] text-foreground/55">Search files & plugins</div>
+        <div className="flex gap-1">
+          {["Files","Plugins","Widgets","Templates"].map((c,i)=>(<Chip key={i} accent={i===0}>{c}</Chip>))}
+        </div>
+        <div className="grid grid-cols-2 gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["iOS 17 UI Kit","Apple · 42k 🤍"],
+            ["Wireframe Kit v3","Mozilla · 28k 🤍"],
+            ["Design System Starter","Vercel · 18k 🤍"],
+            ["Icon Set 8 — Free","Sara K. · 9k 🤍"],
+          ].map(([t,a],i)=>(
+            <div key={i} className="rounded-md overflow-hidden border border-border/60">
+              <Photo seed={i} className="aspect-video" />
+              <div className="p-1">
+                <div className="text-[9px] font-medium truncate">{t}</div>
+                <div className="text-[8px] text-foreground/55 truncate">{a}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <CTA>Open in Figma</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "18%", label: "Community browse" },
+      { n: 2, x: "30%", y: "55%", label: "File card" },
+      { n: 3, x: "50%", y: "70%", label: "Author + likes" },
+    ],
+  })) as Builder,
+
+  // 9. Figma — Precise vector
+  desFigmaCanvas: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <div className="flex items-center gap-1.5 -mt-1">
+          <TrafficLights />
+          <div className="flex gap-0.5 ml-1">{["V","K","T","O","P"].map((k,i)=>(<div key={i} className={`w-4 h-4 rounded grid place-items-center text-[8px] font-mono ${i===0?"bg-blue-500 text-white":"bg-foreground/8"}`}>{k}</div>))}</div>
+          <div className="text-[8.5px] font-mono text-foreground/55 ml-auto">100%</div>
+        </div>
+        <div className="flex gap-1 flex-1">
+          <div className="w-14 rounded-md border border-border/60 p-1 text-[8px] space-y-0.5">
+            <div className="text-foreground/55 uppercase tracking-wider text-[7px]">Layers</div>
+            <div>▾ Frame</div>
+            <div className="pl-2 bg-blue-500/15 text-blue-600 rounded px-0.5">▸ Card</div>
+            <div className="pl-4">○ Icon</div>
+            <div className="pl-4">T Title</div>
+            <div className="pl-2">▸ Button</div>
+          </div>
+          <div className="relative flex-1 rounded-md border border-border/60 bg-[radial-gradient(circle,_currentColor_0.5px,_transparent_0.5px)] [background-size:8px_8px] text-foreground/15">
+            <div className="absolute left-4 top-4 right-6 bottom-6 rounded-lg border-2 border-blue-500 bg-background">
+              <div className="absolute inset-2 grid place-items-center text-foreground/40 text-[9px]">Card</div>
+              <div className="absolute -top-1 -left-1 w-2 h-2 bg-white border border-blue-500" />
+              <div className="absolute -top-1 -right-1 w-2 h-2 bg-white border border-blue-500" />
+              <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-white border border-blue-500" />
+              <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-white border border-blue-500" />
+            </div>
+            <div className="absolute top-1 right-1 text-[7.5px] font-mono text-blue-600 bg-background/90 px-1 rounded">240 × 160</div>
+          </div>
+          <div className="w-14 rounded-md border border-border/60 p-1 text-[8px] space-y-0.5">
+            <div className="text-foreground/55 uppercase tracking-wider text-[7px]">Design</div>
+            <div>W 240</div>
+            <div>H 160</div>
+            <div>R 8</div>
+            <div>Fill ⬜</div>
+          </div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "12%", y: "40%", label: "Layers panel" },
+      { n: 2, x: "50%", y: "45%", label: "Vector canvas" },
+      { n: 3, x: "85%", y: "40%", label: "Inspector" },
+    ],
+  })) as Builder,
+
+  // 10. Sketch — Native precision
+  desSketchCanvas: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <div className="flex items-center gap-1.5 -mt-1">
+          <TrafficLights />
+          <div className="text-[9px] font-mono text-foreground/55 ml-1">Untitled.sketch</div>
+          <div className="ml-auto flex gap-0.5">{["R","O","T","V","M"].map((k,i)=>(<div key={i} className="w-4 h-4 rounded-sm grid place-items-center bg-foreground/8 text-[8px] font-mono">{k}</div>))}</div>
+        </div>
+        <div className="flex gap-1 flex-1">
+          <div className="w-12 rounded-md border border-border/60 p-1 text-[8px] space-y-0.5">
+            <div className="text-foreground/55 text-[7px]">Layers</div>
+            <div>▾ Page</div>
+            <div className="pl-2">▾ Group</div>
+            <div className="pl-4">▸ Rect</div>
+          </div>
+          <div className="relative flex-1 rounded-md border border-border/60 bg-foreground/[0.02]">
+            <div className="absolute inset-0 grid place-items-center">
+              <div className="w-24 h-16 bg-foreground/8 border-2 border-orange-500 relative">
+                <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-white border border-orange-500" />
+                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-white border border-orange-500" />
+                <div className="absolute -left-1 top-1/2 -translate-y-1/2 w-2 h-2 bg-white border border-orange-500" />
+                <div className="absolute -right-1 top-1/2 -translate-y-1/2 w-2 h-2 bg-white border border-orange-500" />
+              </div>
+            </div>
+            <div className="absolute bottom-1 left-1 text-[7px] font-mono text-foreground/55">x 24 · y 18 · 1×</div>
+          </div>
+          <div className="w-16 rounded-md border border-border/60 p-1 text-[8px] space-y-1">
+            <div className="text-foreground/55 text-[7px]">Inspector</div>
+            <div>X <span className="font-mono">24</span></div>
+            <div>Y <span className="font-mono">18</span></div>
+            <div>W <span className="font-mono">120</span></div>
+            <div>H <span className="font-mono">80</span></div>
+            <div className="border-t border-border/60 pt-0.5">Radius 4</div>
+            <div>Fill ⬛</div>
+          </div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "45%", label: "Pixel-aligned shape" },
+      { n: 2, x: "85%", y: "45%", label: "Numeric inspector" },
+      { n: 3, x: "20%", y: "92%", label: "Native chrome" },
+    ],
+  })) as Builder,
+
+  // 11. Canva — Drag simple
+  desCanvaDrag: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DesBar />
+        <div className="flex gap-1 flex-1">
+          <div className="w-14 rounded-md bg-gradient-to-b from-[#00C4CC]/15 to-[#7D2AE8]/10 p-1 space-y-1 text-[8px] text-center">
+            {[["📐","Templates"],["🅰","Text"],["🖼","Photos"],["🎨","Elements"],["🎬","Video"],["☁","Uploads"]].map(([e,t],i)=>(
+              <div key={i} className={`rounded p-0.5 ${i===1?"bg-white/80 dark:bg-foreground/15":""}`}>
+                <div className="text-[12px]">{e}</div>
+                <div className="text-[7px]">{t}</div>
+              </div>
+            ))}
+          </div>
+          <div className="flex-1 grid place-items-center rounded-md border border-border/60 bg-foreground/[0.03] relative">
+            <div className="w-32 h-44 rounded shadow-md bg-gradient-to-br from-pink-400 to-purple-500 text-white grid place-items-center text-[11px] font-display tracking-wide p-2 text-center">SUMMER<br/>SALE</div>
+            <div className="absolute top-1 left-1 text-[7px] font-mono text-foreground/55">Instagram Post</div>
+            <div className="absolute -right-1 -top-1 w-3 h-3 rounded-full bg-[#7D2AE8] grid place-items-center text-white text-[8px]" style={{top:"30%",right:"22%"}}>↻</div>
+          </div>
+        </div>
+        <div className="text-[8.5px] text-center text-foreground/55">Drag elements onto the canvas</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "15%", y: "40%", label: "Friendly sidebar" },
+      { n: 2, x: "55%", y: "50%", label: "Drag-and-drop canvas" },
+      { n: 3, x: "50%", y: "92%", label: "No jargon" },
+    ],
+  })) as Builder,
+
+  // 12. Adobe — Deep raster
+  desAdobeRaster: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <div className="flex items-center gap-1.5 -mt-1">
+          <div className="w-4 h-4 rounded bg-blue-700 grid place-items-center text-white text-[8px] font-bold">Ps</div>
+          <div className="text-[8.5px] font-mono text-foreground/55">untitled.psd @ 200% · RGB/8</div>
+        </div>
+        <div className="flex gap-0.5 flex-1">
+          <div className="w-5 rounded bg-foreground/[0.04] py-1 space-y-1 text-center text-[10px]">
+            {["⤢","✋","✂","🖌","🪣","✏","🎨","🔠","💧","○","T"].map((t,i)=>(<div key={i} className={`leading-none ${i===3?"text-blue-500":""}`}>{t}</div>))}
+          </div>
+          <div className="flex-1 rounded bg-[#2a2a2a] dark:bg-foreground/[0.04] relative overflow-hidden">
+            <Photo seed={2} className="absolute inset-1" />
+            <div className="absolute left-2 top-2 bg-blue-500/30 border border-blue-400 w-10 h-8" />
+            <div className="absolute right-1 top-1 text-[7px] font-mono bg-black/60 text-white px-1 rounded">Brush · 24 px</div>
+          </div>
+          <div className="w-16 space-y-0.5 text-[8px]">
+            <div className="rounded bg-foreground/[0.04] p-0.5">
+              <div className="text-foreground/55 text-[7px]">Layers</div>
+              <div className="bg-blue-500/15 px-0.5 rounded">🖼 Sky</div>
+              <div className="px-0.5">🖼 Mountain</div>
+              <div className="px-0.5">⊕ BG</div>
+            </div>
+            <div className="rounded bg-foreground/[0.04] p-0.5">
+              <div className="text-foreground/55 text-[7px]">Adjustments</div>
+              <div>Curves · Levels</div>
+              <div>Hue/Sat · BW</div>
+            </div>
+            <div className="rounded bg-foreground/[0.04] p-0.5">
+              <div className="text-foreground/55 text-[7px]">History</div>
+              <div>Brush</div>
+              <div>Crop</div>
+            </div>
+          </div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "8%", y: "45%", label: "Deep toolbox" },
+      { n: 2, x: "50%", y: "45%", label: "Raster canvas" },
+      { n: 3, x: "85%", y: "45%", label: "Layers + adjustments" },
+    ],
+  })) as Builder,
+
+  // 13. Figma — Multiplayer live
+  desFigmaMultiplayer: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <div className="flex items-center gap-1 -mt-1">
+          <TrafficLights />
+          <div className="text-[8.5px] font-mono text-foreground/55 ml-1">Marketing Site · v3</div>
+          <div className="ml-auto flex -space-x-1">
+            {[["#FF5252","M"],["#7C3AED","J"],["#10B981","A"],["#F59E0B","L"]].map(([c,l],i)=>(
+              <div key={i} className="w-5 h-5 rounded-full border-2 border-background grid place-items-center text-[8px] font-bold text-white" style={{background:c as string}}>{l}</div>
+            ))}
+          </div>
+        </div>
+        <div className="relative flex-1 rounded-md border border-border/60 bg-[radial-gradient(circle,_currentColor_0.5px,_transparent_0.5px)] [background-size:8px_8px] text-foreground/15">
+          <div className="absolute left-3 top-3 right-12 bottom-12 rounded-lg bg-background border border-border/60 grid place-items-center text-foreground/40 text-[9px]">Hero frame</div>
+          {[["20%","30%","#FF5252","Maya"],["60%","20%","#7C3AED","Jin"],["45%","65%","#10B981","Ada"]].map(([x,y,c,n],i)=>(
+            <div key={i} className="absolute" style={{left:x as string, top:y as string}}>
+              <svg viewBox="0 0 16 16" className="w-3 h-3" fill={c as string}><path d="M2 2 L14 7 L8 9 L7 14 Z" /></svg>
+              <div className="text-[7.5px] text-white px-1 rounded mt-0.5" style={{background:c as string}}>{n}</div>
+            </div>
+          ))}
+          <div className="absolute right-2 top-12 w-20 rounded-md bg-background border border-border/60 shadow-md p-1 text-[8px]">
+            <div className="flex items-center gap-1"><div className="w-3 h-3 rounded-full bg-[#7C3AED] text-white grid place-items-center text-[7px]">J</div><div className="font-medium">Jin</div></div>
+            <div className="mt-0.5 text-foreground/65">Bump padding here?</div>
+          </div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "85%", y: "10%", label: "Live avatars" },
+      { n: 2, x: "35%", y: "45%", label: "Other cursors" },
+      { n: 3, x: "82%", y: "55%", label: "Comment thread" },
+    ],
+  })) as Builder,
+
+  // 14. Canva — Share + comment
+  desCanvaShare: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DesBar />
+        <div className="text-[11px] font-semibold">Share "Summer Sale"</div>
+        <div className="rounded-md border border-border/60 p-2 space-y-1.5">
+          <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">People with access</div>
+          {[["Maya","can edit"],["Jin","can comment"],["Ada","can view"]].map(([n,r],i)=>(
+            <div key={i} className="flex items-center gap-1.5">
+              <Photo seed={i} className="w-6 h-6 rounded-full" />
+              <div className="text-[10px] flex-1">{n}</div>
+              <div className="text-[9px] text-foreground/55">{r}</div>
+            </div>
+          ))}
+          <div className="h-8 rounded bg-foreground/[0.05] border border-border/60 px-2 grid items-center text-[10px] text-foreground/55">Add people by email…</div>
+        </div>
+        <div className="rounded-md border border-border/60 p-2">
+          <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Anyone with the link</div>
+          <div className="text-[9px] font-mono text-foreground/70 truncate">canva.com/design/abc123/view</div>
+          <div className="flex gap-1 mt-1"><Chip>Can comment ▾</Chip><Chip accent>Copy link</Chip></div>
+        </div>
+        <div className="flex-1" />
+        <CTA>Send invites</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Per-person roles" },
+      { n: 2, x: "50%", y: "65%", label: "Link sharing" },
+      { n: 3, x: "85%", y: "78%", label: "Permission level" },
+    ],
+  })) as Builder,
+
+  // 15. Framer — Handoff to dev
+  desFramerHandoff: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DesBar />
+        <div className="flex items-center gap-1.5">
+          <div className="text-[11px] font-semibold">Hero / Button</div>
+          <Chip accent>{`</> Code`}</Chip>
+        </div>
+        <div className="rounded-md border border-border/60 overflow-hidden">
+          <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-600 grid place-items-center">
+            <div className="px-3 py-1.5 rounded-full bg-white text-blue-600 text-[10px] font-semibold">Get Started</div>
+          </div>
+        </div>
+        <div className="rounded-md bg-[#0d1117] text-emerald-300 p-1.5 font-mono text-[8px] leading-tight space-y-0.5">
+          <div><span className="text-pink-400">export function</span> <span className="text-blue-300">Button</span>() &#123;</div>
+          <div className="pl-2">return (</div>
+          <div className="pl-4"><span className="text-foreground/40">{'<button className='}</span></div>
+          <div className="pl-6">"px-4 py-2 rounded-full bg-white"</div>
+          <div className="pl-4"><span className="text-foreground/40">{'>'}Get Started{'</button>'}</span></div>
+          <div className="pl-2">);</div>
+          <div>&#125;</div>
+        </div>
+        <div className="grid grid-cols-3 gap-1 text-[9px] text-center">
+          <Chip>React</Chip><Chip accent>Tailwind</Chip><Chip>CSS</Chip>
+        </div>
+        <div className="flex-1" />
+        <CTA>Copy component code</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "82%", y: "13%", label: "Code view" },
+      { n: 2, x: "50%", y: "50%", label: "Production code" },
+      { n: 3, x: "50%", y: "73%", label: "Framework toggle" },
+    ],
+  })) as Builder,
+
+  // 16. Adobe — Cloud sync
+  desAdobeCloud: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DesBar />
+        <div className="flex items-center gap-1.5">
+          <div className="w-5 h-5 rounded bg-red-600 grid place-items-center text-white text-[9px] font-bold">Cc</div>
+          <div className="text-[11px] font-semibold">Creative Cloud</div>
+          <div className="ml-auto text-[8.5px] text-emerald-600">✓ All synced</div>
+        </div>
+        <div className="rounded-md border border-border/60 divide-y divide-border/60 text-[9.5px]">
+          {[
+            ["Brand Library","48 assets · synced 2m ago","☁"],
+            ["Photos folder","312 files · syncing 64%","↻"],
+            ["Type — Adobe Fonts","12 activated","✓"],
+            ["Mobile creations","8 files from iPad","✓"],
+          ].map(([t,s,ic],i)=>(
+            <div key={i} className="flex items-center gap-2 p-1.5">
+              <div className="w-6 h-6 rounded bg-foreground/8 grid place-items-center text-[12px]">{ic}</div>
+              <div className="flex-1 min-w-0">
+                <div className="font-medium truncate">{t}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{s}</div>
+              </div>
+              {i===1 && <div className="w-12 h-1 bg-foreground/10 rounded-full overflow-hidden"><div className="h-full w-2/3 bg-red-500" /></div>}
+            </div>
+          ))}
+        </div>
+        <div className="rounded-md bg-foreground/[0.04] p-1.5 text-[8.5px] text-foreground/65">98 GB of 100 GB used · across Ps, Ai, Id, Lr</div>
+        <div className="flex-1" />
+        <CTA>Manage library</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "85%", y: "13%", label: "Sync status" },
+      { n: 2, x: "50%", y: "45%", label: "Shared library" },
+      { n: 3, x: "50%", y: "78%", label: "Cross-app storage" },
+    ],
+  })) as Builder,
+
+  // 17. Framer — Publish live site
+  desFramerPublish: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DesBar />
+        <div className="text-[11px] font-semibold">Publish</div>
+        <div className="rounded-md border border-border/60 p-2 space-y-1">
+          <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Domain</div>
+          <div className="flex items-center gap-1">
+            <div className="flex-1 rounded bg-foreground/[0.04] px-2 py-1 text-[9.5px] font-mono">acme.framer.website</div>
+            <Chip>+ Custom</Chip>
+          </div>
+          <div className="text-[8.5px] text-emerald-600">✓ SSL · CDN · ⚡ 98 score</div>
+        </div>
+        <div className="rounded-md border border-border/60 p-2">
+          <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Changes since last publish</div>
+          <div className="text-[9.5px] space-y-0.5 mt-0.5">
+            <div>+ Updated hero copy</div>
+            <div>+ New pricing section</div>
+            <div>+ Replaced 4 images</div>
+          </div>
+        </div>
+        <div className="rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 p-3 text-center text-white">
+          <div className="text-[8.5px] uppercase tracking-wider opacity-80">One-click</div>
+          <div className="font-display text-[15px]">Publish live</div>
+          <div className="text-[9px] opacity-90">Deploys in ~12 seconds</div>
+        </div>
+        <div className="flex-1" />
+        <div className="h-11 rounded-xl bg-foreground text-background grid place-items-center text-[12px] font-bold">↑ Publish to acme.framer.website</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "25%", label: "Live domain" },
+      { n: 2, x: "50%", y: "55%", label: "Diff since last" },
+      { n: 3, x: "50%", y: "92%", label: "One-click deploy" },
+    ],
+  })) as Builder,
+
+  // 18. Figma — Dev Mode specs
+  desFigmaDevMode: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <div className="flex items-center gap-1 -mt-1">
+          <TrafficLights />
+          <Chip accent>{`</> Dev Mode`}</Chip>
+          <div className="ml-auto text-[8.5px] font-mono text-foreground/55">CSS</div>
+        </div>
+        <div className="flex gap-1 flex-1">
+          <div className="relative flex-1 rounded-md border border-border/60 bg-foreground/[0.02] p-2">
+            <div className="absolute left-3 top-3 right-3 bottom-3 rounded-lg border border-blue-500 bg-background grid place-items-center text-[9px] text-foreground/40">Button</div>
+            <div className="absolute -left-1 top-1/2 text-[7.5px] font-mono text-blue-600">↔ 240</div>
+            <div className="absolute left-1/2 -top-1 text-[7.5px] font-mono text-blue-600">↕ 48</div>
+            <div className="absolute right-1 bottom-1 text-[7.5px] font-mono text-blue-600">↘ 24px gap</div>
+          </div>
+          <div className="w-24 rounded-md border border-border/60 p-1 text-[8px] space-y-1">
+            <div className="text-foreground/55 text-[7.5px] uppercase tracking-wider">Inspect</div>
+            <div className="font-mono space-y-0.5 leading-tight">
+              <div><span className="text-pink-500">width:</span> 240px</div>
+              <div><span className="text-pink-500">height:</span> 48px</div>
+              <div><span className="text-pink-500">radius:</span> 8px</div>
+              <div><span className="text-pink-500">bg:</span> #3B82F6</div>
+              <div><span className="text-pink-500">font:</span> Inter 14</div>
+            </div>
+            <div className="rounded bg-foreground/[0.05] p-0.5 text-[7px] font-mono">px-4 py-2 rounded-lg bg-blue-500</div>
+            <div className="flex gap-0.5"><Chip>CSS</Chip><Chip accent>TW</Chip></div>
+          </div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "82%", y: "13%", label: "Dev Mode" },
+      { n: 2, x: "30%", y: "50%", label: "Measurements" },
+      { n: 3, x: "85%", y: "50%", label: "Code snippets" },
+    ],
+  })) as Builder,
+
+  // 19. Sketch — Inspector + export
+  desSketchExport: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <div className="flex items-center gap-1.5 -mt-1">
+          <TrafficLights />
+          <div className="text-[9px] font-mono text-foreground/55 ml-1">icon@2x</div>
+        </div>
+        <div className="flex gap-1 flex-1">
+          <div className="flex-1 rounded-md border border-border/60 bg-foreground/[0.03] grid place-items-center">
+            <div className="w-12 h-12 rounded-xl bg-orange-500 grid place-items-center text-white text-[18px]">★</div>
+          </div>
+          <div className="w-24 rounded-md border border-border/60 p-1 text-[8px] space-y-1">
+            <div className="text-foreground/55 text-[7.5px] uppercase tracking-wider">Inspector</div>
+            <div>W <span className="font-mono">48</span> · H <span className="font-mono">48</span></div>
+            <div>Radius <span className="font-mono">12</span></div>
+            <div className="border-t border-border/60 pt-0.5 text-foreground/55 text-[7.5px] uppercase tracking-wider">Make exportable</div>
+            <div className="space-y-0.5">
+              {[["1×","PNG","icon.png"],["2×","PNG","icon@2x.png"],["3×","PNG","icon@3x.png"],["1×","SVG","icon.svg"],["1×","PDF","icon.pdf"]].map(([s,f,n],i)=>(
+                <div key={i} className="flex items-center gap-1 text-[7.5px]">
+                  <div className="font-mono w-5">{s}</div>
+                  <div className="px-1 rounded bg-foreground/8 font-mono">{f}</div>
+                  <div className="truncate text-foreground/55">{n}</div>
+                </div>
+              ))}
+            </div>
+            <div className="rounded bg-orange-500 text-white text-center py-0.5 text-[8px] font-semibold">Export 5</div>
+          </div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "85%", y: "30%", label: "Inspector" },
+      { n: 2, x: "85%", y: "55%", label: "Export presets" },
+      { n: 3, x: "85%", y: "92%", label: "Batch export" },
+    ],
+  })) as Builder,
+
+  // 20. Adobe — Asset export
+  desAdobeExport: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DesBar />
+        <div className="text-[11px] font-semibold">Export As…</div>
+        <div className="flex gap-1 flex-1">
+          <div className="w-20 rounded-md border border-border/60 p-1 space-y-0.5 text-[8px]">
+            <div className="text-foreground/55 text-[7.5px] uppercase tracking-wider">Layers</div>
+            {["Sky","Logo","Hero","Button","Footer"].map((l,i)=>(
+              <div key={i} className={`flex items-center gap-1 px-1 py-0.5 rounded ${i<3?"bg-blue-500/15":""}`}>
+                <div className={`w-2 h-2 rounded-sm border ${i<3?"bg-blue-500 border-blue-500":"border-border"}`} />
+                <div>{l}</div>
+              </div>
+            ))}
+          </div>
+          <div className="flex-1 rounded-md border border-border/60 p-1.5 space-y-1 text-[8.5px]">
+            <div className="text-foreground/55 text-[7.5px] uppercase tracking-wider">Scale + format</div>
+            {[
+              ["1×","PNG-24","logo.png"],
+              ["2×","PNG-24","logo@2x.png"],
+              ["1×","SVG","logo.svg"],
+              ["1×","WebP","logo.webp"],
+              ["0.5×","JPG 80","logo-sm.jpg"],
+            ].map(([s,f,n],i)=>(
+              <div key={i} className="flex items-center gap-1 p-0.5 rounded border border-border/40">
+                <select className="bg-foreground/8 rounded px-1 text-[8px] font-mono">{[s].map(o=>(<option key={o}>{o}</option>))}</select>
+                <div className="px-1 rounded bg-foreground/8 font-mono text-[7.5px]">{f}</div>
+                <div className="truncate text-foreground/55 flex-1">{n}</div>
+                <div className="text-foreground/40">⋯</div>
+              </div>
+            ))}
+            <div className="text-[7.5px] text-foreground/55">+ Add scale · 3 layers × 5 = 15 files</div>
+          </div>
+        </div>
+        <CTA>Export 15 assets</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "15%", y: "40%", label: "Layer picker" },
+      { n: 2, x: "60%", y: "50%", label: "Format matrix" },
+      { n: 3, x: "50%", y: "92%", label: "Batch export" },
+    ],
+  })) as Builder,
+});
+
 export function renderScreen(screen: string | undefined, ctx: RenderCtx, preview?: Preview): RenderedScreen {
   const p = safePreview(preview, ctx);
   const b = (screen && screens[screen]) || fallback;
