@@ -70,9 +70,9 @@ const safePreview = (p: Preview | undefined, ctx: RenderCtx): Preview => ({
   cta: p?.cta ?? "",
 });
 
-const title = (p: Preview) => `${p.company} · ${p.pattern}`;
+const title = (p: Preview) => p.company;
 const row = (p: Preview, i: number) => p.rows[i % p.rows.length];
-const detail = (p: Preview, i: number) => [p.metric, p.header, p.cta, p.company, p.pattern][i % 5];
+const detail = (p: Preview, i: number) => [p.metric, p.header, p.cta, p.company][i % 4];
 
 const screens: Record<string, Builder> = {
   photoGrid: (ctx, p) => ({
