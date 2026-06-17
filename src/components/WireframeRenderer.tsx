@@ -89,7 +89,7 @@ const screens: Record<string, Builder> = {
               </Photo>
               <div className="p-1.5">
                 <div className="text-[10px] font-medium leading-tight truncate">{row(p, i)}</div>
-                <div className="text-[9px] text-foreground/55 truncate mt-0.5">{NEUTRAL[i % NEUTRAL.length]}</div>
+                <div className="text-[9px] text-foreground/55 truncate mt-0.5">{detail(p, i)}</div>
               </div>
             </div>
           ))}
@@ -116,7 +116,7 @@ const screens: Record<string, Builder> = {
                 <div className="text-[11px] font-medium truncate">{row(p, i)}</div>
                 <div className="text-[9px] text-foreground/55 truncate">{NEUTRAL[i % NEUTRAL.length]}</div>
               </div>
-              <Chip accent>Deal</Chip>
+              <Chip accent>{p.cta}</Chip>
             </div>
           ))}
         </div>
@@ -166,7 +166,7 @@ const screens: Record<string, Builder> = {
               <Photo seed={i} className="w-12 h-12 rounded-md shrink-0" />
               <div className="flex-1 min-w-0">
                 <div className="text-[11px] font-medium truncate">{row(p, i)}</div>
-                <div className="text-[9px] text-foreground/55 truncate">{NEUTRAL[i % NEUTRAL.length]}</div>
+                <div className="text-[9px] text-foreground/55 truncate">{detail(p, i)}</div>
               </div>
             </div>
           ))}
@@ -221,7 +221,7 @@ const screens: Record<string, Builder> = {
               <Photo seed={i} className="w-9 h-9 rounded-md shrink-0" />
               <div className="flex-1 min-w-0">
                 <div className="text-[11px] font-medium truncate">{row(p, i)}</div>
-                <div className="text-[9px] text-foreground/55 truncate">{NEUTRAL[i % NEUTRAL.length]}</div>
+                <div className="text-[9px] text-foreground/55 truncate">{detail(p, i)}</div>
               </div>
             </div>
           ))}
