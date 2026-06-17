@@ -860,6 +860,87 @@ const screens: Record<string, Builder> = {
       { n: 3, x: "50%", y: "92%", label: "Commit CTA" },
     ],
   }),
+
+  compareGrid: (ctx, p) => ({
+    node: (
+      <Frame>
+        <StatusBar title={title(p)} />
+        <div className="font-display text-[18px] leading-tight truncate">{p.header}</div>
+        <div className="text-[10px] font-mono text-foreground/55 -mt-1 truncate">Compare · {p.metric}</div>
+        <div className="grid grid-cols-[80px_1fr_1fr] gap-x-2 gap-y-1 text-[9px] flex-1">
+          <div />
+          {p.rows.slice(0, 2).map((r, i) => (
+            <div key={i} className="flex flex-col items-center gap-1 p-1 rounded-lg bg-primary/5 border border-primary/30">
+              <Photo seed={i} className="w-full aspect-[4/3] rounded" />
+              <div className="text-[9px] font-medium truncate w-full text-center">{r.split("·")[0]?.trim() || r}</div>
+            </div>
+          ))}
+          {[
+            { label: "Price/night", values: ["$240", "$118"] },
+            { label: "Rating", values: ["★ 4.9", "★ 4.8"] },
+            { label: "Free cancel", values: ["✓", "✓"] },
+            { label: "Breakfast", values: ["✓", "—"] },
+            { label: "Wi-Fi", values: ["Fast", "Std"] },
+          ].map((r, i) => (
+            <Fragment key={i}>
+              <div className="text-[9px] font-mono text-foreground/55 self-center truncate">{r.label}</div>
+              {r.values.map((v, j) => (
+                <div key={j} className={`text-[10px] text-center font-medium self-center ${j === 0 ? "text-primary" : ""}`}>{v}</div>
+              ))}
+            </Fragment>
+          ))}
+        </div>
+        <div className="mt-auto"><CTA>{p.cta}</CTA></div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "18%", label: "Compare header" },
+      { n: 2, x: "50%", y: "55%", label: "Attribute matrix" },
+      { n: 3, x: "50%", y: "92%", label: "Pick winner" },
+    ],
+  }),
+
+  pointsBundle: (ctx, p) => ({
+    node: (
+      <Frame>
+        <StatusBar title={title(p)} />
+        <div className="font-display text-[18px] leading-tight truncate">{p.header}</div>
+        <div className="text-[10px] font-mono text-foreground/55 -mt-1 truncate">{p.metric}</div>
+        <div className="p-3 rounded-xl bg-gradient-to-br from-primary to-primary/70 text-primary-foreground flex items-center justify-between gap-2 shadow-[0_10px_30px_-15px_var(--primary)]">
+          <div className="min-w-0">
+            <div className="text-[9px] font-mono opacity-80 uppercase tracking-wider">Points balance</div>
+            <div className="font-display text-[26px] leading-none mt-0.5">24,580</div>
+          </div>
+          <div className="text-right text-[9px] font-mono opacity-90 shrink-0">
+            <div>+1,420 pending</div>
+            <div className="opacity-75">expires Mar 2027</div>
+          </div>
+        </div>
+        <div className="text-[9px] font-mono text-foreground/55 uppercase tracking-wider mt-1">Redeem as bundle</div>
+        <div className="space-y-1.5 flex-1">
+          {[
+            { name: "Flight + Hotel", cost: "18,000 pts", save: "Save $120" },
+            { name: "Hotel + Car", cost: "12,500 pts", save: "Save $65" },
+            { name: "3-night stay", cost: "9,800 pts", save: "Save $40" },
+          ].map((b, i) => (
+            <div key={i} className="flex items-center gap-2 p-2 rounded-lg border border-border/60">
+              <div className="w-7 h-7 rounded-md bg-primary/15 text-primary grid place-items-center text-[12px] shrink-0">◆</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[11px] font-medium truncate">{b.name}</div>
+                <div className="text-[9px] font-mono text-foreground/55 truncate">{b.cost}</div>
+              </div>
+              <span className="text-[9px] font-mono text-primary shrink-0">{b.save}</span>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "22%", label: "Points balance" },
+      { n: 2, x: "50%", y: "60%", label: "Bundle redemption" },
+      { n: 3, x: "78%", y: "78%", label: "Bundle savings" },
+    ],
+  }),
 };
 
 const fallback: Builder = (ctx, p) => ({
