@@ -177,3 +177,43 @@ export function suggestedPicksFor(
 }
 
 export type { GenomeData };
+
+// ---------- annotation helpers ----------
+
+type AnyOption = Stage["options"][number];
+
+export function composePurpose(
+  opt: AnyOption,
+  screenTypes: Record<string, string> | undefined,
+  stageName: string
+): string {
+  // Use opt.purpose if the dataset has it (forward-compatible)
+  const purpose = (opt as unknown as { purpose?: string }).purpose;
+  if (purpose && purpose.trim()) return purpose.trim();
+  const raw = screenTypes?.[opt.screen];
+  if (raw) {
+    const t = raw.replace(/^[a-z]/, (c) => c.toUpperCase()).replace(/\.$/, "");
+    return `${t}.`;
+  }
+  return `Frames the ${stageName.toLowerCase()} step as a ${opt.pattern.toLowerCase()}.`;
+}
+
+export function composeStrength(opt: AnyOption): string {
+  const phrases: Record<string, [string, string]> = {
+    ex: ["rewards open exploration", "feels fast and decisive"],
+    em: ["builds emotional pull", "stays calm and transactional"],
+    si: ["reads instantly", "exposes power and depth"],
+  };
+  const axes: ("ex" | "em" | "si")[] = ["ex", "em", "si"];
+  let bestAxis: "ex" | "em" | "si" = "em";
+  let bestMag = -1;
+  axes.forEach((a) => {
+    const v = opt.traits[a];
+    if (Math.abs(v) > bestMag) {
+      bestMag = Math.abs(v);
+      bestAxis = a;
+    }
+  });
+  const dir = opt.traits[bestAxis] >= 0 ? phrases[bestAxis][0] : phrases[bestAxis][1];
+  return `Best at this: ${dir}.`;
+}
