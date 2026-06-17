@@ -13,6 +13,7 @@ import type { Concept, GoalId, Picks } from "@/data/genome.types";
 import { PhoneFrame } from "@/components/PhoneFrame";
 import { WireframeRenderer, renderScreen } from "@/components/WireframeRenderer";
 import { composePurpose, composeStrength } from "@/lib/engine";
+import { SketchIcon } from "@/components/SketchIcons";
 
 export const Route = createFileRoute("/studio/$industryId")({
   head: ({ params }) => ({
