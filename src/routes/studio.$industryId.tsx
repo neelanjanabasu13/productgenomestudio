@@ -11,8 +11,7 @@ import {
 } from "@/lib/engine";
 import type { Concept, GoalId, Picks } from "@/data/genome.types";
 import { PhoneFrame } from "@/components/PhoneFrame";
-import { WireframeRenderer, renderScreen } from "@/components/WireframeRenderer";
-import { composePurpose, composeStrength } from "@/lib/engine";
+import { WireframeRenderer } from "@/components/WireframeRenderer";
 import { SketchIcon } from "@/components/SketchIcons";
 
 export const Route = createFileRoute("/studio/$industryId")({
@@ -87,17 +86,6 @@ function Studio() {
     () => (industry ? score(industry, picks, goal) : null),
     [industry, picks, goal]
   );
-
-  const screenTypes = meta.data?.screenTypes;
-  const rendered = useMemo(() => {
-    if (!chosenOption || !stage || !industry) return null;
-    return renderScreen(chosenOption.screen, {
-      industryId: industry.id,
-      stage: stage.stage,
-      pattern: chosenOption.pattern,
-      company: chosenOption.company,
-    });
-  }, [chosenOption, stage, industry]);
 
   function pick(stageName: string, optId: string) {
     setPicks((p) => ({ ...p, [stageName]: p[stageName] === optId ? "" : optId }));
@@ -202,36 +190,11 @@ function Studio() {
             </div>
           )}
 
-          {/* Callout panel — Purpose / Strength / Weakness */}
-          <div className="mt-5 w-full max-w-[290px]">
-            {chosenOption && rendered ? (
-              <div className="rounded-2xl border border-border bg-card p-4 space-y-3">
-                <div className="text-[9px] font-mono uppercase tracking-[0.18em] text-muted-foreground">Annotation</div>
-                <CalloutRow
-                  n={rendered.pins[0]?.n ?? 1}
-                  label="Purpose"
-                  text={composePurpose(chosenOption, screenTypes, stage.stage)}
-                  tone="primary"
-                />
-                <CalloutRow
-                  n={rendered.pins[1]?.n ?? 2}
-                  label="Strength"
-                  text={composeStrength(chosenOption)}
-                  tone="primary"
-                />
-                <CalloutRow
-                  n={rendered.pins[2]?.n ?? 3}
-                  label="Weakness — tradeoff"
-                  text={chosenOption.tradeoff}
-                  tone="amber"
-                />
-              </div>
-            ) : (
-              <div className="rounded-2xl border border-dashed border-border p-4 text-xs text-muted-foreground text-center">
-                Pick a pattern to see how it works.
-              </div>
-            )}
-          </div>
+          {!chosenOption && (
+            <div className="mt-5 w-full max-w-[290px] rounded-2xl border border-dashed border-border p-4 text-xs text-muted-foreground text-center">
+              Pick a pattern to see how it works.
+            </div>
+          )}
         </div>
 
         {/* CONTROLS */}
@@ -371,34 +334,6 @@ function GoalChip({ active, onClick, children }: { active: boolean; onClick: () 
     >
       {children}
     </button>
-  );
-}
-
-function CalloutRow({
-  n,
-  label,
-  text,
-  tone,
-}: {
-  n: number;
-  label: string;
-  text: string;
-  tone: "primary" | "amber";
-}) {
-  const borderCls = tone === "primary" ? "border-primary" : "border-amber-400/80";
-  const chipCls =
-    tone === "primary"
-      ? "bg-primary text-primary-foreground"
-      : "bg-amber-400 text-background";
-  const labelCls = tone === "primary" ? "text-primary" : "text-amber-400";
-  return (
-    <div className={`pl-3 border-l-2 ${borderCls}`}>
-      <div className="flex items-center gap-1.5">
-        <span className={`w-4 h-4 rounded-full grid place-items-center text-[9px] font-mono ${chipCls}`}>{n}</span>
-        <span className={`text-[9px] font-mono uppercase tracking-[0.16em] ${labelCls}`}>{label}</span>
-      </div>
-      <p className="mt-1.5 text-[12px] leading-snug text-foreground/85">{text}</p>
-    </div>
   );
 }
 
