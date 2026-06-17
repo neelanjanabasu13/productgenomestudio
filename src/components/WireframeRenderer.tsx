@@ -2116,6 +2116,781 @@ const fallback: Builder = (ctx, p) => ({
   ],
 });
 
+// ============= AI Assistants specialized screens =============
+// Neutral, brand-evocative UI. Do not echo p.company / p.pattern / p.metric.
+const AIBar = () => (
+  <div className="flex items-center justify-between text-[9px] font-mono text-foreground/50 -mt-1">
+    <span>9:41</span>
+    <span className="tracking-[0.18em]">●●●</span>
+    <span>100%</span>
+  </div>
+);
+
+Object.assign(screens, {
+  // 1. Meta AI — inbox with pinned AI
+  aiMetaInbox: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="flex items-center justify-between">
+          <div className="font-display text-[15px]">Chats</div>
+          <div className="w-6 h-6 rounded-full bg-foreground/10 grid place-items-center text-[10px]">✎</div>
+        </div>
+        <div className="h-7 rounded-full bg-foreground/8 px-2 grid items-center text-[10px] text-foreground/55">Search</div>
+        <div className="flex flex-col gap-1 flex-1 overflow-hidden">
+          <div className="flex items-center gap-2 p-1.5 rounded-lg bg-primary/10 border border-primary/30">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-foreground/40 grid place-items-center text-[11px] text-primary-foreground">✦</div>
+            <div className="flex-1 min-w-0">
+              <div className="text-[11px] font-medium truncate flex items-center gap-1">Meta AI <span className="text-[8px] text-foreground/50">📌</span></div>
+              <div className="text-[9px] text-foreground/55 truncate">Ask me anything · Tap to chat</div>
+            </div>
+            <div className="text-[8px] font-mono text-foreground/50">now</div>
+          </div>
+          {[
+            ["Anika", "see you tonight 🙂", "2m"],
+            ["Family group", "Mom: sent photos", "12m"],
+            ["Jordan", "okay sounds good", "1h"],
+            ["Dribbble crew", "shipped the update", "3h"],
+            ["Sam", "🎉🎉🎉", "yesterday"],
+          ].map(([n, m, t], i) => (
+            <div key={i} className="flex items-center gap-2 p-1.5">
+              <Photo seed={i} className="w-8 h-8 rounded-full shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="text-[11px] font-medium truncate">{n}</div>
+                <div className="text-[9px] text-foreground/55 truncate">{m}</div>
+              </div>
+              <div className="text-[8px] font-mono text-foreground/45">{t}</div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "22%", label: "AI pinned in inbox" },
+      { n: 2, x: "50%", y: "55%", label: "Friends + family" },
+      { n: 3, x: "50%", y: "10%", label: "Native messaging chrome" },
+    ],
+  })) as Builder,
+
+  // 2. ChatGPT — clean centered prompt
+  aiChatGPTHome: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="flex items-center justify-between">
+          <div className="w-6 h-6 rounded-full bg-foreground/10 grid place-items-center text-[10px]">≡</div>
+          <div className="text-[11px] font-medium">GPT-5</div>
+          <div className="w-6 h-6 rounded-full bg-foreground/10 grid place-items-center text-[10px]">⋯</div>
+        </div>
+        <div className="flex-1 flex flex-col items-center justify-center gap-3 px-2">
+          <div className="w-10 h-10 rounded-full border border-foreground/40 grid place-items-center text-[14px]">✦</div>
+          <div className="font-display text-[16px] text-center">Ask anything</div>
+          <div className="flex flex-col gap-1.5 w-full mt-1">
+            {["Plan a 3-day trip to Lisbon", "Explain recursion simply", "Summarize my notes"].map((t, i) => (
+              <div key={i} className="text-[10px] px-2.5 py-1.5 rounded-full border border-border/70 text-foreground/70 text-center truncate">{t}</div>
+            ))}
+          </div>
+        </div>
+        <div className="h-9 rounded-full bg-foreground/8 border border-border/60 flex items-center px-3 text-[10px] text-foreground/45">
+          <span className="flex-1">Message…</span>
+          <span className="text-foreground/60">🎤</span>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "45%", label: "Single open prompt" },
+      { n: 2, x: "50%", y: "70%", label: "Example chips" },
+      { n: 3, x: "50%", y: "92%", label: "One destination" },
+    ],
+  })) as Builder,
+
+  // 3. Gemini — Workspace top bar with spark
+  aiGeminiWorkspace: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="flex items-center gap-1.5 h-7 -mx-1 px-1.5 border-b border-border/60">
+          <div className="w-5 h-5 rounded grid place-items-center text-[10px] bg-foreground/10">M</div>
+          <div className="text-[10px] font-medium">Inbox</div>
+          <div className="ml-auto w-6 h-6 rounded-full bg-gradient-to-br from-primary to-foreground/40 grid place-items-center text-[10px] text-primary-foreground">✦</div>
+        </div>
+        <div className="flex flex-col gap-1 flex-1">
+          {[
+            ["Quarterly review draft", "Maya · 9:14", true],
+            ["Re: brand guidelines", "Theo · 8:02", false],
+            ["Invoice #1042", "Stripe · yesterday", false],
+            ["Trip planning", "Anika · Mon", false],
+          ].map(([s, m, u], i) => (
+            <div key={i} className={`flex items-center gap-2 p-1.5 rounded-md ${u ? "bg-foreground/5" : ""}`}>
+              <div className={`w-1.5 h-1.5 rounded-full ${u ? "bg-primary" : "bg-foreground/20"}`} />
+              <div className="flex-1 min-w-0">
+                <div className="text-[11px] font-medium truncate">{s as string}</div>
+                <div className="text-[9px] text-foreground/55 truncate">{m as string}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-xl border border-primary/40 bg-primary/5 p-2 flex items-center gap-2">
+          <div className="w-6 h-6 rounded-full bg-primary text-primary-foreground grid place-items-center text-[10px]">✦</div>
+          <div className="text-[10px] flex-1">Help me write a reply</div>
+          <span className="text-[9px] font-mono text-foreground/55">Gemini</span>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "85%", y: "12%", label: "Spark in Workspace" },
+      { n: 2, x: "50%", y: "50%", label: "Native Gmail/Docs" },
+      { n: 3, x: "50%", y: "92%", label: "Embedded assist" },
+    ],
+  })) as Builder,
+
+  // 4. Manus — agent run console
+  aiManusConsole: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="text-[10px] font-mono text-foreground/55 tracking-wider">AGENT · RUN #042</div>
+        <div className="h-9 rounded-lg border border-border/60 px-2 flex items-center gap-2">
+          <span className="text-[10px] text-foreground/70 flex-1 truncate">Give it a task…</span>
+          <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-foreground/10">▶ Run</span>
+        </div>
+        <div className="text-[9px] font-mono text-foreground/45 tracking-wider mt-1">RUN LOG</div>
+        <div className="flex-1 rounded-md border border-border/60 bg-foreground/[0.03] p-2 overflow-hidden flex flex-col gap-1 text-[9.5px] font-mono">
+          {[
+            ["✓", "plan → break task into 4 steps"],
+            ["✓", "search → 'top SaaS pricing pages 2026'"],
+            ["✓", "fetch → notion.so/pricing"],
+            ["●", "extract → tiers, features, CTAs"],
+            ["○", "compose → draft comparison table"],
+            ["○", "export → deliver report.pdf"],
+          ].map(([m, t], i) => (
+            <div key={i} className="flex gap-1.5">
+              <span className={`${m === "✓" ? "text-primary" : m === "●" ? "text-foreground" : "text-foreground/35"}`}>{m}</span>
+              <span className="text-foreground/75 truncate">{t}</span>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "18%", label: "Give it a task" },
+      { n: 2, x: "50%", y: "55%", label: "Autonomous run log" },
+      { n: 3, x: "20%", y: "55%", label: "Step status" },
+    ],
+  })) as Builder,
+
+  // 5. Claude — nuanced structured reply
+  aiClaudeReply: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-md bg-primary/80 text-primary-foreground grid place-items-center text-[10px]">✱</div>
+          <div className="text-[11px] font-medium">Claude</div>
+          <span className="ml-auto text-[9px] font-mono text-foreground/55">Sonnet</span>
+        </div>
+        <div className="self-end max-w-[80%] rounded-2xl rounded-br-sm bg-foreground/10 px-2.5 py-1.5 text-[10px]">
+          Help me decide between two job offers — one is more pay, one is more aligned.
+        </div>
+        <div className="self-start w-full rounded-2xl rounded-bl-sm bg-foreground/[0.04] border border-border/60 p-2.5 text-[10px] flex flex-col gap-1.5">
+          <div className="font-medium text-[10.5px]">How I'd think about it</div>
+          <ul className="flex flex-col gap-1">
+            {[
+              "Map a 3-year horizon — money compounds, but so does alignment.",
+              "List concrete daily tasks each role implies, not the titles.",
+              "Run a quiet pre-mortem: which choice would you regret?",
+            ].map((t, i) => (
+              <li key={i} className="flex gap-1.5"><span className="text-foreground/40">•</span><span className="text-foreground/75">{t}</span></li>
+            ))}
+          </ul>
+        </div>
+        <div className="h-8 rounded-full bg-foreground/8 border border-border/60 flex items-center px-3 text-[10px] text-foreground/45">Reply to Claude…</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "55%", label: "Heading + bullets" },
+      { n: 2, x: "50%", y: "30%", label: "Considered tone" },
+      { n: 3, x: "50%", y: "92%", label: "Calm chat surface" },
+    ],
+  })) as Builder,
+
+  // 6. ChatGPT — versatile friendly + follow-ups
+  aiChatGPTFriendly: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-full border border-foreground/40 grid place-items-center text-[10px]">✦</div>
+          <div className="text-[11px] font-medium">ChatGPT</div>
+        </div>
+        <div className="self-end max-w-[78%] rounded-2xl rounded-br-sm bg-foreground/10 px-2.5 py-1.5 text-[10px]">
+          What's a good 20-min dinner with chicken and rice?
+        </div>
+        <div className="self-start max-w-[88%] rounded-2xl rounded-bl-sm bg-foreground/[0.04] border border-border/60 px-2.5 py-1.5 text-[10px]">
+          Easy — try a one-pan lemon chicken rice. Sear seasoned thighs, toss in rice + broth, lid on 18 min. Finish with parsley and a squeeze of lemon. 🍋
+        </div>
+        <div className="text-[9px] font-mono text-foreground/45 mt-1">Follow up</div>
+        <div className="flex flex-wrap gap-1">
+          {["Make it spicy", "Vegetarian version", "Add a side"].map((t, i) => (
+            <span key={i} className="text-[10px] px-2 py-1 rounded-full border border-border/70 text-foreground/75">{t}</span>
+          ))}
+        </div>
+        <div className="h-8 rounded-full bg-foreground/8 border border-border/60 flex items-center px-3 text-[10px] text-foreground/45 mt-auto">Message ChatGPT…</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "45%", label: "Friendly quick answer" },
+      { n: 2, x: "50%", y: "75%", label: "Follow-up suggestions" },
+      { n: 3, x: "50%", y: "92%", label: "General purpose" },
+    ],
+  })) as Builder,
+
+  // 7. Gemini — fast answer + sources
+  aiGeminiFast: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-foreground/40 grid place-items-center text-[10px] text-primary-foreground">✦</div>
+          <div className="text-[11px] font-medium">Gemini</div>
+          <span className="ml-auto text-[9px] font-mono text-foreground/55">2.5 Flash</span>
+        </div>
+        <div className="self-end max-w-[78%] rounded-2xl rounded-br-sm bg-foreground/10 px-2.5 py-1.5 text-[10px]">Capital of Portugal?</div>
+        <div className="self-start max-w-[88%] rounded-2xl rounded-bl-sm bg-foreground/[0.04] border border-border/60 px-2.5 py-1.5 text-[10px]">
+          <div className="font-medium">Lisbon.</div>
+          <div className="text-foreground/70 mt-0.5">Largest city and political capital, on the Tagus estuary.</div>
+        </div>
+        <div className="text-[9px] font-mono text-foreground/45 mt-1">Related · Sources</div>
+        <div className="flex flex-col gap-1">
+          {[
+            ["wikipedia.org", "Lisbon — Wikipedia"],
+            ["britannica.com", "Lisbon | History, Population…"],
+            ["visitportugal.com", "Discover Lisbon"],
+          ].map(([d, t], i) => (
+            <div key={i} className="flex items-center gap-2 p-1.5 rounded-md border border-border/60">
+              <div className="w-5 h-5 rounded bg-foreground/10 grid place-items-center text-[9px]">🔗</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] font-medium truncate">{t}</div>
+                <div className="text-[9px] text-foreground/55 truncate">{d}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "38%", label: "Snappy short answer" },
+      { n: 2, x: "50%", y: "70%", label: "Related + sources" },
+      { n: 3, x: "85%", y: "12%", label: "Flash model" },
+    ],
+  })) as Builder,
+
+  // 8. Meta AI — casual emoji bubbles
+  aiMetaCasual: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="flex items-center gap-2 pb-1 border-b border-border/60">
+          <div className="w-7 h-7 rounded-full bg-gradient-to-br from-primary to-foreground/40 grid place-items-center text-[11px] text-primary-foreground">✦</div>
+          <div>
+            <div className="text-[11px] font-medium leading-tight">Meta AI</div>
+            <div className="text-[9px] text-foreground/55">Active now</div>
+          </div>
+        </div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          <div className="self-end max-w-[78%] rounded-2xl rounded-br-sm bg-primary text-primary-foreground px-2.5 py-1.5 text-[10px]">good movies for tonight? 🎬</div>
+          <div className="self-start max-w-[78%] rounded-2xl rounded-bl-sm bg-foreground/10 px-2.5 py-1.5 text-[10px]">ooh fun! 😄 vibe check — cozy, thrilling, or laugh-til-you-cry?</div>
+          <div className="self-end max-w-[78%] rounded-2xl rounded-br-sm bg-primary text-primary-foreground px-2.5 py-1.5 text-[10px]">cozy 🛋️🍿</div>
+          <div className="self-start max-w-[78%] rounded-2xl rounded-bl-sm bg-foreground/10 px-2.5 py-1.5 text-[10px]">say no more 💛 try <b>Paddington 2</b> or <b>About Time</b> — both feel like a warm hug 🫂</div>
+          <div className="self-end max-w-[40%] rounded-2xl rounded-br-sm bg-primary text-primary-foreground px-2.5 py-1.5 text-[10px]">🙌</div>
+        </div>
+        <div className="h-8 rounded-full bg-foreground/8 border border-border/60 flex items-center px-3 text-[10px] text-foreground/45">
+          <span className="flex-1">Aa</span>
+          <span>😊</span>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "55%", label: "Emoji-friendly bubbles" },
+      { n: 2, x: "50%", y: "20%", label: "Messenger chrome" },
+      { n: 3, x: "50%", y: "92%", label: "Light tone" },
+    ],
+  })) as Builder,
+
+  // 9. Gemini context — Workspace side panel
+  aiGeminiWorkspaceContext: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-foreground/40 grid place-items-center text-[10px] text-primary-foreground">✦</div>
+          <div className="text-[11px] font-medium">Gemini</div>
+          <span className="ml-auto text-[9px] font-mono text-foreground/55">@workspace</span>
+        </div>
+        <div className="flex-1 flex gap-2 min-h-0">
+          <div className="w-[38%] flex flex-col gap-1 border border-border/60 rounded-md p-1.5">
+            <div className="text-[9px] font-mono text-foreground/45 tracking-wider">CONNECTED</div>
+            {[
+              ["📄", "Q3 plan.gdoc"],
+              ["📨", "Re: brand · Gmail"],
+              ["📊", "Pricing.gsheet"],
+              ["📁", "/Marketing · Drive"],
+              ["📨", "Anika · Trip"],
+            ].map(([i, n], k) => (
+              <div key={k} className="flex items-center gap-1.5 text-[9.5px] truncate">
+                <span>{i}</span><span className="truncate">{n}</span>
+              </div>
+            ))}
+          </div>
+          <div className="flex-1 flex flex-col gap-1.5 min-w-0">
+            <div className="self-end max-w-full rounded-2xl rounded-br-sm bg-foreground/10 px-2 py-1.5 text-[10px]">Pull next steps from my Q3 plan</div>
+            <div className="self-start rounded-2xl rounded-bl-sm bg-foreground/[0.04] border border-border/60 px-2 py-1.5 text-[10px] flex-1">
+              From <b>Q3 plan.gdoc</b> + <b>Re: brand</b>:
+              <div className="mt-1 text-foreground/70">• Ship landing v2<br/>• Confirm pricing tiers<br/>• Reply to Anika by Fri</div>
+            </div>
+          </div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "20%", y: "55%", label: "Connected Workspace" },
+      { n: 2, x: "70%", y: "55%", label: "Grounded answer" },
+      { n: 3, x: "85%", y: "12%", label: "@workspace context" },
+    ],
+  })) as Builder,
+
+  // 10. Claude — Projects with attached docs
+  aiClaudeProjects: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-md bg-primary/80 text-primary-foreground grid place-items-center text-[10px]">✱</div>
+          <div className="text-[11px] font-medium truncate">Project · Onboarding rewrite</div>
+        </div>
+        <div className="flex-1 flex gap-2 min-h-0">
+          <div className="w-[42%] flex flex-col gap-1 border border-border/60 rounded-md p-1.5">
+            <div className="text-[9px] font-mono text-foreground/45 tracking-wider">KNOWLEDGE</div>
+            {[
+              ["PDF", "User research v3", "412 pp"],
+              ["DOC", "Brand voice guide", "82 pp"],
+              ["MD", "Old onboarding spec", "26 pp"],
+              ["CSV", "Funnel data Q1-Q3", "—"],
+              ["PDF", "Competitor teardown", "118 pp"],
+            ].map(([t, n, p], i) => (
+              <div key={i} className="flex items-center gap-1.5">
+                <div className="text-[8px] font-mono px-1 py-0.5 rounded bg-foreground/10">{t}</div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-[9.5px] font-medium truncate">{n}</div>
+                  <div className="text-[8px] text-foreground/55 truncate">{p}</div>
+                </div>
+              </div>
+            ))}
+            <div className="text-[9px] text-primary mt-1">+ Add to project</div>
+          </div>
+          <div className="flex-1 flex flex-col gap-1.5 min-w-0">
+            <div className="text-[9px] font-mono text-foreground/45 tracking-wider">CHAT</div>
+            <div className="self-start rounded-2xl rounded-bl-sm bg-foreground/[0.04] border border-border/60 px-2 py-1.5 text-[10px]">
+              Using your 5 attached docs, the strongest drop-off is step 3. Three things to try…
+            </div>
+            <div className="h-7 mt-auto rounded-full bg-foreground/8 border border-border/60 flex items-center px-2 text-[9.5px] text-foreground/45">Ask the project…</div>
+          </div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "22%", y: "50%", label: "Knowledge sidebar" },
+      { n: 2, x: "72%", y: "50%", label: "Project-aware chat" },
+      { n: 3, x: "50%", y: "12%", label: "Long-running project" },
+    ],
+  })) as Builder,
+
+  // 11. ChatGPT — memory + GPTs
+  aiChatGPTMemory: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-full border border-foreground/40 grid place-items-center text-[10px]">✦</div>
+          <div className="text-[11px] font-medium">Personalization</div>
+        </div>
+        <div className="rounded-lg border border-border/60 p-2 flex flex-col gap-1">
+          <div className="flex items-center justify-between">
+            <div className="text-[10px] font-medium">Memory</div>
+            <div className="w-7 h-4 rounded-full bg-primary relative"><div className="absolute right-0.5 top-0.5 w-3 h-3 rounded-full bg-background" /></div>
+          </div>
+          {[
+            "Lives in Berlin, prefers metric units",
+            "Building a SaaS for small studios",
+            "Vegetarian, mild spice",
+            "Reply in concise bullets",
+          ].map((t, i) => (
+            <div key={i} className="flex items-center gap-1.5 text-[9.5px] text-foreground/75">
+              <span className="text-foreground/40">•</span><span className="truncate flex-1">{t}</span><span className="text-foreground/40 text-[9px]">×</span>
+            </div>
+          ))}
+        </div>
+        <div className="text-[9px] font-mono text-foreground/45 tracking-wider">MY GPTs</div>
+        <div className="grid grid-cols-4 gap-1.5">
+          {[
+            ["📝", "Writer"],
+            ["💼", "PM Coach"],
+            ["🧮", "Tax"],
+            ["🍳", "Chef"],
+            ["🇫🇷", "French"],
+            ["📚", "Tutor"],
+            ["🎨", "Brand"],
+            ["+", "New"],
+          ].map(([i, n], k) => (
+            <div key={k} className="flex flex-col items-center gap-0.5">
+              <div className="w-9 h-9 rounded-xl bg-foreground/8 grid place-items-center text-[14px]">{i}</div>
+              <div className="text-[8.5px] truncate w-full text-center">{n}</div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "35%", label: "Memory panel" },
+      { n: 2, x: "50%", y: "78%", label: "Saved custom GPTs" },
+      { n: 3, x: "50%", y: "12%", label: "Personalization" },
+    ],
+  })) as Builder,
+
+  // 12. Manus — live web fetch log
+  aiManusWebFetch: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="text-[10px] font-mono text-foreground/55 tracking-wider">LIVE WEB · STREAMING</div>
+        <div className="self-end max-w-[80%] rounded-2xl rounded-br-sm bg-foreground/10 px-2.5 py-1.5 text-[10px]">Latest news on the Mars sample return mission</div>
+        <div className="flex-1 flex flex-col gap-1 rounded-md border border-border/60 bg-foreground/[0.03] p-2 overflow-hidden text-[9px] font-mono">
+          {[
+            ["GET", "nasa.gov/missions/msr", "200"],
+            ["GET", "spacenews.com/2026/jun/16", "200"],
+            ["READ", "esa.int/Science/Mars_Return", "200"],
+            ["GET", "reuters.com/science/mars-…", "200"],
+            ["READ", "arstechnica.com/space/2026/…", "200"],
+            ["●", "synthesizing answer from 5 sources", ""],
+          ].map(([v, u, s], i) => (
+            <div key={i} className="flex gap-1.5 items-center">
+              <span className="text-primary w-9 shrink-0">{v}</span>
+              <span className="flex-1 text-foreground/75 truncate">{u}</span>
+              {s && <span className="text-foreground/45">{s}</span>}
+            </div>
+          ))}
+        </div>
+        <div className="self-start max-w-[88%] rounded-2xl rounded-bl-sm bg-foreground/[0.04] border border-border/60 px-2.5 py-1.5 text-[10px]">
+          As of today, NASA confirmed the revised architecture…
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "50%", label: "Live URL fetch log" },
+      { n: 2, x: "20%", y: "50%", label: "Real-time reads" },
+      { n: 3, x: "50%", y: "85%", label: "Grounded answer" },
+    ],
+  })) as Builder,
+
+  // 13. ChatGPT — voice + image + camera
+  aiChatGPTVoice: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-full border border-foreground/40 grid place-items-center text-[10px]">✦</div>
+          <div className="text-[11px] font-medium">Voice mode</div>
+        </div>
+        <div className="flex-1 flex items-center justify-center">
+          <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-primary/40 to-foreground/10 grid place-items-center">
+            <div className="absolute inset-2 rounded-full border border-primary/40 animate-pulse" />
+            <div className="text-[18px]">🎤</div>
+          </div>
+        </div>
+        <div className="flex items-end justify-center gap-0.5 h-10">
+          {[6, 14, 22, 10, 28, 18, 32, 20, 12, 26, 16, 24, 8, 18, 14, 22, 10, 6].map((h, i) => (
+            <div key={i} className="w-1 rounded-full bg-primary/70" style={{ height: `${h}px` }} />
+          ))}
+        </div>
+        <div className="text-[10px] text-center text-foreground/60">Listening…</div>
+        <div className="h-11 rounded-full bg-foreground/8 border border-border/60 flex items-center px-3 gap-2 text-[10px] text-foreground/45">
+          <span className="text-base">🎤</span>
+          <span className="text-base">🖼️</span>
+          <span className="text-base">📷</span>
+          <span className="flex-1 truncate">Message…</span>
+          <span className="text-base">⤴</span>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "92%", label: "Mic · Image · Camera" },
+      { n: 2, x: "50%", y: "40%", label: "Live voice mode" },
+      { n: 3, x: "50%", y: "70%", label: "Waveform" },
+    ],
+  })) as Builder,
+
+  // 14. Gemini — native multimodal message
+  aiGeminiMultimodal: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-foreground/40 grid place-items-center text-[10px] text-primary-foreground">✦</div>
+          <div className="text-[11px] font-medium">Gemini</div>
+          <span className="ml-auto text-[9px] font-mono text-foreground/55">multimodal</span>
+        </div>
+        <div className="self-end max-w-[88%] rounded-2xl rounded-br-sm bg-foreground/10 p-1.5 text-[10px] flex flex-col gap-1.5">
+          <Photo seed={1} className="aspect-[16/10] rounded-lg" />
+          <div className="flex items-center gap-2 px-1.5 py-1 rounded-md bg-background/40 border border-border/60">
+            <span className="text-[12px]">▶</span>
+            <div className="flex-1 flex items-center gap-0.5 h-3">
+              {[4, 8, 6, 10, 5, 12, 7, 9, 6, 11, 4, 8].map((h, i) => (
+                <div key={i} className="w-0.5 rounded-full bg-foreground/60" style={{ height: `${h}px` }} />
+              ))}
+            </div>
+            <span className="text-[8.5px] font-mono text-foreground/55">0:14</span>
+          </div>
+          <div className="px-1">What's in this photo and what am I saying?</div>
+        </div>
+        <div className="self-start max-w-[88%] rounded-2xl rounded-bl-sm bg-foreground/[0.04] border border-border/60 px-2.5 py-1.5 text-[10px]">
+          A street market in Lisbon at dusk. You're asking which stall sells the custard tarts — the blue awning on the left.
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "40%", label: "Image + text + audio" },
+      { n: 2, x: "50%", y: "82%", label: "Single combined reply" },
+      { n: 3, x: "85%", y: "12%", label: "Native multimodal" },
+    ],
+  })) as Builder,
+
+  // 15. Meta AI — image gen inline
+  aiMetaImageGen: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-foreground/40 grid place-items-center text-[10px] text-primary-foreground">✦</div>
+          <div className="text-[11px] font-medium">Meta AI</div>
+        </div>
+        <div className="self-end max-w-[80%] rounded-2xl rounded-br-sm bg-primary text-primary-foreground px-2.5 py-1.5 text-[10px]">
+          /imagine a corgi astronaut on Mars, golden hour 🪐
+        </div>
+        <div className="self-start w-full rounded-2xl rounded-bl-sm bg-foreground/[0.04] border border-border/60 p-2 text-[10px] flex flex-col gap-1.5">
+          <div className="text-foreground/70">Here you go! ✨</div>
+          <Photo seed={2} className="aspect-square rounded-xl relative">
+            <div className="absolute bottom-1.5 left-1.5 text-[8px] font-mono px-1.5 py-0.5 rounded-full bg-background/80">Imagined with Meta AI</div>
+          </Photo>
+          <div className="flex gap-1.5">
+            <div className="flex-1 text-center text-[9.5px] px-1.5 py-1 rounded-full border border-border/70">Regenerate</div>
+            <div className="flex-1 text-center text-[9.5px] px-1.5 py-1 rounded-full border border-border/70">Save</div>
+            <div className="flex-1 text-center text-[9.5px] px-1.5 py-1 rounded-full bg-primary text-primary-foreground">Send</div>
+          </div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "55%", label: "Generated image inline" },
+      { n: 2, x: "50%", y: "20%", label: "Same chat thread" },
+      { n: 3, x: "50%", y: "92%", label: "Share to friends" },
+    ],
+  })) as Builder,
+
+  // 16. Claude — doc + image read
+  aiClaudeDocRead: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-md bg-primary/80 text-primary-foreground grid place-items-center text-[10px]">✱</div>
+          <div className="text-[11px] font-medium">Claude</div>
+        </div>
+        <div className="self-end max-w-[88%] rounded-2xl rounded-br-sm bg-foreground/10 px-2 py-1.5 text-[10px] flex flex-col gap-1.5">
+          <div className="flex items-center gap-1.5 p-1.5 rounded-md bg-background/40 border border-border/60">
+            <div className="text-[10px] font-mono px-1 py-0.5 rounded bg-red-500/15 text-red-600">PDF</div>
+            <div className="flex-1 min-w-0">
+              <div className="text-[10px] font-medium truncate">lease-agreement-2026.pdf</div>
+              <div className="text-[8.5px] text-foreground/55">42 pages · 1.8 MB</div>
+            </div>
+          </div>
+          <div className="flex items-center gap-1.5 p-1.5 rounded-md bg-background/40 border border-border/60">
+            <Photo seed={3} className="w-8 h-8 rounded-md shrink-0" />
+            <div className="flex-1 min-w-0">
+              <div className="text-[10px] font-medium truncate">scan-page-7.jpg</div>
+              <div className="text-[8.5px] text-foreground/55">2.1 MB</div>
+            </div>
+          </div>
+          <div className="px-1">Summarize and flag anything risky.</div>
+        </div>
+        <div className="self-start w-full rounded-2xl rounded-bl-sm bg-foreground/[0.04] border border-border/60 p-2 text-[10px] flex flex-col gap-1">
+          <div className="font-medium">Read both files. Key points:</div>
+          <div className="text-foreground/75">• 12-month term, auto-renews unless 60-day notice.</div>
+          <div className="text-foreground/75">• <span className="bg-amber-400/30 px-1 rounded">Clause 9.3</span> shifts repair costs to tenant.</div>
+          <div className="text-foreground/75">• Scan p.7 shows landlord signature missing.</div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "32%", label: "PDF + image attached" },
+      { n: 2, x: "50%", y: "78%", label: "Reads both, summarizes" },
+      { n: 3, x: "60%", y: "85%", label: "Flags risk inline" },
+    ],
+  })) as Builder,
+
+  // 17. Claude — Artifacts split view
+  aiClaudeArtifacts: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-md bg-primary/80 text-primary-foreground grid place-items-center text-[10px]">✱</div>
+          <div className="text-[11px] font-medium">Claude</div>
+          <span className="ml-auto text-[8.5px] font-mono px-1.5 py-0.5 rounded bg-foreground/10">Artifact · Live</span>
+        </div>
+        <div className="flex-1 flex gap-1.5 min-h-0">
+          <div className="w-[44%] flex flex-col gap-1 min-w-0">
+            <div className="self-end max-w-full rounded-xl rounded-br-sm bg-foreground/10 px-2 py-1 text-[9.5px]">Build a tip calculator</div>
+            <div className="self-start rounded-xl rounded-bl-sm bg-foreground/[0.04] border border-border/60 px-2 py-1 text-[9.5px]">Here's a working version — try it →</div>
+            <div className="self-end max-w-full rounded-xl rounded-br-sm bg-foreground/10 px-2 py-1 text-[9.5px]">Make it 18% default</div>
+            <div className="self-start rounded-xl rounded-bl-sm bg-foreground/[0.04] border border-border/60 px-2 py-1 text-[9.5px]">Updated ✓</div>
+          </div>
+          <div className="flex-1 rounded-lg border border-border/60 bg-background flex flex-col overflow-hidden min-w-0">
+            <div className="px-1.5 py-1 text-[8.5px] font-mono text-foreground/55 border-b border-border/60 flex items-center gap-1">
+              <span>● ● ●</span><span className="ml-1 truncate">tip-calc</span>
+            </div>
+            <div className="flex-1 p-2 flex flex-col gap-1.5 text-[9px]">
+              <div className="font-medium text-[10px]">Tip Calculator</div>
+              <div className="rounded-md border border-border/60 px-1.5 py-1">Bill <span className="font-mono float-right">$42.00</span></div>
+              <div className="flex gap-1">
+                {["15%", "18%", "20%"].map((t, i) => (
+                  <div key={i} className={`flex-1 text-center px-1 py-0.5 rounded ${i === 1 ? "bg-primary text-primary-foreground" : "border border-border/60"}`}>{t}</div>
+                ))}
+              </div>
+              <div className="rounded-md bg-foreground/[0.04] px-1.5 py-1 mt-auto">Total <span className="font-mono float-right font-medium">$49.56</span></div>
+            </div>
+          </div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "22%", y: "55%", label: "Chat on the left" },
+      { n: 2, x: "72%", y: "55%", label: "Live artifact right" },
+      { n: 3, x: "85%", y: "12%", label: "Updates in place" },
+    ],
+  })) as Builder,
+
+  // 18. ChatGPT — Canvas with Export
+  aiChatGPTCanvas: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-full border border-foreground/40 grid place-items-center text-[10px]">✦</div>
+          <div className="text-[11px] font-medium truncate">Canvas · Launch memo</div>
+          <div className="ml-auto text-[9px] font-mono px-1.5 py-0.5 rounded bg-primary text-primary-foreground">Export ↓</div>
+        </div>
+        <div className="flex-1 rounded-lg border border-border/60 bg-background p-2 flex flex-col gap-1 overflow-hidden">
+          <div className="text-[11px] font-medium">Studio launch — June 2026</div>
+          <div className="text-[8.5px] font-mono text-foreground/45">Draft · co-edited with ChatGPT</div>
+          <div className="text-[10px] font-medium mt-1">Summary</div>
+          <div className="text-[9.5px] text-foreground/75 leading-snug">A focused launch around three studios in Lisbon. We lead with the brand film and a private preview night.</div>
+          <div className="text-[10px] font-medium mt-1">Goals</div>
+          <ul className="text-[9.5px] text-foreground/75 leading-snug">
+            <li>• 50 signups from preview night</li>
+            <li>• <span className="bg-primary/15">3 press mentions</span> in design weeklies</li>
+            <li>• Waitlist of 500 by July 15</li>
+          </ul>
+          <div className="mt-auto flex items-center gap-1.5 rounded-md bg-foreground/[0.04] px-1.5 py-1 text-[9px] text-foreground/60">
+            <span>✦</span><span className="truncate">ChatGPT suggested: tighten the third goal</span>
+          </div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "50%", label: "Editable canvas" },
+      { n: 2, x: "85%", y: "12%", label: "Export button" },
+      { n: 3, x: "50%", y: "88%", label: "AI co-edit suggestion" },
+    ],
+  })) as Builder,
+
+  // 19. Manus — completed deliverables
+  aiManusDeliverables: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="text-[10px] font-mono text-foreground/55 tracking-wider">RUN #042 · COMPLETE</div>
+        <div className="font-display text-[15px] truncate">Deliverables</div>
+        <div className="text-[9.5px] text-foreground/60 -mt-1">Competitor pricing teardown · 6 files ready</div>
+        <div className="flex flex-col gap-1.5 flex-1">
+          {[
+            ["PDF", "report.pdf", "12 pp · 2.1 MB"],
+            ["PPTX", "deck.pptx", "18 slides · 8.6 MB"],
+            ["XLSX", "pricing-matrix.xlsx", "4 sheets · 240 KB"],
+            ["CSV", "raw-data.csv", "1,204 rows"],
+            ["MD", "executive-summary.md", "3 min read"],
+            ["ZIP", "screenshots.zip", "32 images"],
+          ].map(([t, n, s], i) => (
+            <div key={i} className="flex items-center gap-2 p-1.5 rounded-md border border-border/60">
+              <div className="text-[8.5px] font-mono px-1.5 py-0.5 rounded bg-foreground/10">{t}</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] font-medium truncate">{n}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{s}</div>
+              </div>
+              <div className="text-[9px] font-mono text-primary">↓</div>
+            </div>
+          ))}
+        </div>
+        <div className="h-9 rounded-xl bg-primary text-primary-foreground grid place-items-center text-[11px] font-medium">Download all</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "55%", label: "Finished files" },
+      { n: 2, x: "85%", y: "55%", label: "Download each" },
+      { n: 3, x: "50%", y: "94%", label: "Done-for-you" },
+    ],
+  })) as Builder,
+
+  // 20. Gemini — Export to Docs
+  aiGeminiExportDocs: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <AIBar />
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-foreground/40 grid place-items-center text-[10px] text-primary-foreground">✦</div>
+          <div className="text-[11px] font-medium">Gemini</div>
+        </div>
+        <div className="self-start w-full rounded-2xl rounded-bl-sm bg-foreground/[0.04] border border-border/60 px-2.5 py-1.5 text-[10px]">
+          <div className="font-medium">Q3 marketing brief</div>
+          <div className="text-foreground/75 mt-0.5 leading-snug">Three priorities, owners, and a 6-week timeline. Drafted from your notes.</div>
+        </div>
+        <div className="flex gap-1.5">
+          <div className="flex items-center gap-1.5 text-[9.5px] px-2 py-1 rounded-full bg-primary text-primary-foreground">
+            <span>📄</span><span>Send to Google Docs</span>
+          </div>
+          <div className="flex items-center gap-1 text-[9.5px] px-2 py-1 rounded-full border border-border/70">Copy</div>
+        </div>
+        <div className="text-[9px] font-mono text-foreground/45 tracking-wider mt-1">DOCS PREVIEW</div>
+        <div className="flex-1 rounded-lg border border-border/60 bg-background p-2 flex flex-col gap-1 overflow-hidden">
+          <div className="flex items-center gap-1.5 -mt-0.5">
+            <div className="w-4 h-4 rounded bg-blue-500/80 grid place-items-center text-[9px] text-white">D</div>
+            <div className="text-[9.5px] truncate">Q3 marketing brief — Google Docs</div>
+          </div>
+          <div className="h-px bg-border/60" />
+          <div className="text-[11px] font-medium">Q3 marketing brief</div>
+          <div className="text-[8.5px] text-foreground/55">Maya Chen · just now</div>
+          <div className="text-[9.5px] text-foreground/75 leading-snug mt-1">Priorities: brand film, preview night, press push…</div>
+          <div className="mt-auto text-[8.5px] text-foreground/45">Saved to Drive ✓</div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "40%", label: "Send to Google Docs" },
+      { n: 2, x: "50%", y: "75%", label: "Docs preview" },
+      { n: 3, x: "50%", y: "94%", label: "Saved to Drive" },
+    ],
+  })) as Builder,
+});
+
 export function renderScreen(screen: string | undefined, ctx: RenderCtx, preview?: Preview): RenderedScreen {
   const p = safePreview(preview, ctx);
   const b = (screen && screens[screen]) || fallback;
