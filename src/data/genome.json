@@ -690,7 +690,7 @@
        "company": "Expedia",
        "pattern": "Points + bundles",
        "tradeoff": "Flexible but confusing",
-       "screen": "tierList",
+       "screen": "pointsBundle",
        "traits": {
         "ex": -1,
         "em": -1,
