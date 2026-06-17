@@ -15,6 +15,17 @@ export interface Option {
   screen: string;
   traits: Traits;
   goalsServed: GoalId[];
+  purpose?: string;
+  preview?: Preview;
+}
+
+export interface Preview {
+  company: string;
+  pattern: string;
+  header: string;
+  metric: string;
+  rows: string[];
+  cta: string;
 }
 
 export interface Stage {
