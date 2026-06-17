@@ -1,9 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 import { Sparkles, Search } from "lucide-react";
 import { dataSource } from "@/lib/dataSource";
 import { toast } from "sonner";
+import { HexIndustryPicker } from "@/components/HexIndustryPicker";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,7 +45,7 @@ function Home() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-5 pt-16 pb-12">
+    <div className="max-w-6xl mx-auto px-5 pt-16 pb-20">
       <div className="max-w-3xl">
         <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-muted-foreground mb-5">
           <span className="w-1.5 h-1.5 rounded-full bg-primary" /> A hands-on simulator
@@ -53,7 +54,7 @@ function Home() {
           Design a product by <em className="text-primary not-italic">choosing patterns</em>.
         </h1>
         <p className="mt-6 text-lg text-muted-foreground max-w-2xl">
-          {meta.data?.tagline ?? "Pick real UX patterns at each funnel stage. See the tradeoffs, surface the conflicts, and assemble a coherent product."}
+          {meta.data?.tagline ?? "Design a product by choosing real patterns at each journey stage — with tradeoffs, conflicts, and a goal-guided assist."}
         </p>
       </div>
 
@@ -77,32 +78,8 @@ function Home() {
         )}
       </div>
 
-      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {filtered.map((ind) => (
-          <Link
-            key={ind.id}
-            to="/studio/$industryId"
-            params={{ industryId: ind.id }}
-            className="group rounded-2xl border border-border bg-card p-5 hover:border-primary/40 hover:-translate-y-0.5 transition-all"
-          >
-            <div className="flex items-start justify-between">
-              <span className="text-3xl">{ind.emoji}</span>
-              {ind.source && ind.source !== "seed" && (
-                <span className="text-[10px] uppercase tracking-wider text-muted-foreground">{ind.source}</span>
-              )}
-            </div>
-            <h3 className="mt-4 font-display text-xl">{ind.name}</h3>
-            <p className="mt-1 text-sm text-muted-foreground">{ind.companies.length} companies · {ind.funnel.length} stages</p>
-            <div className="mt-4 flex flex-wrap gap-1">
-              {ind.companies.slice(0, 3).map((c) => (
-                <span key={c} className="text-[10px] px-2 py-0.5 rounded-full bg-muted text-muted-foreground">{c}</span>
-              ))}
-              {ind.companies.length > 3 && (
-                <span className="text-[10px] px-2 py-0.5 rounded-full bg-muted text-muted-foreground">+{ind.companies.length - 3}</span>
-              )}
-            </div>
-          </Link>
-        ))}
+      <div className="mt-16">
+        <HexIndustryPicker industries={filtered} />
       </div>
     </div>
   );

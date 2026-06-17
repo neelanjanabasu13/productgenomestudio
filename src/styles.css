@@ -61,10 +61,17 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+@theme inline {
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
 :root {
   --radius: 1rem;
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   --background: oklch(0.985 0.003 90);
   --foreground: oklch(0.18 0.02 220);
   --card: oklch(1 0 0);
@@ -106,7 +113,7 @@
   --card-foreground: oklch(0.96 0.005 90);
   --popover: oklch(0.20 0.018 230);
   --popover-foreground: oklch(0.96 0.005 90);
-  --primary: oklch(0.72 0.11 195);
+  --primary: oklch(0.66 0.105 188);
   --primary-foreground: oklch(0.15 0.02 230);
   --secondary: oklch(0.24 0.02 230);
   --secondary-foreground: oklch(0.96 0.005 90);
@@ -151,4 +158,153 @@
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
+}
+
+/* ---------- Hex industry picker ---------- */
+
+.hex-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 40px 0 80px;
+  max-width: 880px;
+}
+
+.hex-pos-0 { margin-top: 0; }
+.hex-pos-1 { margin-top: 84px; }
+.hex-pos-2 { margin-top: 16px; }
+
+.hex-tile {
+  position: relative;
+  width: 200px;
+  height: 230px;
+  display: block;
+  cursor: pointer;
+  animation: hex-float var(--float-duration, 10s) ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+  transition: transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: transform;
+}
+
+.hex-border,
+.hex-fill {
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transition: background-color 400ms ease;
+}
+
+.hex-border {
+  background-color: color-mix(in oklab, var(--foreground) 18%, transparent);
+}
+.hex-fill {
+  inset: 1px;
+  background-color: var(--background);
+}
+
+.hex-inner {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.hex-index {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: color-mix(in oklab, var(--foreground) 55%, transparent);
+  transition: color 400ms ease;
+}
+
+.hex-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.hex-name,
+.hex-icon {
+  grid-area: 1 / 1;
+  transition: opacity 320ms ease;
+}
+
+.hex-icon {
+  opacity: 0;
+  color: var(--foreground);
+  pointer-events: none;
+}
+
+.hex-tile:hover {
+  animation: none;
+  transform: scale(1.05);
+  z-index: 2;
+}
+.hex-tile:hover .hex-border {
+  background-color: var(--primary);
+}
+.hex-tile:hover .hex-index {
+  color: var(--primary);
+}
+.hex-tile:hover .hex-name {
+  opacity: 0;
+}
+.hex-tile:hover .hex-icon {
+  opacity: 1;
+}
+
+/* Sketch draw-in animation */
+.sketch-svg path,
+.sketch-svg rect,
+.sketch-svg circle {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  transition: stroke-dashoffset 0s;
+}
+.hex-tile:hover .sketch-svg path,
+.hex-tile:hover .sketch-svg rect,
+.hex-tile:hover .sketch-svg circle {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1100ms ease-out;
+}
+
+@keyframes hex-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes hex-page-in {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hex-tile,
+  .hex-grid {
+    animation: none !important;
+  }
+  .hex-tile:hover {
+    transform: none;
+  }
+  .sketch-svg path,
+  .sketch-svg rect,
+  .sketch-svg circle {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .hex-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .hex-pos-0, .hex-pos-1, .hex-pos-2 { margin-top: 0; }
 }
