@@ -5807,7 +5807,7 @@
               "company": "Duolingo",
               "pattern": "Goal + first lesson",
               "tradeoff": "Instant but gamey",
-              "screen": "onboardChecklist",
+              "screen": "eduDuoGoal",
               "traits": {
                 "ex": 0,
                 "em": 2,
@@ -5836,7 +5836,7 @@
               "company": "Coursera",
               "pattern": "Goal + path",
               "tradeoff": "Outcome-led but slow",
-              "screen": "onboardChecklist",
+              "screen": "eduCourseraPath",
               "traits": {
                 "ex": -1,
                 "em": 0,
@@ -5865,7 +5865,7 @@
               "company": "Khan Academy",
               "pattern": "Diagnostic",
               "tradeoff": "Tailored but test-y",
-              "screen": "onboardChecklist",
+              "screen": "eduKhanDiagnostic",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -5892,7 +5892,7 @@
               "company": "MasterClass",
               "pattern": "Inspire reel",
               "tradeoff": "Aspirational but vague",
-              "screen": "playerView",
+              "screen": "eduMcReel",
               "traits": {
                 "ex": 1,
                 "em": 2,
@@ -5931,7 +5931,7 @@
               "company": "Coursera",
               "pattern": "Outcome filters",
               "tradeoff": "Decisive but dry",
-              "screen": "filterList",
+              "screen": "eduCourseraFilters",
               "traits": {
                 "ex": -1,
                 "em": -1,
@@ -5958,7 +5958,7 @@
               "company": "Udemy",
               "pattern": "Ratings + sales",
               "tradeoff": "Broad but noisy",
-              "screen": "listRows",
+              "screen": "eduUdemyDeals",
               "traits": {
                 "ex": -1,
                 "em": -1,
@@ -5988,7 +5988,7 @@
               "company": "MasterClass",
               "pattern": "Star instructors",
               "tradeoff": "Aspirational but narrow",
-              "screen": "carousel",
+              "screen": "eduMcInstructors",
               "traits": {
                 "ex": 1,
                 "em": 2,
@@ -6017,7 +6017,7 @@
               "company": "Khan Academy",
               "pattern": "Subject tree",
               "tradeoff": "Structured but plain",
-              "screen": "listRows",
+              "screen": "eduKhanTree",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -6054,7 +6054,7 @@
               "company": "Duolingo",
               "pattern": "Bite-size interactive",
               "tradeoff": "Sticky but shallow",
-              "screen": "lessonCard",
+              "screen": "eduDuoLesson",
               "traits": {
                 "ex": 0,
                 "em": 2,
@@ -6083,7 +6083,7 @@
               "company": "Khan Academy",
               "pattern": "Video + practice",
               "tradeoff": "Solid but long",
-              "screen": "playerView",
+              "screen": "eduKhanVideo",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -6110,7 +6110,7 @@
               "company": "Coursera",
               "pattern": "Lecture + quiz",
               "tradeoff": "Rigorous but heavy",
-              "screen": "playerView",
+              "screen": "eduCourseraLecture",
               "traits": {
                 "ex": -1,
                 "em": 0,
@@ -6139,7 +6139,7 @@
               "company": "MasterClass",
               "pattern": "Cinematic video",
               "tradeoff": "Inspiring but passive",
-              "screen": "playerView",
+              "screen": "eduMcVideo",
               "traits": {
                 "ex": 1,
                 "em": 2,
@@ -6178,7 +6178,7 @@
               "company": "Duolingo",
               "pattern": "Streaks + XP",
               "tradeoff": "Motivating but nagging",
-              "screen": "progressRings",
+              "screen": "eduDuoStreak",
               "traits": {
                 "ex": 0,
                 "em": 2,
@@ -6208,7 +6208,7 @@
               "company": "Coursera",
               "pattern": "Certificates",
               "tradeoff": "Credible but slow",
-              "screen": "badgeRow",
+              "screen": "eduCourseraCerts",
               "traits": {
                 "ex": -1,
                 "em": 0,
@@ -6237,7 +6237,7 @@
               "company": "Khan Academy",
               "pattern": "Mastery bars",
               "tradeoff": "Clear but clinical",
-              "screen": "progressRings",
+              "screen": "eduKhanMastery",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -6264,7 +6264,7 @@
               "company": "Udemy",
               "pattern": "Completion %",
               "tradeoff": "Simple but flat",
-              "screen": "progressRings",
+              "screen": "eduUdemyProgress",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -6301,7 +6301,7 @@
               "company": "Duolingo",
               "pattern": "Streak reminders",
               "tradeoff": "Sticky but nagging",
-              "screen": "progressRings",
+              "screen": "eduDuoReminder",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -6330,7 +6330,7 @@
               "company": "Coursera",
               "pattern": "Deadlines",
               "tradeoff": "Structured but stressy",
-              "screen": "listRows",
+              "screen": "eduCourseraDeadlines",
               "traits": {
                 "ex": -1,
                 "em": 0,
@@ -6357,7 +6357,7 @@
               "company": "MasterClass",
               "pattern": "New classes",
               "tradeoff": "Aspirational but pricey",
-              "screen": "carousel",
+              "screen": "eduMcNew",
               "traits": {
                 "ex": 1,
                 "em": 2,
@@ -6386,7 +6386,7 @@
               "company": "Udemy",
               "pattern": "Sales emails",
               "tradeoff": "Cheap pull but spammy",
-              "screen": "insightsCards",
+              "screen": "eduUdemySale",
               "traits": {
                 "ex": -1,
                 "em": -1,
