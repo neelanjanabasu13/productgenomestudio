@@ -84,6 +84,8 @@
   "templateGallery": "grid of template thumbnails",
   "codeCanvas": "design canvas with layers/toolbar",
   "sendForm": "recipient + amount send form"
+  ,"compareGrid": "side-by-side comparison table of options"
+  ,"pointsBundle": "points balance card + bundle redemption tiles"
  },
  "industryCount": 12,
  "industries": [
@@ -289,7 +291,7 @@
        "company": "Kayak",
        "pattern": "Compare grid",
        "tradeoff": "Thorough but dense",
-       "screen": "listRows",
+       "screen": "compareGrid",
        "traits": {
         "ex": -1,
         "em": -1,
@@ -690,7 +692,7 @@
        "company": "Expedia",
        "pattern": "Points + bundles",
        "tradeoff": "Flexible but confusing",
-       "screen": "tierList",
+       "screen": "pointsBundle",
        "traits": {
         "ex": -1,
         "em": -1,
