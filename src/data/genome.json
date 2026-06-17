@@ -3911,7 +3911,7 @@
               "company": "Netflix",
               "pattern": "Pick titles to seed",
               "tradeoff": "Quick but limited",
-              "screen": "onboardChecklist",
+              "screen": "streamNetflixPickTitles",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -3941,7 +3941,7 @@
               "company": "Spotify",
               "pattern": "Pick artists",
               "tradeoff": "Fast but shallow",
-              "screen": "onboardChecklist",
+              "screen": "streamSpotifyArtists",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -3968,7 +3968,7 @@
               "company": "YouTube",
               "pattern": "Infer from history",
               "tradeoff": "Seamless but creepy",
-              "screen": "feedFull",
+              "screen": "streamYouTubeInfer",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -3997,7 +3997,7 @@
               "company": "Disney+",
               "pattern": "Brand hubs",
               "tradeoff": "Familiar but siloed",
-              "screen": "carousel",
+              "screen": "streamDisneyHubs",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -4034,7 +4034,7 @@
               "company": "Netflix",
               "pattern": "Personalized rows",
               "tradeoff": "Effortless but same-y",
-              "screen": "carousel",
+              "screen": "streamNetflixRows",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -4064,7 +4064,7 @@
               "company": "Spotify",
               "pattern": "Named playlists",
               "tradeoff": "Ritual but algorithmic",
-              "screen": "listRows",
+              "screen": "streamSpotifyPlaylists",
               "traits": {
                 "ex": 0,
                 "em": 2,
@@ -4093,7 +4093,7 @@
               "company": "Disney+",
               "pattern": "Franchise tiles",
               "tradeoff": "Clear but narrow",
-              "screen": "carousel",
+              "screen": "streamDisneyFranchise",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -4120,7 +4120,7 @@
               "company": "Twitch",
               "pattern": "Live now",
               "tradeoff": "Exciting but chaotic",
-              "screen": "feedFull",
+              "screen": "streamTwitchLive",
               "traits": {
                 "ex": 1,
                 "em": 1,
@@ -4157,7 +4157,7 @@
               "company": "YouTube",
               "pattern": "Predictive at scale",
               "tradeoff": "Scales but noisy",
-              "screen": "searchBox",
+              "screen": "streamYouTubeSearch",
               "traits": {
                 "ex": 0,
                 "em": -1,
@@ -4186,7 +4186,7 @@
               "company": "Netflix",
               "pattern": "Title + genre",
               "tradeoff": "Simple but limited",
-              "screen": "searchBox",
+              "screen": "streamNetflixSearch",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -4216,7 +4216,7 @@
               "company": "Spotify",
               "pattern": "Songs + podcasts",
               "tradeoff": "Broad but mixed",
-              "screen": "searchBox",
+              "screen": "streamSpotifySearch",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -4243,7 +4243,7 @@
               "company": "Twitch",
               "pattern": "Categories / games",
               "tradeoff": "Niche but cluttered",
-              "screen": "listRows",
+              "screen": "streamTwitchCategories",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -4280,7 +4280,7 @@
               "company": "YouTube",
               "pattern": "Speed / captions / PiP",
               "tradeoff": "Powerful but cluttered",
-              "screen": "playerView",
+              "screen": "streamYouTubePlayer",
               "traits": {
                 "ex": -1,
                 "em": -1,
@@ -4309,7 +4309,7 @@
               "company": "Netflix",
               "pattern": "Autoplay next",
               "tradeoff": "Bingeable but pushy",
-              "screen": "playerView",
+              "screen": "streamNetflixAutoplay",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -4338,7 +4338,7 @@
               "company": "Spotify",
               "pattern": "Queue + crossfade",
               "tradeoff": "Smooth but hidden",
-              "screen": "playerView",
+              "screen": "streamSpotifyQueue",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -4365,7 +4365,7 @@
               "company": "Twitch",
               "pattern": "Live chat overlay",
               "tradeoff": "Communal but distracting",
-              "screen": "playerView",
+              "screen": "streamTwitchChat",
               "traits": {
                 "ex": 1,
                 "em": 1,
@@ -4404,7 +4404,7 @@
               "company": "Netflix",
               "pattern": "New-release rows",
               "tradeoff": "Habitual but churny",
-              "screen": "carousel",
+              "screen": "streamNetflixNewRow",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -4433,7 +4433,7 @@
               "company": "Spotify",
               "pattern": "Wrapped & daylist",
               "tradeoff": "Sticky but seasonal",
-              "screen": "insightsCards",
+              "screen": "streamSpotifyWrapped",
               "traits": {
                 "ex": 0,
                 "em": 2,
@@ -4462,7 +4462,7 @@
               "company": "YouTube",
               "pattern": "Subscriptions feed",
               "tradeoff": "Sticky but sprawling",
-              "screen": "feedFull",
+              "screen": "streamYouTubeSubs",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -4491,7 +4491,7 @@
               "company": "Twitch",
               "pattern": "Subs & emotes",
               "tradeoff": "Loyal but niche",
-              "screen": "tierList",
+              "screen": "streamTwitchSubs",
               "traits": {
                 "ex": 1,
                 "em": 1,
