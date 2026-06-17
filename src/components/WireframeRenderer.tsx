@@ -27,9 +27,9 @@ const Frame = ({ children }: { children: ReactNode }) => (
 
 const StatusBar = ({ title }: { title: string }) => (
   <div className="flex items-center justify-between text-[9px] font-mono text-foreground/50 -mt-1 gap-2">
-    <span>9:41</span>
+    <span className="truncate max-w-[70px]">{title.split(" · ")[0]}</span>
     <span className="tracking-[0.18em] uppercase truncate">{title}</span>
-    <span>●●●</span>
+    <span className="truncate max-w-[70px]">{title.split(" · ")[1] ?? title}</span>
   </div>
 );
 
@@ -61,20 +61,18 @@ const CTA = ({ children }: { children: ReactNode }) => (
 
 type Builder = (ctx: RenderCtx, p: Preview) => RenderedScreen;
 
-// neutral fallback word pool — generic, industry-agnostic
-const NEUTRAL = ["Featured", "Top pick", "Recent", "Saved", "Trending", "Online", "Verified", "Trusted", "Now"];
-
 const safePreview = (p: Preview | undefined, ctx: RenderCtx): Preview => ({
-  company: p?.company ?? ctx.company ?? "",
-  pattern: p?.pattern ?? ctx.pattern ?? "",
+  company: p?.company ?? "",
+  pattern: p?.pattern ?? "",
   header: p?.header ?? "",
   metric: p?.metric ?? "",
-  rows: p?.rows && p.rows.length ? p.rows : ["", "", "", ""],
-  cta: p?.cta ?? "Continue",
+  rows: p?.rows && p.rows.length ? p.rows : [p?.header ?? "", p?.metric ?? "", p?.cta ?? "", p?.pattern ?? ""],
+  cta: p?.cta ?? "",
 });
 
 const title = (p: Preview) => `${p.company} · ${p.pattern}`;
 const row = (p: Preview, i: number) => p.rows[i % p.rows.length];
+const detail = (p: Preview, i: number) => [p.metric, p.header, p.cta, p.company, p.pattern][i % 5];
 
 const screens: Record<string, Builder> = {
   photoGrid: (ctx, p) => ({
@@ -91,7 +89,7 @@ const screens: Record<string, Builder> = {
               </Photo>
               <div className="p-1.5">
                 <div className="text-[10px] font-medium leading-tight truncate">{row(p, i)}</div>
-                <div className="text-[9px] text-foreground/55 truncate mt-0.5">{NEUTRAL[i % NEUTRAL.length]}</div>
+                <div className="text-[9px] text-foreground/55 truncate mt-0.5">{detail(p, i)}</div>
               </div>
             </div>
           ))}
@@ -116,9 +114,9 @@ const screens: Record<string, Builder> = {
               <Photo seed={i} className="w-10 h-10 rounded-md shrink-0" />
               <div className="flex-1 min-w-0">
                 <div className="text-[11px] font-medium truncate">{row(p, i)}</div>
-                <div className="text-[9px] text-foreground/55 truncate">{NEUTRAL[i % NEUTRAL.length]}</div>
+                <div className="text-[9px] text-foreground/55 truncate">{detail(p, i)}</div>
               </div>
-              <Chip accent>Deal</Chip>
+              <Chip accent>{p.cta}</Chip>
             </div>
           ))}
         </div>
@@ -168,7 +166,7 @@ const screens: Record<string, Builder> = {
               <Photo seed={i} className="w-12 h-12 rounded-md shrink-0" />
               <div className="flex-1 min-w-0">
                 <div className="text-[11px] font-medium truncate">{row(p, i)}</div>
-                <div className="text-[9px] text-foreground/55 truncate">{NEUTRAL[i % NEUTRAL.length]}</div>
+                <div className="text-[9px] text-foreground/55 truncate">{detail(p, i)}</div>
               </div>
             </div>
           ))}
@@ -223,7 +221,7 @@ const screens: Record<string, Builder> = {
               <Photo seed={i} className="w-9 h-9 rounded-md shrink-0" />
               <div className="flex-1 min-w-0">
                 <div className="text-[11px] font-medium truncate">{row(p, i)}</div>
-                <div className="text-[9px] text-foreground/55 truncate">{NEUTRAL[i % NEUTRAL.length]}</div>
+                <div className="text-[9px] text-foreground/55 truncate">{detail(p, i)}</div>
               </div>
             </div>
           ))}
@@ -265,7 +263,7 @@ const screens: Record<string, Builder> = {
           <Photo seed={2} className="w-14 h-14 rounded-full shrink-0" />
           <div className="flex-1 min-w-0">
             <div className="font-display text-[16px] truncate">{p.header}</div>
-            <div className="flex gap-1 mt-0.5"><Chip>Verified</Chip><Chip>Trusted</Chip></div>
+            <div className="flex gap-1 mt-0.5"><Chip>{row(p, 0)}</Chip><Chip>{p.cta}</Chip></div>
           </div>
         </div>
         <div className="text-[10px] text-foreground/70 truncate">{p.metric}</div>
@@ -333,7 +331,7 @@ const screens: Record<string, Builder> = {
         <div className="p-3 rounded-xl border border-border/60 flex items-center gap-2">
           <div className="w-9 h-6 rounded bg-foreground/70 shrink-0" />
           <div className="flex-1 text-[11px] truncate">{row(p, 0)}</div>
-          <span className="text-[9px] font-mono text-foreground/55 shrink-0">DEFAULT</span>
+          <span className="text-[9px] font-mono text-foreground/55 shrink-0 truncate max-w-[80px]">{p.metric}</span>
         </div>
         <div className="p-3 rounded-xl border border-border/60 flex items-center gap-2">
           <div className="flex-1 text-[11px] truncate">{row(p, 1)}</div>
@@ -426,7 +424,7 @@ const screens: Record<string, Builder> = {
             <div key={i} className="flex items-center gap-2 p-2 rounded-lg border border-border/60">
               <div className="w-2 h-2 rounded-full bg-primary shrink-0" />
               <div className="flex-1 text-[11px] truncate">{c}</div>
-              <span className="text-[9px] font-mono text-primary shrink-0">UNLOCKED</span>
+              <span className="text-[9px] font-mono text-primary shrink-0 truncate max-w-[72px]">{p.cta}</span>
             </div>
           ))}
           <div className="flex items-center gap-2 p-2 rounded-lg border border-dashed border-border/80 opacity-60">
@@ -566,7 +564,7 @@ const screens: Record<string, Builder> = {
         <div className="text-[10px] font-mono text-foreground/55 -mt-1 uppercase tracking-wider truncate">{p.metric}</div>
         {[0, 1].map((row_i) => (
           <div key={row_i}>
-            <div className="text-[10px] font-mono text-foreground/55 uppercase tracking-wider mb-1.5">{NEUTRAL[row_i]}</div>
+            <div className="text-[10px] font-mono text-foreground/55 uppercase tracking-wider mb-1.5 truncate">{detail(p, row_i)}</div>
             <div className="flex gap-2 overflow-hidden">
               {[0, 1, 2, 3].map((i) => (
                 <div key={i} className="w-[68px] shrink-0">
@@ -622,7 +620,7 @@ const screens: Record<string, Builder> = {
         <div className="grid grid-cols-2 gap-2">
           {p.rows.slice(0, 4).map((c, i) => (
             <div key={i} className="p-2.5 rounded-xl border border-border/60">
-              <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 truncate">{NEUTRAL[i % NEUTRAL.length]}</div>
+              <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 truncate">{detail(p, i)}</div>
               <div className="text-[14px] font-display mt-0.5 leading-tight line-clamp-2">{c}</div>
               <div className="h-5 mt-1.5 flex items-end gap-0.5">
                 {[3, 5, 4, 6, 5, 7, 6].map((h, hi) => <div key={hi} className="flex-1 bg-primary/40 rounded-sm" style={{ height: `${h * 12}%` }} />)}
@@ -700,7 +698,7 @@ const screens: Record<string, Builder> = {
               <div className="relative w-14 h-14 rounded-full" style={{ background: `conic-gradient(var(--primary) ${pct * 3.6}deg, var(--muted) 0)` }}>
                 <div className="absolute inset-1.5 rounded-full bg-card grid place-items-center text-[10px] font-mono font-medium">{pct}%</div>
               </div>
-              <div className="text-[9px] font-mono text-foreground/55 uppercase tracking-wider truncate max-w-[60px]">{NEUTRAL[i]}</div>
+              <div className="text-[9px] font-mono text-foreground/55 uppercase tracking-wider truncate max-w-[60px]">{detail(p, i)}</div>
             </div>
           ))}
         </div>
@@ -729,12 +727,12 @@ const screens: Record<string, Builder> = {
         <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 truncate">{p.metric}</div>
         <div className="grid grid-cols-3 gap-1.5 flex-1">
           {[
-            { col: "Todo", items: [p.rows[0], p.rows[1]] },
-            { col: "Doing", items: [p.rows[2]] },
-            { col: "Done", items: [p.rows[3]] },
-          ].map((col) => (
-            <div key={col.col} className="space-y-1.5">
-              <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55">{col.col}</div>
+            { col: p.header, items: [p.rows[0], p.rows[1]] },
+            { col: p.metric, items: [p.rows[2]] },
+            { col: p.cta, items: [p.rows[3]] },
+          ].map((col, i) => (
+            <div key={i} className="space-y-1.5">
+              <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 truncate">{col.col}</div>
               {col.items.map((t, i) => (
                 <div key={i} className="rounded-lg border border-border/60 p-1.5 bg-card/70">
                   <div className="text-[10px] font-medium leading-tight line-clamp-3">{t}</div>
@@ -764,7 +762,7 @@ const screens: Record<string, Builder> = {
               <Photo seed={i} className="aspect-[3/4]" />
               <div className="p-1.5">
                 <div className="text-[10px] font-medium truncate">{row(p, i)}</div>
-                <div className="text-[9px] text-foreground/55 truncate">{NEUTRAL[i % NEUTRAL.length]}</div>
+                <div className="text-[9px] text-foreground/55 truncate">{detail(p, i)}</div>
               </div>
             </div>
           ))}
@@ -788,14 +786,14 @@ const screens: Record<string, Builder> = {
           ))}
         </div>
         <div className="flex-1 rounded-lg border border-border/60 bg-background/40 p-2 font-mono text-[9px] leading-relaxed overflow-hidden">
-          <div className="text-foreground/40 truncate">// {p.header}</div>
-          <div className="truncate"><span className="text-primary">const</span> v = <span className="text-foreground/80">"{row(p, 3)}"</span></div>
-          <div className="mt-1 truncate"><span className="text-primary">export function</span> Page() {"{"}</div>
-          <div className="pl-3 truncate"><span className="text-primary">return</span> {"<View />"}</div>
-          <div>{"}"}</div>
-          <div className="mt-2 text-foreground/40 truncate">// {p.metric}</div>
+          <div className="text-foreground/40 truncate">{p.header}</div>
+          <div className="truncate text-primary">{row(p, 0)}</div>
+          <div className="mt-1 truncate text-foreground/80">{row(p, 1)}</div>
+          <div className="pl-3 truncate">{row(p, 2)}</div>
+          <div className="truncate">{row(p, 3)}</div>
+          <div className="mt-2 text-foreground/40 truncate">{p.metric}</div>
         </div>
-        <div className="flex justify-between text-[9px] font-mono text-foreground/55 gap-2"><span className="truncate">{p.cta}</span><span className="text-primary shrink-0">● live</span></div>
+        <div className="flex justify-between text-[9px] font-mono text-foreground/55 gap-2"><span className="truncate">{p.cta}</span><span className="text-primary shrink-0 truncate max-w-[80px]">{p.company}</span></div>
       </Frame>
     ),
     pins: [
@@ -810,12 +808,12 @@ const screens: Record<string, Builder> = {
       <Frame>
         <StatusBar title={title(p)} />
         <div className="font-display text-[18px] leading-tight truncate">{p.header}</div>
-        <div className="text-[9px] font-mono text-foreground/55 uppercase tracking-wider">To</div>
+        <div className="text-[9px] font-mono text-foreground/55 uppercase tracking-wider truncate">{p.header}</div>
         <div className="h-10 rounded-xl border border-border bg-background/40 flex items-center px-3 gap-2">
           <div className="w-6 h-6 rounded-full bg-foreground/20 shrink-0" />
           <div className="text-[11px] flex-1 truncate">{row(p, 0)}</div>
         </div>
-        <div className="text-[9px] font-mono text-foreground/55 uppercase tracking-wider">Amount</div>
+        <div className="text-[9px] font-mono text-foreground/55 uppercase tracking-wider truncate">{p.metric}</div>
         <div className="rounded-xl border border-border bg-background/40 px-3 py-3 text-center">
           <div className="font-display text-[24px] leading-none truncate">{p.metric}</div>
           <div className="text-[10px] text-foreground/55 mt-1 truncate">{row(p, 1)}</div>
@@ -844,7 +842,7 @@ const fallback: Builder = (ctx, p) => ({
             <Photo seed={i} className="w-10 h-10 rounded-md shrink-0" />
             <div className="flex-1 min-w-0">
               <div className="text-[11px] font-medium truncate">{row(p, i)}</div>
-              <div className="text-[9px] text-foreground/55 truncate">{NEUTRAL[i % NEUTRAL.length]}</div>
+              <div className="text-[9px] text-foreground/55 truncate">{detail(p, i)}</div>
             </div>
           </div>
         ))}
