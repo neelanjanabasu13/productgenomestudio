@@ -3683,6 +3683,798 @@ Object.assign(screens, {
   })) as Builder,
 });
 
+// ============================================================
+// E-COMMERCE — 20 brand-evocative screens
+// ============================================================
+const ShopBar = () => (
+  <div className="flex items-center justify-between text-[9px] font-mono text-foreground/50 -mt-1">
+    <span>9:41</span>
+    <span className="tracking-[0.18em]">●●●</span>
+    <span>100%</span>
+  </div>
+);
+
+Object.assign(screens, {
+  // 1. Amazon — Forgiving autocomplete
+  shopAmazonAutocomplete: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <ShopBar />
+        <div className="h-8 rounded-full bg-yellow-400/20 border border-yellow-500/40 px-2 flex items-center gap-1.5 text-[10px]">
+          <span>🔍</span>
+          <span className="flex-1">blutooth headphns|</span>
+          <span className="text-foreground/45">✕</span>
+        </div>
+        <div className="text-[9px] text-foreground/55 italic">Did you mean <span className="text-primary underline">bluetooth headphones</span>?</div>
+        <div className="text-[9px] text-foreground/55 uppercase tracking-wider">Suggestions</div>
+        <div className="flex flex-col flex-1">
+          {[
+            ["bluetooth headphones","in Electronics"],
+            ["bluetooth headphones wireless","in Electronics"],
+            ["bluetooth headphones with mic","in Electronics"],
+            ["bluetooth headphones for kids","in Kids"],
+            ["bluetooth earbuds noise cancelling","in Electronics"],
+            ["bluetooth speaker portable","in Electronics"],
+          ].map(([q,c],i)=>(
+            <div key={i} className="flex items-center justify-between py-1 border-b border-border/30 text-[10px]">
+              <div className="flex items-center gap-1.5 min-w-0">
+                <span className="text-foreground/45">🔍</span>
+                <span className="truncate">{q}</span>
+              </div>
+              <span className="text-[8.5px] text-foreground/50 shrink-0">{c}</span>
+            </div>
+          ))}
+        </div>
+        <div className="text-[8.5px] text-foreground/50 text-center">2,418 results match</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "Forgiving — did you mean" },
+      { n: 2, x: "50%", y: "55%", label: "Scoped suggestions" },
+      { n: 3, x: "50%", y: "94%", label: "Never zero results" },
+    ],
+  })) as Builder,
+
+  // 2. ASOS — Visual scoped search
+  shopAsosVisualSearch: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <ShopBar />
+        <div className="h-8 rounded-md bg-foreground/8 px-2 flex items-center gap-1.5 text-[10px]">
+          <span>🔍</span><span className="flex-1">linen dress</span><span>📷</span>
+        </div>
+        <div className="flex gap-1 overflow-hidden">
+          {["Women","Men","Brand","Edit","Sale"].map((c,i)=>(
+            <Chip key={i} accent={i===0}>{c}</Chip>
+          ))}
+        </div>
+        <div className="flex gap-1 overflow-hidden">
+          {["Mini","Midi","Maxi","Beige","White","XS-XL"].map((c,i)=>(
+            <Chip key={i}>{c}</Chip>
+          ))}
+        </div>
+        <div className="grid grid-cols-2 gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Linen Midi","£48"],
+            ["Tie-Back Mini","£35"],
+            ["Belted Maxi","£62"],
+            ["Sleeveless Slip","£28"],
+          ].map(([n,pr],i)=>(
+            <div key={i} className="rounded-md overflow-hidden border border-border/40 flex flex-col">
+              <Photo seed={i} className="flex-1 min-h-[60px]" />
+              <div className="px-1.5 py-1">
+                <div className="text-[9.5px] truncate">{n}</div>
+                <div className="text-[8.5px] font-mono text-foreground/65">{pr}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "15%", label: "Search + camera" },
+      { n: 2, x: "50%", y: "30%", label: "Scoped pills" },
+      { n: 3, x: "50%", y: "70%", label: "Visual grid" },
+    ],
+  })) as Builder,
+
+  // 3. Sephora — Guided beauty search
+  shopSephoraGuided: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <ShopBar />
+        <div className="font-display text-[14px]">Find your match</div>
+        <div className="text-[9.5px] text-foreground/60">Tell us about your skin</div>
+        <div className="text-[9px] text-foreground/55 uppercase tracking-wider">Concern</div>
+        <div className="flex gap-1 flex-wrap">
+          {["Acne","Dryness","Dullness","Redness","Pores"].map((c,i)=>(
+            <Chip key={i} accent={i===1}>{c}</Chip>
+          ))}
+        </div>
+        <div className="text-[9px] text-foreground/55 uppercase tracking-wider">Skin type</div>
+        <div className="flex gap-1 flex-wrap">
+          {["Oily","Dry","Combo","Sensitive","Normal"].map((c,i)=>(
+            <Chip key={i} accent={i===1}>{c}</Chip>
+          ))}
+        </div>
+        <div className="text-[10px] font-medium mt-1">Matched for you · 24</div>
+        <div className="flex flex-col gap-1 flex-1 overflow-hidden">
+          {[
+            ["Hydrating Serum","98% match · for Dry"],
+            ["Barrier Cream","95% match · Sensitive ok"],
+            ["Overnight Mask","91% match · Dry"],
+          ].map(([n,m],i)=>(
+            <div key={i} className="flex items-center gap-2 p-1 rounded-md border border-border/40">
+              <Photo seed={i} className="w-8 h-8 rounded shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] font-medium truncate">{n}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{m}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "25%", label: "Concern" },
+      { n: 2, x: "50%", y: "45%", label: "Skin type" },
+      { n: 3, x: "50%", y: "80%", label: "Guided matches" },
+    ],
+  })) as Builder,
+
+  // 4. IKEA — Room / category search
+  shopIkeaRooms: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <ShopBar />
+        <div className="h-8 rounded-md bg-foreground/8 px-2 flex items-center gap-1.5 text-[10px]">
+          <span>🔍</span><span className="flex-1">Shop by room</span>
+        </div>
+        <div className="text-[10px] font-medium">Browse rooms</div>
+        <div className="grid grid-cols-2 gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Living room","248 items"],
+            ["Bedroom","312 items"],
+            ["Kitchen","186 items"],
+            ["Bathroom","94 items"],
+            ["Kids","142 items"],
+            ["Outdoor","78 items"],
+          ].map(([n,c],i)=>(
+            <div key={i} className="rounded-md overflow-hidden border border-border/40 flex flex-col">
+              <Photo seed={i} className="flex-1 min-h-[44px] flex items-end p-1">
+                <span className="text-[9px] bg-background/80 px-1 rounded">{n}</span>
+              </Photo>
+              <div className="px-1.5 py-1 text-[8.5px] text-foreground/55">{c}</div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "12%", label: "Search by room" },
+      { n: 2, x: "30%", y: "55%", label: "Inspirational rooms" },
+      { n: 3, x: "70%", y: "80%", label: "Category counts" },
+    ],
+  })) as Builder,
+
+  // 5. ASOS — Fit/size filters grid
+  shopAsosFilters: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <ShopBar />
+        <div className="flex items-center justify-between">
+          <div className="text-[11px] font-medium">Dresses · 1,248</div>
+          <div className="text-[9px] text-foreground/55">Sort</div>
+        </div>
+        <div className="flex gap-1 overflow-hidden">
+          {["Fit: Regular","Size: M","Colour: Beige","+3"].map((c,i)=>(
+            <div key={i} className="text-[9px] px-2 py-0.5 rounded-full bg-foreground/12 border border-border/60 truncate flex items-center gap-1">
+              {c} <span className="text-foreground/45">✕</span>
+            </div>
+          ))}
+        </div>
+        <div className="grid grid-cols-2 gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Linen Midi","£48","M, L"],
+            ["Slip Dress","£32","S, M"],
+            ["Belted Maxi","£58","M"],
+            ["Tie-Back Mini","£36","S, M, L"],
+          ].map(([n,pr,sz],i)=>(
+            <div key={i} className="rounded-md overflow-hidden border border-border/40 flex flex-col">
+              <Photo seed={i} className="flex-1 min-h-[54px]" />
+              <div className="px-1.5 py-1">
+                <div className="text-[9.5px] truncate">{n}</div>
+                <div className="text-[8.5px] font-mono text-foreground/65">{pr}</div>
+                <div className="text-[8px] text-green-600">In your size · {sz}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "22%", label: "Fit/size/colour chips" },
+      { n: 2, x: "50%", y: "60%", label: "Visual grid" },
+      { n: 3, x: "50%", y: "88%", label: "In-your-size flag" },
+    ],
+  })) as Builder,
+
+  // 6. Amazon — Faceted filters dense
+  shopAmazonFacets: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <ShopBar />
+        <div className="flex items-center justify-between">
+          <div className="text-[10px] font-medium">"laptop stand"</div>
+          <div className="text-[9px] text-foreground/55">2,418 results</div>
+        </div>
+        <div className="flex gap-1.5 flex-1 overflow-hidden">
+          <div className="w-[42%] flex flex-col gap-1 text-[8.5px]">
+            <div className="font-semibold">Department</div>
+            <div>· Office Products</div>
+            <div>· Electronics</div>
+            <div className="font-semibold mt-0.5">Avg. Customer Review</div>
+            <div>★★★★☆ & Up</div>
+            <div>★★★☆☆ & Up</div>
+            <div className="font-semibold mt-0.5">Price</div>
+            <div className="flex gap-1">
+              <div className="px-1 border border-border rounded">$0</div>
+              <div className="px-1 border border-border rounded">$50</div>
+            </div>
+            <div className="font-semibold mt-0.5">Brand</div>
+            <div>☐ Rain</div>
+            <div>☑ Nulaxy</div>
+            <div>☐ Roost</div>
+            <div className="font-semibold mt-0.5">Material</div>
+            <div>☐ Aluminum</div>
+            <div>☐ Bamboo</div>
+            <div>☐ Steel</div>
+            <div className="font-semibold mt-0.5">Prime</div>
+            <div>☑ Prime eligible</div>
+          </div>
+          <div className="flex-1 flex flex-col gap-1.5 overflow-hidden">
+            {[
+              ["Aluminum Riser","$29.99","★★★★☆ 12,481"],
+              ["Adjustable Stand","$42.50","★★★★★ 8,902"],
+              ["Bamboo Stand","$24.00","★★★★☆ 3,210"],
+              ["Foldable Stand","$18.99","★★★★☆ 6,418"],
+            ].map(([n,pr,r],i)=>(
+              <div key={i} className="flex gap-1.5">
+                <Photo seed={i} className="w-9 h-9 rounded shrink-0" />
+                <div className="min-w-0">
+                  <div className="text-[9px] truncate">{n}</div>
+                  <div className="text-[9px] font-mono">{pr}</div>
+                  <div className="text-[8px] text-yellow-600 truncate">{r}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "20%", y: "55%", label: "Dense facets" },
+      { n: 2, x: "70%", y: "55%", label: "Results list" },
+      { n: 3, x: "70%", y: "90%", label: "Ratings + Prime" },
+    ],
+  })) as Builder,
+
+  // 7. Sephora — Reviews-led grid
+  shopSephoraReviews: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <ShopBar />
+        <div className="text-[11px] font-medium">Best skincare</div>
+        <div className="grid grid-cols-2 gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Glow Serum","★ 4.8","12,481 reviews","$38"],
+            ["Barrier Cream","★ 4.9","8,902 reviews","$42"],
+            ["Vit-C Drops","★ 4.7","6,210 reviews","$28"],
+            ["Night Mask","★ 4.8","9,418 reviews","$45"],
+          ].map(([n,r,c,pr],i)=>(
+            <div key={i} className="rounded-md overflow-hidden border border-border/40 flex flex-col">
+              <Photo seed={i} className="flex-1 min-h-[54px]" />
+              <div className="px-1.5 py-1">
+                <div className="text-[10px] text-yellow-600 font-medium">{r}</div>
+                <div className="text-[8px] text-foreground/55">{c}</div>
+                <div className="text-[9.5px] truncate">{n}</div>
+                <div className="text-[8.5px] font-mono">{pr}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "30%", y: "55%", label: "Rating leads card" },
+      { n: 2, x: "30%", y: "65%", label: "Review count" },
+      { n: 3, x: "70%", y: "75%", label: "Name + price below" },
+    ],
+  })) as Builder,
+
+  // 8. IKEA — Room visualizer grid
+  shopIkeaVisualizer: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <ShopBar />
+        <div className="text-[11px] font-medium">Sofas — see in a room</div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["KIVIK 3-seat","$799","Linen beige"],
+            ["EKTORP","$549","Cotton white"],
+            ["FRIHETEN sleeper","$649","Velvet teal"],
+          ].map(([n,pr,c],i)=>(
+            <div key={i} className="rounded-md overflow-hidden border border-border/40 flex">
+              <Photo seed={i} className="w-[55%] min-h-[60px] relative flex items-end p-1">
+                <span className="text-[8px] bg-background/80 px-1 rounded">In a living room</span>
+              </Photo>
+              <div className="flex-1 p-1.5">
+                <div className="text-[10px] font-medium truncate">{n}</div>
+                <div className="text-[8.5px] text-foreground/55">{c}</div>
+                <div className="text-[9.5px] font-mono mt-1">{pr}</div>
+                <div className="text-[8px] text-primary mt-0.5">See in a room ›</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "30%", y: "45%", label: "Room imagery" },
+      { n: 2, x: "75%", y: "55%", label: "Product specs" },
+      { n: 3, x: "75%", y: "70%", label: "See in a room" },
+    ],
+  })) as Builder,
+
+  // 9. Sephora — Reviews by skin type PDP
+  shopSephoraPdp: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <ShopBar />
+        <Photo seed={1} className="h-16 rounded-md" />
+        <div>
+          <div className="text-[11px] font-medium">Glow Serum</div>
+          <div className="text-[9px] text-foreground/55">Drunk Elephant · $38</div>
+          <div className="text-[10px] text-yellow-600">★ 4.8 · 12,481</div>
+        </div>
+        <div className="text-[9px] text-foreground/55 uppercase tracking-wider">Key ingredients</div>
+        <div className="flex gap-1 flex-wrap">
+          {["Vit C 15%","Niacinamide","Ferulic","Hyaluronic"].map((c,i)=>(
+            <Chip key={i}>{c}</Chip>
+          ))}
+        </div>
+        <div className="flex items-center justify-between text-[9.5px]">
+          <span className="font-medium">Reviews</span>
+          <span className="text-foreground/55">Filter by skin</span>
+        </div>
+        <div className="flex gap-1">
+          {["Dry","Oily","Combo","Sensitive"].map((c,i)=>(
+            <Chip key={i} accent={i===0}>{c}</Chip>
+          ))}
+        </div>
+        <div className="flex flex-col gap-1 flex-1 overflow-hidden">
+          {[
+            ["Maya · Dry","★★★★★","Finally hydrated all day."],
+            ["Aisha · Dry","★★★★☆","Glows but takes time."],
+          ].map(([who,r,t],i)=>(
+            <div key={i} className="rounded p-1 border border-border/40">
+              <div className="flex items-center justify-between text-[9px]"><span className="font-medium truncate">{who}</span><span className="text-yellow-600">{r}</span></div>
+              <div className="text-[8.5px] text-foreground/65 truncate">{t}</div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "40%", label: "Ingredient list" },
+      { n: 2, x: "50%", y: "65%", label: "Filter reviews by skin" },
+      { n: 3, x: "50%", y: "85%", label: "Same-skin reviews" },
+    ],
+  })) as Builder,
+
+  // 10. Amazon — Q&A + reviews
+  shopAmazonQA: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <ShopBar />
+        <div className="flex gap-1.5">
+          <Photo seed={0} className="w-12 h-12 rounded shrink-0" />
+          <div className="min-w-0">
+            <div className="text-[10px] font-medium truncate">Echo Dot (5th Gen)</div>
+            <div className="text-[9px] text-yellow-600">★★★★☆ 4.6 · 218,402</div>
+            <div className="text-[10px] font-mono">$49.99</div>
+          </div>
+        </div>
+        <div className="text-[10px] font-medium">Customer Q&A</div>
+        <div className="flex flex-col gap-1">
+          {[
+            ["Q: Works without Wi-Fi?","A: No, Wi-Fi is required for Alexa. — Tom"],
+            ["Q: Multiroom audio?","A: Yes, with other Echo devices. — Priya"],
+          ].map(([q,a],i)=>(
+            <div key={i} className="rounded p-1 border border-border/40">
+              <div className="text-[9px] font-medium truncate">{q}</div>
+              <div className="text-[8.5px] text-foreground/65 truncate">{a}</div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[10px] font-medium mt-1">Customer reviews</div>
+        <div className="flex flex-col gap-1 flex-1 overflow-hidden">
+          {[
+            ["★★★★★","Great sound for the size","Verified Purchase"],
+            ["★★★★☆","Setup was easy","Verified Purchase"],
+            ["★★★★★","Worth every penny","Verified Purchase"],
+          ].map(([r,t,v],i)=>(
+            <div key={i} className="rounded p-1 border border-border/30">
+              <div className="text-[9px] text-yellow-600">{r}</div>
+              <div className="text-[9px] truncate">{t}</div>
+              <div className="text-[8px] text-green-600">{v}</div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "35%", label: "Customer Q&A" },
+      { n: 2, x: "50%", y: "70%", label: "Long reviews" },
+      { n: 3, x: "50%", y: "92%", label: "Verified badge" },
+    ],
+  })) as Builder,
+
+  // 11. Nike — Story + media PDP
+  shopNikeStory: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <Photo seed={1} className="h-24 -mx-3.5 -mt-3 flex items-end p-2">
+          <span className="text-[9px] tracking-[0.2em] uppercase text-foreground/70 bg-background/70 px-1.5">Air Max · Story</span>
+        </Photo>
+        <div className="font-display text-[16px] leading-tight">Run with Air.</div>
+        <div className="text-[9.5px] text-foreground/65 leading-snug">A new chapter for Air Max. Built for the morning commute and the late-night loop.</div>
+        <Photo seed={2} className="h-14 rounded-md" />
+        <div className="flex gap-1.5">
+          {[0,1,2,3].map(i => <div key={i} className="w-5 h-5 rounded-full bg-foreground/15 border border-border/60" />)}
+        </div>
+        <div className="flex items-center justify-between">
+          <div className="font-mono text-[12px]">$160</div>
+          <div className="text-[9px] text-foreground/55">Free shipping for Members</div>
+        </div>
+        <CTA>Add to Bag</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "15%", label: "Big media hero" },
+      { n: 2, x: "50%", y: "38%", label: "Brand story" },
+      { n: 3, x: "50%", y: "94%", label: "Light on specs" },
+    ],
+  })) as Builder,
+
+  // 12. IKEA — AR in your room
+  shopIkeaAR: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <ShopBar />
+        <div className="relative h-36 rounded-md overflow-hidden border border-border/60 bg-gradient-to-br from-foreground/10 to-foreground/[0.03]">
+          <div className="absolute inset-2 border border-dashed border-primary/50 rounded grid place-items-center">
+            <Photo seed={1} className="w-2/3 h-2/3 rounded shadow-lg" />
+          </div>
+          <div className="absolute top-1 left-1 text-[8px] font-mono bg-background/80 px-1 rounded">AR · LIVE</div>
+          <div className="absolute bottom-1 right-1 text-[8px] bg-background/80 px-1 rounded">Tap floor to place</div>
+        </div>
+        <div className="text-[11px] font-medium">POÄNG armchair</div>
+        <div className="text-[9px] text-foreground/55">Birch · $179</div>
+        <div className="flex gap-1.5">
+          <div className="flex-1 h-9 rounded-md bg-primary text-primary-foreground grid place-items-center text-[10px] font-medium">📐 View in your room</div>
+          <div className="w-9 h-9 rounded-md border border-border/60 grid place-items-center text-[12px]">♡</div>
+        </div>
+        <div className="text-[9px] text-foreground/55">See actual size in your space before you buy.</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "AR placed in room" },
+      { n: 2, x: "20%", y: "20%", label: "Live AR" },
+      { n: 3, x: "50%", y: "75%", label: "View in your room CTA" },
+    ],
+  })) as Builder,
+
+  // 13. Amazon — 1-click
+  shopAmazon1Click: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <ShopBar />
+        <div className="flex gap-1.5">
+          <Photo seed={0} className="w-14 h-14 rounded shrink-0" />
+          <div className="min-w-0">
+            <div className="text-[10px] truncate">Echo Dot (5th Gen)</div>
+            <div className="text-[9px] text-yellow-600">★★★★☆</div>
+            <div className="text-[12px] font-mono">$49.99</div>
+          </div>
+        </div>
+        <div className="rounded-md border border-border/60 p-1.5 text-[9.5px]">
+          <div>Deliver to: <span className="font-medium">Maya · 220 Mission St</span></div>
+          <div className="text-foreground/55">Arrives <span className="text-green-600 font-medium">tomorrow</span> by 8pm</div>
+        </div>
+        <div className="rounded-md border border-border/60 p-1.5 text-[9.5px]">
+          Pay with: <span className="font-medium">Visa •••• 4242</span>
+        </div>
+        <div className="flex-1" />
+        <div className="h-10 rounded-full bg-yellow-400 text-black grid place-items-center text-[12px] font-medium">Buy now — 1-Click</div>
+        <div className="h-8 rounded-full border border-border/60 grid place-items-center text-[10px] text-foreground/65">Add to Cart</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "40%", label: "Saved address" },
+      { n: 2, x: "50%", y: "55%", label: "Saved payment" },
+      { n: 3, x: "50%", y: "85%", label: "Single Buy now" },
+    ],
+  })) as Builder,
+
+  // 14. ASOS — Express wallets
+  shopAsosExpress: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <ShopBar />
+        <div className="text-[11px] font-medium">Checkout</div>
+        <div className="flex flex-col gap-1.5">
+          <div className="h-10 rounded-md bg-black text-white grid place-items-center text-[11px]"> Pay</div>
+          <div className="h-10 rounded-md bg-yellow-300 text-black grid place-items-center text-[11px] font-medium">PayPal</div>
+          <div className="h-10 rounded-md bg-blue-600 text-white grid place-items-center text-[11px] font-medium">Klarna · Pay in 3</div>
+        </div>
+        <div className="flex items-center gap-2 text-[8.5px] text-foreground/55">
+          <div className="flex-1 h-px bg-border/60" />
+          <span>or pay with card</span>
+          <div className="flex-1 h-px bg-border/60" />
+        </div>
+        <div className="flex flex-col gap-1 flex-1">
+          {["Email","Card number","Expiry / CVC"].map((l,i)=>(
+            <div key={i}>
+              <div className="text-[8px] text-foreground/55 uppercase tracking-wider">{l}</div>
+              <div className="h-7 rounded border border-border/60" />
+            </div>
+          ))}
+        </div>
+        <CTA>Place order · £62.00</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "22%", label: "Express wallets up top" },
+      { n: 2, x: "50%", y: "45%", label: "Apple Pay / PayPal" },
+      { n: 3, x: "50%", y: "75%", label: "Card fallback below" },
+    ],
+  })) as Builder,
+
+  // 15. Nike — Member checkout
+  shopNikeMember: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <ShopBar />
+        <div className="rounded-md bg-foreground/[0.04] border border-border/60 p-1.5 flex items-center gap-2">
+          <div className="w-7 h-7 rounded-full bg-black text-white grid place-items-center text-[10px] font-bold">✓</div>
+          <div className="flex-1 min-w-0">
+            <div className="text-[10px] font-medium">Member · Maya</div>
+            <div className="text-[8.5px] text-foreground/55">Free shipping · 2,480 pts</div>
+          </div>
+          <div className="text-[8.5px] px-1.5 py-0.5 rounded-full bg-foreground/10">Gold</div>
+        </div>
+        <div className="rounded-md border border-border/60 p-1.5 text-[10px]">
+          <div className="font-medium">Air Max 90 · Size 9</div>
+          <div className="text-foreground/55 text-[9px]">In bag · $130</div>
+        </div>
+        <div className="rounded-md border border-border/60 p-1.5 text-[10px]">220 Mission St · Edit</div>
+        <div className="rounded-md border border-border/60 p-1.5 text-[10px]">Visa •••• 4242 · Edit</div>
+        <div className="rounded-md bg-foreground/[0.04] p-1.5 text-[9.5px] space-y-0.5">
+          <div className="flex justify-between"><span>Subtotal</span><span className="font-mono">$130.00</span></div>
+          <div className="flex justify-between text-green-600"><span>Member shipping</span><span className="font-mono">FREE</span></div>
+          <div className="flex justify-between text-green-600"><span>Points (−$5)</span><span className="font-mono">−$5.00</span></div>
+          <div className="flex justify-between font-medium pt-0.5 border-t border-border/40"><span>Total</span><span className="font-mono">$125.00</span></div>
+        </div>
+        <CTA>Place order</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "18%", label: "Member identity + tier" },
+      { n: 2, x: "50%", y: "50%", label: "Saved details" },
+      { n: 3, x: "50%", y: "80%", label: "Perks + points applied" },
+    ],
+  })) as Builder,
+
+  // 16. IKEA — Delivery / pickup choice
+  shopIkeaFulfil: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <ShopBar />
+        <div className="text-[11px] font-medium">How would you like it?</div>
+        <div className="rounded-md border-2 border-primary p-2">
+          <div className="flex items-start gap-2">
+            <div className="w-4 h-4 rounded-full border-2 border-primary grid place-items-center"><div className="w-2 h-2 rounded-full bg-primary" /></div>
+            <div className="flex-1">
+              <div className="text-[10.5px] font-medium">Home delivery</div>
+              <div className="text-[8.5px] text-foreground/55">Tue, Apr 30 · 9am–1pm</div>
+              <div className="text-[8.5px] font-mono">$49.00</div>
+            </div>
+          </div>
+        </div>
+        <div className="rounded-md border border-border/60 p-2">
+          <div className="flex items-start gap-2">
+            <div className="w-4 h-4 rounded-full border-2 border-border/60" />
+            <div className="flex-1">
+              <div className="text-[10.5px] font-medium">Store pickup</div>
+              <div className="text-[8.5px] text-foreground/55">IKEA Emeryville · ready Sat</div>
+              <div className="text-[8.5px] text-green-600">Free</div>
+            </div>
+          </div>
+        </div>
+        <div className="rounded-md border border-border/60 p-2">
+          <div className="flex items-start gap-2">
+            <div className="w-4 h-4 rounded-full border-2 border-border/60" />
+            <div className="flex-1">
+              <div className="text-[10.5px] font-medium">Click & collect locker</div>
+              <div className="text-[8.5px] text-foreground/55">Nearest: 0.6 mi</div>
+              <div className="text-[8.5px] font-mono">$9.00</div>
+            </div>
+          </div>
+        </div>
+        <div className="flex-1" />
+        <CTA>Continue</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "25%", label: "Home delivery" },
+      { n: 2, x: "50%", y: "50%", label: "Store pickup option" },
+      { n: 3, x: "50%", y: "75%", label: "Locker pickup" },
+    ],
+  })) as Builder,
+
+  // 17. ASOS — Free paperless returns + QR
+  shopAsosReturns: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <ShopBar />
+        <div className="font-display text-[14px]">Return — free & easy</div>
+        <div className="text-[9.5px] text-foreground/60">No printer. No label. Just scan.</div>
+        <div className="aspect-square w-32 self-center my-1 rounded-md bg-foreground p-2 grid place-items-center">
+          <div className="w-full h-full grid grid-cols-8 grid-rows-8 gap-px">
+            {Array.from({length:64}).map((_,i)=>(
+              <div key={i} className={(i*7+i%5)%3? "bg-background" : "bg-foreground"} />
+            ))}
+          </div>
+        </div>
+        <div className="text-[10px] text-center font-mono">RTN-AB12-9482</div>
+        <div className="rounded-md border border-border/60 p-1.5 text-[9.5px] space-y-0.5">
+          <div>✓ Free return</div>
+          <div>✓ Paperless · just show QR</div>
+          <div>✓ Refund in 5 days</div>
+        </div>
+        <div className="flex-1" />
+        <CTA>Find drop-off</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "12%", label: "Free & easy" },
+      { n: 2, x: "50%", y: "45%", label: "Paperless QR" },
+      { n: 3, x: "50%", y: "78%", label: "What you get" },
+    ],
+  })) as Builder,
+
+  // 18. Amazon — Drop-off network map
+  shopAmazonDropoff: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <ShopBar />
+        <div className="text-[11px] font-medium">Drop off your return</div>
+        <div className="relative h-28 rounded-md overflow-hidden border border-border/60 bg-gradient-to-br from-primary/10 to-foreground/5">
+          <div className="absolute inset-0 opacity-50" style={{backgroundImage:"linear-gradient(0deg,transparent 24%,rgba(0,0,0,.05) 25%,rgba(0,0,0,.05) 26%,transparent 27%,transparent 74%,rgba(0,0,0,.05) 75%,rgba(0,0,0,.05) 76%,transparent 77%),linear-gradient(90deg,transparent 24%,rgba(0,0,0,.05) 25%,rgba(0,0,0,.05) 26%,transparent 27%,transparent 74%,rgba(0,0,0,.05) 75%,rgba(0,0,0,.05) 76%,transparent 77%)",backgroundSize:"24px 24px"}}/>
+          {[
+            ["30%","30%","UPS"],
+            ["60%","45%","Whole Foods"],
+            ["45%","70%","Kohl's"],
+            ["80%","65%","Amazon Hub"],
+          ].map(([x,y,l],i)=>(
+            <div key={i} className="absolute -translate-x-1/2 -translate-y-1/2" style={{left:x as string, top:y as string}}>
+              <div className="w-4 h-4 rounded-full bg-primary text-primary-foreground grid place-items-center text-[8px] font-bold">{i+1}</div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[9px] text-foreground/55">4 locations within 1 mile</div>
+        <div className="flex flex-col gap-1 flex-1 overflow-hidden">
+          {[
+            ["1","UPS Store","0.3 mi · Open until 7pm","No box, no label"],
+            ["2","Whole Foods","0.5 mi · Open 24h","Amazon Hub counter"],
+            ["3","Kohl's","0.8 mi · Open until 9pm","No box, no label"],
+            ["4","Amazon Hub Locker","1.0 mi · 24h","Self-service"],
+          ].map(([n,name,d,e],i)=>(
+            <div key={i} className="flex items-center gap-1.5 py-0.5 border-b border-border/30">
+              <div className="w-4 h-4 rounded-full bg-primary/15 text-primary grid place-items-center text-[8px] font-bold">{n}</div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[9.5px] font-medium truncate">{name}</div>
+                <div className="text-[8px] text-foreground/55 truncate">{d} · {e}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Drop-off map" },
+      { n: 2, x: "50%", y: "65%", label: "Nearby network" },
+      { n: 3, x: "85%", y: "70%", label: "No box, no label" },
+    ],
+  })) as Builder,
+
+  // 19. Sephora — Generous returns
+  shopSephoraReturns: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <ShopBar />
+        <div className="font-display text-[14px]">Love it or return it</div>
+        <div className="text-[9.5px] text-foreground/65">Up to 60 days — even if it's been opened.</div>
+        <div className="rounded-md border border-border/60 p-2 flex gap-2 items-center bg-foreground/[0.03]">
+          <div className="w-10 h-10 rounded-full bg-primary/15 grid place-items-center text-[18px]">💖</div>
+          <div className="text-[9.5px] text-foreground/70">If it's not your match, send it back. We'll refund the original payment.</div>
+        </div>
+        <div className="text-[10px] font-medium">3 easy steps</div>
+        <div className="flex flex-col gap-1.5 flex-1">
+          {[
+            ["1","Pick the item","From your last 60 days of orders"],
+            ["2","Choose a reason","No re-stocking fees"],
+            ["3","Drop off or mail back","Free pre-paid label"],
+          ].map(([n,t,d],i)=>(
+            <div key={i} className="flex items-start gap-2">
+              <div className="w-5 h-5 rounded-full bg-primary text-primary-foreground grid place-items-center text-[10px] font-bold shrink-0">{n}</div>
+              <div className="min-w-0">
+                <div className="text-[10px] font-medium truncate">{t}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{d}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <CTA>Start a return</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "15%", label: "60-day window" },
+      { n: 2, x: "50%", y: "30%", label: "Even if opened" },
+      { n: 3, x: "50%", y: "70%", label: "3 simple steps" },
+    ],
+  })) as Builder,
+
+  // 20. IKEA — In-store returns
+  shopIkeaInStore: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <ShopBar />
+        <div className="text-[11px] font-medium">Bring it back to a store</div>
+        <div className="rounded-md border border-border/60 overflow-hidden">
+          <Photo seed={2} className="h-16" />
+          <div className="p-2">
+            <div className="text-[10.5px] font-medium">IKEA Emeryville</div>
+            <div className="text-[8.5px] text-foreground/55">4400 Shellmound St · 8.2 mi</div>
+            <div className="text-[8.5px] text-foreground/55">Returns desk · Door 2</div>
+          </div>
+        </div>
+        <div className="rounded-md border border-border/60 p-2 text-[9.5px]">
+          <div className="font-medium mb-1">Store hours</div>
+          <div className="flex justify-between"><span>Mon–Fri</span><span className="font-mono">10am – 9pm</span></div>
+          <div className="flex justify-between"><span>Sat</span><span className="font-mono">9am – 9pm</span></div>
+          <div className="flex justify-between"><span>Sun</span><span className="font-mono">10am – 8pm</span></div>
+        </div>
+        <div className="rounded-md border border-border/60 p-2 text-[9.5px] space-y-0.5">
+          <div>✓ Bring item + receipt or order #</div>
+          <div>✓ 365-day return window</div>
+          <div>✓ Refund to original payment</div>
+        </div>
+        <div className="flex gap-1.5">
+          <div className="flex-1 h-9 rounded-md bg-primary text-primary-foreground grid place-items-center text-[10px] font-medium">Get directions</div>
+          <div className="h-9 px-3 rounded-md border border-border/60 grid place-items-center text-[10px]">Call</div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "25%", label: "Nearest store" },
+      { n: 2, x: "50%", y: "55%", label: "Store hours" },
+      { n: 3, x: "50%", y: "92%", label: "Directions / Call" },
+    ],
+  })) as Builder,
+});
+
 export function renderScreen(screen: string | undefined, ctx: RenderCtx, preview?: Preview): RenderedScreen {
   const p = safePreview(preview, ctx);
   const b = (screen && screens[screen]) || fallback;

@@ -2646,7 +2646,7 @@
               "company": "Amazon",
               "pattern": "Forgiving + autocomplete",
               "tradeoff": "Always finds, noisy relevance",
-              "screen": "searchBox",
+              "screen": "shopAmazonAutocomplete",
               "traits": {
                 "ex": 0,
                 "em": -1,
@@ -2676,7 +2676,7 @@
               "company": "ASOS",
               "pattern": "Visual + scoped",
               "tradeoff": "Fashion-fit but narrow",
-              "screen": "searchBox",
+              "screen": "shopAsosVisualSearch",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -2703,7 +2703,7 @@
               "company": "Sephora",
               "pattern": "Guided beauty search",
               "tradeoff": "Helpful but vertical",
-              "screen": "searchBox",
+              "screen": "shopSephoraGuided",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -2730,7 +2730,7 @@
               "company": "IKEA",
               "pattern": "Room / category search",
               "tradeoff": "Inspiring but indirect",
-              "screen": "listRows",
+              "screen": "shopIkeaRooms",
               "traits": {
                 "ex": 1,
                 "em": 1,
@@ -2769,7 +2769,7 @@
               "company": "ASOS",
               "pattern": "Fit / size filters",
               "tradeoff": "Decisive but dense",
-              "screen": "filterList",
+              "screen": "shopAsosFilters",
               "traits": {
                 "ex": -1,
                 "em": 1,
@@ -2798,7 +2798,7 @@
               "company": "Amazon",
               "pattern": "Faceted filters",
               "tradeoff": "Powerful but cluttered",
-              "screen": "filterList",
+              "screen": "shopAmazonFacets",
               "traits": {
                 "ex": -1,
                 "em": -1,
@@ -2827,7 +2827,7 @@
               "company": "Sephora",
               "pattern": "Reviews-led grid",
               "tradeoff": "Trustworthy but slow",
-              "screen": "photoGrid",
+              "screen": "shopSephoraReviews",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -2854,7 +2854,7 @@
               "company": "IKEA",
               "pattern": "Room visualizer",
               "tradeoff": "Immersive but heavy",
-              "screen": "photoGrid",
+              "screen": "shopIkeaVisualizer",
               "traits": {
                 "ex": 1,
                 "em": 1,
@@ -2893,7 +2893,7 @@
               "company": "Sephora",
               "pattern": "Reviews by skin type",
               "tradeoff": "Reassuring but long",
-              "screen": "profileTrust",
+              "screen": "shopSephoraPdp",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -2920,7 +2920,7 @@
               "company": "Amazon",
               "pattern": "Q&A + reviews",
               "tradeoff": "Thorough but overwhelming",
-              "screen": "listRows",
+              "screen": "shopAmazonQA",
               "traits": {
                 "ex": -1,
                 "em": -1,
@@ -2949,7 +2949,7 @@
               "company": "Nike",
               "pattern": "Story + media",
               "tradeoff": "Aspirational but light on specs",
-              "screen": "playerView",
+              "screen": "shopNikeStory",
               "traits": {
                 "ex": 1,
                 "em": 2,
@@ -2979,7 +2979,7 @@
               "company": "IKEA",
               "pattern": "AR in your room",
               "tradeoff": "Magical but device-bound",
-              "screen": "mapView",
+              "screen": "shopIkeaAR",
               "traits": {
                 "ex": 1,
                 "em": 1,
@@ -3016,7 +3016,7 @@
               "company": "Amazon",
               "pattern": "1-click",
               "tradeoff": "Fastest but account-bound",
-              "screen": "oneClick",
+              "screen": "shopAmazon1Click",
               "traits": {
                 "ex": -1,
                 "em": -1,
@@ -3046,7 +3046,7 @@
               "company": "ASOS",
               "pattern": "Express + wallets",
               "tradeoff": "Smooth but standard",
-              "screen": "oneClick",
+              "screen": "shopAsosExpress",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -3073,7 +3073,7 @@
               "company": "Nike",
               "pattern": "Member checkout",
               "tradeoff": "Perks but gated",
-              "screen": "reassureForm",
+              "screen": "shopNikeMember",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -3102,7 +3102,7 @@
               "company": "IKEA",
               "pattern": "Delivery / pickup choice",
               "tradeoff": "Flexible but multi-step",
-              "screen": "guestForm",
+              "screen": "shopIkeaFulfil",
               "traits": {
                 "ex": -1,
                 "em": 0,
@@ -3139,7 +3139,7 @@
               "company": "ASOS",
               "pattern": "Free easy returns",
               "tradeoff": "De-risks but costly",
-              "screen": "reassureForm",
+              "screen": "shopAsosReturns",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -3169,7 +3169,7 @@
               "company": "Amazon",
               "pattern": "Drop-off network",
               "tradeoff": "Convenient but impersonal",
-              "screen": "badgeRow",
+              "screen": "shopAmazonDropoff",
               "traits": {
                 "ex": -1,
                 "em": -1,
@@ -3198,7 +3198,7 @@
               "company": "Sephora",
               "pattern": "Generous returns",
               "tradeoff": "Builds trust but abused",
-              "screen": "reassureForm",
+              "screen": "shopSephoraReturns",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -3225,7 +3225,7 @@
               "company": "IKEA",
               "pattern": "In-store returns",
               "tradeoff": "Reliable but effortful",
-              "screen": "listRows",
+              "screen": "shopIkeaInStore",
               "traits": {
                 "ex": -1,
                 "em": 0,
