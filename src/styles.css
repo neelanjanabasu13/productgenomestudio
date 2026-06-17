@@ -61,6 +61,12 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+@theme inline {
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
 :root {
   --radius: 1rem;
   --font-display: "Playfair Display", ui-serif, Georgia, serif;
