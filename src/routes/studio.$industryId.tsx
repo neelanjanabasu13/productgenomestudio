@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { useEffect, useMemo, useState } from "react";
-import { Star, AlertTriangle, ArrowLeft, Sparkles, Check, X } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Star, AlertTriangle, ArrowLeft, Sparkles, Check, X, ChevronLeft, ChevronRight, RotateCcw, Pause, Play, Wand2 } from "lucide-react";
 import { dataSource } from "@/lib/dataSource";
 import {
   matchGoalFromText,
@@ -366,7 +366,16 @@ function Studio() {
         </div>
       </div>
 
-      {concept && <ConceptModal concept={concept} onClose={() => setConcept(null)} />}
+      {concept && (
+        <FlowReelModal
+          concept={concept}
+          industry={industry}
+          picks={picks}
+          consistency={scored?.consistency ?? 0}
+          conflicts={scored?.conflicts ?? []}
+          onClose={() => setConcept(null)}
+        />
+      )}
     </div>
   );
 }
