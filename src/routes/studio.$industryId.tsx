@@ -193,25 +193,6 @@ function Studio() {
                 </div>
               )}
             </PhoneFrame>
-            {/* Numbered pin overlay — positioned over the phone screen area (inset-2 + top pt-6 of PhoneFrame) */}
-            {rendered && (
-              <div className="absolute pointer-events-none" style={{ left: 8, right: 8, top: 8 + 24, bottom: 8 }}>
-                {rendered.pins.map((p) => (
-                  <div
-                    key={p.n}
-                    className="absolute -translate-x-1/2 -translate-y-1/2 animate-scale-in"
-                    style={{ left: p.x, top: p.y }}
-                  >
-                    <div className="relative">
-                      <div className="absolute inset-0 rounded-full bg-primary/30 blur-[6px]" />
-                      <div className="relative w-5 h-5 rounded-full bg-primary text-primary-foreground grid place-items-center text-[10px] font-mono ring-2 ring-background shadow-md">
-                        {p.n}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
           {chosenOption && (
             <div className="mt-4 text-center max-w-[290px]">
