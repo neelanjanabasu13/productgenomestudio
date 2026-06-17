@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
-import { samplesFor, ctaFor, type IndustrySamples } from "@/lib/sampleContent";
+import type { Preview } from "@/data/genome.types";
 
 export interface Pin {
   n: number;
