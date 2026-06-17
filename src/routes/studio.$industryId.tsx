@@ -513,14 +513,24 @@ function FlowReelModal({
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-md flex flex-col items-center"
+        className="relative w-full max-w-md max-h-[calc(100dvh-2rem)] overflow-y-auto flex flex-col items-center px-2 py-3"
       >
-        <button
-          onClick={onClose}
-          className="absolute -top-2 -right-2 w-8 h-8 grid place-items-center rounded-full bg-card border border-border hover:bg-accent z-10"
-        >
-          <X className="w-4 h-4" />
-        </button>
+        {/* Top bar — always reachable, never clipped */}
+        <div className="sticky top-0 z-20 w-full flex items-center justify-between mb-3 -mx-2 px-2 py-2 bg-background/70 backdrop-blur rounded-xl">
+          <button
+            onClick={onClose}
+            className="inline-flex items-center gap-1.5 h-8 px-3 rounded-full border border-border hover:bg-accent text-[11px] font-mono uppercase tracking-wider"
+          >
+            <ArrowLeft className="w-3.5 h-3.5" /> Back to Studio
+          </button>
+          <button
+            onClick={onClose}
+            aria-label="Close"
+            className="w-8 h-8 grid place-items-center rounded-full bg-card border border-border hover:bg-accent"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
 
         {/* Header */}
         <div className="text-center mb-5">
@@ -629,6 +639,16 @@ function FlowReelModal({
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
+
+            {/* Explicit skip-to-end / finish */}
+            {!atEnd && (
+              <button
+                onClick={() => setIndex(total)}
+                className="mt-3 h-9 px-4 rounded-full bg-primary text-primary-foreground text-[11px] font-mono uppercase tracking-wider hover:opacity-90 inline-flex items-center gap-1.5"
+              >
+                <Sparkles className="w-3.5 h-3.5" /> View concept
+              </button>
+            )}
           </>
         )}
       </div>
