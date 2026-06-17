@@ -6804,6 +6804,706 @@ Object.assign(screens, {
   })) as Builder,
 });
 
+// ============================================================
+// DATING — 20 brand-evocative screens
+// ============================================================
+const DateBar = () => (
+  <div className="flex items-center justify-between text-[9px] font-mono text-foreground/50 -mt-1">
+    <span>9:41</span>
+    <span className="tracking-[0.18em]">●●●</span>
+    <span>100%</span>
+  </div>
+);
+
+Object.assign(screens, {
+  // 1. Hinge — Prompt-based profile
+  dateHingePrompts: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DateBar />
+        <div className="flex items-center gap-2">
+          <Photo seed={0} className="w-10 h-10 rounded-full" />
+          <div>
+            <div className="text-[12px] font-semibold">Olivia · 28</div>
+            <div className="text-[9px] text-foreground/55">Brooklyn · 2 mi</div>
+          </div>
+          <div className="ml-auto w-6 h-6 rounded-full bg-foreground/8 grid place-items-center text-[12px]">♡</div>
+        </div>
+        <div className="rounded-xl bg-foreground/[0.05] border border-border/60 p-2 relative">
+          <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">My simple pleasures</div>
+          <div className="text-[11px] font-display leading-tight mt-0.5">A perfectly ripe peach in July, no notes.</div>
+          <div className="absolute -bottom-2 right-2 w-7 h-7 rounded-full bg-pink-600 text-white grid place-items-center text-[13px]">♡</div>
+        </div>
+        <Photo seed={2} className="h-20 rounded-lg" />
+        <div className="rounded-xl bg-foreground/[0.05] border border-border/60 p-2">
+          <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">My most controversial opinion</div>
+          <div className="text-[11px] font-display leading-tight mt-0.5">Pineapple absolutely belongs on pizza.</div>
+        </div>
+        <div className="flex-1" />
+        <CTA>Comment on a prompt</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "35%", label: "Prompt answer" },
+      { n: 2, x: "85%", y: "38%", label: "Like a detail" },
+      { n: 3, x: "50%", y: "70%", label: "Photos interleave" },
+    ],
+  })) as Builder,
+
+  // 2. OkCupid — Question depth
+  dateOkcQuestions: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DateBar />
+        <div className="flex items-center gap-2">
+          <Photo seed={1} className="w-10 h-10 rounded-full" />
+          <div className="flex-1 min-w-0">
+            <div className="text-[12px] font-semibold truncate">Jordan · 31</div>
+            <div className="text-[9px] text-foreground/55">Answered 412 questions</div>
+          </div>
+          <div className="text-right">
+            <div className="text-[14px] font-display text-[#FF3A57]">94%</div>
+            <div className="text-[7.5px] text-foreground/55">match</div>
+          </div>
+        </div>
+        <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Compatibility breakdown</div>
+        <div className="space-y-1">
+          {[["Politics",96],["Lifestyle",91],["Religion",88],["Sex",82]].map(([l,v],i)=>(
+            <div key={i}>
+              <div className="flex justify-between text-[9px]"><span>{l}</span><span className="font-mono">{v}%</span></div>
+              <div className="h-1.5 bg-foreground/10 rounded-full overflow-hidden"><div className="h-full bg-[#FF3A57]" style={{width:`${v}%`}} /></div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[8.5px] uppercase tracking-wider text-foreground/55 mt-1">A question you both answered</div>
+        <div className="rounded-md border border-border/60 p-2">
+          <div className="text-[10px] font-medium">"Could you date a messy person?"</div>
+          <div className="text-[8.5px] text-foreground/60 mt-1">You: No · Jordan: No · ✓ Match</div>
+        </div>
+        <div className="flex-1" />
+        <CTA>Message Jordan</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "85%", y: "15%", label: "Match %" },
+      { n: 2, x: "50%", y: "45%", label: "Compatibility bars" },
+      { n: 3, x: "50%", y: "75%", label: "Shared answers" },
+    ],
+  })) as Builder,
+
+  // 3. Tinder — Photo-first
+  dateTinderPhoto: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DateBar />
+        <div className="relative flex-1 rounded-2xl overflow-hidden">
+          <Photo seed={3} className="absolute inset-0" />
+          <div className="absolute top-2 left-2 right-2 flex gap-1">
+            {[1,2,3,4,5].map(i=>(<div key={i} className={`h-0.5 flex-1 rounded-full ${i===2?"bg-white":"bg-white/40"}`} />))}
+          </div>
+          <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/80 to-transparent text-white">
+            <div className="text-[18px] font-display">Mia, 26</div>
+            <div className="text-[10px] opacity-90">📍 3 miles away</div>
+            <div className="text-[10px] opacity-75 mt-0.5">Designer · loves bouldering 🧗</div>
+          </div>
+        </div>
+        <div className="flex items-center justify-center gap-3">
+          <div className="w-9 h-9 rounded-full bg-background border border-border/60 grid place-items-center text-[14px]">↺</div>
+          <div className="w-11 h-11 rounded-full bg-background border-2 border-red-500 grid place-items-center text-red-500 text-[18px]">✕</div>
+          <div className="w-9 h-9 rounded-full bg-background border-2 border-blue-500 grid place-items-center text-blue-500 text-[14px]">★</div>
+          <div className="w-11 h-11 rounded-full bg-background border-2 border-emerald-500 grid place-items-center text-emerald-500 text-[18px]">♡</div>
+          <div className="w-9 h-9 rounded-full bg-background border border-border/60 grid place-items-center text-[14px]">⚡</div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "45%", label: "Full-bleed photo" },
+      { n: 2, x: "50%", y: "70%", label: "Minimal text" },
+      { n: 3, x: "50%", y: "90%", label: "Swipe controls" },
+    ],
+  })) as Builder,
+
+  // 4. Bumble — Guided profile
+  dateBumbleGuided: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DateBar />
+        <div className="flex items-center justify-between">
+          <div className="text-[11px] font-semibold text-[#FFC629]">Build your hive</div>
+          <div className="text-[9px] text-foreground/60">Step 4 of 6</div>
+        </div>
+        <div className="h-1 bg-foreground/10 rounded-full overflow-hidden"><div className="h-full w-2/3 bg-[#FFC629]" /></div>
+        <div className="grid grid-cols-3 gap-1.5">
+          {[0,1,2,3,4,5].map(i=>(
+            <div key={i} className={`aspect-square rounded-lg overflow-hidden border ${i<3?"border-[#FFC629]":"border-dashed border-border/60"}`}>
+              {i<3 ? <Photo seed={i} className="w-full h-full" /> : <div className="w-full h-full grid place-items-center text-foreground/40 text-[16px]">+</div>}
+            </div>
+          ))}
+        </div>
+        <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Badges</div>
+        <div className="flex gap-1 flex-wrap">
+          {["♀ She/her","🍷 Drinks sometimes","🚭 Non-smoker","💪 Active","🐕 Has a dog"].map((b,i)=>(
+            <Chip key={i} accent={i<3}>{b}</Chip>
+          ))}
+        </div>
+        <div className="rounded-md border border-border/60 p-2">
+          <div className="text-[8.5px] text-foreground/55">Prompt 1 of 3 · suggested</div>
+          <div className="text-[10px] font-medium">"My greenest flag is…"</div>
+        </div>
+        <div className="flex-1" />
+        <CTA>Continue</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "16%", label: "Stepper" },
+      { n: 2, x: "50%", y: "38%", label: "Photo slots" },
+      { n: 3, x: "50%", y: "62%", label: "Badges" },
+    ],
+  })) as Builder,
+
+  // 5. Tinder — Swipe deck
+  dateTinderSwipe: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DateBar />
+        <div className="relative flex-1">
+          <div className="absolute inset-x-3 top-3 bottom-3 rounded-2xl bg-foreground/5 border border-border/40" />
+          <div className="absolute inset-x-1.5 top-1.5 bottom-1.5 rounded-2xl bg-foreground/10 border border-border/60" />
+          <div className="absolute inset-0 rounded-2xl overflow-hidden rotate-[-3deg] shadow-lg">
+            <Photo seed={2} className="absolute inset-0" />
+            <div className="absolute top-3 left-3 px-2 py-0.5 rounded border-2 border-emerald-400 text-emerald-400 text-[14px] font-bold rotate-[-12deg]">LIKE</div>
+            <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/80 to-transparent text-white">
+              <div className="text-[16px] font-display">Alex, 29</div>
+              <div className="text-[10px] opacity-90">5 mi away · 1 of 6</div>
+            </div>
+          </div>
+        </div>
+        <div className="flex items-center justify-center gap-3">
+          <div className="w-11 h-11 rounded-full bg-background border-2 border-red-500 grid place-items-center text-red-500 text-[18px]">✕</div>
+          <div className="w-9 h-9 rounded-full bg-background border-2 border-blue-500 grid place-items-center text-blue-500 text-[14px]">★</div>
+          <div className="w-11 h-11 rounded-full bg-background border-2 border-emerald-500 grid place-items-center text-emerald-500 text-[18px]">♡</div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "40%", label: "Card stack" },
+      { n: 2, x: "25%", y: "30%", label: "Swipe label" },
+      { n: 3, x: "50%", y: "90%", label: "Like / Nope" },
+    ],
+  })) as Builder,
+
+  // 6. Hinge — Likes you (curated)
+  dateHingeLikes: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DateBar />
+        <div className="flex items-center justify-between">
+          <div className="text-[12px] font-semibold">Likes You</div>
+          <Chip accent>23 new</Chip>
+        </div>
+        <div className="text-[8.5px] text-foreground/55">They liked something specific about you.</div>
+        <div className="grid grid-cols-2 gap-2 flex-1 overflow-hidden">
+          {[
+            ["Sara, 27","liked your photo"],
+            ["Tom, 30","liked your prompt"],
+            ["Lee, 26","commented '😂'"],
+            ["Ana, 28","liked your photo"],
+          ].map(([n,s],i)=>(
+            <div key={i} className="rounded-xl overflow-hidden border border-border/60 relative">
+              <Photo seed={i} className="aspect-[3/4]" />
+              <div className="absolute top-1.5 left-1.5 right-1.5 rounded-md bg-background/95 px-1.5 py-1">
+                <div className="text-[8.5px] uppercase tracking-wider text-pink-600">💬 {s}</div>
+              </div>
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent text-white p-1.5">
+                <div className="text-[10px] font-medium truncate">{n}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <CTA>See who liked you</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "Likes you" },
+      { n: 2, x: "50%", y: "40%", label: "What they liked" },
+      { n: 3, x: "50%", y: "60%", label: "Curated grid" },
+    ],
+  })) as Builder,
+
+  // 7. Coffee Meets Bagel — Daily curated
+  dateCmbDaily: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DateBar />
+        <div className="text-center">
+          <div className="text-[10px] text-foreground/55">Your daily bagels · 🥯</div>
+          <div className="font-display text-[14px]">Today's curated 5</div>
+          <div className="text-[8.5px] text-foreground/55">Resets in 4h 22m</div>
+        </div>
+        <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+          {[
+            ["Priya, 29","Designer · Friend of Maya","94%"],
+            ["Devon, 32","Architect · 2 mi","88%"],
+            ["Hana, 27","Photographer · Loves hiking","85%"],
+            ["Lin, 30","PM · Bookworm","82%"],
+            ["Eli, 28","Chef · 3 mi","80%"],
+          ].map(([n,s,m],i)=>(
+            <div key={i} className="flex items-center gap-2 p-1.5 rounded-md border border-border/60">
+              <Photo seed={i} className="w-9 h-9 rounded-full shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="text-[10.5px] font-medium truncate">{n}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{s}</div>
+              </div>
+              <div className="text-[10px] font-mono text-[#995E3F]">{m}</div>
+              <div className="w-6 h-6 rounded-full bg-[#995E3F]/15 text-[#995E3F] grid place-items-center text-[12px]">♡</div>
+            </div>
+          ))}
+        </div>
+        <CTA>Open today's batch</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "15%", label: "Daily batch" },
+      { n: 2, x: "50%", y: "22%", label: "Reset timer" },
+      { n: 3, x: "50%", y: "55%", label: "Quality over quantity" },
+    ],
+  })) as Builder,
+
+  // 8. Bumble — Swipe + filters
+  dateBumbleSwipe: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DateBar />
+        <div className="flex items-center justify-between">
+          <div className="text-[11px] font-semibold text-[#FFC629]">Bumble Date</div>
+          <div className="flex items-center gap-1 text-[9px]"><span>⚙</span><span>Filters · 4</span></div>
+        </div>
+        <div className="flex gap-1 flex-wrap">
+          {["25-32","≤10 mi","Non-smoker","Wants kids"].map((f,i)=>(<Chip key={i} accent>{f}</Chip>))}
+        </div>
+        <div className="relative flex-1 rounded-2xl overflow-hidden">
+          <Photo seed={1} className="absolute inset-0" />
+          <div className="absolute top-2 right-2 bg-[#FFC629] text-black text-[9px] px-1.5 py-0.5 rounded">Matches filters</div>
+          <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/80 to-transparent text-white">
+            <div className="text-[16px] font-display">Riley, 28</div>
+            <div className="text-[10px] opacity-90">8 mi · Wants kids someday</div>
+          </div>
+        </div>
+        <div className="flex items-center justify-center gap-3">
+          <div className="w-10 h-10 rounded-full bg-background border-2 border-foreground/40 grid place-items-center text-[16px]">✕</div>
+          <div className="w-10 h-10 rounded-full bg-[#FFC629] text-black grid place-items-center text-[16px]">♡</div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "78%", y: "13%", label: "Filters" },
+      { n: 2, x: "50%", y: "24%", label: "Active filter chips" },
+      { n: 3, x: "78%", y: "42%", label: "Filter badge" },
+    ],
+  })) as Builder,
+
+  // 9. Hinge — Like a detail
+  dateHingeMatch: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DateBar />
+        <div className="text-center">
+          <div className="text-[10px] uppercase tracking-wider text-pink-600">It's a match</div>
+          <div className="font-display text-[16px]">You & Olivia liked each other</div>
+        </div>
+        <div className="rounded-xl bg-pink-50 dark:bg-pink-950/30 border border-pink-300/50 p-2 relative">
+          <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Olivia liked your prompt</div>
+          <div className="text-[11px] font-display leading-tight mt-0.5">"My simple pleasures — a perfectly ripe peach in July."</div>
+          <div className="text-[8.5px] mt-1 text-pink-600">💬 "Okay this is dangerously specific."</div>
+        </div>
+        <div className="flex items-center justify-center gap-3 py-1">
+          <Photo seed={0} className="w-14 h-14 rounded-full border-2 border-pink-500" />
+          <div className="text-pink-500 text-[20px]">♡</div>
+          <Photo seed={2} className="w-14 h-14 rounded-full border-2 border-pink-500" />
+        </div>
+        <div className="rounded-md border border-border/60 p-2">
+          <div className="text-[8.5px] text-foreground/55">Reply to start</div>
+          <div className="text-[10px] text-foreground/70">Type your reply…</div>
+        </div>
+        <div className="flex-1" />
+        <CTA>Send reply</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "25%", label: "What they liked" },
+      { n: 2, x: "50%", y: "33%", label: "Their comment" },
+      { n: 3, x: "50%", y: "72%", label: "Reply inline" },
+    ],
+  })) as Builder,
+
+  // 10. Bumble — Mutual + 24h timer
+  dateBumbleTimer: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DateBar />
+        <div className="text-center">
+          <div className="font-display text-[16px] text-[#FFC629]">You matched with Riley!</div>
+        </div>
+        <div className="flex items-center justify-center gap-3 py-2">
+          <Photo seed={0} className="w-16 h-16 rounded-full border-2 border-[#FFC629]" />
+          <div className="text-[#FFC629] text-[22px]">⬢</div>
+          <Photo seed={1} className="w-16 h-16 rounded-full border-2 border-[#FFC629]" />
+        </div>
+        <div className="rounded-xl bg-[#FFC629]/15 border-2 border-[#FFC629]/60 p-2 text-center">
+          <div className="text-[8.5px] uppercase tracking-wider text-foreground/60">Time left to say hi</div>
+          <div className="font-display text-[24px] text-[#FFC629] leading-none">23 : 47 : 12</div>
+          <div className="text-[8.5px] text-foreground/60 mt-1">Riley makes the first move on Bumble.</div>
+        </div>
+        <div className="flex-1" />
+        <div className="grid grid-cols-2 gap-2">
+          <div className="h-9 rounded-md border border-border/60 grid place-items-center text-[10px]">Extend 24h</div>
+          <div className="h-9 rounded-md bg-[#FFC629] text-black grid place-items-center text-[10px] font-semibold">Wait for Riley</div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Mutual match" },
+      { n: 2, x: "50%", y: "58%", label: "24h countdown" },
+      { n: 3, x: "50%", y: "72%", label: "First-move rule" },
+    ],
+  })) as Builder,
+
+  // 11. Tinder — Instant match
+  dateTinderMatch: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <div className="absolute inset-0 bg-gradient-to-br from-pink-500/20 via-red-500/10 to-orange-400/20 pointer-events-none" />
+        <DateBar />
+        <div className="text-center pt-2">
+          <div className="font-display text-[28px] bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent leading-none">It's a Match!</div>
+          <div className="text-[10px] text-foreground/60 mt-1">You and Mia liked each other.</div>
+        </div>
+        <div className="relative flex items-center justify-center gap-3 py-3">
+          <Photo seed={3} className="w-20 h-20 rounded-full border-4 border-background shadow-lg rotate-[-6deg]" />
+          <Photo seed={1} className="w-20 h-20 rounded-full border-4 border-background shadow-lg rotate-[6deg] -ml-3" />
+          <div className="absolute inset-x-0 -bottom-1 text-center text-[14px]">✨ 💖 ✨</div>
+        </div>
+        <div className="flex-1" />
+        <div className="h-11 rounded-full bg-gradient-to-r from-pink-500 to-red-500 text-white grid place-items-center text-[12px] font-semibold">Send a message</div>
+        <div className="h-10 rounded-full border border-border/60 grid place-items-center text-[10px]">Keep swiping</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "20%", label: "Big celebration" },
+      { n: 2, x: "50%", y: "45%", label: "Two avatars" },
+      { n: 3, x: "50%", y: "82%", label: "Message or keep swiping" },
+    ],
+  })) as Builder,
+
+  // 12. Coffee Meets Bagel — Curated intro
+  dateCmbIntro: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DateBar />
+        <div className="text-center">
+          <div className="text-[10px] text-[#995E3F]">🥯 Your bagel today</div>
+          <div className="font-display text-[14px]">Meet Priya</div>
+        </div>
+        <Photo seed={2} className="h-24 rounded-xl" />
+        <div className="rounded-xl border border-[#995E3F]/40 bg-[#995E3F]/8 p-2 space-y-1">
+          <div className="text-[8.5px] uppercase tracking-wider text-[#995E3F]">Why we picked Priya for you</div>
+          <div className="text-[10px]">• Both love modernist design and Sunday hikes</div>
+          <div className="text-[10px]">• You're 1 mutual friend apart (Maya)</div>
+          <div className="text-[10px]">• Similar values on family + ambition</div>
+        </div>
+        <div className="grid grid-cols-3 gap-1 text-center text-[8.5px]">
+          <div className="rounded-md bg-foreground/5 py-1">Designer</div>
+          <div className="rounded-md bg-foreground/5 py-1">Brooklyn</div>
+          <div className="rounded-md bg-foreground/5 py-1">29</div>
+        </div>
+        <div className="flex-1" />
+        <div className="grid grid-cols-2 gap-2">
+          <div className="h-10 rounded-full border border-border/60 grid place-items-center text-[11px]">Pass</div>
+          <div className="h-10 rounded-full bg-[#995E3F] text-white grid place-items-center text-[11px] font-semibold">Like Priya</div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "15%", label: "Today's pick" },
+      { n: 2, x: "50%", y: "55%", label: "Why we matched you" },
+      { n: 3, x: "50%", y: "92%", label: "One careful choice" },
+    ],
+  })) as Builder,
+
+  // 13. Bumble — Women first, 24h chat
+  dateBumbleChat: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DateBar />
+        <div className="flex items-center gap-2">
+          <Photo seed={0} className="w-8 h-8 rounded-full" />
+          <div className="flex-1 min-w-0">
+            <div className="text-[11px] font-semibold">Riley</div>
+            <div className="text-[8.5px] text-[#FFC629]">⬢ 23h 47m to make a move</div>
+          </div>
+          <div className="text-[10px] text-foreground/55">⋯</div>
+        </div>
+        <div className="flex-1 rounded-md bg-foreground/[0.03] border border-border/40 p-2 grid place-items-center">
+          <div className="text-center space-y-1.5">
+            <div className="w-12 h-12 rounded-full bg-[#FFC629]/20 grid place-items-center text-[20px] mx-auto">⬢</div>
+            <div className="text-[11px] font-semibold">Your turn to break the ice</div>
+            <div className="text-[9px] text-foreground/55 max-w-[200px] mx-auto">On Bumble, women say hi first. If you don't, the match expires.</div>
+          </div>
+        </div>
+        <div className="rounded-full bg-foreground/[0.06] border border-border/60 px-3 h-9 grid items-center text-[10px] text-foreground/55">Say something…</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "17%", label: "Live countdown" },
+      { n: 2, x: "50%", y: "50%", label: "Women-first rule" },
+      { n: 3, x: "50%", y: "90%", label: "Open with hi" },
+    ],
+  })) as Builder,
+
+  // 14. Hinge — Comment to start
+  dateHingeComment: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DateBar />
+        <div className="text-[11px] font-semibold">Like Olivia's…</div>
+        <div className="rounded-xl bg-foreground/[0.05] border-2 border-pink-500 p-2 relative">
+          <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">My simple pleasures</div>
+          <div className="text-[11px] font-display leading-tight mt-0.5">A perfectly ripe peach in July, no notes.</div>
+          <div className="absolute -bottom-2 right-2 px-2 py-0.5 rounded-full bg-pink-600 text-white text-[8.5px]">Selected</div>
+        </div>
+        <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Add a comment</div>
+        <div className="rounded-md border border-border/60 p-2 bg-foreground/[0.03]">
+          <div className="text-[10px]">Okay this is dangerously specific. Donut peach or yellow?</div>
+          <div className="text-[8.5px] text-foreground/55 mt-1">52 / 200</div>
+        </div>
+        <div className="flex gap-1 flex-wrap">
+          {["Same!","Tell me more","Bold take 🔥"].map((s,i)=>(<Chip key={i}>{s}</Chip>))}
+        </div>
+        <div className="flex-1" />
+        <CTA>Send like + comment</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "22%", label: "Liked detail" },
+      { n: 2, x: "50%", y: "55%", label: "Comment to open" },
+      { n: 3, x: "50%", y: "90%", label: "Send like+comment" },
+    ],
+  })) as Builder,
+
+  // 15. Tinder — Open chat
+  dateTinderChat: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DateBar />
+        <div className="flex items-center gap-2">
+          <Photo seed={3} className="w-8 h-8 rounded-full" />
+          <div className="flex-1 min-w-0">
+            <div className="text-[11px] font-semibold">Mia</div>
+            <div className="text-[8.5px] text-foreground/55">Matched 2 days ago</div>
+          </div>
+        </div>
+        <div className="flex-1 flex flex-col gap-1.5 overflow-hidden">
+          <div className="self-start max-w-[75%] rounded-2xl rounded-bl-sm bg-foreground/10 px-2 py-1 text-[10px]">Heyy! Loved your bouldering pic 🧗</div>
+          <div className="self-end max-w-[75%] rounded-2xl rounded-br-sm bg-gradient-to-r from-pink-500 to-red-500 text-white px-2 py-1 text-[10px]">Thanks! You climb?</div>
+          <div className="self-start max-w-[75%] rounded-2xl rounded-bl-sm bg-foreground/10 px-2 py-1 text-[10px]">A bit. Mostly V2-V3 vibes 😅</div>
+          <div className="self-end max-w-[75%] rounded-2xl rounded-br-sm bg-gradient-to-r from-pink-500 to-red-500 text-white px-2 py-1 text-[10px]">Same! Brooklyn Boulders this weekend?</div>
+          <div className="self-start text-[8.5px] text-foreground/50">Mia is typing…</div>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <div className="flex-1 rounded-full bg-foreground/[0.06] border border-border/60 px-3 h-8 grid items-center text-[10px] text-foreground/55">Message</div>
+          <div className="w-8 h-8 rounded-full bg-foreground/8 grid place-items-center text-[12px]">😊</div>
+          <div className="w-8 h-8 rounded-full bg-foreground/8 grid place-items-center text-[12px]">🎁</div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "40%", label: "Open thread" },
+      { n: 2, x: "30%", y: "75%", label: "Typing indicator" },
+      { n: 3, x: "50%", y: "92%", label: "Composer" },
+    ],
+  })) as Builder,
+
+  // 16. OkCupid — Compatibility chat
+  dateOkcChat: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DateBar />
+        <div className="flex items-center gap-2">
+          <Photo seed={1} className="w-8 h-8 rounded-full" />
+          <div className="flex-1 min-w-0">
+            <div className="text-[11px] font-semibold">Jordan</div>
+            <div className="text-[8.5px] text-foreground/55">Active 2m ago</div>
+          </div>
+          <div className="px-2 py-0.5 rounded-full bg-[#FF3A57] text-white text-[10px] font-mono">94% match</div>
+        </div>
+        <div className="rounded-md bg-[#FF3A57]/10 border border-[#FF3A57]/30 p-1.5 text-[8.5px]">
+          You agree on 312 of 412 questions · Top: Politics, Lifestyle
+        </div>
+        <div className="flex-1 flex flex-col gap-1.5 overflow-hidden">
+          <div className="self-start max-w-[75%] rounded-md bg-foreground/10 px-2 py-1 text-[10px]">Hey, your answer on "long-distance" caught my eye.</div>
+          <div className="self-end max-w-[75%] rounded-md bg-[#FF3A57] text-white px-2 py-1 text-[10px]">Ha — yours too. Coffee this week?</div>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <div className="flex-1 rounded-md bg-foreground/[0.06] border border-border/60 px-2 h-8 grid items-center text-[10px] text-foreground/55">Message Jordan</div>
+          <div className="w-8 h-8 rounded-md bg-[#FF3A57] text-white grid place-items-center text-[11px]">➤</div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "85%", y: "15%", label: "Match % badge" },
+      { n: 2, x: "50%", y: "27%", label: "Compatibility recap" },
+      { n: 3, x: "50%", y: "55%", label: "Thread" },
+    ],
+  })) as Builder,
+
+  // 17. Bumble — Verify + detect
+  dateBumbleSafety: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DateBar />
+        <div className="text-[11px] font-semibold text-[#FFC629]">Safety tools</div>
+        <div className="rounded-xl border-2 border-[#FFC629] bg-[#FFC629]/10 p-2">
+          <div className="flex items-center gap-2">
+            <div className="w-9 h-9 rounded-full bg-[#FFC629] text-black grid place-items-center text-[14px]">✓</div>
+            <div className="flex-1 min-w-0">
+              <div className="text-[10.5px] font-semibold">Photo verified</div>
+              <div className="text-[8.5px] text-foreground/60">Selfie matches your profile photos.</div>
+            </div>
+          </div>
+        </div>
+        <div className="rounded-xl border border-border/60 p-2">
+          <div className="flex items-center gap-2">
+            <div className="w-9 h-9 rounded-full bg-foreground/8 grid place-items-center text-[14px]">🛡️</div>
+            <div className="flex-1 min-w-0">
+              <div className="text-[10.5px] font-semibold">Private Detector</div>
+              <div className="text-[8.5px] text-foreground/60">Auto-blurs lewd images sent to you.</div>
+            </div>
+            <div className="w-8 h-4 rounded-full bg-[#FFC629] relative"><div className="absolute right-0.5 top-0.5 w-3 h-3 rounded-full bg-white" /></div>
+          </div>
+        </div>
+        <div className="rounded-xl border border-border/60 p-2">
+          <div className="text-[10.5px] font-semibold">Deception Detector</div>
+          <div className="text-[8.5px] text-foreground/60">Flags spam/scam patterns automatically.</div>
+        </div>
+        <div className="flex-1" />
+        <CTA>Manage safety</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "25%", label: "Photo verified" },
+      { n: 2, x: "50%", y: "48%", label: "Private detector" },
+      { n: 3, x: "85%", y: "48%", label: "Toggle on" },
+    ],
+  })) as Builder,
+
+  // 18. Hinge — Report + block
+  dateHingeReport: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DateBar />
+        <div className="text-[11px] font-semibold">Olivia · Safety</div>
+        <div className="grid grid-cols-2 gap-1.5">
+          <div className="rounded-xl border-2 border-red-500/60 bg-red-500/8 p-2 text-center">
+            <div className="text-[18px]">🚫</div>
+            <div className="text-[10px] font-semibold text-red-600">Block</div>
+            <div className="text-[8px] text-foreground/55">Hide from each other</div>
+          </div>
+          <div className="rounded-xl border-2 border-orange-500/60 bg-orange-500/8 p-2 text-center">
+            <div className="text-[18px]">⚑</div>
+            <div className="text-[10px] font-semibold text-orange-600">Report</div>
+            <div className="text-[8px] text-foreground/55">Tell us what happened</div>
+          </div>
+        </div>
+        <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Why are you reporting?</div>
+        <div className="flex flex-col gap-1">
+          {["Inappropriate messages","Fake profile","Underage","Spam or scam","Harassment"].map((r,i)=>(
+            <div key={i} className="flex items-center justify-between p-1.5 rounded-md border border-border/60 text-[10px]">
+              <span>{r}</span><span className="text-foreground/40">›</span>
+            </div>
+          ))}
+        </div>
+        <div className="flex-1" />
+        <CTA>Submit report</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "25%", y: "22%", label: "Block" },
+      { n: 2, x: "75%", y: "22%", label: "Report" },
+      { n: 3, x: "50%", y: "55%", label: "Clear reasons" },
+    ],
+  })) as Builder,
+
+  // 19. Tinder — Photo verify
+  dateTinderVerify: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DateBar />
+        <div className="text-center">
+          <div className="font-display text-[14px]">Verify your photo</div>
+          <div className="text-[9px] text-foreground/55">Pose to match the prompt. Stays private.</div>
+        </div>
+        <div className="relative aspect-square rounded-2xl overflow-hidden border-2 border-dashed border-blue-500/60 bg-blue-500/5">
+          <div className="absolute inset-6 rounded-full border-2 border-blue-500/60" />
+          <div className="absolute inset-x-0 top-3 text-center text-[9px] text-blue-600 font-medium">Look up, touch your nose</div>
+          <div className="absolute inset-x-0 bottom-3 text-center text-[8.5px] text-foreground/55">3 of 3 poses</div>
+        </div>
+        <div className="flex items-center gap-2 rounded-md border border-emerald-500/40 bg-emerald-500/8 p-2">
+          <div className="w-8 h-8 rounded-full bg-emerald-500 text-white grid place-items-center text-[14px]">✓</div>
+          <div className="flex-1 min-w-0">
+            <div className="text-[10.5px] font-semibold text-emerald-600">Verified badge unlocked</div>
+            <div className="text-[8.5px] text-foreground/55">Adds a blue ✓ to your profile.</div>
+          </div>
+        </div>
+        <div className="flex-1" />
+        <CTA>Take photo</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Pose prompt" },
+      { n: 2, x: "50%", y: "50%", label: "Selfie match" },
+      { n: 3, x: "50%", y: "72%", label: "Verified badge" },
+    ],
+  })) as Builder,
+
+  // 20. OkCupid — Privacy controls
+  dateOkcPrivacy: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <DateBar />
+        <div className="text-[11px] font-semibold text-[#FF3A57]">Privacy & visibility</div>
+        <div className="rounded-md border border-border/60 divide-y divide-border/60">
+          {[
+            ["Profile visibility","Public",true],
+            ["Hide from coworkers","On",true],
+            ["Show online status","Off",false],
+            ["Incognito Mode","Premium",false],
+            ["Read receipts","On",true],
+            ["Distance shown","Approximate",true],
+          ].map(([l,v,on],i)=>(
+            <div key={i} className="flex items-center justify-between p-1.5">
+              <div className="min-w-0">
+                <div className="text-[10px] font-medium truncate">{l as string}</div>
+                <div className="text-[8.5px] text-foreground/55 truncate">{v as string}</div>
+              </div>
+              <div className={`w-8 h-4 rounded-full relative ${on?"bg-[#FF3A57]":"bg-foreground/15"}`}>
+                <div className={`absolute top-0.5 w-3 h-3 rounded-full bg-white ${on?"right-0.5":"left-0.5"}`} />
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-md bg-foreground/[0.04] p-1.5 text-[8.5px] text-foreground/60">Granular controls — choose exactly who sees what.</div>
+        <div className="flex-1" />
+        <CTA>Save changes</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "15%", label: "Privacy hub" },
+      { n: 2, x: "85%", y: "40%", label: "Per-setting toggle" },
+      { n: 3, x: "50%", y: "80%", label: "Granular" },
+    ],
+  })) as Builder,
+});
+
 export function renderScreen(screen: string | undefined, ctx: RenderCtx, preview?: Preview): RenderedScreen {
   const p = safePreview(preview, ctx);
   const b = (screen && screens[screen]) || fallback;
