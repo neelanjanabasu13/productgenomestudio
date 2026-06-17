@@ -113,7 +113,7 @@ export function SketchIcon({ id }: { id: string }) {
           <feDisplacementMap in="SourceGraphic" in2="t" scale="4" />
         </filter>
       </defs>
-      {/* ghost pass — thinner, lower opacity, second seed */}
+      {/* ghost pass - thinner, lower opacity, second seed */}
       <g
         className="sketch-layer sketch-ghost"
         fill="none"

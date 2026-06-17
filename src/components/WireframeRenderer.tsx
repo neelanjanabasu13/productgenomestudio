@@ -885,7 +885,7 @@ const screens: Record<string, Builder> = {
             { label: "Price/night", values: ["$240", "$118"] },
             { label: "Rating", values: ["★ 4.9", "★ 4.8"] },
             { label: "Free cancel", values: ["✓", "✓"] },
-            { label: "Breakfast", values: ["✓", "—"] },
+            { label: "Breakfast", values: ["✓", "-"] },
             { label: "Wi-Fi", values: ["Fast", "Std"] },
           ].map((r, i) => (
             <Fragment key={i}>
@@ -955,7 +955,7 @@ Object.assign(screens, {
     node: (
       <Frame>
         <StatusBar title={title(p)} />
-        <div className="font-display text-[16px] leading-tight truncate">Welcome — let's get going</div>
+        <div className="font-display text-[16px] leading-tight truncate">Welcome - let's get going</div>
         <div className="flex items-center gap-1 -mt-1">
           {[0,1,2,3].map(i => (
             <div key={i} className={`h-1 flex-1 rounded-full ${i <= 1 ? "bg-primary" : "bg-foreground/15"}`} />
@@ -1039,7 +1039,7 @@ Object.assign(screens, {
             { s: "Todo", c: "bg-foreground/15 text-foreground/70", o: "SP", d: "Jun 22" },
             { s: "Doing", c: "bg-primary/20 text-primary", o: "AL", d: "Jun 24" },
             { s: "Review", c: "bg-amber-500/20 text-amber-500", o: "MK", d: "Jun 26" },
-            { s: "Blocked", c: "bg-destructive/20 text-destructive", o: "JT", d: "—" },
+            { s: "Blocked", c: "bg-destructive/20 text-destructive", o: "JT", d: "-" },
             { s: "Done", c: "bg-emerald-500/20 text-emerald-500", o: "SP", d: "Jun 18" },
           ].map((r, i) => (
             <div key={i} className="grid grid-cols-[1fr_46px_42px_38px] gap-x-1 items-center py-1.5">
@@ -1114,7 +1114,7 @@ Object.assign(screens, {
             <div className="flex items-center gap-1 text-[9px] font-mono text-primary"><span className="w-3 h-3 rounded-full bg-primary text-primary-foreground grid place-items-center text-[7px]">S</span>Sam · just now</div>
             <div className="text-[10px]">Shouldn't this be 45% based on last test?</div>
             <div className="flex items-center gap-1 text-[9px] font-mono text-foreground/55"><span className="w-3 h-3 rounded-full bg-foreground/30 text-background grid place-items-center text-[7px]">A</span>Alex · 1m</div>
-            <div className="text-[10px]">42 is the floor — happy to raise.</div>
+            <div className="text-[10px]">42 is the floor - happy to raise.</div>
             <div className="h-6 rounded border border-border bg-background/60 flex items-center px-1.5 text-[9px] text-foreground/50">Reply…</div>
           </div>
           <p className="text-foreground/85">Rollback plan: feature flag <span className="font-mono bg-foreground/10 rounded px-0.5">onb_v3</span> off via dashboard.</p>
@@ -1287,7 +1287,7 @@ Object.assign(screens, {
 
 // ============= Social Media specialized screens =============
 // Each builder renders only neutral, brand-evocative UI. Never echo
-// p.company / p.metric / p.pattern — those leak strings like "TikTok · Onboarding".
+// p.company / p.metric / p.pattern - those leak strings like "TikTok · Onboarding".
 const PhoneBar = () => (
   <div className="flex items-center justify-between text-[9px] font-mono text-foreground/50 -mt-1">
     <span>9:41</span>
@@ -1319,7 +1319,7 @@ Object.assign(screens, {
             </div>
             <div className="absolute bottom-3 left-3 right-12">
               <div className="text-[11px] font-medium text-background leading-snug line-clamp-2">three minutes that change how you think about color theory</div>
-              <div className="text-[10px] text-background/80 mt-0.5 truncate">♪ original sound — maya.makes</div>
+              <div className="text-[10px] text-background/80 mt-0.5 truncate">♪ original sound - maya.makes</div>
             </div>
           </div>
           <div className="flex flex-col gap-3 items-center justify-end pb-3">
@@ -1345,7 +1345,7 @@ Object.assign(screens, {
       <Frame>
         <PhoneBar />
         <div className="font-display text-[15px] leading-tight">What are you into?</div>
-        <div className="text-[10px] text-foreground/60 -mt-1">Pick 3+ — we'll tune your For You</div>
+        <div className="text-[10px] text-foreground/60 -mt-1">Pick 3+ - we'll tune your For You</div>
         <div className="flex items-center gap-1 text-[9px] font-mono text-foreground/55">
           <div className="flex-1 h-1 rounded-full bg-foreground/15 overflow-hidden"><div className="h-full w-[60%] bg-primary" /></div>
           <span>5 / 3</span>
@@ -1735,7 +1735,7 @@ Object.assign(screens, {
         <input className="w-full bg-background/40 border border-border rounded-md px-2 py-1.5 text-[12px] font-medium" defaultValue="What's your one-week productivity hack?" readOnly />
         <div className="flex gap-1 text-[10px] font-mono text-foreground/65 bg-foreground/[0.04] rounded-md px-1.5 py-1 overflow-hidden">
           <span className="font-bold">B</span><span className="italic">I</span><span className="underline">U</span>
-          <span>H1</span><span>H2</span><span>“ ”</span><span>{"</>"}</span><span>•—</span><span>🔗</span>
+          <span>H1</span><span>H2</span><span>“ ”</span><span>{"</>"}</span><span>•-</span><span>🔗</span>
         </div>
         <div className="flex-1 rounded-md border border-border/60 bg-background/40 p-2 text-[10px] leading-snug font-mono space-y-1 overflow-hidden">
           <div className="text-[11px] font-bold font-sans">## What worked for me</div>
@@ -1961,7 +1961,7 @@ Object.assign(screens, {
           <div className="w-7 h-7 rounded bg-primary/20 grid place-items-center text-[10px] font-mono shrink-0">L</div>
           <div className="flex-1 min-w-0">
             <div className="text-[10px] font-medium truncate">Senior Designer · Linework</div>
-            <div className="text-[9px] text-foreground/55 truncate">2023 — Present · 2 yr 3 mo</div>
+            <div className="text-[9px] text-foreground/55 truncate">2023 - Present · 2 yr 3 mo</div>
           </div>
         </div>
         <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 mt-1">Skills</div>
@@ -2127,7 +2127,7 @@ const AIBar = () => (
 );
 
 Object.assign(screens, {
-  // 1. Meta AI — inbox with pinned AI
+  // 1. Meta AI - inbox with pinned AI
   aiMetaInbox: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2172,7 +2172,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 2. ChatGPT — clean centered prompt
+  // 2. ChatGPT - clean centered prompt
   aiChatGPTHome: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2204,7 +2204,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 3. Gemini — Workspace top bar with spark
+  // 3. Gemini - Workspace top bar with spark
   aiGeminiWorkspace: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2244,7 +2244,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 4. Manus — agent run console
+  // 4. Manus - agent run console
   aiManusConsole: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2279,7 +2279,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 5. Claude — nuanced structured reply
+  // 5. Claude - nuanced structured reply
   aiClaudeReply: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2290,13 +2290,13 @@ Object.assign(screens, {
           <span className="ml-auto text-[9px] font-mono text-foreground/55">Sonnet</span>
         </div>
         <div className="self-end max-w-[80%] rounded-2xl rounded-br-sm bg-foreground/10 px-2.5 py-1.5 text-[10px]">
-          Help me decide between two job offers — one is more pay, one is more aligned.
+          Help me decide between two job offers - one is more pay, one is more aligned.
         </div>
         <div className="self-start w-full rounded-2xl rounded-bl-sm bg-foreground/[0.04] border border-border/60 p-2.5 text-[10px] flex flex-col gap-1.5">
           <div className="font-medium text-[10.5px]">How I'd think about it</div>
           <ul className="flex flex-col gap-1">
             {[
-              "Map a 3-year horizon — money compounds, but so does alignment.",
+              "Map a 3-year horizon - money compounds, but so does alignment.",
               "List concrete daily tasks each role implies, not the titles.",
               "Run a quiet pre-mortem: which choice would you regret?",
             ].map((t, i) => (
@@ -2314,7 +2314,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 6. ChatGPT — versatile friendly + follow-ups
+  // 6. ChatGPT - versatile friendly + follow-ups
   aiChatGPTFriendly: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2327,7 +2327,7 @@ Object.assign(screens, {
           What's a good 20-min dinner with chicken and rice?
         </div>
         <div className="self-start max-w-[88%] rounded-2xl rounded-bl-sm bg-foreground/[0.04] border border-border/60 px-2.5 py-1.5 text-[10px]">
-          Easy — try a one-pan lemon chicken rice. Sear seasoned thighs, toss in rice + broth, lid on 18 min. Finish with parsley and a squeeze of lemon. 🍋
+          Easy - try a one-pan lemon chicken rice. Sear seasoned thighs, toss in rice + broth, lid on 18 min. Finish with parsley and a squeeze of lemon. 🍋
         </div>
         <div className="text-[9px] font-mono text-foreground/45 mt-1">Follow up</div>
         <div className="flex flex-wrap gap-1">
@@ -2345,7 +2345,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 7. Gemini — fast answer + sources
+  // 7. Gemini - fast answer + sources
   aiGeminiFast: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2363,7 +2363,7 @@ Object.assign(screens, {
         <div className="text-[9px] font-mono text-foreground/45 mt-1">Related · Sources</div>
         <div className="flex flex-col gap-1">
           {[
-            ["wikipedia.org", "Lisbon — Wikipedia"],
+            ["wikipedia.org", "Lisbon - Wikipedia"],
             ["britannica.com", "Lisbon | History, Population…"],
             ["visitportugal.com", "Discover Lisbon"],
           ].map(([d, t], i) => (
@@ -2385,7 +2385,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 8. Meta AI — casual emoji bubbles
+  // 8. Meta AI - casual emoji bubbles
   aiMetaCasual: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2399,9 +2399,9 @@ Object.assign(screens, {
         </div>
         <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
           <div className="self-end max-w-[78%] rounded-2xl rounded-br-sm bg-primary text-primary-foreground px-2.5 py-1.5 text-[10px]">good movies for tonight? 🎬</div>
-          <div className="self-start max-w-[78%] rounded-2xl rounded-bl-sm bg-foreground/10 px-2.5 py-1.5 text-[10px]">ooh fun! 😄 vibe check — cozy, thrilling, or laugh-til-you-cry?</div>
+          <div className="self-start max-w-[78%] rounded-2xl rounded-bl-sm bg-foreground/10 px-2.5 py-1.5 text-[10px]">ooh fun! 😄 vibe check - cozy, thrilling, or laugh-til-you-cry?</div>
           <div className="self-end max-w-[78%] rounded-2xl rounded-br-sm bg-primary text-primary-foreground px-2.5 py-1.5 text-[10px]">cozy 🛋️🍿</div>
-          <div className="self-start max-w-[78%] rounded-2xl rounded-bl-sm bg-foreground/10 px-2.5 py-1.5 text-[10px]">say no more 💛 try <b>Paddington 2</b> or <b>About Time</b> — both feel like a warm hug 🫂</div>
+          <div className="self-start max-w-[78%] rounded-2xl rounded-bl-sm bg-foreground/10 px-2.5 py-1.5 text-[10px]">say no more 💛 try <b>Paddington 2</b> or <b>About Time</b> - both feel like a warm hug 🫂</div>
           <div className="self-end max-w-[40%] rounded-2xl rounded-br-sm bg-primary text-primary-foreground px-2.5 py-1.5 text-[10px]">🙌</div>
         </div>
         <div className="h-8 rounded-full bg-foreground/8 border border-border/60 flex items-center px-3 text-[10px] text-foreground/45">
@@ -2417,7 +2417,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 9. Gemini context — Workspace side panel
+  // 9. Gemini context - Workspace side panel
   aiGeminiWorkspaceContext: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2459,7 +2459,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 10. Claude — Projects with attached docs
+  // 10. Claude - Projects with attached docs
   aiClaudeProjects: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2475,7 +2475,7 @@ Object.assign(screens, {
               ["PDF", "User research v3", "412 pp"],
               ["DOC", "Brand voice guide", "82 pp"],
               ["MD", "Old onboarding spec", "26 pp"],
-              ["CSV", "Funnel data Q1-Q3", "—"],
+              ["CSV", "Funnel data Q1-Q3", "-"],
               ["PDF", "Competitor teardown", "118 pp"],
             ].map(([t, n, p], i) => (
               <div key={i} className="flex items-center gap-1.5">
@@ -2505,7 +2505,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 11. ChatGPT — memory + GPTs
+  // 11. ChatGPT - memory + GPTs
   aiChatGPTMemory: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2557,7 +2557,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 12. Manus — live web fetch log
+  // 12. Manus - live web fetch log
   aiManusWebFetch: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2592,7 +2592,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 13. ChatGPT — voice + image + camera
+  // 13. ChatGPT - voice + image + camera
   aiChatGPTVoice: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2629,7 +2629,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 14. Gemini — native multimodal message
+  // 14. Gemini - native multimodal message
   aiGeminiMultimodal: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2653,7 +2653,7 @@ Object.assign(screens, {
           <div className="px-1">What's in this photo and what am I saying?</div>
         </div>
         <div className="self-start max-w-[88%] rounded-2xl rounded-bl-sm bg-foreground/[0.04] border border-border/60 px-2.5 py-1.5 text-[10px]">
-          A street market in Lisbon at dusk. You're asking which stall sells the custard tarts — the blue awning on the left.
+          A street market in Lisbon at dusk. You're asking which stall sells the custard tarts - the blue awning on the left.
         </div>
       </Frame>
     ),
@@ -2664,7 +2664,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 15. Meta AI — image gen inline
+  // 15. Meta AI - image gen inline
   aiMetaImageGen: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2696,7 +2696,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 16. Claude — doc + image read
+  // 16. Claude - doc + image read
   aiClaudeDocRead: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2737,7 +2737,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 17. Claude — Artifacts split view
+  // 17. Claude - Artifacts split view
   aiClaudeArtifacts: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2750,7 +2750,7 @@ Object.assign(screens, {
         <div className="flex-1 flex gap-1.5 min-h-0">
           <div className="w-[44%] flex flex-col gap-1 min-w-0">
             <div className="self-end max-w-full rounded-xl rounded-br-sm bg-foreground/10 px-2 py-1 text-[9.5px]">Build a tip calculator</div>
-            <div className="self-start rounded-xl rounded-bl-sm bg-foreground/[0.04] border border-border/60 px-2 py-1 text-[9.5px]">Here's a working version — try it →</div>
+            <div className="self-start rounded-xl rounded-bl-sm bg-foreground/[0.04] border border-border/60 px-2 py-1 text-[9.5px]">Here's a working version - try it →</div>
             <div className="self-end max-w-full rounded-xl rounded-br-sm bg-foreground/10 px-2 py-1 text-[9.5px]">Make it 18% default</div>
             <div className="self-start rounded-xl rounded-bl-sm bg-foreground/[0.04] border border-border/60 px-2 py-1 text-[9.5px]">Updated ✓</div>
           </div>
@@ -2779,7 +2779,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 18. ChatGPT — Canvas with Export
+  // 18. ChatGPT - Canvas with Export
   aiChatGPTCanvas: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2790,7 +2790,7 @@ Object.assign(screens, {
           <div className="ml-auto text-[9px] font-mono px-1.5 py-0.5 rounded bg-primary text-primary-foreground">Export ↓</div>
         </div>
         <div className="flex-1 rounded-lg border border-border/60 bg-background p-2 flex flex-col gap-1 overflow-hidden">
-          <div className="text-[11px] font-medium">Studio launch — June 2026</div>
+          <div className="text-[11px] font-medium">Studio launch - June 2026</div>
           <div className="text-[8.5px] font-mono text-foreground/45">Draft · co-edited with ChatGPT</div>
           <div className="text-[10px] font-medium mt-1">Summary</div>
           <div className="text-[9.5px] text-foreground/75 leading-snug">A focused launch around three studios in Lisbon. We lead with the brand film and a private preview night.</div>
@@ -2813,7 +2813,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 19. Manus — completed deliverables
+  // 19. Manus - completed deliverables
   aiManusDeliverables: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2850,7 +2850,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 20. Gemini — Export to Docs
+  // 20. Gemini - Export to Docs
   aiGeminiExportDocs: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2873,7 +2873,7 @@ Object.assign(screens, {
         <div className="flex-1 rounded-lg border border-border/60 bg-background p-2 flex flex-col gap-1 overflow-hidden">
           <div className="flex items-center gap-1.5 -mt-0.5">
             <div className="w-4 h-4 rounded bg-blue-500/80 grid place-items-center text-[9px] text-white">D</div>
-            <div className="text-[9.5px] truncate">Q3 marketing brief — Google Docs</div>
+            <div className="text-[9.5px] truncate">Q3 marketing brief - Google Docs</div>
           </div>
           <div className="h-px bg-border/60" />
           <div className="text-[11px] font-medium">Q3 marketing brief</div>
@@ -2892,7 +2892,7 @@ Object.assign(screens, {
 });
 
 // ============================================================
-// FOOD DELIVERY — 20 brand-evocative screens
+// FOOD DELIVERY - 20 brand-evocative screens
 // Neutral copy. Do not echo p.company / p.pattern / p.metric.
 // ============================================================
 const FoodBar = () => (
@@ -2904,7 +2904,7 @@ const FoodBar = () => (
 );
 
 Object.assign(screens, {
-  // 1. Uber Eats — Imagery carousels
+  // 1. Uber Eats - Imagery carousels
   foodImageryCarousels: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2944,7 +2944,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 2. DoorDash — Popular near you (ranked)
+  // 2. DoorDash - Popular near you (ranked)
   foodPopularNear: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -2980,7 +2980,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 3. Grubhub — Local breadth list (many)
+  // 3. Grubhub - Local breadth list (many)
   foodBreadthList: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3020,7 +3020,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 4. Instacart — Store-first browse (grocery)
+  // 4. Instacart - Store-first browse (grocery)
   foodStoreFirst: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3062,7 +3062,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 5. DoorDash — Popular items first
+  // 5. DoorDash - Popular items first
   foodPopularItems: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3102,7 +3102,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 6. Deliveroo — Photo menu grid
+  // 6. Deliveroo - Photo menu grid
   foodPhotoMenu: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3138,7 +3138,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 7. Uber Eats — Category tabs sticky
+  // 7. Uber Eats - Category tabs sticky
   foodCategoryTabs: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3177,7 +3177,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 8. Instacart — Search items
+  // 8. Instacart - Search items
   foodSearchItems: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3215,7 +3215,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 9. Deliveroo — Live total + mods
+  // 9. Deliveroo - Live total + mods
   foodLiveTotalMods: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3253,7 +3253,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 10. Uber Eats — Upsell add-ons
+  // 10. Uber Eats - Upsell add-ons
   foodUpsellAddons: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3302,7 +3302,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 11. DoorDash — Group order
+  // 11. DoorDash - Group order
   foodGroupOrder: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3344,7 +3344,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 12. Grubhub — Simple cart
+  // 12. Grubhub - Simple cart
   foodSimpleCart: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3375,7 +3375,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 13. Uber Eats — One-tap reorder
+  // 13. Uber Eats - One-tap reorder
   foodOneTapReorder: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3416,7 +3416,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 14. DoorDash — Saved + DashPass
+  // 14. DoorDash - Saved + DashPass
   foodDashPass: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3455,7 +3455,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 15. Deliveroo — Clear fees breakdown
+  // 15. Deliveroo - Clear fees breakdown
   foodClearFees: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3482,7 +3482,7 @@ Object.assign(screens, {
           <div className="flex justify-between text-foreground/60"><span>VAT included</span><span className="font-mono">£6.10</span></div>
           <div className="flex justify-between pt-1 border-t border-border/40 font-medium text-[10.5px]"><span>Total</span><span className="font-mono">£36.69</span></div>
         </div>
-        <div className="text-[8.5px] text-foreground/55">No hidden fees — what you see is what you pay.</div>
+        <div className="text-[8.5px] text-foreground/55">No hidden fees - what you see is what you pay.</div>
         <CTA>Confirm & pay · £36.69</CTA>
       </Frame>
     ),
@@ -3493,7 +3493,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 16. Grubhub — Guest checkout
+  // 16. Grubhub - Guest checkout
   foodGuestCheckout: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3531,7 +3531,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 17. Uber Eats — Reorder shelf
+  // 17. Uber Eats - Reorder shelf
   foodReorderShelf: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3564,7 +3564,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 18. DoorDash — Subscription perks (DashPass)
+  // 18. DoorDash - Subscription perks (DashPass)
   foodSubscriptionPerks: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3602,7 +3602,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 19. Grubhub — Points / perks
+  // 19. Grubhub - Points / perks
   foodPointsPerks: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3644,7 +3644,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 20. Deliveroo — Favorites
+  // 20. Deliveroo - Favorites
   foodFavorites: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3684,7 +3684,7 @@ Object.assign(screens, {
 });
 
 // ============================================================
-// E-COMMERCE — 20 brand-evocative screens
+// E-COMMERCE - 20 brand-evocative screens
 // ============================================================
 const ShopBar = () => (
   <div className="flex items-center justify-between text-[9px] font-mono text-foreground/50 -mt-1">
@@ -3695,7 +3695,7 @@ const ShopBar = () => (
 );
 
 Object.assign(screens, {
-  // 1. Amazon — Forgiving autocomplete
+  // 1. Amazon - Forgiving autocomplete
   shopAmazonAutocomplete: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3729,13 +3729,13 @@ Object.assign(screens, {
       </Frame>
     ),
     pins: [
-      { n: 1, x: "50%", y: "20%", label: "Forgiving — did you mean" },
+      { n: 1, x: "50%", y: "20%", label: "Forgiving - did you mean" },
       { n: 2, x: "50%", y: "55%", label: "Scoped suggestions" },
       { n: 3, x: "50%", y: "94%", label: "Never zero results" },
     ],
   })) as Builder,
 
-  // 2. ASOS — Visual scoped search
+  // 2. ASOS - Visual scoped search
   shopAsosVisualSearch: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3778,7 +3778,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 3. Sephora — Guided beauty search
+  // 3. Sephora - Guided beauty search
   shopSephoraGuided: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3822,7 +3822,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 4. IKEA — Room / category search
+  // 4. IKEA - Room / category search
   shopIkeaRooms: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3857,7 +3857,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 5. ASOS — Fit/size filters grid
+  // 5. ASOS - Fit/size filters grid
   shopAsosFilters: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3899,7 +3899,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 6. Amazon — Faceted filters dense
+  // 6. Amazon - Faceted filters dense
   shopAmazonFacets: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3959,7 +3959,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 7. Sephora — Reviews-led grid
+  // 7. Sephora - Reviews-led grid
   shopSephoraReviews: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -3992,12 +3992,12 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 8. IKEA — Room visualizer grid
+  // 8. IKEA - Room visualizer grid
   shopIkeaVisualizer: ((_ctx, _p) => ({
     node: (
       <Frame>
         <ShopBar />
-        <div className="text-[11px] font-medium">Sofas — see in a room</div>
+        <div className="text-[11px] font-medium">Sofas - see in a room</div>
         <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
           {[
             ["KIVIK 3-seat","$799","Linen beige"],
@@ -4026,7 +4026,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 9. Sephora — Reviews by skin type PDP
+  // 9. Sephora - Reviews by skin type PDP
   shopSephoraPdp: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4072,7 +4072,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 10. Amazon — Q&A + reviews
+  // 10. Amazon - Q&A + reviews
   shopAmazonQA: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4088,8 +4088,8 @@ Object.assign(screens, {
         <div className="text-[10px] font-medium">Customer Q&A</div>
         <div className="flex flex-col gap-1">
           {[
-            ["Q: Works without Wi-Fi?","A: No, Wi-Fi is required for Alexa. — Tom"],
-            ["Q: Multiroom audio?","A: Yes, with other Echo devices. — Priya"],
+            ["Q: Works without Wi-Fi?","A: No, Wi-Fi is required for Alexa. - Tom"],
+            ["Q: Multiroom audio?","A: Yes, with other Echo devices. - Priya"],
           ].map(([q,a],i)=>(
             <div key={i} className="rounded p-1 border border-border/40">
               <div className="text-[9px] font-medium truncate">{q}</div>
@@ -4120,7 +4120,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 11. Nike — Story + media PDP
+  // 11. Nike - Story + media PDP
   shopNikeStory: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4147,7 +4147,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 12. IKEA — AR in your room
+  // 12. IKEA - AR in your room
   shopIkeaAR: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4175,7 +4175,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 13. Amazon — 1-click
+  // 13. Amazon - 1-click
   shopAmazon1Click: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4196,7 +4196,7 @@ Object.assign(screens, {
           Pay with: <span className="font-medium">Visa •••• 4242</span>
         </div>
         <div className="flex-1" />
-        <div className="h-10 rounded-full bg-yellow-400 text-black grid place-items-center text-[12px] font-medium">Buy now — 1-Click</div>
+        <div className="h-10 rounded-full bg-yellow-400 text-black grid place-items-center text-[12px] font-medium">Buy now - 1-Click</div>
         <div className="h-8 rounded-full border border-border/60 grid place-items-center text-[10px] text-foreground/65">Add to Cart</div>
       </Frame>
     ),
@@ -4207,7 +4207,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 14. ASOS — Express wallets
+  // 14. ASOS - Express wallets
   shopAsosExpress: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4241,7 +4241,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 15. Nike — Member checkout
+  // 15. Nike - Member checkout
   shopNikeMember: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4276,7 +4276,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 16. IKEA — Delivery / pickup choice
+  // 16. IKEA - Delivery / pickup choice
   shopIkeaFulfil: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4323,12 +4323,12 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 17. ASOS — Free paperless returns + QR
+  // 17. ASOS - Free paperless returns + QR
   shopAsosReturns: ((_ctx, _p) => ({
     node: (
       <Frame>
         <ShopBar />
-        <div className="font-display text-[14px]">Return — free & easy</div>
+        <div className="font-display text-[14px]">Return - free & easy</div>
         <div className="text-[9.5px] text-foreground/60">No printer. No label. Just scan.</div>
         <div className="aspect-square w-32 self-center my-1 rounded-md bg-foreground p-2 grid place-items-center">
           <div className="w-full h-full grid grid-cols-8 grid-rows-8 gap-px">
@@ -4354,7 +4354,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 18. Amazon — Drop-off network map
+  // 18. Amazon - Drop-off network map
   shopAmazonDropoff: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4399,13 +4399,13 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 19. Sephora — Generous returns
+  // 19. Sephora - Generous returns
   shopSephoraReturns: ((_ctx, _p) => ({
     node: (
       <Frame>
         <ShopBar />
         <div className="font-display text-[14px]">Love it or return it</div>
-        <div className="text-[9.5px] text-foreground/65">Up to 60 days — even if it's been opened.</div>
+        <div className="text-[9.5px] text-foreground/65">Up to 60 days - even if it's been opened.</div>
         <div className="rounded-md border border-border/60 p-2 flex gap-2 items-center bg-foreground/[0.03]">
           <div className="w-10 h-10 rounded-full bg-primary/15 grid place-items-center text-[18px]">💖</div>
           <div className="text-[9.5px] text-foreground/70">If it's not your match, send it back. We'll refund the original payment.</div>
@@ -4436,7 +4436,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 20. IKEA — In-store returns
+  // 20. IKEA - In-store returns
   shopIkeaInStore: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4476,7 +4476,7 @@ Object.assign(screens, {
 });
 
 // ============================================================
-// FINTECH — 20 brand-evocative screens
+// FINTECH - 20 brand-evocative screens
 // ============================================================
 const FinBar = () => (
   <div className="flex items-center justify-between text-[9px] font-mono text-foreground/50 -mt-1">
@@ -4487,7 +4487,7 @@ const FinBar = () => (
 );
 
 Object.assign(screens, {
-  // 1. Monzo — Human KYC
+  // 1. Monzo - Human KYC
   finMonzoKyc: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4496,7 +4496,7 @@ Object.assign(screens, {
           <div className="w-7 h-7 rounded-full bg-[#FF4F40] grid place-items-center text-white text-[11px] font-bold">M</div>
           <div className="text-[10px] text-foreground/55">Hey Maya 👋</div>
         </div>
-        <div className="font-display text-[15px] leading-tight">Let's get you set up — takes about 3 minutes.</div>
+        <div className="font-display text-[15px] leading-tight">Let's get you set up - takes about 3 minutes.</div>
         <div className="flex items-center gap-1.5 text-[8.5px] text-foreground/60">
           <span>Step 2 of 4</span>
           <div className="flex-1 h-1 rounded-full bg-foreground/10 overflow-hidden">
@@ -4507,7 +4507,7 @@ Object.assign(screens, {
         <div className="flex flex-col gap-1.5 flex-1">
           {[
             ["✓","Tell us about you","30s"],
-            ["●","Snap your ID","Now — front + back"],
+            ["●","Snap your ID","Now - front + back"],
             ["○","Take a quick selfie","20s"],
             ["○","Pick a card colour","Almost there"],
           ].map(([m,t,d],i)=>(
@@ -4530,7 +4530,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 2. Revolut — Quick multi-step
+  // 2. Revolut - Quick multi-step
   finRevolutMultiStep: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4572,7 +4572,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 3. Cash App — Minimal signup
+  // 3. Cash App - Minimal signup
   finCashAppMinimal: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4598,7 +4598,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 4. Wise — Transparent setup
+  // 4. Wise - Transparent setup
   finWiseTransparent: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4630,7 +4630,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 5. Revolut — Balance + quick actions
+  // 5. Revolut - Balance + quick actions
   finRevolutDash: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4678,7 +4678,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 6. Monzo — Balance + Pots
+  // 6. Monzo - Balance + Pots
   finMonzoDash: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4730,7 +4730,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 7. Cash App — Big send button
+  // 7. Cash App - Big send button
   finCashAppDash: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4759,7 +4759,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 8. Robinhood — Portfolio first
+  // 8. Robinhood - Portfolio first
   finRobinhoodDash: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4805,7 +4805,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 9. Cash App — $cashtag send
+  // 9. Cash App - $cashtag send
   finCashAppSend: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4833,7 +4833,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 10. Wise — Transparent FX
+  // 10. Wise - Transparent FX
   finWiseFx: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4867,7 +4867,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 11. Revolut — Multi-currency
+  // 11. Revolut - Multi-currency
   finRevolutMulti: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4913,7 +4913,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 12. Monzo — Split & request
+  // 12. Monzo - Split & request
   finMonzoSplit: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -4922,7 +4922,7 @@ Object.assign(screens, {
         <div className="rounded-md border border-border/60 p-2 flex items-center gap-2">
           <div className="w-8 h-8 rounded bg-foreground/10 grid place-items-center text-[14px]">🍝</div>
           <div className="flex-1 min-w-0">
-            <div className="text-[10px] font-medium truncate">Trattoria San — dinner</div>
+            <div className="text-[10px] font-medium truncate">Trattoria San - dinner</div>
             <div className="text-[8.5px] text-foreground/55">Last night · 4 people</div>
           </div>
           <div className="font-mono text-[12px]">£96.00</div>
@@ -4933,7 +4933,7 @@ Object.assign(screens, {
             ["Jordan","✓","£24.00"],
             ["Aisha","✓","£24.00"],
             ["Sam","✓","£24.00"],
-            ["Maya (you)","—","£24.00"],
+            ["Maya (you)","-","£24.00"],
           ].map(([n,s,a],i)=>(
             <div key={i} className="flex items-center gap-2 p-1.5 border border-border/40 rounded-md">
               <div className="w-7 h-7 rounded-full bg-foreground/10 grid place-items-center text-[10px]">{(n as string)[0]}</div>
@@ -4953,7 +4953,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 13. Monzo — Auto-categorized + Pots
+  // 13. Monzo - Auto-categorized + Pots
   finMonzoInsights: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5003,7 +5003,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 14. Revolut — Analytics charts
+  // 14. Revolut - Analytics charts
   finRevolutAnalytics: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5045,7 +5045,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 15. Wise — Fee breakdown
+  // 15. Wise - Fee breakdown
   finWiseFees: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5074,7 +5074,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 16. Robinhood — Gain/loss focus
+  // 16. Robinhood - Gain/loss focus
   finRobinhoodGains: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5124,7 +5124,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 17. Monzo — Goals & nudges
+  // 17. Monzo - Goals & nudges
   finMonzoGoals: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5166,7 +5166,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 18. Revolut — Tiers & perks
+  // 18. Revolut - Tiers & perks
   finRevolutTiers: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5201,7 +5201,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 19. Cash App — Boosts
+  // 19. Cash App - Boosts
   finCashAppBoosts: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5241,7 +5241,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 20. Robinhood — Streaks & alerts
+  // 20. Robinhood - Streaks & alerts
   finRobinhoodAlerts: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5263,7 +5263,7 @@ Object.assign(screens, {
           {[
             ["🔔","NVDA hit $850 target","2m ago","up"],
             ["📈","S&P 500 +1.2% today","12m ago","up"],
-            ["📉","TSLA down 5% — your alert","1h ago","down"],
+            ["📉","TSLA down 5% - your alert","1h ago","down"],
             ["💰","Earnings: AAPL after close","3h ago","neutral"],
             ["🔔","BTC crossed $52k","yesterday","up"],
           ].map(([e,t,when,d],i)=>(
@@ -5288,7 +5288,7 @@ Object.assign(screens, {
 });
 
 // ============================================================
-// STREAMING — 20 brand-evocative screens
+// STREAMING - 20 brand-evocative screens
 // ============================================================
 const StreamBar = () => (
   <div className="flex items-center justify-between text-[9px] font-mono text-foreground/50 -mt-1">
@@ -5299,7 +5299,7 @@ const StreamBar = () => (
 );
 
 Object.assign(screens, {
-  // 1. Netflix — Pick titles
+  // 1. Netflix - Pick titles
   streamNetflixPickTitles: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5326,7 +5326,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 2. Spotify — Pick artists
+  // 2. Spotify - Pick artists
   streamSpotifyArtists: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5361,7 +5361,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 3. YouTube — Infer from history
+  // 3. YouTube - Infer from history
   streamYouTubeInfer: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5370,7 +5370,7 @@ Object.assign(screens, {
           <div className="w-7 h-7 rounded grid place-items-center bg-red-600 text-white text-[11px]">▶</div>
           <div className="text-[11px] font-medium">Setting up your feed</div>
         </div>
-        <div className="text-[9.5px] text-foreground/65">We'll learn from what you watch — no quiz needed.</div>
+        <div className="text-[9.5px] text-foreground/65">We'll learn from what you watch - no quiz needed.</div>
         <div className="rounded-md bg-foreground/[0.04] border border-border/60 p-2">
           <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Detected from watch history</div>
           <div className="flex gap-1 flex-wrap mt-1">
@@ -5405,7 +5405,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 4. Disney+ — Brand hubs
+  // 4. Disney+ - Brand hubs
   streamDisneyHubs: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5436,7 +5436,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 5. Netflix — Personalized rows
+  // 5. Netflix - Personalized rows
   streamNetflixRows: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5480,7 +5480,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 6. Spotify — Named playlists
+  // 6. Spotify - Named playlists
   streamSpotifyPlaylists: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5524,7 +5524,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 7. Disney+ — Franchise tiles
+  // 7. Disney+ - Franchise tiles
   streamDisneyFranchise: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5556,7 +5556,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 8. Twitch — Live now
+  // 8. Twitch - Live now
   streamTwitchLive: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5595,7 +5595,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 9. YouTube — Predictive at scale
+  // 9. YouTube - Predictive at scale
   streamYouTubeSearch: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5632,7 +5632,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 10. Netflix — Title + genre
+  // 10. Netflix - Title + genre
   streamNetflixSearch: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5663,7 +5663,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 11. Spotify — Songs + podcasts tabs
+  // 11. Spotify - Songs + podcasts tabs
   streamSpotifySearch: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5704,7 +5704,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 12. Twitch — Categories / games
+  // 12. Twitch - Categories / games
   streamTwitchCategories: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5745,7 +5745,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 13. YouTube — Speed / captions / PiP
+  // 13. YouTube - Speed / captions / PiP
   streamYouTubePlayer: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5783,7 +5783,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 14. Netflix — Autoplay next
+  // 14. Netflix - Autoplay next
   streamNetflixAutoplay: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5809,7 +5809,7 @@ Object.assign(screens, {
           {[
             ["E03 · The Disappearance","48m","now"],
             ["E04 · The Vanishing","52m","next"],
-            ["E05 · The Flea & the Acrobat","49m","—"],
+            ["E05 · The Flea & the Acrobat","49m","-"],
           ].map(([t,d,s],i)=>(
             <div key={i} className={`flex items-center gap-2 p-1 rounded border ${i===0?"border-red-600":"border-border/30"}`}>
               <Photo seed={i} className="w-12 h-7 rounded shrink-0" />
@@ -5829,7 +5829,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 15. Spotify — Queue + now playing
+  // 15. Spotify - Queue + now playing
   streamSpotifyQueue: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5874,7 +5874,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 16. Twitch — Live chat overlay
+  // 16. Twitch - Live chat overlay
   streamTwitchChat: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5918,7 +5918,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 17. Netflix — New & Popular
+  // 17. Netflix - New & Popular
   streamNetflixNewRow: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5961,7 +5961,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 18. Spotify — Wrapped & daylist
+  // 18. Spotify - Wrapped & daylist
   streamSpotifyWrapped: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -5995,7 +5995,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 19. YouTube — Subscriptions feed
+  // 19. YouTube - Subscriptions feed
   streamYouTubeSubs: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6039,7 +6039,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 20. Twitch — Subs & emotes
+  // 20. Twitch - Subs & emotes
   streamTwitchSubs: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6087,7 +6087,7 @@ Object.assign(screens, {
 });
 
 // ============================================================
-// MOBILITY — 20 brand-evocative screens
+// MOBILITY - 20 brand-evocative screens
 // ============================================================
 const MobBar = ({ accent = "text-foreground/50" }: { accent?: string }) => (
   <div className={`flex items-center justify-between text-[9px] font-mono ${accent} -mt-1`}>
@@ -6108,7 +6108,7 @@ const MapBg = ({ tint = "from-emerald-500/15 to-sky-500/10" }: { tint?: string }
 );
 
 Object.assign(screens, {
-  // 1. Uber — Predicted places
+  // 1. Uber - Predicted places
   mobUberPredicted: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6143,7 +6143,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 2. Lyft — Saved + recent
+  // 2. Lyft - Saved + recent
   mobLyftSaved: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6183,7 +6183,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 3. Citymapper — Multimodal plan
+  // 3. Citymapper - Multimodal plan
   mobCitymapperPlan: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6224,7 +6224,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 4. Bolt — Quick entry
+  // 4. Bolt - Quick entry
   mobBoltQuick: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6253,7 +6253,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 5. Uber — Tiers price + ETA
+  // 5. Uber - Tiers price + ETA
   mobUberTiers: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6290,7 +6290,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 6. Bolt — Cheapest first
+  // 6. Bolt - Cheapest first
   mobBoltCheapest: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6327,7 +6327,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 7. Lyft — Friendly tiers
+  // 7. Lyft - Friendly tiers
   mobLyftTiers: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6361,7 +6361,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 8. Citymapper — Compare modes
+  // 8. Citymapper - Compare modes
   mobCitymapperCompare: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6397,7 +6397,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 9. Lyft — Warm match + ETA
+  // 9. Lyft - Warm match + ETA
   mobLyftMatch: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6434,7 +6434,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 10. Uber — Live map track
+  // 10. Uber - Live map track
   mobUberLiveMap: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6465,7 +6465,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 11. Bolt — Basic match
+  // 11. Bolt - Basic match
   mobBoltMatch: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6501,7 +6501,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 12. Lime — Unlock nearby
+  // 12. Lime - Unlock nearby
   mobLimeUnlock: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6530,7 +6530,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 13. Uber — Share + safety kit
+  // 13. Uber - Share + safety kit
   mobUberSafety: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6572,7 +6572,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 14. Lyft — Trip share
+  // 14. Lyft - Trip share
   mobLyftShare: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6608,7 +6608,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 15. Citymapper — Step navigation
+  // 15. Citymapper - Step navigation
   mobCitymapperSteps: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6644,7 +6644,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 16. Lime — Ride timer
+  // 16. Lime - Ride timer
   mobLimeTimer: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6670,7 +6670,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 17. Uber — Invisible auto-charge
+  // 17. Uber - Invisible auto-charge
   mobUberAutoCharge: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6701,7 +6701,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 18. Lyft — Auto + tip prompt
+  // 18. Lyft - Auto + tip prompt
   mobLyftTip: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6735,7 +6735,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 19. Bolt — Cash / card
+  // 19. Bolt - Cash / card
   mobBoltCash: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6771,7 +6771,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 20. Lime — Per-minute receipt
+  // 20. Lime - Per-minute receipt
   mobLimeReceipt: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6805,7 +6805,7 @@ Object.assign(screens, {
 });
 
 // ============================================================
-// DATING — 20 brand-evocative screens
+// DATING - 20 brand-evocative screens
 // ============================================================
 const DateBar = () => (
   <div className="flex items-center justify-between text-[9px] font-mono text-foreground/50 -mt-1">
@@ -6816,7 +6816,7 @@ const DateBar = () => (
 );
 
 Object.assign(screens, {
-  // 1. Hinge — Prompt-based profile
+  // 1. Hinge - Prompt-based profile
   dateHingePrompts: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6850,7 +6850,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 2. OkCupid — Question depth
+  // 2. OkCupid - Question depth
   dateOkcQuestions: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6891,7 +6891,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 3. Tinder — Photo-first
+  // 3. Tinder - Photo-first
   dateTinderPhoto: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6923,7 +6923,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 4. Bumble — Guided profile
+  // 4. Bumble - Guided profile
   dateBumbleGuided: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6961,7 +6961,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 5. Tinder — Swipe deck
+  // 5. Tinder - Swipe deck
   dateTinderSwipe: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -6992,7 +6992,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 6. Hinge — Likes you (curated)
+  // 6. Hinge - Likes you (curated)
   dateHingeLikes: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7030,7 +7030,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 7. Coffee Meets Bagel — Daily curated
+  // 7. Coffee Meets Bagel - Daily curated
   dateCmbDaily: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7069,7 +7069,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 8. Bumble — Swipe + filters
+  // 8. Bumble - Swipe + filters
   dateBumbleSwipe: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7102,7 +7102,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 9. Hinge — Like a detail
+  // 9. Hinge - Like a detail
   dateHingeMatch: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7113,7 +7113,7 @@ Object.assign(screens, {
         </div>
         <div className="rounded-xl bg-pink-50 dark:bg-pink-950/30 border border-pink-300/50 p-2 relative">
           <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Olivia liked your prompt</div>
-          <div className="text-[11px] font-display leading-tight mt-0.5">"My simple pleasures — a perfectly ripe peach in July."</div>
+          <div className="text-[11px] font-display leading-tight mt-0.5">"My simple pleasures - a perfectly ripe peach in July."</div>
           <div className="text-[8.5px] mt-1 text-pink-600">💬 "Okay this is dangerously specific."</div>
         </div>
         <div className="flex items-center justify-center gap-3 py-1">
@@ -7136,7 +7136,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 10. Bumble — Mutual + 24h timer
+  // 10. Bumble - Mutual + 24h timer
   dateBumbleTimer: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7168,7 +7168,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 11. Tinder — Instant match
+  // 11. Tinder - Instant match
   dateTinderMatch: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7195,7 +7195,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 12. Coffee Meets Bagel — Curated intro
+  // 12. Coffee Meets Bagel - Curated intro
   dateCmbIntro: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7230,7 +7230,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 13. Bumble — Women first, 24h chat
+  // 13. Bumble - Women first, 24h chat
   dateBumbleChat: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7260,7 +7260,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 14. Hinge — Comment to start
+  // 14. Hinge - Comment to start
   dateHingeComment: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7290,7 +7290,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 15. Tinder — Open chat
+  // 15. Tinder - Open chat
   dateTinderChat: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7323,7 +7323,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 16. OkCupid — Compatibility chat
+  // 16. OkCupid - Compatibility chat
   dateOkcChat: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7341,7 +7341,7 @@ Object.assign(screens, {
         </div>
         <div className="flex-1 flex flex-col gap-1.5 overflow-hidden">
           <div className="self-start max-w-[75%] rounded-md bg-foreground/10 px-2 py-1 text-[10px]">Hey, your answer on "long-distance" caught my eye.</div>
-          <div className="self-end max-w-[75%] rounded-md bg-[#FF3A57] text-white px-2 py-1 text-[10px]">Ha — yours too. Coffee this week?</div>
+          <div className="self-end max-w-[75%] rounded-md bg-[#FF3A57] text-white px-2 py-1 text-[10px]">Ha - yours too. Coffee this week?</div>
         </div>
         <div className="flex items-center gap-1.5">
           <div className="flex-1 rounded-md bg-foreground/[0.06] border border-border/60 px-2 h-8 grid items-center text-[10px] text-foreground/55">Message Jordan</div>
@@ -7356,7 +7356,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 17. Bumble — Verify + detect
+  // 17. Bumble - Verify + detect
   dateBumbleSafety: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7396,7 +7396,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 18. Hinge — Report + block
+  // 18. Hinge - Report + block
   dateHingeReport: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7433,7 +7433,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 19. Tinder — Photo verify
+  // 19. Tinder - Photo verify
   dateTinderVerify: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7465,7 +7465,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 20. OkCupid — Privacy controls
+  // 20. OkCupid - Privacy controls
   dateOkcPrivacy: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7491,7 +7491,7 @@ Object.assign(screens, {
             </div>
           ))}
         </div>
-        <div className="rounded-md bg-foreground/[0.04] p-1.5 text-[8.5px] text-foreground/60">Granular controls — choose exactly who sees what.</div>
+        <div className="rounded-md bg-foreground/[0.04] p-1.5 text-[8.5px] text-foreground/60">Granular controls - choose exactly who sees what.</div>
         <div className="flex-1" />
         <CTA>Save changes</CTA>
       </Frame>
@@ -7505,7 +7505,7 @@ Object.assign(screens, {
 });
 
 // ============================================================
-// EDTECH — 20 brand-evocative screens
+// EDTECH - 20 brand-evocative screens
 // ============================================================
 const EduBar = () => (
   <div className="flex items-center justify-between text-[9px] font-mono text-foreground/50 -mt-1">
@@ -7516,7 +7516,7 @@ const EduBar = () => (
 );
 
 Object.assign(screens, {
-  // 1. Duolingo — Goal + first lesson
+  // 1. Duolingo - Goal + first lesson
   eduDuoGoal: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7549,7 +7549,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 2. Coursera — Goal + path
+  // 2. Coursera - Goal + path
   eduCourseraPath: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7591,7 +7591,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 3. Khan — Diagnostic
+  // 3. Khan - Diagnostic
   eduKhanDiagnostic: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7611,7 +7611,7 @@ Object.assign(screens, {
             </div>
           ))}
         </div>
-        <div className="rounded-md bg-foreground/[0.04] p-1.5 text-[8.5px] text-foreground/60">No grade — we'll place you at the right level.</div>
+        <div className="rounded-md bg-foreground/[0.04] p-1.5 text-[8.5px] text-foreground/60">No grade - we'll place you at the right level.</div>
         <div className="flex-1" />
         <CTA>Next question</CTA>
       </Frame>
@@ -7623,7 +7623,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 4. MasterClass — Inspire reel
+  // 4. MasterClass - Inspire reel
   eduMcReel: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7653,7 +7653,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 5. Coursera — Outcome filters
+  // 5. Coursera - Outcome filters
   eduCourseraFilters: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7689,7 +7689,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 6. Udemy — Ratings + sales
+  // 6. Udemy - Ratings + sales
   eduUdemyDeals: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7733,7 +7733,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 7. MasterClass — Star instructors
+  // 7. MasterClass - Star instructors
   eduMcInstructors: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7767,7 +7767,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 8. Khan — Subject tree
+  // 8. Khan - Subject tree
   eduKhanTree: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7796,7 +7796,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 9. Duolingo — Bite-size interactive
+  // 9. Duolingo - Bite-size interactive
   eduDuoLesson: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7835,7 +7835,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 10. Khan — Video + practice
+  // 10. Khan - Video + practice
   eduKhanVideo: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7869,7 +7869,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 11. Coursera — Lecture + quiz
+  // 11. Coursera - Lecture + quiz
   eduCourseraLecture: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7902,7 +7902,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 12. MasterClass — Cinematic video
+  // 12. MasterClass - Cinematic video
   eduMcVideo: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7934,7 +7934,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 13. Duolingo — Streaks + XP
+  // 13. Duolingo - Streaks + XP
   eduDuoStreak: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -7974,7 +7974,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 14. Coursera — Certificates
+  // 14. Coursera - Certificates
   eduCourseraCerts: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8010,7 +8010,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 15. Khan — Mastery bars
+  // 15. Khan - Mastery bars
   eduKhanMastery: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8046,7 +8046,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 16. Udemy — Completion %
+  // 16. Udemy - Completion %
   eduUdemyProgress: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8082,7 +8082,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 17. Duolingo — Streak reminder
+  // 17. Duolingo - Streak reminder
   eduDuoReminder: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8113,7 +8113,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 18. Coursera — Deadlines
+  // 18. Coursera - Deadlines
   eduCourseraDeadlines: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8150,7 +8150,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 19. MasterClass — New classes
+  // 19. MasterClass - New classes
   eduMcNew: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8191,7 +8191,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 20. Udemy — Sales emails / promo
+  // 20. Udemy - Sales emails / promo
   eduUdemySale: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8211,7 +8211,7 @@ Object.assign(screens, {
           {[
             ["Web Dev Bootcamp","$84.99","$9.99"],
             ["Python Bootcamp","$94.99","$11.99"],
-            ["React — The Complete Guide","$84.99","$9.99"],
+            ["React - The Complete Guide","$84.99","$9.99"],
           ].map(([t,old,sale],i)=>(
             <div key={i} className="flex items-center gap-2 p-1.5 rounded-md border border-border/60">
               <Photo seed={i} className="w-10 h-7 rounded shrink-0" />
@@ -8237,7 +8237,7 @@ Object.assign(screens, {
 });
 
 // ============================================================
-// DESIGN TOOLS — 20 brand-evocative screens
+// DESIGN TOOLS - 20 brand-evocative screens
 // ============================================================
 const DesBar = () => (
   <div className="flex items-center justify-between text-[9px] font-mono text-foreground/50 -mt-1">
@@ -8256,7 +8256,7 @@ const TrafficLights = () => (
 );
 
 Object.assign(screens, {
-  // 1. Canva — Template-first
+  // 1. Canva - Template-first
   desCanvaTemplates: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8292,7 +8292,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 2. Figma — Blank + tutorial
+  // 2. Figma - Blank + tutorial
   desFigmaBlank: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8329,7 +8329,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 3. Framer — Site template
+  // 3. Framer - Site template
   desFramerSite: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8367,13 +8367,13 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 4. Sketch — Mac-native start
+  // 4. Sketch - Mac-native start
   desSketchStart: ((_ctx, _p) => ({
     node: (
       <Frame>
         <div className="flex items-center gap-1.5 -mt-1">
           <TrafficLights />
-          <div className="text-[9px] font-mono text-foreground/60 ml-1">Sketch — New Document</div>
+          <div className="text-[9px] font-mono text-foreground/60 ml-1">Sketch - New Document</div>
         </div>
         <div className="flex gap-1 flex-1">
           <div className="w-16 rounded-md bg-foreground/[0.04] border border-border/60 p-1 text-[8.5px] space-y-0.5">
@@ -8386,7 +8386,7 @@ Object.assign(screens, {
           <div className="flex-1 space-y-1">
             <div className="text-[8.5px] uppercase tracking-wider text-foreground/55">Start a new document</div>
             <div className="grid grid-cols-3 gap-1">
-              {[["iPhone 15","393×852"],["MacBook","1440×900"],["A4","595×842"],["iPad","1024×1366"],["Apple Watch","176×216"],["Custom","—"]].map(([n,s],i)=>(
+              {[["iPhone 15","393×852"],["MacBook","1440×900"],["A4","595×842"],["iPad","1024×1366"],["Apple Watch","176×216"],["Custom","-"]].map(([n,s],i)=>(
                 <div key={i} className="rounded-md border border-border/60 p-1 text-center bg-background">
                   <div className="h-7 grid place-items-center text-foreground/40 text-[14px]">▭</div>
                   <div className="text-[8px] font-medium truncate">{n}</div>
@@ -8409,7 +8409,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 5. Canva — Huge library
+  // 5. Canva - Huge library
   desCanvaLibrary: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8437,7 +8437,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 6. Adobe — Stock + assets
+  // 6. Adobe - Stock + assets
   desAdobeStock: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8472,7 +8472,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 7. Framer — Responsive kits
+  // 7. Framer - Responsive kits
   desFramerKits: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8485,9 +8485,9 @@ Object.assign(screens, {
         </div>
         <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
           {[
-            ["Hero — Centered","Mobile · Tablet · Desktop"],
-            ["Pricing — 3 tier","Responsive grid"],
-            ["Nav — Sticky","Auto-collapses"],
+            ["Hero - Centered","Mobile · Tablet · Desktop"],
+            ["Pricing - 3 tier","Responsive grid"],
+            ["Nav - Sticky","Auto-collapses"],
             ["Testimonial carousel","Touch + arrows"],
           ].map(([t,s],i)=>(
             <div key={i} className="p-1.5 rounded-md border border-border/60">
@@ -8515,7 +8515,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 8. Figma — Community files
+  // 8. Figma - Community files
   desFigmaCommunity: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8530,7 +8530,7 @@ Object.assign(screens, {
             ["iOS 17 UI Kit","Apple · 42k 🤍"],
             ["Wireframe Kit v3","Mozilla · 28k 🤍"],
             ["Design System Starter","Vercel · 18k 🤍"],
-            ["Icon Set 8 — Free","Sara K. · 9k 🤍"],
+            ["Icon Set 8 - Free","Sara K. · 9k 🤍"],
           ].map(([t,a],i)=>(
             <div key={i} className="rounded-md overflow-hidden border border-border/60">
               <Photo seed={i} className="aspect-video" />
@@ -8551,7 +8551,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 9. Figma — Precise vector
+  // 9. Figma - Precise vector
   desFigmaCanvas: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8596,7 +8596,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 10. Sketch — Native precision
+  // 10. Sketch - Native precision
   desSketchCanvas: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8642,7 +8642,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 11. Canva — Drag simple
+  // 11. Canva - Drag simple
   desCanvaDrag: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8672,7 +8672,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 12. Adobe — Deep raster
+  // 12. Adobe - Deep raster
   desAdobeRaster: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8717,7 +8717,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 13. Figma — Multiplayer live
+  // 13. Figma - Multiplayer live
   desFigmaMultiplayer: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8752,7 +8752,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 14. Canva — Share + comment
+  // 14. Canva - Share + comment
   desCanvaShare: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8785,7 +8785,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 15. Framer — Handoff to dev
+  // 15. Framer - Handoff to dev
   desFramerHandoff: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8822,7 +8822,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 16. Adobe — Cloud sync
+  // 16. Adobe - Cloud sync
   desAdobeCloud: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8836,7 +8836,7 @@ Object.assign(screens, {
           {[
             ["Brand Library","48 assets · synced 2m ago","☁"],
             ["Photos folder","312 files · syncing 64%","↻"],
-            ["Type — Adobe Fonts","12 activated","✓"],
+            ["Type - Adobe Fonts","12 activated","✓"],
             ["Mobile creations","8 files from iPad","✓"],
           ].map(([t,s,ic],i)=>(
             <div key={i} className="flex items-center gap-2 p-1.5">
@@ -8861,7 +8861,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 17. Framer — Publish live site
+  // 17. Framer - Publish live site
   desFramerPublish: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8899,7 +8899,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 18. Figma — Dev Mode specs
+  // 18. Figma - Dev Mode specs
   desFigmaDevMode: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8937,7 +8937,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 19. Sketch — Inspector + export
+  // 19. Sketch - Inspector + export
   desSketchExport: ((_ctx, _p) => ({
     node: (
       <Frame>
@@ -8975,7 +8975,7 @@ Object.assign(screens, {
     ],
   })) as Builder,
 
-  // 20. Adobe — Asset export
+  // 20. Adobe - Asset export
   desAdobeExport: ((_ctx, _p) => ({
     node: (
       <Frame>
