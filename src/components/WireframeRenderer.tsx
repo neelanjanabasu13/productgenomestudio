@@ -1285,6 +1285,754 @@ Object.assign(screens, {
   })) as Builder,
 });
 
+// ============= Social Media specialized screens =============
+// Each builder renders only neutral, brand-evocative UI. Never echo
+// p.company / p.metric / p.pattern — those leak strings like "TikTok · Onboarding".
+const PhoneBar = () => (
+  <div className="flex items-center justify-between text-[9px] font-mono text-foreground/50 -mt-1">
+    <span>9:41</span>
+    <span className="tracking-[0.18em]">●●●</span>
+    <span>100%</span>
+  </div>
+);
+
+const SAMPLE_USERS = [
+  { h: "@maya.makes",     n: "Maya Chen",       sub: "Designer · 12k followers" },
+  { h: "@devpatel",       n: "Dev Patel",       sub: "Engineer · 8.2k followers" },
+  { h: "@studio.ks",      n: "Studio KS",       sub: "Creative studio · 24k" },
+  { h: "@lina.codes",     n: "Lina Park",       sub: "Open source · 4.1k" },
+  { h: "@theo",           n: "Theo Whitlock",   sub: "Founder · 18k" },
+  { h: "@noor.design",    n: "Noor Hassan",     sub: "Brand designer · 9k" },
+];
+
+Object.assign(screens, {
+  socialFypFeed: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="flex-1 flex gap-2">
+          <div className="flex-1 rounded-xl bg-gradient-to-b from-foreground/20 to-foreground/50 relative overflow-hidden">
+            <div className="absolute top-2 left-2 right-2 flex items-center gap-2">
+              <div className="w-6 h-6 rounded-full bg-background/80 shrink-0" />
+              <div className="text-[10px] font-medium text-background truncate">@maya.makes</div>
+              <span className="ml-auto text-[9px] font-mono text-background/80 px-1.5 py-0.5 rounded-full bg-background/20">Follow</span>
+            </div>
+            <div className="absolute bottom-3 left-3 right-12">
+              <div className="text-[11px] font-medium text-background leading-snug line-clamp-2">three minutes that change how you think about color theory</div>
+              <div className="text-[10px] text-background/80 mt-0.5 truncate">♪ original sound — maya.makes</div>
+            </div>
+          </div>
+          <div className="flex flex-col gap-3 items-center justify-end pb-3">
+            {[["♥", "24.1k"], ["💬", "812"], ["↗", "Share"], ["⋯", ""]].map(([i, n], idx) => (
+              <div key={idx} className="flex flex-col items-center">
+                <div className="w-9 h-9 rounded-full bg-foreground/15 grid place-items-center text-sm">{i}</div>
+                {n && <div className="text-[9px] font-mono text-foreground/70 mt-0.5 max-w-[44px] truncate">{n}</div>}
+              </div>
+            ))}
+          </div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "40%", y: "50%", label: "Full-bleed video" },
+      { n: 2, x: "85%", y: "40%", label: "Side actions" },
+      { n: 3, x: "40%", y: "85%", label: "Caption + sound" },
+    ],
+  })) as Builder,
+
+  socialFollowSuggest: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="font-display text-[16px] leading-tight">Suggested for you</div>
+        <div className="text-[10px] text-foreground/55 -mt-1">Based on accounts you follow</div>
+        <div className="space-y-2 flex-1">
+          {SAMPLE_USERS.slice(0, 5).map((u, i) => (
+            <div key={i} className="flex items-center gap-2">
+              <Photo seed={i} className="w-9 h-9 rounded-full shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="text-[11px] font-medium truncate">{u.h}</div>
+                <div className="text-[9px] text-foreground/55 truncate">{u.sub}</div>
+              </div>
+              <button className={`text-[10px] font-medium px-3 py-1 rounded-md shrink-0 ${i === 1 ? "border border-border text-foreground/70" : "bg-primary text-primary-foreground"}`}>
+                {i === 1 ? "Following" : "Follow"}
+              </button>
+            </div>
+          ))}
+        </div>
+        <div className="text-[10px] text-foreground/55 text-center">See all suggestions</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "30%", y: "16%", label: "Suggestion list" },
+      { n: 2, x: "82%", y: "40%", label: "Follow CTA" },
+      { n: 3, x: "82%", y: "55%", label: "Following state" },
+    ],
+  })) as Builder,
+
+  socialBuildProfile: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="font-display text-[15px] leading-tight">Build your profile</div>
+        <div className="flex items-center gap-1">
+          {[0,1,2,3].map(i => <div key={i} className={`h-1 flex-1 rounded-full ${i <= 1 ? "bg-primary" : "bg-foreground/15"}`} />)}
+        </div>
+        <div className="text-[9px] font-mono text-foreground/55 uppercase tracking-wider">Step 2 of 4 · Headline</div>
+        <div className="flex items-center gap-2 p-2 rounded-lg border border-border/60">
+          <Photo seed={2} className="w-12 h-12 rounded-full shrink-0" />
+          <div className="flex-1 min-w-0">
+            <div className="text-[11px] font-medium truncate">Jordan Reyes</div>
+            <div className="text-[9px] text-foreground/55 truncate">Add a photo · greater reach</div>
+          </div>
+          <span className="text-[10px] font-mono text-primary shrink-0">Upload</span>
+        </div>
+        <div className="space-y-1.5 flex-1">
+          {[
+            { l: "Headline", v: "Product designer building tools for teams", req: true },
+            { l: "Current position", v: "Senior Designer · Linework", req: true },
+            { l: "Industry", v: "Software · Design", req: false },
+            { l: "Location", v: "Lisbon, Portugal", req: false },
+          ].map((f, i) => (
+            <div key={i} className="space-y-0.5">
+              <div className="flex items-center justify-between">
+                <span className="text-[9px] font-mono uppercase tracking-wider text-foreground/55">{f.l}</span>
+                {f.req && <span className="text-[8px] font-mono text-primary">REQUIRED</span>}
+              </div>
+              <div className="h-8 rounded-md border border-border bg-background/40 flex items-center px-2 text-[10px] truncate">{f.v}</div>
+            </div>
+          ))}
+        </div>
+        <CTA>Save and continue</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "16%", label: "Profile stepper" },
+      { n: 2, x: "30%", y: "30%", label: "Photo upload" },
+      { n: 3, x: "50%", y: "65%", label: "Structured fields" },
+    ],
+  })) as Builder,
+
+  socialPickCommunities: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="font-display text-[15px] leading-tight">Find your communities</div>
+        <div className="text-[10px] text-foreground/55 -mt-1">Pick at least 3 to personalize your feed</div>
+        <div className="grid grid-cols-2 gap-2 flex-1">
+          {[
+            { n: "r/webdev", m: "1.4M members", j: true,  c: "bg-primary/20 text-primary" },
+            { n: "r/design", m: "2.1M members", j: true,  c: "bg-amber-500/20 text-amber-500" },
+            { n: "r/productivity", m: "1.0M",   j: false, c: "bg-emerald-500/20 text-emerald-500" },
+            { n: "r/uxdesign", m: "640k",       j: true,  c: "bg-sky-500/20 text-sky-500" },
+            { n: "r/typography", m: "212k",     j: false, c: "bg-rose-500/20 text-rose-500" },
+            { n: "r/SaaS", m: "180k",           j: false, c: "bg-indigo-500/20 text-indigo-500" },
+          ].map((cm, i) => (
+            <div key={i} className={`p-2 rounded-lg border ${cm.j ? "border-primary/50 bg-primary/5" : "border-border/60"}`}>
+              <div className="flex items-center gap-1.5">
+                <div className={`w-6 h-6 rounded-full grid place-items-center text-[10px] font-mono shrink-0 ${cm.c}`}>{cm.n[2]?.toUpperCase()}</div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-[10px] font-medium truncate">{cm.n}</div>
+                  <div className="text-[8px] font-mono text-foreground/55 truncate">{cm.m}</div>
+                </div>
+              </div>
+              <button className={`mt-1.5 w-full text-[9px] font-medium py-1 rounded ${cm.j ? "bg-primary text-primary-foreground" : "border border-border text-foreground/70"}`}>
+                {cm.j ? "✓ Joined" : "Join"}
+              </button>
+            </div>
+          ))}
+        </div>
+        <div className="text-[9px] font-mono text-foreground/55 text-center">3 of 3 selected</div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "16%", label: "Community picker" },
+      { n: 2, x: "30%", y: "45%", label: "Joined card" },
+      { n: 3, x: "70%", y: "45%", label: "Join CTA" },
+    ],
+  })) as Builder,
+
+  socialGridStories: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="flex gap-2 overflow-hidden -mt-1">
+          {[
+            { n: "Your story", new: false, you: true },
+            { n: "maya", new: true },
+            { n: "dev", new: true },
+            { n: "studio", new: false },
+            { n: "lina", new: true },
+            { n: "theo", new: false },
+          ].map((s, i) => (
+            <div key={i} className="flex flex-col items-center gap-0.5 shrink-0">
+              <div className={`w-12 h-12 rounded-full p-[2px] ${s.new ? "bg-gradient-to-tr from-primary via-rose-500 to-amber-500" : "bg-foreground/15"}`}>
+                <div className="w-full h-full rounded-full bg-card grid place-items-center text-[10px] relative">
+                  <Photo seed={i} className="w-full h-full rounded-full" />
+                  {s.you && <span className="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-primary text-primary-foreground grid place-items-center text-[9px] border-2 border-card">+</span>}
+                </div>
+              </div>
+              <div className="text-[8px] truncate max-w-[48px]">{s.n}</div>
+            </div>
+          ))}
+        </div>
+        <div className="h-px bg-border/60 my-0.5" />
+        <div className="grid grid-cols-3 gap-0.5 flex-1">
+          {[0,1,2,3,4,5,6,7,8].map(i => (
+            <Photo key={i} seed={i} className="aspect-square relative">
+              {i === 2 && <span className="absolute top-1 right-1 text-[9px] text-background">▣</span>}
+              {i === 5 && <span className="absolute top-1 right-1 text-[9px] text-background">▶</span>}
+            </Photo>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "30%", y: "12%", label: "Stories rail" },
+      { n: 2, x: "10%", y: "12%", label: "Your story +" },
+      { n: 3, x: "50%", y: "60%", label: "Permanent grid" },
+    ],
+  })) as Builder,
+
+  socialFyToggle: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="grid grid-cols-3 border-b border-border/60 -mt-1">
+          {["For you", "Following", "Latest"].map((t, i) => (
+            <div key={i} className={`text-center text-[11px] font-medium py-1.5 ${i === 0 ? "text-foreground border-b-2 border-primary" : "text-foreground/55"}`}>{t}</div>
+          ))}
+        </div>
+        <div className="space-y-2 flex-1 overflow-hidden">
+          {[
+            { u: "Maya Chen", h: "@maya.makes", t: "rebuilt my whole portfolio in a weekend. 12 components, zero plugins. ask me anything.", k: "12m" },
+            { u: "Dev Patel", h: "@devpatel",   t: "hot take: tabs vs spaces is decided. the editor wins.", k: "1h" },
+            { u: "Theo W.",  h: "@theo",        t: "building in public month 8: $4.2k MRR, 312 paying customers, one very tired founder.", k: "3h" },
+          ].map((p, i) => (
+            <div key={i} className="flex gap-2 pb-2 border-b border-border/40">
+              <Photo seed={i} className="w-8 h-8 rounded-full shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-1 text-[10px]">
+                  <span className="font-medium truncate">{p.u}</span>
+                  <span className="text-foreground/55 truncate">{p.h} · {p.k}</span>
+                </div>
+                <div className="text-[10px] leading-snug line-clamp-2">{p.t}</div>
+                <div className="flex gap-4 mt-1 text-[9px] font-mono text-foreground/55">
+                  <span>💬 24</span><span>↻ 8</span><span>♥ 312</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "20%", y: "10%", label: "For you tab" },
+      { n: 2, x: "78%", y: "10%", label: "Latest tab" },
+      { n: 3, x: "50%", y: "55%", label: "Mixed feed" },
+    ],
+  })) as Builder,
+
+  socialRankedThreads: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="font-display text-[14px] leading-tight">r/popular</div>
+        <div className="flex gap-1 -mt-1 text-[10px] font-mono text-foreground/55">
+          <span className="text-primary">▲ Hot</span><span>New</span><span>Top</span><span>Rising</span>
+        </div>
+        <div className="flex-1 space-y-1">
+          {[
+            { rank: 1, up: "24.8k", c: "1.2k", t: "What's a small UI detail that immediately tells you the product was made with care?", sub: "r/design" },
+            { rank: 2, up: "18.2k", c: "640",  t: "After 3 years remote, I finally figured out how to keep deep work going past lunch", sub: "r/productivity" },
+            { rank: 3, up: "9.1k",  c: "412",  t: "Show me one keyboard shortcut you can't live without", sub: "r/webdev" },
+            { rank: 4, up: "4.4k",  c: "212",  t: "Hot take: most dashboards would be better as a single sentence", sub: "r/SaaS" },
+          ].map((th, i) => (
+            <div key={i} className="flex gap-1.5 p-1.5 rounded border border-border/50">
+              <div className="flex flex-col items-center w-6 shrink-0">
+                <span className="text-[9px] text-primary">▲</span>
+                <span className="text-[9px] font-mono font-medium">{th.up}</span>
+                <span className="text-[9px] text-foreground/45">▼</span>
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[8px] font-mono text-foreground/55 truncate">#{th.rank} · {th.sub} · 6h</div>
+                <div className="text-[10px] leading-tight line-clamp-2">{th.t}</div>
+                <div className="text-[9px] font-mono text-foreground/55 mt-0.5">💬 {th.c} comments</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "12%", y: "30%", label: "Vote arrows" },
+      { n: 2, x: "20%", y: "40%", label: "Rank position" },
+      { n: 3, x: "60%", y: "55%", label: "Title + community" },
+    ],
+  })) as Builder,
+
+  socialCameraFilters: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="flex-1 rounded-xl bg-gradient-to-br from-rose-500/30 via-amber-500/20 to-primary/30 border border-border/60 relative overflow-hidden">
+          <div className="absolute top-2 left-2 right-2 flex items-center justify-between text-background/90 text-[10px] font-mono">
+            <span>✕</span><span>1:1 · 4:5 · 9:16</span><span>⟲</span>
+          </div>
+          <div className="absolute inset-0 grid place-items-center">
+            <div className="w-14 h-14 rounded-full border-4 border-background/80 grid place-items-center text-background/80 text-xl">◉</div>
+          </div>
+        </div>
+        <div className="text-[9px] font-mono text-foreground/55 uppercase tracking-wider">Filters</div>
+        <div className="flex gap-1.5 overflow-hidden">
+          {["Normal","Clarendon","Juno","Lark","Reyes","Slumber"].map((f, i) => (
+            <div key={i} className="flex flex-col items-center shrink-0">
+              <Photo seed={i} className={`w-10 h-10 rounded-md ${i === 1 ? "ring-2 ring-primary" : ""}`} />
+              <div className={`text-[8px] font-mono mt-0.5 truncate max-w-[44px] ${i === 1 ? "text-primary" : "text-foreground/55"}`}>{f}</div>
+            </div>
+          ))}
+        </div>
+        <CTA>Create</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "35%", label: "Viewfinder" },
+      { n: 2, x: "50%", y: "75%", label: "Filter strip" },
+      { n: 3, x: "50%", y: "92%", label: "Create" },
+    ],
+  })) as Builder,
+
+  socialEffectsSounds: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="flex-1 rounded-xl bg-gradient-to-b from-foreground/30 to-foreground/60 relative overflow-hidden">
+          <div className="absolute top-2 left-2 right-2 flex justify-between text-background/90 text-[10px] font-mono">
+            <span>✕</span><span>60s</span><span>Flip</span>
+          </div>
+          <div className="absolute right-2 top-12 flex flex-col gap-2 items-center text-background/90 text-[10px]">
+            {["✨","⚡","🎭","⏱","🖼"].map((i, k) => (
+              <div key={k} className="w-8 h-8 rounded-full bg-background/15 grid place-items-center text-[12px]">{i}</div>
+            ))}
+          </div>
+          <div className="absolute bottom-14 left-2 right-12 flex items-center gap-1.5 px-2 py-1 rounded-full bg-background/20 backdrop-blur">
+            <span className="text-[12px]">♪</span>
+            <div className="flex-1 min-w-0">
+              <div className="text-[9px] font-mono text-background truncate">trending sound · maya.makes</div>
+              <div className="h-1 bg-background/30 rounded-full mt-0.5 overflow-hidden"><div className="h-full w-1/3 bg-background/80" /></div>
+            </div>
+            <span className="text-[9px] font-mono text-background/90 shrink-0">2.4M</span>
+          </div>
+          <div className="absolute bottom-2 inset-x-0 grid place-items-center">
+            <div className="w-14 h-14 rounded-full bg-rose-500 border-4 border-background/80" />
+          </div>
+        </div>
+        <div className="grid grid-cols-4 gap-1 text-[9px] font-mono text-foreground/65 text-center">
+          <div>Effects</div><div className="text-primary">Sounds</div><div>Speed</div><div>Timer</div>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "85%", y: "35%", label: "Effects rail" },
+      { n: 2, x: "40%", y: "70%", label: "Trending sound" },
+      { n: 3, x: "50%", y: "85%", label: "Record" },
+    ],
+  })) as Builder,
+
+  socialQuickPost: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="flex items-center justify-between -mt-1">
+          <span className="text-[11px] text-foreground/65">Cancel</span>
+          <span className="text-[11px] font-medium">Drafts</span>
+        </div>
+        <div className="flex gap-2 flex-1">
+          <Photo seed={2} className="w-9 h-9 rounded-full shrink-0" />
+          <div className="flex-1 min-w-0 flex flex-col">
+            <div className="text-[12px] leading-snug text-foreground/90">What's happening?</div>
+            <div className="text-[10px] text-primary mt-1">@</div>
+            <div className="mt-auto flex items-center justify-between border-t border-border/40 pt-1.5">
+              <div className="flex gap-3 text-[12px] text-primary">📷 📊 🗓 📍</div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-[9px] font-mono text-foreground/55">218</span>
+                <div className="w-3.5 h-3.5 rounded-full border-2 border-primary" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <button className="self-end text-[11px] font-medium px-3 py-1 rounded-full bg-primary text-primary-foreground">Post</button>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Plain text composer" },
+      { n: 2, x: "85%", y: "75%", label: "Char counter" },
+      { n: 3, x: "85%", y: "92%", label: "Post" },
+    ],
+  })) as Builder,
+
+  socialMarkdown: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="text-[10px] font-mono text-foreground/55">r/webdev · Post</div>
+        <input className="w-full bg-background/40 border border-border rounded-md px-2 py-1.5 text-[12px] font-medium" defaultValue="What's your one-week productivity hack?" readOnly />
+        <div className="flex gap-1 text-[10px] font-mono text-foreground/65 bg-foreground/[0.04] rounded-md px-1.5 py-1 overflow-hidden">
+          <span className="font-bold">B</span><span className="italic">I</span><span className="underline">U</span>
+          <span>H1</span><span>H2</span><span>“ ”</span><span>{"</>"}</span><span>•—</span><span>🔗</span>
+        </div>
+        <div className="flex-1 rounded-md border border-border/60 bg-background/40 p-2 text-[10px] leading-snug font-mono space-y-1 overflow-hidden">
+          <div className="text-[11px] font-bold font-sans">## What worked for me</div>
+          <div>I started **batching** all meetings into Tue/Thu so</div>
+          <div>Mon/Wed/Fri stay open for deep work.</div>
+          <div className="pl-2 text-foreground/65">- 25-min Pomodoro</div>
+          <div className="pl-2 text-foreground/65">- One tab rule</div>
+          <div className="pl-2 text-foreground/65">- `git commit` every hour</div>
+          <div className="text-foreground/55">&gt; "shipping beats polishing"</div>
+          <div className="text-primary underline">[full writeup](my.blog/wk)</div>
+        </div>
+        <div className="flex items-center justify-between text-[9px] font-mono text-foreground/55">
+          <span>Markdown · Preview</span><span className="text-primary">Post</span>
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "26%", label: "Markdown toolbar" },
+      { n: 2, x: "50%", y: "55%", label: "Structured body" },
+      { n: 3, x: "80%", y: "92%", label: "Submit" },
+    ],
+  })) as Builder,
+
+  socialReplyQuote: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="flex gap-2 pb-2 border-b border-border/60">
+          <Photo seed={2} className="w-9 h-9 rounded-full shrink-0" />
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-1 text-[10px]">
+              <span className="font-medium truncate">Maya Chen</span>
+              <span className="text-primary">✔</span>
+              <span className="text-foreground/55 truncate">@maya.makes</span>
+            </div>
+            <div className="text-[11px] leading-snug mt-0.5">unpopular opinion: 80% of dashboards would be a better email.</div>
+            <div className="text-[9px] font-mono text-foreground/55 mt-1">2:14 PM · Jun 17, 2026</div>
+          </div>
+        </div>
+        <div className="flex justify-around text-[12px] text-foreground/65 py-1 border-b border-border/60">
+          <div className="flex items-center gap-1"><span>💬</span><span className="text-[9px] font-mono">124</span></div>
+          <div className="flex items-center gap-1 text-emerald-500"><span>↻</span><span className="text-[9px] font-mono">412</span></div>
+          <div className="flex items-center gap-1 text-rose-500"><span>♥</span><span className="text-[9px] font-mono">2.4k</span></div>
+          <div className="flex items-center gap-1"><span>📊</span><span className="text-[9px] font-mono">84k</span></div>
+          <div className="flex items-center gap-1"><span>↗</span></div>
+        </div>
+        <div className="space-y-1.5 flex-1 overflow-hidden">
+          {[
+            { u: "Dev Patel",   h: "@devpatel",  t: "true and the email could be one line",            v: "reply" },
+            { u: "Theo W.",     h: "@theo",      t: "quoting this for my next standup",                v: "quote" },
+            { u: "Lina Park",   h: "@lina.codes",t: "reposted",                                        v: "repost" },
+          ].map((r, i) => (
+            <div key={i} className="flex gap-2">
+              <Photo seed={i} className="w-7 h-7 rounded-full shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-1 text-[9px]">
+                  <span className="font-medium truncate">{r.u}</span>
+                  <span className="text-foreground/55 truncate">{r.h}</span>
+                  {r.v === "repost" && <span className="text-emerald-500 text-[8px] font-mono">↻ reposted</span>}
+                  {r.v === "quote"  && <span className="text-foreground/55 text-[8px] font-mono">❝ quoted</span>}
+                </div>
+                <div className="text-[10px] leading-snug truncate">{r.t}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "30%", y: "40%", label: "Action row" },
+      { n: 2, x: "55%", y: "40%", label: "Repost icon" },
+      { n: 3, x: "60%", y: "70%", label: "Quote thread" },
+    ],
+  })) as Builder,
+
+  socialUpvote: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="text-[10px] font-mono text-foreground/55">r/productivity · 6h · u/maya</div>
+        <div className="font-display text-[12px] leading-tight">After 3 years remote, here's what actually works</div>
+        <div className="flex-1 space-y-1 overflow-hidden">
+          {[
+            { u: "dev_patel",   v: 412,  t: "the 'one tab rule' changed my brain. felt impossible day 1, automatic by day 4." },
+            { u: "theo.w",      v: 218,  t: "+1 on batching meetings. moved every sync to Tue/Thu and shipped 2 features in a week." },
+            { u: "lina.codes",  v: 84,   t: "what about deep work after lunch? always crash around 2pm." },
+            { u: "noor.h",      v: -12,  t: "this only works if you don't have kids tbh" },
+          ].map((c, i) => (
+            <div key={i} className="flex gap-1.5 py-1 border-b border-border/40">
+              <div className="flex flex-col items-center w-5 shrink-0">
+                <span className={`text-[10px] leading-none ${i === 0 ? "text-primary" : "text-foreground/45"}`}>▲</span>
+                <span className={`text-[9px] font-mono leading-tight ${c.v < 0 ? "text-rose-500" : i === 0 ? "text-primary" : "text-foreground/65"}`}>{c.v}</span>
+                <span className={`text-[10px] leading-none ${c.v < 0 ? "text-rose-500" : "text-foreground/45"}`}>▼</span>
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[8px] font-mono text-foreground/55 truncate">u/{c.u} · {i + 1}h</div>
+                <div className="text-[10px] leading-snug line-clamp-2">{c.t}</div>
+                <div className="text-[8px] font-mono text-foreground/55 mt-0.5">Reply · Share · Award</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "8%", y: "40%", label: "Upvote arrow" },
+      { n: 2, x: "8%", y: "60%", label: "Score column" },
+      { n: 3, x: "60%", y: "60%", label: "Threaded comment" },
+    ],
+  })) as Builder,
+
+  socialLikesDms: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="flex items-center justify-between -mt-1">
+          <div className="font-display text-[15px]">Activity</div>
+          <span className="text-[16px] text-foreground/80">✈</span>
+        </div>
+        <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55">Today</div>
+        <div className="space-y-1.5">
+          {[
+            { u: "@devpatel",   a: "liked your photo",                   k: "♥", c: "text-rose-500", new: true,  thumb: true },
+            { u: "@maya.makes", a: "started following you",              k: "+", c: "text-primary",  new: true,  btn: "Follow back" },
+            { u: "@theo",      a: "and 12 others liked your reel",       k: "♥", c: "text-rose-500", new: false, thumb: true },
+          ].map((n, i) => (
+            <div key={i} className="flex items-center gap-2">
+              <div className="relative shrink-0">
+                <Photo seed={i} className="w-8 h-8 rounded-full" />
+                <span className={`absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-background grid place-items-center text-[10px] ${n.c}`}>{n.k}</span>
+              </div>
+              <div className="flex-1 min-w-0 text-[10px] leading-snug">
+                <span className="font-medium">{n.u}</span> <span className="text-foreground/70">{n.a}</span>
+              </div>
+              {n.thumb && <Photo seed={i + 2} className="w-7 h-7 rounded shrink-0" />}
+              {n.btn   && <button className="text-[9px] font-medium px-2 py-0.5 rounded bg-primary text-primary-foreground shrink-0">{n.btn}</button>}
+            </div>
+          ))}
+        </div>
+        <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 mt-1">Messages</div>
+        <div className="space-y-1.5 flex-1">
+          {[
+            { u: "Maya Chen",  m: "sent a reel",            t: "now",  unread: true  },
+            { u: "Studio KS",  m: "you: thanks!",           t: "2h",   unread: false },
+            { u: "Dev Patel",  m: "react to ♥",             t: "1d",   unread: false },
+          ].map((m, i) => (
+            <div key={i} className="flex items-center gap-2">
+              <Photo seed={i + 1} className="w-8 h-8 rounded-full shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="text-[10px] font-medium truncate">{m.u}</div>
+                <div className="text-[9px] text-foreground/55 truncate">{m.m} · {m.t}</div>
+              </div>
+              {m.unread && <span className="w-2 h-2 rounded-full bg-primary shrink-0" />}
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "78%", y: "10%", label: "DM paperplane" },
+      { n: 2, x: "30%", y: "30%", label: "Like notif" },
+      { n: 3, x: "30%", y: "75%", label: "DM thread row" },
+    ],
+  })) as Builder,
+
+  socialDuet: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="text-[10px] font-mono text-foreground/55 -mt-1">Duet with @maya.makes</div>
+        <div className="flex-1 grid grid-cols-2 gap-1 rounded-xl overflow-hidden border border-border/60">
+          <div className="bg-gradient-to-b from-primary/30 to-foreground/40 relative">
+            <div className="absolute top-1 left-1 text-[8px] font-mono text-background/90 bg-background/20 px-1 rounded">@maya.makes</div>
+            <div className="absolute inset-0 grid place-items-center text-background/80 text-2xl">▶</div>
+          </div>
+          <div className="bg-gradient-to-b from-rose-500/30 to-foreground/40 relative">
+            <div className="absolute top-1 left-1 text-[8px] font-mono text-background/90 bg-background/20 px-1 rounded">You</div>
+            <div className="absolute inset-0 grid place-items-center text-background/80 text-xl">◉</div>
+          </div>
+        </div>
+        <div className="flex gap-1.5 text-[9px] font-mono text-foreground/65">
+          {[
+            { l: "Duet",   on: true  },
+            { l: "Stitch", on: false },
+            { l: "React",  on: false },
+            { l: "Reply",  on: false },
+          ].map((m, i) => (
+            <div key={i} className={`flex-1 text-center py-1 rounded ${m.on ? "bg-primary text-primary-foreground" : "border border-border/60"}`}>{m.l}</div>
+          ))}
+        </div>
+        <div className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-foreground/[0.06] text-[9px]">
+          <span>♪</span><span className="flex-1 truncate">use original sound · maya.makes</span><span className="text-primary">▼</span>
+        </div>
+        <CTA>Record duet</CTA>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "30%", y: "40%", label: "Original video" },
+      { n: 2, x: "70%", y: "40%", label: "Your side" },
+      { n: 3, x: "50%", y: "75%", label: "Mode toggle" },
+    ],
+  })) as Builder,
+
+  socialResume: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="h-10 rounded-t-lg bg-gradient-to-r from-primary/30 to-foreground/10 -mt-1" />
+        <div className="flex items-end gap-2 -mt-6 px-1">
+          <Photo seed={2} className="w-14 h-14 rounded-full border-4 border-card shrink-0" />
+          <div className="flex-1 min-w-0 pb-1">
+            <div className="text-[12px] font-medium truncate">Jordan Reyes</div>
+            <div className="text-[9px] text-foreground/55 truncate">She/her · 1st</div>
+          </div>
+          <button className="text-[9px] font-medium px-2 py-1 rounded-full border border-primary text-primary shrink-0">+ Connect</button>
+        </div>
+        <div className="text-[10px] leading-snug">Senior Product Designer · ex-Linework, ex-Squarefoot</div>
+        <div className="text-[9px] text-foreground/55">Lisbon, Portugal · 4,218 followers · 500+ connections</div>
+        <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 mt-1">About</div>
+        <div className="text-[10px] leading-snug text-foreground/80 line-clamp-2">Design systems and onboarding for collaborative tools. Recently shipped a redesign that lifted activation by 38%.</div>
+        <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 mt-1">Experience</div>
+        <div className="flex items-center gap-2">
+          <div className="w-7 h-7 rounded bg-primary/20 grid place-items-center text-[10px] font-mono shrink-0">L</div>
+          <div className="flex-1 min-w-0">
+            <div className="text-[10px] font-medium truncate">Senior Designer · Linework</div>
+            <div className="text-[9px] text-foreground/55 truncate">2023 — Present · 2 yr 3 mo</div>
+          </div>
+        </div>
+        <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 mt-1">Skills</div>
+        <div className="flex gap-1 flex-wrap">
+          {["Design systems","Onboarding","Prototyping","Figma","Research"].map((s, i) => (
+            <span key={i} className="text-[9px] font-mono px-1.5 py-0.5 rounded-full border border-border/60 bg-foreground/[0.04] truncate">{s}</span>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "16%", label: "Cover + headline" },
+      { n: 2, x: "50%", y: "45%", label: "Structured about" },
+      { n: 3, x: "50%", y: "80%", label: "Skills row" },
+    ],
+  })) as Builder,
+
+  socialKarma: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="flex items-center gap-2">
+          <div className="w-12 h-12 rounded-full bg-amber-500/20 grid place-items-center text-[20px] shrink-0">🦊</div>
+          <div className="flex-1 min-w-0">
+            <div className="text-[12px] font-medium truncate">u/silent_pinetree</div>
+            <div className="text-[9px] text-foreground/55 truncate">Redditor for 4 yr · she/they</div>
+          </div>
+        </div>
+        <div className="grid grid-cols-3 gap-2">
+          {[
+            { k: "Post karma",    v: "12,481" },
+            { k: "Comment karma", v: "48,210" },
+            { k: "Gold",          v: "14" },
+          ].map((m, i) => (
+            <div key={i} className="p-2 rounded-lg border border-border/60 text-center">
+              <div className="text-[9px] font-mono uppercase text-foreground/55 truncate">{m.k}</div>
+              <div className="font-display text-[16px] leading-none mt-0.5 text-primary">{m.v}</div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55">Trophies</div>
+        <div className="grid grid-cols-4 gap-1">
+          {[
+            { i: "🏆", l: "4-year club" },
+            { i: "🥇", l: "Gilded × 14" },
+            { i: "💬", l: "Top commenter" },
+            { i: "🔥", l: "Hot post" },
+          ].map((b, i) => (
+            <div key={i} className="p-1.5 rounded-lg border border-border/60 text-center">
+              <div className="text-[16px] leading-none">{b.i}</div>
+              <div className="text-[8px] font-mono mt-0.5 text-foreground/65 truncate">{b.l}</div>
+            </div>
+          ))}
+        </div>
+        <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55">Recent karma</div>
+        <div className="space-y-1 flex-1">
+          {[
+            { v: "+412", t: "r/design · UI detail thread" },
+            { v: "+218", t: "r/productivity · batching reply" },
+            { v: "−12",  t: "r/webdev · spicy take",  bad: true },
+          ].map((r, i) => (
+            <div key={i} className="flex items-center gap-2 text-[10px] py-1 border-b border-border/40">
+              <span className={`font-mono text-[10px] w-8 shrink-0 ${r.bad ? "text-rose-500" : "text-primary"}`}>{r.v}</span>
+              <span className="flex-1 truncate">{r.t}</span>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "50%", y: "30%", label: "Karma totals" },
+      { n: 2, x: "50%", y: "55%", label: "Trophy case" },
+      { n: 3, x: "30%", y: "80%", label: "Recent gain" },
+    ],
+  })) as Builder,
+
+  socialVerified: ((_ctx, _p) => ({
+    node: (
+      <Frame>
+        <PhoneBar />
+        <div className="h-8 rounded-t-lg bg-gradient-to-r from-sky-500/30 to-foreground/10 -mt-1" />
+        <div className="flex items-end justify-between -mt-5 px-1">
+          <Photo seed={2} className="w-14 h-14 rounded-full border-4 border-card" />
+          <button className="text-[10px] font-medium px-3 py-1 rounded-full bg-foreground text-background">Follow</button>
+        </div>
+        <div>
+          <div className="flex items-center gap-1">
+            <span className="text-[13px] font-medium">Maya Chen</span>
+            <span className="w-3.5 h-3.5 rounded-full bg-sky-500 text-background grid place-items-center text-[8px] shrink-0">✓</span>
+          </div>
+          <div className="text-[10px] text-foreground/55">@maya.makes</div>
+        </div>
+        <div className="text-[10px] leading-snug">Designer building tools for teams. Words sometimes useful, vibes always.</div>
+        <div className="flex gap-3 text-[9px] font-mono text-foreground/55">
+          <span>📍 Lisbon</span><span>🔗 maya.dev</span><span>Joined 2019</span>
+        </div>
+        <div className="flex gap-3 text-[10px]">
+          <span><b>248</b> <span className="text-foreground/55">Following</span></span>
+          <span><b>12.4k</b> <span className="text-foreground/55">Followers</span></span>
+        </div>
+        <div className="text-[9px] font-mono uppercase tracking-wider text-foreground/55 mt-1">Verified mentions</div>
+        <div className="space-y-1 flex-1">
+          {[
+            { u: "Dev Patel",   h: "@devpatel",   v: true,  t: "follow @maya.makes she ships" },
+            { u: "Theo W.",     h: "@theo",       v: true,  t: "@maya.makes nailed the brief" },
+            { u: "noor h.",     h: "@noor.design",v: false, t: "@maya.makes 👏👏" },
+          ].map((m, i) => (
+            <div key={i} className="flex items-center gap-2 text-[10px] py-1 border-b border-border/40">
+              <div className="flex items-center gap-1 shrink-0">
+                <span className="font-medium truncate max-w-[60px]">{m.u}</span>
+                {m.v && <span className="w-3 h-3 rounded-full bg-sky-500 text-background grid place-items-center text-[7px]">✓</span>}
+                <span className="text-foreground/55 truncate max-w-[60px]">{m.h}</span>
+              </div>
+              <span className="flex-1 truncate text-foreground/80">{m.t}</span>
+            </div>
+          ))}
+        </div>
+      </Frame>
+    ),
+    pins: [
+      { n: 1, x: "55%", y: "30%", label: "Blue check" },
+      { n: 2, x: "85%", y: "20%", label: "Follow" },
+      { n: 3, x: "40%", y: "80%", label: "Verified mention" },
+    ],
+  })) as Builder,
+});
+
 const fallback: Builder = (ctx, p) => ({
   node: (
     <Frame>

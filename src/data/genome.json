@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "product": "Product Genome Studio",
-  "tagline": "Design a product by choosing real patterns at each journey stage \u2014 with tradeoffs, conflicts, and a goal-guided assist.",
-  "disclaimer": "Patterns and winners reflect opinionated design judgment on observable UX, not internal metrics. Built to be extended \u2014 add or AI-generate more industries.",
+  "tagline": "Design a product by choosing real patterns at each journey stage — with tradeoffs, conflicts, and a goal-guided assist.",
+  "disclaimer": "Patterns and winners reflect opinionated design judgment on observable UX, not internal metrics. Built to be extended — add or AI-generate more industries.",
   "goals": [
     {
       "id": "conversion",
@@ -92,7 +92,7 @@
     {
       "id": "travel",
       "name": "Travel & Lodging",
-      "emoji": "\ud83d\udece\ufe0f",
+      "emoji": "🛎️",
       "companies": [
         "Airbnb",
         "Booking.com",
@@ -118,17 +118,17 @@
               "goalsServed": [
                 "emotional"
               ],
-              "purpose": "Keep inputs fuzzy \u2014 invite browsing before forcing dates or filters.",
+              "purpose": "Keep inputs fuzzy — invite browsing before forcing dates or filters.",
               "preview": {
                 "company": "Airbnb",
                 "pattern": "Inspiration-led",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "Cliff Villa \u00b7 $240/nt \u26054.9",
-                  "Lisbon Loft \u00b7 $118/nt \u26054.8",
-                  "A-frame Cabin \u00b7 $176 \u26054.95",
-                  "Riad Stay \u00b7 $92 \u26054.7"
+                  "Cliff Villa · $240/nt ★4.9",
+                  "Lisbon Loft · $118/nt ★4.8",
+                  "A-frame Cabin · $176 ★4.95",
+                  "Riad Stay · $92 ★4.7"
                 ],
                 "cta": "Explore"
               }
@@ -152,12 +152,12 @@
                 "company": "Booking.com",
                 "pattern": "Deal-led, urgent",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "Riad Stay \u00b7 $92 \u26054.7",
-                  "Kyoto Ryokan \u00b7 $210 \u26054.9",
-                  "Tulum Bungalow \u00b7 $134 \u26054.85",
-                  "Alpine Chalet \u00b7 $320 \u26054.97"
+                  "Riad Stay · $92 ★4.7",
+                  "Kyoto Ryokan · $210 ★4.9",
+                  "Tulum Bungalow · $134 ★4.85",
+                  "Alpine Chalet · $320 ★4.97"
                 ],
                 "cta": "Explore"
               }
@@ -176,17 +176,17 @@
               "goalsServed": [
                 "simple"
               ],
-              "purpose": "Serve users who already know where and when \u2014 straight to results.",
+              "purpose": "Serve users who already know where and when — straight to results.",
               "preview": {
                 "company": "Kayak",
                 "pattern": "Search-box first",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "Alpine Chalet \u00b7 $320 \u26054.97",
-                  "Porto Flat \u00b7 $88 \u26054.6",
-                  "Cliff Villa \u00b7 $240/nt \u26054.9",
-                  "Lisbon Loft \u00b7 $118/nt \u26054.8"
+                  "Alpine Chalet · $320 ★4.97",
+                  "Porto Flat · $88 ★4.6",
+                  "Cliff Villa · $240/nt ★4.9",
+                  "Lisbon Loft · $118/nt ★4.8"
                 ],
                 "cta": "Explore"
               }
@@ -208,12 +208,12 @@
                 "company": "Expedia",
                 "pattern": "Bundle deals",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "Lisbon Loft \u00b7 $118/nt \u26054.8",
-                  "A-frame Cabin \u00b7 $176 \u26054.95",
-                  "Riad Stay \u00b7 $92 \u26054.7",
-                  "Kyoto Ryokan \u00b7 $210 \u26054.9"
+                  "Lisbon Loft · $118/nt ★4.8",
+                  "A-frame Cabin · $176 ★4.95",
+                  "Riad Stay · $92 ★4.7",
+                  "Kyoto Ryokan · $210 ★4.9"
                 ],
                 "cta": "Explore"
               }
@@ -247,12 +247,12 @@
                 "company": "Booking.com",
                 "pattern": "Filter-heavy + live counts",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "Kyoto Ryokan \u00b7 $210 \u26054.9",
-                  "Tulum Bungalow \u00b7 $134 \u26054.85",
-                  "Alpine Chalet \u00b7 $320 \u26054.97",
-                  "Porto Flat \u00b7 $88 \u26054.6"
+                  "Kyoto Ryokan · $210 ★4.9",
+                  "Tulum Bungalow · $134 ★4.85",
+                  "Alpine Chalet · $320 ★4.97",
+                  "Porto Flat · $88 ★4.6"
                 ],
                 "cta": "Explore"
               }
@@ -276,12 +276,12 @@
                 "company": "Airbnb",
                 "pattern": "Map-first, flexible",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "Porto Flat \u00b7 $88 \u26054.6",
-                  "Cliff Villa \u00b7 $240/nt \u26054.9",
-                  "Lisbon Loft \u00b7 $118/nt \u26054.8",
-                  "A-frame Cabin \u00b7 $176 \u26054.95"
+                  "Porto Flat · $88 ★4.6",
+                  "Cliff Villa · $240/nt ★4.9",
+                  "Lisbon Loft · $118/nt ★4.8",
+                  "A-frame Cabin · $176 ★4.95"
                 ],
                 "cta": "Explore"
               }
@@ -303,12 +303,12 @@
                 "company": "Kayak",
                 "pattern": "Compare grid",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "A-frame Cabin \u00b7 $176 \u26054.95",
-                  "Riad Stay \u00b7 $92 \u26054.7",
-                  "Kyoto Ryokan \u00b7 $210 \u26054.9",
-                  "Tulum Bungalow \u00b7 $134 \u26054.85"
+                  "A-frame Cabin · $176 ★4.95",
+                  "Riad Stay · $92 ★4.7",
+                  "Kyoto Ryokan · $210 ★4.9",
+                  "Tulum Bungalow · $134 ★4.85"
                 ],
                 "cta": "Explore"
               }
@@ -327,17 +327,17 @@
               "goalsServed": [
                 "simple"
               ],
-              "purpose": "Strip to one ranked list \u2014 least friction, fastest scan.",
+              "purpose": "Strip to one ranked list — least friction, fastest scan.",
               "preview": {
                 "company": "Hotels.com",
                 "pattern": "Simple sorted list",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "Tulum Bungalow \u00b7 $134 \u26054.85",
-                  "Alpine Chalet \u00b7 $320 \u26054.97",
-                  "Porto Flat \u00b7 $88 \u26054.6",
-                  "Cliff Villa \u00b7 $240/nt \u26054.9"
+                  "Tulum Bungalow · $134 ★4.85",
+                  "Alpine Chalet · $320 ★4.97",
+                  "Porto Flat · $88 ★4.6",
+                  "Cliff Villa · $240/nt ★4.9"
                 ],
                 "cta": "Explore"
               }
@@ -371,12 +371,12 @@
                 "company": "Booking.com",
                 "pattern": "Quantified proof + urgency",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "Cliff Villa \u00b7 $240/nt \u26054.9",
-                  "Lisbon Loft \u00b7 $118/nt \u26054.8",
-                  "A-frame Cabin \u00b7 $176 \u26054.95",
-                  "Riad Stay \u00b7 $92 \u26054.7"
+                  "Cliff Villa · $240/nt ★4.9",
+                  "Lisbon Loft · $118/nt ★4.8",
+                  "A-frame Cabin · $176 ★4.95",
+                  "Riad Stay · $92 ★4.7"
                 ],
                 "cta": "Continue"
               }
@@ -400,12 +400,12 @@
                 "company": "Airbnb",
                 "pattern": "Host identity + reviews",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "Riad Stay \u00b7 $92 \u26054.7",
-                  "Kyoto Ryokan \u00b7 $210 \u26054.9",
-                  "Tulum Bungalow \u00b7 $134 \u26054.85",
-                  "Alpine Chalet \u00b7 $320 \u26054.97"
+                  "Riad Stay · $92 ★4.7",
+                  "Kyoto Ryokan · $210 ★4.9",
+                  "Tulum Bungalow · $134 ★4.85",
+                  "Alpine Chalet · $320 ★4.97"
                 ],
                 "cta": "Continue"
               }
@@ -427,12 +427,12 @@
                 "company": "Expedia",
                 "pattern": "Brand guarantee badges",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "Alpine Chalet \u00b7 $320 \u26054.97",
-                  "Porto Flat \u00b7 $88 \u26054.6",
-                  "Cliff Villa \u00b7 $240/nt \u26054.9",
-                  "Lisbon Loft \u00b7 $118/nt \u26054.8"
+                  "Alpine Chalet · $320 ★4.97",
+                  "Porto Flat · $88 ★4.6",
+                  "Cliff Villa · $240/nt ★4.9",
+                  "Lisbon Loft · $118/nt ★4.8"
                 ],
                 "cta": "Continue"
               }
@@ -456,12 +456,12 @@
                 "company": "Hotels.com",
                 "pattern": "Star rating + verified",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "Lisbon Loft \u00b7 $118/nt \u26054.8",
-                  "A-frame Cabin \u00b7 $176 \u26054.95",
-                  "Riad Stay \u00b7 $92 \u26054.7",
-                  "Kyoto Ryokan \u00b7 $210 \u26054.9"
+                  "Lisbon Loft · $118/nt ★4.8",
+                  "A-frame Cabin · $176 ★4.95",
+                  "Riad Stay · $92 ★4.7",
+                  "Kyoto Ryokan · $210 ★4.9"
                 ],
                 "cta": "Continue"
               }
@@ -490,17 +490,17 @@
               "goalsServed": [
                 "simple"
               ],
-              "purpose": "Remove commitment fear at the decision point \u2014 book now, decide later.",
+              "purpose": "Remove commitment fear at the decision point — book now, decide later.",
               "preview": {
                 "company": "Booking.com",
                 "pattern": "Guest + free cancel",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "Kyoto Ryokan \u00b7 $210 \u26054.9",
-                  "Tulum Bungalow \u00b7 $134 \u26054.85",
-                  "Alpine Chalet \u00b7 $320 \u26054.97",
-                  "Porto Flat \u00b7 $88 \u26054.6"
+                  "Kyoto Ryokan · $210 ★4.9",
+                  "Tulum Bungalow · $134 ★4.85",
+                  "Alpine Chalet · $320 ★4.97",
+                  "Porto Flat · $88 ★4.6"
                 ],
                 "cta": "Confirm"
               }
@@ -524,12 +524,12 @@
                 "company": "Expedia",
                 "pattern": "1-click bundle",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "Porto Flat \u00b7 $88 \u26054.6",
-                  "Cliff Villa \u00b7 $240/nt \u26054.9",
-                  "Lisbon Loft \u00b7 $118/nt \u26054.8",
-                  "A-frame Cabin \u00b7 $176 \u26054.95"
+                  "Porto Flat · $88 ★4.6",
+                  "Cliff Villa · $240/nt ★4.9",
+                  "Lisbon Loft · $118/nt ★4.8",
+                  "A-frame Cabin · $176 ★4.95"
                 ],
                 "cta": "Confirm"
               }
@@ -553,12 +553,12 @@
                 "company": "Airbnb",
                 "pattern": "Request + reassure",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "A-frame Cabin \u00b7 $176 \u26054.95",
-                  "Riad Stay \u00b7 $92 \u26054.7",
-                  "Kyoto Ryokan \u00b7 $210 \u26054.9",
-                  "Tulum Bungalow \u00b7 $134 \u26054.85"
+                  "A-frame Cabin · $176 ★4.95",
+                  "Riad Stay · $92 ★4.7",
+                  "Kyoto Ryokan · $210 ★4.9",
+                  "Tulum Bungalow · $134 ★4.85"
                 ],
                 "cta": "Confirm"
               }
@@ -580,12 +580,12 @@
                 "company": "Kayak",
                 "pattern": "Hand-off to provider",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "Tulum Bungalow \u00b7 $134 \u26054.85",
-                  "Alpine Chalet \u00b7 $320 \u26054.97",
-                  "Porto Flat \u00b7 $88 \u26054.6",
-                  "Cliff Villa \u00b7 $240/nt \u26054.9"
+                  "Tulum Bungalow · $134 ★4.85",
+                  "Alpine Chalet · $320 ★4.97",
+                  "Porto Flat · $88 ★4.6",
+                  "Cliff Villa · $240/nt ★4.9"
                 ],
                 "cta": "Confirm"
               }
@@ -619,12 +619,12 @@
                 "company": "Hotels.com",
                 "pattern": "Stamp-card loyalty",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "Cliff Villa \u00b7 $240/nt \u26054.9",
-                  "Lisbon Loft \u00b7 $118/nt \u26054.8",
-                  "A-frame Cabin \u00b7 $176 \u26054.95",
-                  "Riad Stay \u00b7 $92 \u26054.7"
+                  "Cliff Villa · $240/nt ★4.9",
+                  "Lisbon Loft · $118/nt ★4.8",
+                  "A-frame Cabin · $176 ★4.95",
+                  "Riad Stay · $92 ★4.7"
                 ],
                 "cta": "Continue"
               }
@@ -648,12 +648,12 @@
                 "company": "Airbnb",
                 "pattern": "Wishlists + re-engage",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "Riad Stay \u00b7 $92 \u26054.7",
-                  "Kyoto Ryokan \u00b7 $210 \u26054.9",
-                  "Tulum Bungalow \u00b7 $134 \u26054.85",
-                  "Alpine Chalet \u00b7 $320 \u26054.97"
+                  "Riad Stay · $92 ★4.7",
+                  "Kyoto Ryokan · $210 ★4.9",
+                  "Tulum Bungalow · $134 ★4.85",
+                  "Alpine Chalet · $320 ★4.97"
                 ],
                 "cta": "Continue"
               }
@@ -677,12 +677,12 @@
                 "company": "Booking.com",
                 "pattern": "Genius tiers",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "Alpine Chalet \u00b7 $320 \u26054.97",
-                  "Porto Flat \u00b7 $88 \u26054.6",
-                  "Cliff Villa \u00b7 $240/nt \u26054.9",
-                  "Lisbon Loft \u00b7 $118/nt \u26054.8"
+                  "Alpine Chalet · $320 ★4.97",
+                  "Porto Flat · $88 ★4.6",
+                  "Cliff Villa · $240/nt ★4.9",
+                  "Lisbon Loft · $118/nt ★4.8"
                 ],
                 "cta": "Continue"
               }
@@ -704,12 +704,12 @@
                 "company": "Expedia",
                 "pattern": "Points + bundles",
                 "header": "Stays near you",
-                "metric": "Trip \u00b7 4 nights",
+                "metric": "Trip · 4 nights",
                 "rows": [
-                  "Lisbon Loft \u00b7 $118/nt \u26054.8",
-                  "A-frame Cabin \u00b7 $176 \u26054.95",
-                  "Riad Stay \u00b7 $92 \u26054.7",
-                  "Kyoto Ryokan \u00b7 $210 \u26054.9"
+                  "Lisbon Loft · $118/nt ★4.8",
+                  "A-frame Cabin · $176 ★4.95",
+                  "Riad Stay · $92 ★4.7",
+                  "Kyoto Ryokan · $210 ★4.9"
                 ],
                 "cta": "Continue"
               }
@@ -727,8 +727,8 @@
     },
     {
       "id": "saas_pm",
-      "name": "SaaS \u2014 Project Management",
-      "emoji": "\ud83d\uddc2\ufe0f",
+      "name": "SaaS — Project Management",
+      "emoji": "🗂️",
       "companies": [
         "Notion",
         "Monday",
@@ -761,10 +761,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "Q3 Launch \u00b7 In progress",
-                  "Sprint 24 \u00b7 Todo",
-                  "Bug triage \u00b7 Review",
-                  "Website redesign \u00b7 Done"
+                  "Q3 Launch · In progress",
+                  "Sprint 24 · Todo",
+                  "Bug triage · Review",
+                  "Website redesign · Done"
                 ],
                 "cta": "Get started"
               }
@@ -790,10 +790,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "Website redesign \u00b7 Done",
-                  "Onboarding flow \u00b7 Todo",
-                  "API v2 \u00b7 Blocked",
-                  "Design QA \u00b7 In progress"
+                  "Website redesign · Done",
+                  "Onboarding flow · Todo",
+                  "API v2 · Blocked",
+                  "Design QA · In progress"
                 ],
                 "cta": "Get started"
               }
@@ -819,10 +819,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "Design QA \u00b7 In progress",
-                  "Roadmap sync \u00b7 Done",
-                  "Q3 Launch \u00b7 In progress",
-                  "Sprint 24 \u00b7 Todo"
+                  "Design QA · In progress",
+                  "Roadmap sync · Done",
+                  "Q3 Launch · In progress",
+                  "Sprint 24 · Todo"
                 ],
                 "cta": "Get started"
               }
@@ -846,10 +846,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "Sprint 24 \u00b7 Todo",
-                  "Bug triage \u00b7 Review",
-                  "Website redesign \u00b7 Done",
-                  "Onboarding flow \u00b7 Todo"
+                  "Sprint 24 · Todo",
+                  "Bug triage · Review",
+                  "Website redesign · Done",
+                  "Onboarding flow · Todo"
                 ],
                 "cta": "Get started"
               }
@@ -885,10 +885,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "Onboarding flow \u00b7 Todo",
-                  "API v2 \u00b7 Blocked",
-                  "Design QA \u00b7 In progress",
-                  "Roadmap sync \u00b7 Done"
+                  "Onboarding flow · Todo",
+                  "API v2 · Blocked",
+                  "Design QA · In progress",
+                  "Roadmap sync · Done"
                 ],
                 "cta": "Continue"
               }
@@ -912,10 +912,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "Roadmap sync \u00b7 Done",
-                  "Q3 Launch \u00b7 In progress",
-                  "Sprint 24 \u00b7 Todo",
-                  "Bug triage \u00b7 Review"
+                  "Roadmap sync · Done",
+                  "Q3 Launch · In progress",
+                  "Sprint 24 · Todo",
+                  "Bug triage · Review"
                 ],
                 "cta": "Continue"
               }
@@ -941,10 +941,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "Bug triage \u00b7 Review",
-                  "Website redesign \u00b7 Done",
-                  "Onboarding flow \u00b7 Todo",
-                  "API v2 \u00b7 Blocked"
+                  "Bug triage · Review",
+                  "Website redesign · Done",
+                  "Onboarding flow · Todo",
+                  "API v2 · Blocked"
                 ],
                 "cta": "Continue"
               }
@@ -970,10 +970,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "API v2 \u00b7 Blocked",
-                  "Design QA \u00b7 In progress",
-                  "Roadmap sync \u00b7 Done",
-                  "Q3 Launch \u00b7 In progress"
+                  "API v2 · Blocked",
+                  "Design QA · In progress",
+                  "Roadmap sync · Done",
+                  "Q3 Launch · In progress"
                 ],
                 "cta": "Continue"
               }
@@ -1009,10 +1009,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "Q3 Launch \u00b7 In progress",
-                  "Sprint 24 \u00b7 Todo",
-                  "Bug triage \u00b7 Review",
-                  "Website redesign \u00b7 Done"
+                  "Q3 Launch · In progress",
+                  "Sprint 24 · Todo",
+                  "Bug triage · Review",
+                  "Website redesign · Done"
                 ],
                 "cta": "Continue"
               }
@@ -1036,10 +1036,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "Website redesign \u00b7 Done",
-                  "Onboarding flow \u00b7 Todo",
-                  "API v2 \u00b7 Blocked",
-                  "Design QA \u00b7 In progress"
+                  "Website redesign · Done",
+                  "Onboarding flow · Todo",
+                  "API v2 · Blocked",
+                  "Design QA · In progress"
                 ],
                 "cta": "Continue"
               }
@@ -1066,10 +1066,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "Design QA \u00b7 In progress",
-                  "Roadmap sync \u00b7 Done",
-                  "Q3 Launch \u00b7 In progress",
-                  "Sprint 24 \u00b7 Todo"
+                  "Design QA · In progress",
+                  "Roadmap sync · Done",
+                  "Q3 Launch · In progress",
+                  "Sprint 24 · Todo"
                 ],
                 "cta": "Continue"
               }
@@ -1093,10 +1093,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "Sprint 24 \u00b7 Todo",
-                  "Bug triage \u00b7 Review",
-                  "Website redesign \u00b7 Done",
-                  "Onboarding flow \u00b7 Todo"
+                  "Sprint 24 · Todo",
+                  "Bug triage · Review",
+                  "Website redesign · Done",
+                  "Onboarding flow · Todo"
                 ],
                 "cta": "Continue"
               }
@@ -1130,10 +1130,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "Onboarding flow \u00b7 Todo",
-                  "API v2 \u00b7 Blocked",
-                  "Design QA \u00b7 In progress",
-                  "Roadmap sync \u00b7 Done"
+                  "Onboarding flow · Todo",
+                  "API v2 · Blocked",
+                  "Design QA · In progress",
+                  "Roadmap sync · Done"
                 ],
                 "cta": "Continue"
               }
@@ -1159,10 +1159,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "Roadmap sync \u00b7 Done",
-                  "Q3 Launch \u00b7 In progress",
-                  "Sprint 24 \u00b7 Todo",
-                  "Bug triage \u00b7 Review"
+                  "Roadmap sync · Done",
+                  "Q3 Launch · In progress",
+                  "Sprint 24 · Todo",
+                  "Bug triage · Review"
                 ],
                 "cta": "Continue"
               }
@@ -1188,10 +1188,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "Bug triage \u00b7 Review",
-                  "Website redesign \u00b7 Done",
-                  "Onboarding flow \u00b7 Todo",
-                  "API v2 \u00b7 Blocked"
+                  "Bug triage · Review",
+                  "Website redesign · Done",
+                  "Onboarding flow · Todo",
+                  "API v2 · Blocked"
                 ],
                 "cta": "Continue"
               }
@@ -1217,10 +1217,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "API v2 \u00b7 Blocked",
-                  "Design QA \u00b7 In progress",
-                  "Roadmap sync \u00b7 Done",
-                  "Q3 Launch \u00b7 In progress"
+                  "API v2 · Blocked",
+                  "Design QA · In progress",
+                  "Roadmap sync · Done",
+                  "Q3 Launch · In progress"
                 ],
                 "cta": "Continue"
               }
@@ -1257,10 +1257,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "Q3 Launch \u00b7 In progress",
-                  "Sprint 24 \u00b7 Todo",
-                  "Bug triage \u00b7 Review",
-                  "Website redesign \u00b7 Done"
+                  "Q3 Launch · In progress",
+                  "Sprint 24 · Todo",
+                  "Bug triage · Review",
+                  "Website redesign · Done"
                 ],
                 "cta": "Continue"
               }
@@ -1284,10 +1284,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "Website redesign \u00b7 Done",
-                  "Onboarding flow \u00b7 Todo",
-                  "API v2 \u00b7 Blocked",
-                  "Design QA \u00b7 In progress"
+                  "Website redesign · Done",
+                  "Onboarding flow · Todo",
+                  "API v2 · Blocked",
+                  "Design QA · In progress"
                 ],
                 "cta": "Continue"
               }
@@ -1313,10 +1313,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "Design QA \u00b7 In progress",
-                  "Roadmap sync \u00b7 Done",
-                  "Q3 Launch \u00b7 In progress",
-                  "Sprint 24 \u00b7 Todo"
+                  "Design QA · In progress",
+                  "Roadmap sync · Done",
+                  "Q3 Launch · In progress",
+                  "Sprint 24 · Todo"
                 ],
                 "cta": "Continue"
               }
@@ -1340,10 +1340,10 @@
                 "header": "Your workspace",
                 "metric": "18 open tasks",
                 "rows": [
-                  "Sprint 24 \u00b7 Todo",
-                  "Bug triage \u00b7 Review",
-                  "Website redesign \u00b7 Done",
-                  "Onboarding flow \u00b7 Todo"
+                  "Sprint 24 · Todo",
+                  "Bug triage · Review",
+                  "Website redesign · Done",
+                  "Onboarding flow · Todo"
                 ],
                 "cta": "Continue"
               }
@@ -1362,7 +1362,7 @@
     {
       "id": "social",
       "name": "Social Media",
-      "emoji": "\ud83d\udcac",
+      "emoji": "💬",
       "companies": [
         "TikTok",
         "Instagram",
@@ -1379,7 +1379,7 @@
               "company": "TikTok",
               "pattern": "Watch-time interest graph",
               "tradeoff": "Instant but opaque",
-              "screen": "feedFull",
+              "screen": "socialFypFeed",
               "traits": {
                 "ex": 1,
                 "em": 1,
@@ -1389,17 +1389,17 @@
                 "emotional",
                 "simple"
               ],
-              "purpose": "Infer taste from behavior \u2014 no setup, instant relevance.",
+              "purpose": "Infer taste from behavior — no setup, instant relevance.",
               "preview": {
                 "company": "TikTok",
                 "pattern": "Watch-time interest graph",
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@maya \u00b7 2h",
-                  "@devpatel \u00b7 5h",
-                  "@studio_ks \u00b7 1d",
-                  "@lina.codes \u00b7 3h"
+                  "@maya · 2h",
+                  "@devpatel · 5h",
+                  "@studio_ks · 1d",
+                  "@lina.codes · 3h"
                 ],
                 "cta": "Get started"
               }
@@ -1409,7 +1409,7 @@
               "company": "Instagram",
               "pattern": "Follow suggestions",
               "tradeoff": "Familiar but slow",
-              "screen": "listRows",
+              "screen": "socialFollowSuggest",
               "traits": {
                 "ex": 0,
                 "em": 1,
@@ -1423,10 +1423,10 @@
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@lina.codes \u00b7 3h",
-                  "@theo \u00b7 20m",
-                  "@noor.design \u00b7 6h",
-                  "@fieldnotes \u00b7 1d"
+                  "@lina.codes · 3h",
+                  "@theo · 20m",
+                  "@noor.design · 6h",
+                  "@fieldnotes · 1d"
                 ],
                 "cta": "Get started"
               }
@@ -1436,7 +1436,7 @@
               "company": "LinkedIn",
               "pattern": "Build profile first",
               "tradeoff": "Structured but tedious",
-              "screen": "onboardChecklist",
+              "screen": "socialBuildProfile",
               "traits": {
                 "ex": -1,
                 "em": -1,
@@ -1452,10 +1452,10 @@
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@fieldnotes \u00b7 1d",
-                  "@cal_m \u00b7 45m",
-                  "@maya \u00b7 2h",
-                  "@devpatel \u00b7 5h"
+                  "@fieldnotes · 1d",
+                  "@cal_m · 45m",
+                  "@maya · 2h",
+                  "@devpatel · 5h"
                 ],
                 "cta": "Get started"
               }
@@ -1465,7 +1465,7 @@
               "company": "Reddit",
               "pattern": "Pick communities",
               "tradeoff": "Relevant but effortful",
-              "screen": "listRows",
+              "screen": "socialPickCommunities",
               "traits": {
                 "ex": 0,
                 "em": 0,
@@ -1479,10 +1479,10 @@
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@devpatel \u00b7 5h",
-                  "@studio_ks \u00b7 1d",
-                  "@lina.codes \u00b7 3h",
-                  "@theo \u00b7 20m"
+                  "@devpatel · 5h",
+                  "@studio_ks · 1d",
+                  "@lina.codes · 3h",
+                  "@theo · 20m"
                 ],
                 "cta": "Get started"
               }
@@ -1502,7 +1502,7 @@
               "company": "TikTok",
               "pattern": "Full-screen FYP",
               "tradeoff": "Addictive but low control",
-              "screen": "feedFull",
+              "screen": "socialFypFeed",
               "traits": {
                 "ex": 1,
                 "em": 2,
@@ -1512,17 +1512,17 @@
                 "emotional",
                 "simple"
               ],
-              "purpose": "One perfect item at a time \u2014 zero choice overload.",
+              "purpose": "One perfect item at a time — zero choice overload.",
               "preview": {
                 "company": "TikTok",
                 "pattern": "Full-screen FYP",
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@theo \u00b7 20m",
-                  "@noor.design \u00b7 6h",
-                  "@fieldnotes \u00b7 1d",
-                  "@cal_m \u00b7 45m"
+                  "@theo · 20m",
+                  "@noor.design · 6h",
+                  "@fieldnotes · 1d",
+                  "@cal_m · 45m"
                 ],
                 "cta": "Explore"
               }
@@ -1532,7 +1532,7 @@
               "company": "Instagram",
               "pattern": "Grid + stories",
               "tradeoff": "Rich but cluttered",
-              "screen": "photoGrid",
+              "screen": "socialGridStories",
               "traits": {
                 "ex": 1,
                 "em": 2,
@@ -1546,10 +1546,10 @@
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@cal_m \u00b7 45m",
-                  "@maya \u00b7 2h",
-                  "@devpatel \u00b7 5h",
-                  "@studio_ks \u00b7 1d"
+                  "@cal_m · 45m",
+                  "@maya · 2h",
+                  "@devpatel · 5h",
+                  "@studio_ks · 1d"
                 ],
                 "cta": "Explore"
               }
@@ -1559,7 +1559,7 @@
               "company": "X",
               "pattern": "For-you / latest toggle",
               "tradeoff": "Flexible but chaotic",
-              "screen": "listRows",
+              "screen": "socialFyToggle",
               "traits": {
                 "ex": 0,
                 "em": -1,
@@ -1573,10 +1573,10 @@
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@studio_ks \u00b7 1d",
-                  "@lina.codes \u00b7 3h",
-                  "@theo \u00b7 20m",
-                  "@noor.design \u00b7 6h"
+                  "@studio_ks · 1d",
+                  "@lina.codes · 3h",
+                  "@theo · 20m",
+                  "@noor.design · 6h"
                 ],
                 "cta": "Explore"
               }
@@ -1586,7 +1586,7 @@
               "company": "Reddit",
               "pattern": "Ranked threads",
               "tradeoff": "Substantive but plain",
-              "screen": "listRows",
+              "screen": "socialRankedThreads",
               "traits": {
                 "ex": -1,
                 "em": -1,
@@ -1602,10 +1602,10 @@
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@noor.design \u00b7 6h",
-                  "@fieldnotes \u00b7 1d",
-                  "@cal_m \u00b7 45m",
-                  "@maya \u00b7 2h"
+                  "@noor.design · 6h",
+                  "@fieldnotes · 1d",
+                  "@cal_m · 45m",
+                  "@maya · 2h"
                 ],
                 "cta": "Explore"
               }
@@ -1625,7 +1625,7 @@
               "company": "Instagram",
               "pattern": "Camera + filters",
               "tradeoff": "Polished but templated",
-              "screen": "composer",
+              "screen": "socialCameraFilters",
               "traits": {
                 "ex": 1,
                 "em": 2,
@@ -1641,10 +1641,10 @@
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@maya \u00b7 2h",
-                  "@devpatel \u00b7 5h",
-                  "@studio_ks \u00b7 1d",
-                  "@lina.codes \u00b7 3h"
+                  "@maya · 2h",
+                  "@devpatel · 5h",
+                  "@studio_ks · 1d",
+                  "@lina.codes · 3h"
                 ],
                 "cta": "Continue"
               }
@@ -1654,7 +1654,7 @@
               "company": "TikTok",
               "pattern": "Effects + sounds",
               "tradeoff": "Fun but trend-driven",
-              "screen": "composer",
+              "screen": "socialEffectsSounds",
               "traits": {
                 "ex": 1,
                 "em": 2,
@@ -1668,10 +1668,10 @@
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@lina.codes \u00b7 3h",
-                  "@theo \u00b7 20m",
-                  "@noor.design \u00b7 6h",
-                  "@fieldnotes \u00b7 1d"
+                  "@lina.codes · 3h",
+                  "@theo · 20m",
+                  "@noor.design · 6h",
+                  "@fieldnotes · 1d"
                 ],
                 "cta": "Continue"
               }
@@ -1681,7 +1681,7 @@
               "company": "X",
               "pattern": "Quick text post",
               "tradeoff": "Frictionless but shallow",
-              "screen": "composer",
+              "screen": "socialQuickPost",
               "traits": {
                 "ex": 0,
                 "em": -1,
@@ -1698,10 +1698,10 @@
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@fieldnotes \u00b7 1d",
-                  "@cal_m \u00b7 45m",
-                  "@maya \u00b7 2h",
-                  "@devpatel \u00b7 5h"
+                  "@fieldnotes · 1d",
+                  "@cal_m · 45m",
+                  "@maya · 2h",
+                  "@devpatel · 5h"
                 ],
                 "cta": "Continue"
               }
@@ -1711,7 +1711,7 @@
               "company": "Reddit",
               "pattern": "Long-form markdown",
               "tradeoff": "Deep but intimidating",
-              "screen": "composer",
+              "screen": "socialMarkdown",
               "traits": {
                 "ex": -1,
                 "em": -1,
@@ -1725,10 +1725,10 @@
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@devpatel \u00b7 5h",
-                  "@studio_ks \u00b7 1d",
-                  "@lina.codes \u00b7 3h",
-                  "@theo \u00b7 20m"
+                  "@devpatel · 5h",
+                  "@studio_ks · 1d",
+                  "@lina.codes · 3h",
+                  "@theo · 20m"
                 ],
                 "cta": "Continue"
               }
@@ -1748,7 +1748,7 @@
               "company": "X",
               "pattern": "Reply / quote / repost",
               "tradeoff": "Conversational but combative",
-              "screen": "chatThread",
+              "screen": "socialReplyQuote",
               "traits": {
                 "ex": 0,
                 "em": -1,
@@ -1764,10 +1764,10 @@
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@theo \u00b7 20m",
-                  "@noor.design \u00b7 6h",
-                  "@fieldnotes \u00b7 1d",
-                  "@cal_m \u00b7 45m"
+                  "@theo · 20m",
+                  "@noor.design · 6h",
+                  "@fieldnotes · 1d",
+                  "@cal_m · 45m"
                 ],
                 "cta": "Continue"
               }
@@ -1777,7 +1777,7 @@
               "company": "Reddit",
               "pattern": "Up/downvote threads",
               "tradeoff": "Meritocratic but harsh",
-              "screen": "listRows",
+              "screen": "socialUpvote",
               "traits": {
                 "ex": -1,
                 "em": -1,
@@ -1793,10 +1793,10 @@
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@cal_m \u00b7 45m",
-                  "@maya \u00b7 2h",
-                  "@devpatel \u00b7 5h",
-                  "@studio_ks \u00b7 1d"
+                  "@cal_m · 45m",
+                  "@maya · 2h",
+                  "@devpatel · 5h",
+                  "@studio_ks · 1d"
                 ],
                 "cta": "Continue"
               }
@@ -1806,7 +1806,7 @@
               "company": "Instagram",
               "pattern": "Likes + DMs",
               "tradeoff": "Warm but vanity-driven",
-              "screen": "feedFull",
+              "screen": "socialLikesDms",
               "traits": {
                 "ex": 0,
                 "em": 2,
@@ -1822,10 +1822,10 @@
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@studio_ks \u00b7 1d",
-                  "@lina.codes \u00b7 3h",
-                  "@theo \u00b7 20m",
-                  "@noor.design \u00b7 6h"
+                  "@studio_ks · 1d",
+                  "@lina.codes · 3h",
+                  "@theo · 20m",
+                  "@noor.design · 6h"
                 ],
                 "cta": "Continue"
               }
@@ -1835,7 +1835,7 @@
               "company": "TikTok",
               "pattern": "Duet / stitch",
               "tradeoff": "Creative but chaotic",
-              "screen": "composer",
+              "screen": "socialDuet",
               "traits": {
                 "ex": 1,
                 "em": 1,
@@ -1849,10 +1849,10 @@
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@noor.design \u00b7 6h",
-                  "@fieldnotes \u00b7 1d",
-                  "@cal_m \u00b7 45m",
-                  "@maya \u00b7 2h"
+                  "@noor.design · 6h",
+                  "@fieldnotes · 1d",
+                  "@cal_m · 45m",
+                  "@maya · 2h"
                 ],
                 "cta": "Continue"
               }
@@ -1872,7 +1872,7 @@
               "company": "LinkedIn",
               "pattern": "Resume profile",
               "tradeoff": "Credible but stiff",
-              "screen": "profileTrust",
+              "screen": "socialResume",
               "traits": {
                 "ex": -1,
                 "em": -1,
@@ -1886,10 +1886,10 @@
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@maya \u00b7 2h",
-                  "@devpatel \u00b7 5h",
-                  "@studio_ks \u00b7 1d",
-                  "@lina.codes \u00b7 3h"
+                  "@maya · 2h",
+                  "@devpatel · 5h",
+                  "@studio_ks · 1d",
+                  "@lina.codes · 3h"
                 ],
                 "cta": "Continue"
               }
@@ -1899,7 +1899,7 @@
               "company": "Instagram",
               "pattern": "Curated grid",
               "tradeoff": "Aspirational but performative",
-              "screen": "photoGrid",
+              "screen": "socialGridStories",
               "traits": {
                 "ex": 1,
                 "em": 2,
@@ -1915,10 +1915,10 @@
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@lina.codes \u00b7 3h",
-                  "@theo \u00b7 20m",
-                  "@noor.design \u00b7 6h",
-                  "@fieldnotes \u00b7 1d"
+                  "@lina.codes · 3h",
+                  "@theo · 20m",
+                  "@noor.design · 6h",
+                  "@fieldnotes · 1d"
                 ],
                 "cta": "Continue"
               }
@@ -1928,7 +1928,7 @@
               "company": "Reddit",
               "pattern": "Pseudonymous karma",
               "tradeoff": "Free but low-trust",
-              "screen": "badgeRow",
+              "screen": "socialKarma",
               "traits": {
                 "ex": 0,
                 "em": -1,
@@ -1945,10 +1945,10 @@
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@fieldnotes \u00b7 1d",
-                  "@cal_m \u00b7 45m",
-                  "@maya \u00b7 2h",
-                  "@devpatel \u00b7 5h"
+                  "@fieldnotes · 1d",
+                  "@cal_m · 45m",
+                  "@maya · 2h",
+                  "@devpatel · 5h"
                 ],
                 "cta": "Continue"
               }
@@ -1958,7 +1958,7 @@
               "company": "X",
               "pattern": "Bio + verification",
               "tradeoff": "Punchy but gameable",
-              "screen": "profileTrust",
+              "screen": "socialVerified",
               "traits": {
                 "ex": 0,
                 "em": -1,
@@ -1972,10 +1972,10 @@
                 "header": "Your feed",
                 "metric": "1.2k followers",
                 "rows": [
-                  "@devpatel \u00b7 5h",
-                  "@studio_ks \u00b7 1d",
-                  "@lina.codes \u00b7 3h",
-                  "@theo \u00b7 20m"
+                  "@devpatel · 5h",
+                  "@studio_ks · 1d",
+                  "@lina.codes · 3h",
+                  "@theo · 20m"
                 ],
                 "cta": "Continue"
               }
@@ -1994,7 +1994,7 @@
     {
       "id": "food",
       "name": "Food Delivery",
-      "emoji": "\ud83c\udf54",
+      "emoji": "🍔",
       "companies": [
         "Uber Eats",
         "DoorDash",
@@ -2021,17 +2021,17 @@
                 "emotional",
                 "simple"
               ],
-              "purpose": "Appetite is visual \u2014 lead with mouth-watering imagery.",
+              "purpose": "Appetite is visual — lead with mouth-watering imagery.",
               "preview": {
                 "company": "Uber Eats",
                 "pattern": "Imagery carousels",
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Sushi Nori \u00b7 $18",
-                  "Green Bowl \u00b7 $12",
-                  "Taco Loco \u00b7 $9",
-                  "Pho 88 \u00b7 $14"
+                  "Sushi Nori · $18",
+                  "Green Bowl · $12",
+                  "Taco Loco · $9",
+                  "Pho 88 · $14"
                 ],
                 "cta": "Explore"
               }
@@ -2055,10 +2055,10 @@
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Pho 88 \u00b7 $14",
-                  "Margherita \u00b7 $11",
-                  "Pad Thai \u00b7 $13",
-                  "Falafel Wrap \u00b7 $8"
+                  "Pho 88 · $14",
+                  "Margherita · $11",
+                  "Pad Thai · $13",
+                  "Falafel Wrap · $8"
                 ],
                 "cta": "Explore"
               }
@@ -2082,10 +2082,10 @@
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Falafel Wrap \u00b7 $8",
-                  "Ramen Ya \u00b7 $15",
-                  "Sushi Nori \u00b7 $18",
-                  "Green Bowl \u00b7 $12"
+                  "Falafel Wrap · $8",
+                  "Ramen Ya · $15",
+                  "Sushi Nori · $18",
+                  "Green Bowl · $12"
                 ],
                 "cta": "Explore"
               }
@@ -2111,10 +2111,10 @@
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Green Bowl \u00b7 $12",
-                  "Taco Loco \u00b7 $9",
-                  "Pho 88 \u00b7 $14",
-                  "Margherita \u00b7 $11"
+                  "Green Bowl · $12",
+                  "Taco Loco · $9",
+                  "Pho 88 · $14",
+                  "Margherita · $11"
                 ],
                 "cta": "Explore"
               }
@@ -2150,10 +2150,10 @@
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Margherita \u00b7 $11",
-                  "Pad Thai \u00b7 $13",
-                  "Falafel Wrap \u00b7 $8",
-                  "Ramen Ya \u00b7 $15"
+                  "Margherita · $11",
+                  "Pad Thai · $13",
+                  "Falafel Wrap · $8",
+                  "Ramen Ya · $15"
                 ],
                 "cta": "Explore"
               }
@@ -2179,10 +2179,10 @@
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Ramen Ya \u00b7 $15",
-                  "Sushi Nori \u00b7 $18",
-                  "Green Bowl \u00b7 $12",
-                  "Taco Loco \u00b7 $9"
+                  "Ramen Ya · $15",
+                  "Sushi Nori · $18",
+                  "Green Bowl · $12",
+                  "Taco Loco · $9"
                 ],
                 "cta": "Explore"
               }
@@ -2206,10 +2206,10 @@
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Taco Loco \u00b7 $9",
-                  "Pho 88 \u00b7 $14",
-                  "Margherita \u00b7 $11",
-                  "Pad Thai \u00b7 $13"
+                  "Taco Loco · $9",
+                  "Pho 88 · $14",
+                  "Margherita · $11",
+                  "Pad Thai · $13"
                 ],
                 "cta": "Explore"
               }
@@ -2235,10 +2235,10 @@
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Pad Thai \u00b7 $13",
-                  "Falafel Wrap \u00b7 $8",
-                  "Ramen Ya \u00b7 $15",
-                  "Sushi Nori \u00b7 $18"
+                  "Pad Thai · $13",
+                  "Falafel Wrap · $8",
+                  "Ramen Ya · $15",
+                  "Sushi Nori · $18"
                 ],
                 "cta": "Explore"
               }
@@ -2272,10 +2272,10 @@
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Sushi Nori \u00b7 $18",
-                  "Green Bowl \u00b7 $12",
-                  "Taco Loco \u00b7 $9",
-                  "Pho 88 \u00b7 $14"
+                  "Sushi Nori · $18",
+                  "Green Bowl · $12",
+                  "Taco Loco · $9",
+                  "Pho 88 · $14"
                 ],
                 "cta": "Confirm"
               }
@@ -2301,10 +2301,10 @@
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Pho 88 \u00b7 $14",
-                  "Margherita \u00b7 $11",
-                  "Pad Thai \u00b7 $13",
-                  "Falafel Wrap \u00b7 $8"
+                  "Pho 88 · $14",
+                  "Margherita · $11",
+                  "Pad Thai · $13",
+                  "Falafel Wrap · $8"
                 ],
                 "cta": "Confirm"
               }
@@ -2330,10 +2330,10 @@
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Falafel Wrap \u00b7 $8",
-                  "Ramen Ya \u00b7 $15",
-                  "Sushi Nori \u00b7 $18",
-                  "Green Bowl \u00b7 $12"
+                  "Falafel Wrap · $8",
+                  "Ramen Ya · $15",
+                  "Sushi Nori · $18",
+                  "Green Bowl · $12"
                 ],
                 "cta": "Confirm"
               }
@@ -2359,10 +2359,10 @@
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Green Bowl \u00b7 $12",
-                  "Taco Loco \u00b7 $9",
-                  "Pho 88 \u00b7 $14",
-                  "Margherita \u00b7 $11"
+                  "Green Bowl · $12",
+                  "Taco Loco · $9",
+                  "Pho 88 · $14",
+                  "Margherita · $11"
                 ],
                 "cta": "Confirm"
               }
@@ -2398,10 +2398,10 @@
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Margherita \u00b7 $11",
-                  "Pad Thai \u00b7 $13",
-                  "Falafel Wrap \u00b7 $8",
-                  "Ramen Ya \u00b7 $15"
+                  "Margherita · $11",
+                  "Pad Thai · $13",
+                  "Falafel Wrap · $8",
+                  "Ramen Ya · $15"
                 ],
                 "cta": "Confirm"
               }
@@ -2425,10 +2425,10 @@
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Ramen Ya \u00b7 $15",
-                  "Sushi Nori \u00b7 $18",
-                  "Green Bowl \u00b7 $12",
-                  "Taco Loco \u00b7 $9"
+                  "Ramen Ya · $15",
+                  "Sushi Nori · $18",
+                  "Green Bowl · $12",
+                  "Taco Loco · $9"
                 ],
                 "cta": "Confirm"
               }
@@ -2454,10 +2454,10 @@
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Taco Loco \u00b7 $9",
-                  "Pho 88 \u00b7 $14",
-                  "Margherita \u00b7 $11",
-                  "Pad Thai \u00b7 $13"
+                  "Taco Loco · $9",
+                  "Pho 88 · $14",
+                  "Margherita · $11",
+                  "Pad Thai · $13"
                 ],
                 "cta": "Confirm"
               }
@@ -2483,10 +2483,10 @@
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Pad Thai \u00b7 $13",
-                  "Falafel Wrap \u00b7 $8",
-                  "Ramen Ya \u00b7 $15",
-                  "Sushi Nori \u00b7 $18"
+                  "Pad Thai · $13",
+                  "Falafel Wrap · $8",
+                  "Ramen Ya · $15",
+                  "Sushi Nori · $18"
                 ],
                 "cta": "Confirm"
               }
@@ -2522,10 +2522,10 @@
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Sushi Nori \u00b7 $18",
-                  "Green Bowl \u00b7 $12",
-                  "Taco Loco \u00b7 $9",
-                  "Pho 88 \u00b7 $14"
+                  "Sushi Nori · $18",
+                  "Green Bowl · $12",
+                  "Taco Loco · $9",
+                  "Pho 88 · $14"
                 ],
                 "cta": "Continue"
               }
@@ -2551,10 +2551,10 @@
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Pho 88 \u00b7 $14",
-                  "Margherita \u00b7 $11",
-                  "Pad Thai \u00b7 $13",
-                  "Falafel Wrap \u00b7 $8"
+                  "Pho 88 · $14",
+                  "Margherita · $11",
+                  "Pad Thai · $13",
+                  "Falafel Wrap · $8"
                 ],
                 "cta": "Continue"
               }
@@ -2578,10 +2578,10 @@
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Falafel Wrap \u00b7 $8",
-                  "Ramen Ya \u00b7 $15",
-                  "Sushi Nori \u00b7 $18",
-                  "Green Bowl \u00b7 $12"
+                  "Falafel Wrap · $8",
+                  "Ramen Ya · $15",
+                  "Sushi Nori · $18",
+                  "Green Bowl · $12"
                 ],
                 "cta": "Continue"
               }
@@ -2607,10 +2607,10 @@
                 "header": "Order again",
                 "metric": "$34 cart",
                 "rows": [
-                  "Green Bowl \u00b7 $12",
-                  "Taco Loco \u00b7 $9",
-                  "Pho 88 \u00b7 $14",
-                  "Margherita \u00b7 $11"
+                  "Green Bowl · $12",
+                  "Taco Loco · $9",
+                  "Pho 88 · $14",
+                  "Margherita · $11"
                 ],
                 "cta": "Continue"
               }
@@ -2629,7 +2629,7 @@
     {
       "id": "ecommerce",
       "name": "E-commerce / Retail",
-      "emoji": "\ud83d\udecd\ufe0f",
+      "emoji": "🛍️",
       "companies": [
         "Amazon",
         "ASOS",
@@ -2656,17 +2656,17 @@
                 "conversion",
                 "simple"
               ],
-              "purpose": "Never dead-end a search \u2014 always guide to something.",
+              "purpose": "Never dead-end a search — always guide to something.",
               "preview": {
                 "company": "Amazon",
                 "pattern": "Forgiving + autocomplete",
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Linen Shirt \u00b7 $48 \u26054.6",
-                  "Runner Sneaker \u00b7 $120 \u26054.8",
-                  "Ceramic Mug \u00b7 $22 \u26054.9",
-                  "Wool Throw \u00b7 $65 \u26054.7"
+                  "Linen Shirt · $48 ★4.6",
+                  "Runner Sneaker · $120 ★4.8",
+                  "Ceramic Mug · $22 ★4.9",
+                  "Wool Throw · $65 ★4.7"
                 ],
                 "cta": "Explore"
               }
@@ -2690,10 +2690,10 @@
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Wool Throw \u00b7 $65 \u26054.7",
-                  "Denim Jacket \u00b7 $98 \u26054.5",
-                  "Desk Lamp \u00b7 $54 \u26054.8",
-                  "Tote Bag \u00b7 $34 \u26054.7"
+                  "Wool Throw · $65 ★4.7",
+                  "Denim Jacket · $98 ★4.5",
+                  "Desk Lamp · $54 ★4.8",
+                  "Tote Bag · $34 ★4.7"
                 ],
                 "cta": "Explore"
               }
@@ -2717,10 +2717,10 @@
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Tote Bag \u00b7 $34 \u26054.7",
-                  "Cotton Socks \u00b7 $12 \u26054.6",
-                  "Linen Shirt \u00b7 $48 \u26054.6",
-                  "Runner Sneaker \u00b7 $120 \u26054.8"
+                  "Tote Bag · $34 ★4.7",
+                  "Cotton Socks · $12 ★4.6",
+                  "Linen Shirt · $48 ★4.6",
+                  "Runner Sneaker · $120 ★4.8"
                 ],
                 "cta": "Explore"
               }
@@ -2746,10 +2746,10 @@
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Runner Sneaker \u00b7 $120 \u26054.8",
-                  "Ceramic Mug \u00b7 $22 \u26054.9",
-                  "Wool Throw \u00b7 $65 \u26054.7",
-                  "Denim Jacket \u00b7 $98 \u26054.5"
+                  "Runner Sneaker · $120 ★4.8",
+                  "Ceramic Mug · $22 ★4.9",
+                  "Wool Throw · $65 ★4.7",
+                  "Denim Jacket · $98 ★4.5"
                 ],
                 "cta": "Explore"
               }
@@ -2785,10 +2785,10 @@
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Denim Jacket \u00b7 $98 \u26054.5",
-                  "Desk Lamp \u00b7 $54 \u26054.8",
-                  "Tote Bag \u00b7 $34 \u26054.7",
-                  "Cotton Socks \u00b7 $12 \u26054.6"
+                  "Denim Jacket · $98 ★4.5",
+                  "Desk Lamp · $54 ★4.8",
+                  "Tote Bag · $34 ★4.7",
+                  "Cotton Socks · $12 ★4.6"
                 ],
                 "cta": "Explore"
               }
@@ -2814,10 +2814,10 @@
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Cotton Socks \u00b7 $12 \u26054.6",
-                  "Linen Shirt \u00b7 $48 \u26054.6",
-                  "Runner Sneaker \u00b7 $120 \u26054.8",
-                  "Ceramic Mug \u00b7 $22 \u26054.9"
+                  "Cotton Socks · $12 ★4.6",
+                  "Linen Shirt · $48 ★4.6",
+                  "Runner Sneaker · $120 ★4.8",
+                  "Ceramic Mug · $22 ★4.9"
                 ],
                 "cta": "Explore"
               }
@@ -2841,10 +2841,10 @@
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Ceramic Mug \u00b7 $22 \u26054.9",
-                  "Wool Throw \u00b7 $65 \u26054.7",
-                  "Denim Jacket \u00b7 $98 \u26054.5",
-                  "Desk Lamp \u00b7 $54 \u26054.8"
+                  "Ceramic Mug · $22 ★4.9",
+                  "Wool Throw · $65 ★4.7",
+                  "Denim Jacket · $98 ★4.5",
+                  "Desk Lamp · $54 ★4.8"
                 ],
                 "cta": "Explore"
               }
@@ -2870,10 +2870,10 @@
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Desk Lamp \u00b7 $54 \u26054.8",
-                  "Tote Bag \u00b7 $34 \u26054.7",
-                  "Cotton Socks \u00b7 $12 \u26054.6",
-                  "Linen Shirt \u00b7 $48 \u26054.6"
+                  "Desk Lamp · $54 ★4.8",
+                  "Tote Bag · $34 ★4.7",
+                  "Cotton Socks · $12 ★4.6",
+                  "Linen Shirt · $48 ★4.6"
                 ],
                 "cta": "Explore"
               }
@@ -2907,10 +2907,10 @@
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Linen Shirt \u00b7 $48 \u26054.6",
-                  "Runner Sneaker \u00b7 $120 \u26054.8",
-                  "Ceramic Mug \u00b7 $22 \u26054.9",
-                  "Wool Throw \u00b7 $65 \u26054.7"
+                  "Linen Shirt · $48 ★4.6",
+                  "Runner Sneaker · $120 ★4.8",
+                  "Ceramic Mug · $22 ★4.9",
+                  "Wool Throw · $65 ★4.7"
                 ],
                 "cta": "Continue"
               }
@@ -2936,10 +2936,10 @@
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Wool Throw \u00b7 $65 \u26054.7",
-                  "Denim Jacket \u00b7 $98 \u26054.5",
-                  "Desk Lamp \u00b7 $54 \u26054.8",
-                  "Tote Bag \u00b7 $34 \u26054.7"
+                  "Wool Throw · $65 ★4.7",
+                  "Denim Jacket · $98 ★4.5",
+                  "Desk Lamp · $54 ★4.8",
+                  "Tote Bag · $34 ★4.7"
                 ],
                 "cta": "Continue"
               }
@@ -2966,10 +2966,10 @@
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Tote Bag \u00b7 $34 \u26054.7",
-                  "Cotton Socks \u00b7 $12 \u26054.6",
-                  "Linen Shirt \u00b7 $48 \u26054.6",
-                  "Runner Sneaker \u00b7 $120 \u26054.8"
+                  "Tote Bag · $34 ★4.7",
+                  "Cotton Socks · $12 ★4.6",
+                  "Linen Shirt · $48 ★4.6",
+                  "Runner Sneaker · $120 ★4.8"
                 ],
                 "cta": "Continue"
               }
@@ -2993,10 +2993,10 @@
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Runner Sneaker \u00b7 $120 \u26054.8",
-                  "Ceramic Mug \u00b7 $22 \u26054.9",
-                  "Wool Throw \u00b7 $65 \u26054.7",
-                  "Denim Jacket \u00b7 $98 \u26054.5"
+                  "Runner Sneaker · $120 ★4.8",
+                  "Ceramic Mug · $22 ★4.9",
+                  "Wool Throw · $65 ★4.7",
+                  "Denim Jacket · $98 ★4.5"
                 ],
                 "cta": "Continue"
               }
@@ -3033,10 +3033,10 @@
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Denim Jacket \u00b7 $98 \u26054.5",
-                  "Desk Lamp \u00b7 $54 \u26054.8",
-                  "Tote Bag \u00b7 $34 \u26054.7",
-                  "Cotton Socks \u00b7 $12 \u26054.6"
+                  "Denim Jacket · $98 ★4.5",
+                  "Desk Lamp · $54 ★4.8",
+                  "Tote Bag · $34 ★4.7",
+                  "Cotton Socks · $12 ★4.6"
                 ],
                 "cta": "Confirm"
               }
@@ -3060,10 +3060,10 @@
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Cotton Socks \u00b7 $12 \u26054.6",
-                  "Linen Shirt \u00b7 $48 \u26054.6",
-                  "Runner Sneaker \u00b7 $120 \u26054.8",
-                  "Ceramic Mug \u00b7 $22 \u26054.9"
+                  "Cotton Socks · $12 ★4.6",
+                  "Linen Shirt · $48 ★4.6",
+                  "Runner Sneaker · $120 ★4.8",
+                  "Ceramic Mug · $22 ★4.9"
                 ],
                 "cta": "Confirm"
               }
@@ -3089,10 +3089,10 @@
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Ceramic Mug \u00b7 $22 \u26054.9",
-                  "Wool Throw \u00b7 $65 \u26054.7",
-                  "Denim Jacket \u00b7 $98 \u26054.5",
-                  "Desk Lamp \u00b7 $54 \u26054.8"
+                  "Ceramic Mug · $22 ★4.9",
+                  "Wool Throw · $65 ★4.7",
+                  "Denim Jacket · $98 ★4.5",
+                  "Desk Lamp · $54 ★4.8"
                 ],
                 "cta": "Confirm"
               }
@@ -3116,10 +3116,10 @@
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Desk Lamp \u00b7 $54 \u26054.8",
-                  "Tote Bag \u00b7 $34 \u26054.7",
-                  "Cotton Socks \u00b7 $12 \u26054.6",
-                  "Linen Shirt \u00b7 $48 \u26054.6"
+                  "Desk Lamp · $54 ★4.8",
+                  "Tote Bag · $34 ★4.7",
+                  "Cotton Socks · $12 ★4.6",
+                  "Linen Shirt · $48 ★4.6"
                 ],
                 "cta": "Confirm"
               }
@@ -3156,10 +3156,10 @@
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Linen Shirt \u00b7 $48 \u26054.6",
-                  "Runner Sneaker \u00b7 $120 \u26054.8",
-                  "Ceramic Mug \u00b7 $22 \u26054.9",
-                  "Wool Throw \u00b7 $65 \u26054.7"
+                  "Linen Shirt · $48 ★4.6",
+                  "Runner Sneaker · $120 ★4.8",
+                  "Ceramic Mug · $22 ★4.9",
+                  "Wool Throw · $65 ★4.7"
                 ],
                 "cta": "Continue"
               }
@@ -3185,10 +3185,10 @@
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Wool Throw \u00b7 $65 \u26054.7",
-                  "Denim Jacket \u00b7 $98 \u26054.5",
-                  "Desk Lamp \u00b7 $54 \u26054.8",
-                  "Tote Bag \u00b7 $34 \u26054.7"
+                  "Wool Throw · $65 ★4.7",
+                  "Denim Jacket · $98 ★4.5",
+                  "Desk Lamp · $54 ★4.8",
+                  "Tote Bag · $34 ★4.7"
                 ],
                 "cta": "Continue"
               }
@@ -3212,10 +3212,10 @@
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Tote Bag \u00b7 $34 \u26054.7",
-                  "Cotton Socks \u00b7 $12 \u26054.6",
-                  "Linen Shirt \u00b7 $48 \u26054.6",
-                  "Runner Sneaker \u00b7 $120 \u26054.8"
+                  "Tote Bag · $34 ★4.7",
+                  "Cotton Socks · $12 ★4.6",
+                  "Linen Shirt · $48 ★4.6",
+                  "Runner Sneaker · $120 ★4.8"
                 ],
                 "cta": "Continue"
               }
@@ -3239,10 +3239,10 @@
                 "header": "Recommended for you",
                 "metric": "$190 cart",
                 "rows": [
-                  "Runner Sneaker \u00b7 $120 \u26054.8",
-                  "Ceramic Mug \u00b7 $22 \u26054.9",
-                  "Wool Throw \u00b7 $65 \u26054.7",
-                  "Denim Jacket \u00b7 $98 \u26054.5"
+                  "Runner Sneaker · $120 ★4.8",
+                  "Ceramic Mug · $22 ★4.9",
+                  "Wool Throw · $65 ★4.7",
+                  "Denim Jacket · $98 ★4.5"
                 ],
                 "cta": "Continue"
               }
@@ -3261,7 +3261,7 @@
     {
       "id": "fintech",
       "name": "Fintech / Banking",
-      "emoji": "\ud83d\udcb3",
+      "emoji": "💳",
       "companies": [
         "Monzo",
         "Revolut",
@@ -3294,10 +3294,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Coffee \u00b7 \u2212$4.20",
-                  "Salary \u00b7 +$3,200",
-                  "Rent \u00b7 \u2212$1,450",
-                  "Transfer \u00b7 \u2212$60"
+                  "Coffee · −$4.20",
+                  "Salary · +$3,200",
+                  "Rent · −$1,450",
+                  "Transfer · −$60"
                 ],
                 "cta": "Get started"
               }
@@ -3321,10 +3321,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Transfer \u00b7 \u2212$60",
-                  "Groceries \u00b7 \u2212$72",
-                  "Refund \u00b7 +$24",
-                  "Gym \u00b7 \u2212$39"
+                  "Transfer · −$60",
+                  "Groceries · −$72",
+                  "Refund · +$24",
+                  "Gym · −$39"
                 ],
                 "cta": "Get started"
               }
@@ -3351,10 +3351,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Gym \u00b7 \u2212$39",
-                  "Dividend \u00b7 +$15",
-                  "Coffee \u00b7 \u2212$4.20",
-                  "Salary \u00b7 +$3,200"
+                  "Gym · −$39",
+                  "Dividend · +$15",
+                  "Coffee · −$4.20",
+                  "Salary · +$3,200"
                 ],
                 "cta": "Get started"
               }
@@ -3378,10 +3378,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Salary \u00b7 +$3,200",
-                  "Rent \u00b7 \u2212$1,450",
-                  "Transfer \u00b7 \u2212$60",
-                  "Groceries \u00b7 \u2212$72"
+                  "Salary · +$3,200",
+                  "Rent · −$1,450",
+                  "Transfer · −$60",
+                  "Groceries · −$72"
                 ],
                 "cta": "Get started"
               }
@@ -3417,10 +3417,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Groceries \u00b7 \u2212$72",
-                  "Refund \u00b7 +$24",
-                  "Gym \u00b7 \u2212$39",
-                  "Dividend \u00b7 +$15"
+                  "Groceries · −$72",
+                  "Refund · +$24",
+                  "Gym · −$39",
+                  "Dividend · +$15"
                 ],
                 "cta": "Continue"
               }
@@ -3446,10 +3446,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Dividend \u00b7 +$15",
-                  "Coffee \u00b7 \u2212$4.20",
-                  "Salary \u00b7 +$3,200",
-                  "Rent \u00b7 \u2212$1,450"
+                  "Dividend · +$15",
+                  "Coffee · −$4.20",
+                  "Salary · +$3,200",
+                  "Rent · −$1,450"
                 ],
                 "cta": "Continue"
               }
@@ -3475,10 +3475,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Rent \u00b7 \u2212$1,450",
-                  "Transfer \u00b7 \u2212$60",
-                  "Groceries \u00b7 \u2212$72",
-                  "Refund \u00b7 +$24"
+                  "Rent · −$1,450",
+                  "Transfer · −$60",
+                  "Groceries · −$72",
+                  "Refund · +$24"
                 ],
                 "cta": "Continue"
               }
@@ -3502,10 +3502,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Refund \u00b7 +$24",
-                  "Gym \u00b7 \u2212$39",
-                  "Dividend \u00b7 +$15",
-                  "Coffee \u00b7 \u2212$4.20"
+                  "Refund · +$24",
+                  "Gym · −$39",
+                  "Dividend · +$15",
+                  "Coffee · −$4.20"
                 ],
                 "cta": "Continue"
               }
@@ -3542,10 +3542,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Coffee \u00b7 \u2212$4.20",
-                  "Salary \u00b7 +$3,200",
-                  "Rent \u00b7 \u2212$1,450",
-                  "Transfer \u00b7 \u2212$60"
+                  "Coffee · −$4.20",
+                  "Salary · +$3,200",
+                  "Rent · −$1,450",
+                  "Transfer · −$60"
                 ],
                 "cta": "Confirm"
               }
@@ -3569,10 +3569,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Transfer \u00b7 \u2212$60",
-                  "Groceries \u00b7 \u2212$72",
-                  "Refund \u00b7 +$24",
-                  "Gym \u00b7 \u2212$39"
+                  "Transfer · −$60",
+                  "Groceries · −$72",
+                  "Refund · +$24",
+                  "Gym · −$39"
                 ],
                 "cta": "Confirm"
               }
@@ -3598,10 +3598,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Gym \u00b7 \u2212$39",
-                  "Dividend \u00b7 +$15",
-                  "Coffee \u00b7 \u2212$4.20",
-                  "Salary \u00b7 +$3,200"
+                  "Gym · −$39",
+                  "Dividend · +$15",
+                  "Coffee · −$4.20",
+                  "Salary · +$3,200"
                 ],
                 "cta": "Confirm"
               }
@@ -3625,10 +3625,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Salary \u00b7 +$3,200",
-                  "Rent \u00b7 \u2212$1,450",
-                  "Transfer \u00b7 \u2212$60",
-                  "Groceries \u00b7 \u2212$72"
+                  "Salary · +$3,200",
+                  "Rent · −$1,450",
+                  "Transfer · −$60",
+                  "Groceries · −$72"
                 ],
                 "cta": "Confirm"
               }
@@ -3665,10 +3665,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Groceries \u00b7 \u2212$72",
-                  "Refund \u00b7 +$24",
-                  "Gym \u00b7 \u2212$39",
-                  "Dividend \u00b7 +$15"
+                  "Groceries · −$72",
+                  "Refund · +$24",
+                  "Gym · −$39",
+                  "Dividend · +$15"
                 ],
                 "cta": "Continue"
               }
@@ -3692,10 +3692,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Dividend \u00b7 +$15",
-                  "Coffee \u00b7 \u2212$4.20",
-                  "Salary \u00b7 +$3,200",
-                  "Rent \u00b7 \u2212$1,450"
+                  "Dividend · +$15",
+                  "Coffee · −$4.20",
+                  "Salary · +$3,200",
+                  "Rent · −$1,450"
                 ],
                 "cta": "Continue"
               }
@@ -3719,10 +3719,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Rent \u00b7 \u2212$1,450",
-                  "Transfer \u00b7 \u2212$60",
-                  "Groceries \u00b7 \u2212$72",
-                  "Refund \u00b7 +$24"
+                  "Rent · −$1,450",
+                  "Transfer · −$60",
+                  "Groceries · −$72",
+                  "Refund · +$24"
                 ],
                 "cta": "Continue"
               }
@@ -3748,10 +3748,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Refund \u00b7 +$24",
-                  "Gym \u00b7 \u2212$39",
-                  "Dividend \u00b7 +$15",
-                  "Coffee \u00b7 \u2212$4.20"
+                  "Refund · +$24",
+                  "Gym · −$39",
+                  "Dividend · +$15",
+                  "Coffee · −$4.20"
                 ],
                 "cta": "Continue"
               }
@@ -3787,10 +3787,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Coffee \u00b7 \u2212$4.20",
-                  "Salary \u00b7 +$3,200",
-                  "Rent \u00b7 \u2212$1,450",
-                  "Transfer \u00b7 \u2212$60"
+                  "Coffee · −$4.20",
+                  "Salary · +$3,200",
+                  "Rent · −$1,450",
+                  "Transfer · −$60"
                 ],
                 "cta": "Continue"
               }
@@ -3814,10 +3814,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Transfer \u00b7 \u2212$60",
-                  "Groceries \u00b7 \u2212$72",
-                  "Refund \u00b7 +$24",
-                  "Gym \u00b7 \u2212$39"
+                  "Transfer · −$60",
+                  "Groceries · −$72",
+                  "Refund · +$24",
+                  "Gym · −$39"
                 ],
                 "cta": "Continue"
               }
@@ -3843,10 +3843,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Gym \u00b7 \u2212$39",
-                  "Dividend \u00b7 +$15",
-                  "Coffee \u00b7 \u2212$4.20",
-                  "Salary \u00b7 +$3,200"
+                  "Gym · −$39",
+                  "Dividend · +$15",
+                  "Coffee · −$4.20",
+                  "Salary · +$3,200"
                 ],
                 "cta": "Continue"
               }
@@ -3872,10 +3872,10 @@
                 "header": "Accounts",
                 "metric": "$4,820 balance",
                 "rows": [
-                  "Salary \u00b7 +$3,200",
-                  "Rent \u00b7 \u2212$1,450",
-                  "Transfer \u00b7 \u2212$60",
-                  "Groceries \u00b7 \u2212$72"
+                  "Salary · +$3,200",
+                  "Rent · −$1,450",
+                  "Transfer · −$60",
+                  "Groceries · −$72"
                 ],
                 "cta": "Continue"
               }
@@ -3894,7 +3894,7 @@
     {
       "id": "streaming",
       "name": "Streaming / Entertainment",
-      "emoji": "\ud83c\udfac",
+      "emoji": "🎬",
       "companies": [
         "Netflix",
         "Spotify",
@@ -4527,7 +4527,7 @@
     {
       "id": "mobility",
       "name": "Ride-hailing / Mobility",
-      "emoji": "\ud83d\ude97",
+      "emoji": "🚗",
       "companies": [
         "Uber",
         "Lyft",
@@ -4561,10 +4561,10 @@
                 "header": "Where to?",
                 "metric": "ETA 12 min",
                 "rows": [
-                  "Home \u2192 Airport",
-                  "UberX \u00b7 3 min away",
+                  "Home → Airport",
+                  "UberX · 3 min away",
                   "Fare $18",
-                  "Pool \u00b7 8 min"
+                  "Pool · 8 min"
                 ],
                 "cta": "Explore"
               }
@@ -4590,9 +4590,9 @@
                 "header": "Where to?",
                 "metric": "ETA 12 min",
                 "rows": [
-                  "Pool \u00b7 8 min",
-                  "Office \u2192 Home",
-                  "Black \u00b7 5 min",
+                  "Pool · 8 min",
+                  "Office → Home",
+                  "Black · 5 min",
                   "ETA 12 min"
                 ],
                 "cta": "Explore"
@@ -4610,7 +4610,7 @@
                 "si": -1
               },
               "goalsServed": [],
-              "purpose": "Serve the real goal \u2014 getting there \u2014 across modes.",
+              "purpose": "Serve the real goal — getting there — across modes.",
               "preview": {
                 "company": "Citymapper",
                 "pattern": "Multimodal plan",
@@ -4619,8 +4619,8 @@
                 "rows": [
                   "ETA 12 min",
                   "Split fare",
-                  "Home \u2192 Airport",
-                  "UberX \u00b7 3 min away"
+                  "Home → Airport",
+                  "UberX · 3 min away"
                 ],
                 "cta": "Explore"
               }
@@ -4644,10 +4644,10 @@
                 "header": "Where to?",
                 "metric": "ETA 12 min",
                 "rows": [
-                  "UberX \u00b7 3 min away",
+                  "UberX · 3 min away",
                   "Fare $18",
-                  "Pool \u00b7 8 min",
-                  "Office \u2192 Home"
+                  "Pool · 8 min",
+                  "Office → Home"
                 ],
                 "cta": "Explore"
               }
@@ -4681,8 +4681,8 @@
                 "header": "Where to?",
                 "metric": "ETA 12 min",
                 "rows": [
-                  "Office \u2192 Home",
-                  "Black \u00b7 5 min",
+                  "Office → Home",
+                  "Black · 5 min",
                   "ETA 12 min",
                   "Split fare"
                 ],
@@ -4712,8 +4712,8 @@
                 "metric": "ETA 12 min",
                 "rows": [
                   "Split fare",
-                  "Home \u2192 Airport",
-                  "UberX \u00b7 3 min away",
+                  "Home → Airport",
+                  "UberX · 3 min away",
                   "Fare $18"
                 ],
                 "cta": "Continue"
@@ -4741,9 +4741,9 @@
                 "metric": "ETA 12 min",
                 "rows": [
                   "Fare $18",
-                  "Pool \u00b7 8 min",
-                  "Office \u2192 Home",
-                  "Black \u00b7 5 min"
+                  "Pool · 8 min",
+                  "Office → Home",
+                  "Black · 5 min"
                 ],
                 "cta": "Continue"
               }
@@ -4767,10 +4767,10 @@
                 "header": "Where to?",
                 "metric": "ETA 12 min",
                 "rows": [
-                  "Black \u00b7 5 min",
+                  "Black · 5 min",
                   "ETA 12 min",
                   "Split fare",
-                  "Home \u2192 Airport"
+                  "Home → Airport"
                 ],
                 "cta": "Continue"
               }
@@ -4807,10 +4807,10 @@
                 "header": "Where to?",
                 "metric": "ETA 12 min",
                 "rows": [
-                  "Home \u2192 Airport",
-                  "UberX \u00b7 3 min away",
+                  "Home → Airport",
+                  "UberX · 3 min away",
                   "Fare $18",
-                  "Pool \u00b7 8 min"
+                  "Pool · 8 min"
                 ],
                 "cta": "Say hi"
               }
@@ -4834,9 +4834,9 @@
                 "header": "Where to?",
                 "metric": "ETA 12 min",
                 "rows": [
-                  "Pool \u00b7 8 min",
-                  "Office \u2192 Home",
-                  "Black \u00b7 5 min",
+                  "Pool · 8 min",
+                  "Office → Home",
+                  "Black · 5 min",
                   "ETA 12 min"
                 ],
                 "cta": "Say hi"
@@ -4865,8 +4865,8 @@
                 "rows": [
                   "ETA 12 min",
                   "Split fare",
-                  "Home \u2192 Airport",
-                  "UberX \u00b7 3 min away"
+                  "Home → Airport",
+                  "UberX · 3 min away"
                 ],
                 "cta": "Say hi"
               }
@@ -4890,10 +4890,10 @@
                 "header": "Where to?",
                 "metric": "ETA 12 min",
                 "rows": [
-                  "UberX \u00b7 3 min away",
+                  "UberX · 3 min away",
                   "Fare $18",
-                  "Pool \u00b7 8 min",
-                  "Office \u2192 Home"
+                  "Pool · 8 min",
+                  "Office → Home"
                 ],
                 "cta": "Say hi"
               }
@@ -4927,8 +4927,8 @@
                 "header": "Where to?",
                 "metric": "ETA 12 min",
                 "rows": [
-                  "Office \u2192 Home",
-                  "Black \u00b7 5 min",
+                  "Office → Home",
+                  "Black · 5 min",
                   "ETA 12 min",
                   "Split fare"
                 ],
@@ -4958,8 +4958,8 @@
                 "metric": "ETA 12 min",
                 "rows": [
                   "Split fare",
-                  "Home \u2192 Airport",
-                  "UberX \u00b7 3 min away",
+                  "Home → Airport",
+                  "UberX · 3 min away",
                   "Fare $18"
                 ],
                 "cta": "Continue"
@@ -4985,9 +4985,9 @@
                 "metric": "ETA 12 min",
                 "rows": [
                   "Fare $18",
-                  "Pool \u00b7 8 min",
-                  "Office \u2192 Home",
-                  "Black \u00b7 5 min"
+                  "Pool · 8 min",
+                  "Office → Home",
+                  "Black · 5 min"
                 ],
                 "cta": "Continue"
               }
@@ -5013,10 +5013,10 @@
                 "header": "Where to?",
                 "metric": "ETA 12 min",
                 "rows": [
-                  "Black \u00b7 5 min",
+                  "Black · 5 min",
                   "ETA 12 min",
                   "Split fare",
-                  "Home \u2192 Airport"
+                  "Home → Airport"
                 ],
                 "cta": "Continue"
               }
@@ -5053,10 +5053,10 @@
                 "header": "Where to?",
                 "metric": "ETA 12 min",
                 "rows": [
-                  "Home \u2192 Airport",
-                  "UberX \u00b7 3 min away",
+                  "Home → Airport",
+                  "UberX · 3 min away",
                   "Fare $18",
-                  "Pool \u00b7 8 min"
+                  "Pool · 8 min"
                 ],
                 "cta": "Confirm"
               }
@@ -5082,9 +5082,9 @@
                 "header": "Where to?",
                 "metric": "ETA 12 min",
                 "rows": [
-                  "Pool \u00b7 8 min",
-                  "Office \u2192 Home",
-                  "Black \u00b7 5 min",
+                  "Pool · 8 min",
+                  "Office → Home",
+                  "Black · 5 min",
                   "ETA 12 min"
                 ],
                 "cta": "Confirm"
@@ -5111,8 +5111,8 @@
                 "rows": [
                   "ETA 12 min",
                   "Split fare",
-                  "Home \u2192 Airport",
-                  "UberX \u00b7 3 min away"
+                  "Home → Airport",
+                  "UberX · 3 min away"
                 ],
                 "cta": "Confirm"
               }
@@ -5136,10 +5136,10 @@
                 "header": "Where to?",
                 "metric": "ETA 12 min",
                 "rows": [
-                  "UberX \u00b7 3 min away",
+                  "UberX · 3 min away",
                   "Fare $18",
-                  "Pool \u00b7 8 min",
-                  "Office \u2192 Home"
+                  "Pool · 8 min",
+                  "Office → Home"
                 ],
                 "cta": "Confirm"
               }
@@ -5158,7 +5158,7 @@
     {
       "id": "dating",
       "name": "Dating",
-      "emoji": "\ud83d\udc98",
+      "emoji": "💘",
       "companies": [
         "Hinge",
         "OkCupid",
@@ -5790,7 +5790,7 @@
     {
       "id": "edtech",
       "name": "Online Learning / Edtech",
-      "emoji": "\ud83c\udf93",
+      "emoji": "🎓",
       "companies": [
         "Duolingo",
         "Coursera",
@@ -5823,10 +5823,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "Intro to Python \u00b7 60%",
-                  "Design Basics \u00b7 25%",
-                  "Spanish A1 \u00b7 80%",
-                  "Data 101 \u00b7 10%"
+                  "Intro to Python · 60%",
+                  "Design Basics · 25%",
+                  "Spanish A1 · 80%",
+                  "Data 101 · 10%"
                 ],
                 "cta": "Get started"
               }
@@ -5852,10 +5852,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "Data 101 \u00b7 10%",
-                  "Public Speaking \u00b7 45%",
-                  "UX Research \u00b7 70%",
-                  "Calculus \u00b7 30%"
+                  "Data 101 · 10%",
+                  "Public Speaking · 45%",
+                  "UX Research · 70%",
+                  "Calculus · 30%"
                 ],
                 "cta": "Get started"
               }
@@ -5879,10 +5879,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "Calculus \u00b7 30%",
-                  "Guitar \u00b7 55%",
-                  "Intro to Python \u00b7 60%",
-                  "Design Basics \u00b7 25%"
+                  "Calculus · 30%",
+                  "Guitar · 55%",
+                  "Intro to Python · 60%",
+                  "Design Basics · 25%"
                 ],
                 "cta": "Get started"
               }
@@ -5908,10 +5908,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "Design Basics \u00b7 25%",
-                  "Spanish A1 \u00b7 80%",
-                  "Data 101 \u00b7 10%",
-                  "Public Speaking \u00b7 45%"
+                  "Design Basics · 25%",
+                  "Spanish A1 · 80%",
+                  "Data 101 · 10%",
+                  "Public Speaking · 45%"
                 ],
                 "cta": "Get started"
               }
@@ -5945,10 +5945,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "Public Speaking \u00b7 45%",
-                  "UX Research \u00b7 70%",
-                  "Calculus \u00b7 30%",
-                  "Guitar \u00b7 55%"
+                  "Public Speaking · 45%",
+                  "UX Research · 70%",
+                  "Calculus · 30%",
+                  "Guitar · 55%"
                 ],
                 "cta": "Explore"
               }
@@ -5975,10 +5975,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "Guitar \u00b7 55%",
-                  "Intro to Python \u00b7 60%",
-                  "Design Basics \u00b7 25%",
-                  "Spanish A1 \u00b7 80%"
+                  "Guitar · 55%",
+                  "Intro to Python · 60%",
+                  "Design Basics · 25%",
+                  "Spanish A1 · 80%"
                 ],
                 "cta": "Explore"
               }
@@ -6004,10 +6004,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "Spanish A1 \u00b7 80%",
-                  "Data 101 \u00b7 10%",
-                  "Public Speaking \u00b7 45%",
-                  "UX Research \u00b7 70%"
+                  "Spanish A1 · 80%",
+                  "Data 101 · 10%",
+                  "Public Speaking · 45%",
+                  "UX Research · 70%"
                 ],
                 "cta": "Explore"
               }
@@ -6031,10 +6031,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "UX Research \u00b7 70%",
-                  "Calculus \u00b7 30%",
-                  "Guitar \u00b7 55%",
-                  "Intro to Python \u00b7 60%"
+                  "UX Research · 70%",
+                  "Calculus · 30%",
+                  "Guitar · 55%",
+                  "Intro to Python · 60%"
                 ],
                 "cta": "Explore"
               }
@@ -6070,10 +6070,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "Intro to Python \u00b7 60%",
-                  "Design Basics \u00b7 25%",
-                  "Spanish A1 \u00b7 80%",
-                  "Data 101 \u00b7 10%"
+                  "Intro to Python · 60%",
+                  "Design Basics · 25%",
+                  "Spanish A1 · 80%",
+                  "Data 101 · 10%"
                 ],
                 "cta": "Continue"
               }
@@ -6097,10 +6097,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "Data 101 \u00b7 10%",
-                  "Public Speaking \u00b7 45%",
-                  "UX Research \u00b7 70%",
-                  "Calculus \u00b7 30%"
+                  "Data 101 · 10%",
+                  "Public Speaking · 45%",
+                  "UX Research · 70%",
+                  "Calculus · 30%"
                 ],
                 "cta": "Continue"
               }
@@ -6126,10 +6126,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "Calculus \u00b7 30%",
-                  "Guitar \u00b7 55%",
-                  "Intro to Python \u00b7 60%",
-                  "Design Basics \u00b7 25%"
+                  "Calculus · 30%",
+                  "Guitar · 55%",
+                  "Intro to Python · 60%",
+                  "Design Basics · 25%"
                 ],
                 "cta": "Continue"
               }
@@ -6155,10 +6155,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "Design Basics \u00b7 25%",
-                  "Spanish A1 \u00b7 80%",
-                  "Data 101 \u00b7 10%",
-                  "Public Speaking \u00b7 45%"
+                  "Design Basics · 25%",
+                  "Spanish A1 · 80%",
+                  "Data 101 · 10%",
+                  "Public Speaking · 45%"
                 ],
                 "cta": "Continue"
               }
@@ -6195,10 +6195,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "Public Speaking \u00b7 45%",
-                  "UX Research \u00b7 70%",
-                  "Calculus \u00b7 30%",
-                  "Guitar \u00b7 55%"
+                  "Public Speaking · 45%",
+                  "UX Research · 70%",
+                  "Calculus · 30%",
+                  "Guitar · 55%"
                 ],
                 "cta": "Continue"
               }
@@ -6224,10 +6224,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "Guitar \u00b7 55%",
-                  "Intro to Python \u00b7 60%",
-                  "Design Basics \u00b7 25%",
-                  "Spanish A1 \u00b7 80%"
+                  "Guitar · 55%",
+                  "Intro to Python · 60%",
+                  "Design Basics · 25%",
+                  "Spanish A1 · 80%"
                 ],
                 "cta": "Continue"
               }
@@ -6251,10 +6251,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "Spanish A1 \u00b7 80%",
-                  "Data 101 \u00b7 10%",
-                  "Public Speaking \u00b7 45%",
-                  "UX Research \u00b7 70%"
+                  "Spanish A1 · 80%",
+                  "Data 101 · 10%",
+                  "Public Speaking · 45%",
+                  "UX Research · 70%"
                 ],
                 "cta": "Continue"
               }
@@ -6278,10 +6278,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "UX Research \u00b7 70%",
-                  "Calculus \u00b7 30%",
-                  "Guitar \u00b7 55%",
-                  "Intro to Python \u00b7 60%"
+                  "UX Research · 70%",
+                  "Calculus · 30%",
+                  "Guitar · 55%",
+                  "Intro to Python · 60%"
                 ],
                 "cta": "Continue"
               }
@@ -6317,10 +6317,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "Intro to Python \u00b7 60%",
-                  "Design Basics \u00b7 25%",
-                  "Spanish A1 \u00b7 80%",
-                  "Data 101 \u00b7 10%"
+                  "Intro to Python · 60%",
+                  "Design Basics · 25%",
+                  "Spanish A1 · 80%",
+                  "Data 101 · 10%"
                 ],
                 "cta": "Continue"
               }
@@ -6344,10 +6344,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "Data 101 \u00b7 10%",
-                  "Public Speaking \u00b7 45%",
-                  "UX Research \u00b7 70%",
-                  "Calculus \u00b7 30%"
+                  "Data 101 · 10%",
+                  "Public Speaking · 45%",
+                  "UX Research · 70%",
+                  "Calculus · 30%"
                 ],
                 "cta": "Continue"
               }
@@ -6373,10 +6373,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "Calculus \u00b7 30%",
-                  "Guitar \u00b7 55%",
-                  "Intro to Python \u00b7 60%",
-                  "Design Basics \u00b7 25%"
+                  "Calculus · 30%",
+                  "Guitar · 55%",
+                  "Intro to Python · 60%",
+                  "Design Basics · 25%"
                 ],
                 "cta": "Continue"
               }
@@ -6402,10 +6402,10 @@
                 "header": "Keep learning",
                 "metric": "12-day streak",
                 "rows": [
-                  "Design Basics \u00b7 25%",
-                  "Spanish A1 \u00b7 80%",
-                  "Data 101 \u00b7 10%",
-                  "Public Speaking \u00b7 45%"
+                  "Design Basics · 25%",
+                  "Spanish A1 · 80%",
+                  "Data 101 · 10%",
+                  "Public Speaking · 45%"
                 ],
                 "cta": "Continue"
               }
@@ -6424,7 +6424,7 @@
     {
       "id": "design",
       "name": "Design & Creative Tools",
-      "emoji": "\ud83c\udfa8",
+      "emoji": "🎨",
       "companies": [
         "Canva",
         "Figma",
@@ -7056,7 +7056,7 @@
     {
       "id": "ai",
       "name": "AI Assistants / Chatbots",
-      "emoji": "\ud83e\udd16",
+      "emoji": "🤖",
       "companies": [
         "Meta AI",
         "ChatGPT",
