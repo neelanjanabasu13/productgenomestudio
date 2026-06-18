@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Sparkles, Search } from "lucide-react";
 import { dataSource } from "@/lib/dataSource";
 import { toast } from "sonner";
@@ -36,11 +36,36 @@ function Home() {
 
   const noMatch = q.trim().length > 0 && filtered.length === 0;
 
+  // Pendo: track industry search (debounced)
+  useEffect(() => {
+    if (!q.trim()) return;
+    const timer = setTimeout(() => {
+      pendo?.track("industry_searched", {
+        query: q.trim(),
+        resultsCount: filtered.length,
+        totalIndustries: industries.data?.length ?? 0,
+        hasResults: filtered.length > 0,
+      });
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [q, filtered.length, industries.data?.length]);
+
   async function onGenerate() {
+    const industryName = q.trim();
     try {
-      await dataSource.generateIndustry(q.trim());
+      await dataSource.generateIndustry(industryName);
+      pendo?.track("ai_industry_generation_requested", {
+        industryName,
+        success: true,
+      });
     } catch (e) {
-      toast.message("AI generation", { description: (e as Error).message });
+      const errorMessage = (e as Error).message;
+      pendo?.track("ai_industry_generation_requested", {
+        industryName,
+        success: false,
+        errorMessage: errorMessage?.substring(0, 100),
+      });
+      toast.message("AI generation", { description: errorMessage });
     }
   }
 

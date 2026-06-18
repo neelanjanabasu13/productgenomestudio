@@ -68,7 +68,19 @@ function Studio() {
   useEffect(() => {
     if (!goalText) return;
     const matched = matchGoalFromText(goalText, goals);
-    if (matched) setGoal(matched);
+    if (matched) {
+      if (matched !== goal) {
+        pendo?.track("goal_selected", {
+          goalId: matched,
+          goalLabel: goals.find((g) => g.id === matched)?.label ?? "",
+          selectionMethod: "text",
+          industryId: industry?.id ?? "",
+          industryName: industry?.name ?? "",
+          previousGoalId: goal ?? "none",
+        });
+      }
+      setGoal(matched);
+    }
   }, [goalText, goals]);
 
   const stage = useMemo(
@@ -88,15 +100,50 @@ function Studio() {
   );
 
   function pick(stageName: string, optId: string) {
+    const isDeselection = picks[stageName] === optId;
+    const stageData = industry?.funnel.find((s) => s.stage === stageName);
+    const option = stageData?.options.find((o) => o.id === optId);
+    pendo?.track("pattern_selected", {
+      industryId: industry?.id ?? "",
+      industryName: industry?.name ?? "",
+      stageName,
+      optionId: optId,
+      patternName: option?.pattern ?? "",
+      company: option?.company ?? "",
+      screenType: option?.screen ?? "",
+      isDeselection,
+      isSuggestedForGoal: stageData && goal ? recommendFor(stageData, goal) === optId : false,
+      activeGoalId: goal ?? "none",
+      traitEx: option?.traits.ex ?? 0,
+      traitEm: option?.traits.em ?? 0,
+      traitSi: option?.traits.si ?? 0,
+      totalPicksSoFar: Object.values(picks).filter(Boolean).length,
+    });
     setPicks((p) => ({ ...p, [stageName]: p[stageName] === optId ? "" : optId }));
   }
 
   function useSuggested() {
     if (!industry || !goal) return;
+    const goalLabel = goals.find((g) => g.id === goal)?.label ?? "";
+    pendo?.track("suggested_picks_applied", {
+      industryId: industry.id,
+      industryName: industry.name,
+      goalId: goal,
+      goalLabel,
+      stageCount: industry.funnel.length,
+      previousPickCount: Object.values(picks).filter(Boolean).length,
+    });
     setPicks(suggestedPicksFor(industry, goal));
   }
 
   function reset() {
+    pendo?.track("design_session_reset", {
+      industryId: industry?.id ?? "",
+      industryName: industry?.name ?? "",
+      picksCountBeforeReset: Object.values(picks).filter(Boolean).length,
+      hadGoalSelected: goal !== null,
+      hadConceptSynthesized: concept !== null,
+    });
     setPicks({});
     setConcept(null);
   }
@@ -105,6 +152,21 @@ function Studio() {
     if (!industry) return;
     const c = await dataSource.synthesizeConcept(industry.id, picks, goal);
     setConcept(c);
+    const goalLabel = goal ? goals.find((g) => g.id === goal)?.label ?? "" : "";
+    pendo?.track("concept_synthesized", {
+      industryId: industry.id,
+      industryName: industry.name,
+      goalId: goal ?? "none",
+      goalLabel,
+      conceptName: c.name,
+      consistency: scored?.consistency ?? 0,
+      conflictCount: scored?.conflicts.length ?? 0,
+      goalMatches: scored?.goalMatches ?? 0,
+      totalStages: industry.funnel.length,
+      traitTotalEx: scored?.traitTotals.ex ?? 0,
+      traitTotalEm: scored?.traitTotals.em ?? 0,
+      traitTotalSi: scored?.traitTotals.si ?? 0,
+    });
   }
 
   if (industryQ.isLoading || !industry || !stage) {
@@ -144,9 +206,29 @@ function Studio() {
             className="flex-1 min-w-[200px] h-9 px-3 rounded-full border border-border bg-background text-sm outline-none focus:border-primary"
           />
           <div className="flex flex-wrap gap-1.5">
-            <GoalChip active={goal === null} onClick={() => { setGoal(null); setGoalText(""); }}>No goal</GoalChip>
+            <GoalChip active={goal === null} onClick={() => {
+              pendo?.track("goal_selected", {
+                goalId: "none",
+                goalLabel: "none",
+                selectionMethod: "chip",
+                industryId: industry?.id ?? "",
+                industryName: industry?.name ?? "",
+                previousGoalId: goal ?? "none",
+              });
+              setGoal(null); setGoalText("");
+            }}>No goal</GoalChip>
             {goals.map((g) => (
-              <GoalChip key={g.id} active={goal === g.id} onClick={() => setGoal(g.id)}>{g.label}</GoalChip>
+              <GoalChip key={g.id} active={goal === g.id} onClick={() => {
+                pendo?.track("goal_selected", {
+                  goalId: g.id,
+                  goalLabel: g.label,
+                  selectionMethod: "chip",
+                  industryId: industry?.id ?? "",
+                  industryName: industry?.name ?? "",
+                  previousGoalId: goal ?? "none",
+                });
+                setGoal(g.id);
+              }}>{g.label}</GoalChip>
             ))}
           </div>
           {goal && (
@@ -393,6 +475,8 @@ function FlowReelModal({
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const hoverPause = useRef(false);
+  const reelCompletedRef = useRef(false);
+  const wasSkippedRef = useRef(false);
 
   useEffect(() => {
     if (reduced) return;
@@ -416,7 +500,13 @@ function FlowReelModal({
     return () => window.removeEventListener("keydown", onKey);
   }, [total, onClose]);
 
-  function replay() {
+  function replay(source: string = "controls") {
+    pendo?.track("flow_reel_replayed", {
+      industryId: industry.id,
+      industryName: industry.name,
+      conceptName: concept.name,
+      replaySource: source,
+    });
     setIndex(0);
     setPaused(false);
   }
@@ -424,6 +514,26 @@ function FlowReelModal({
   const atEnd = index >= total;
   const current = !atEnd ? steps[index] : null;
   const progress = total === 0 ? 0 : Math.min(index + (atEnd ? 0 : 1), total) / total;
+
+  // Pendo: track flow reel completion
+  useEffect(() => {
+    if (atEnd && !reelCompletedRef.current) {
+      reelCompletedRef.current = true;
+      pendo?.track("flow_reel_completed", {
+        industryId: industry.id,
+        industryName: industry.name,
+        conceptName: concept.name,
+        stepCount: total,
+        wasSkippedToEnd: wasSkippedRef.current,
+        consistency,
+        conflictCount: conflicts.length,
+      });
+    }
+    if (!atEnd) {
+      reelCompletedRef.current = false;
+      wasSkippedRef.current = false;
+    }
+  }, [atEnd]);
 
   return (
     <div
@@ -459,7 +569,7 @@ function FlowReelModal({
         </div>
 
         {reduced ? (
-          <ReducedFilmstrip steps={steps} industry={industry} concept={concept} consistency={consistency} conflicts={conflicts} onReplay={replay} />
+          <ReducedFilmstrip steps={steps} industry={industry} concept={concept} consistency={consistency} conflicts={conflicts} onReplay={() => replay("filmstrip")} />
         ) : (
           <>
             <div
@@ -491,7 +601,7 @@ function FlowReelModal({
                   concept={concept}
                   consistency={consistency}
                   conflicts={conflicts}
-                  onReplay={replay}
+                  onReplay={() => replay("endCard")}
                 />
               )}
             </div>
@@ -545,7 +655,7 @@ function FlowReelModal({
                 {paused ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
               </button>
               <button
-                onClick={replay}
+                onClick={() => replay("controls")}
                 className="h-9 px-4 rounded-full border border-border hover:bg-accent inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider"
               >
                 <RotateCcw className="w-3.5 h-3.5" /> Replay
@@ -563,7 +673,7 @@ function FlowReelModal({
             {/* Explicit skip-to-end / finish */}
             {!atEnd && (
               <button
-                onClick={() => setIndex(total)}
+                onClick={() => { wasSkippedRef.current = true; setIndex(total); }}
                 className="mt-3 h-9 px-4 rounded-full bg-primary text-primary-foreground text-[11px] font-mono uppercase tracking-wider hover:opacity-90 inline-flex items-center gap-1.5"
               >
                 <Sparkles className="w-3.5 h-3.5" /> View concept

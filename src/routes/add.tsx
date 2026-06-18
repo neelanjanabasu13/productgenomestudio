@@ -73,6 +73,15 @@ function Add() {
       source: "community",
     };
     await dataSource.addEntry(ind);
+    pendo?.track("industry_contributed", {
+      industryId: ind.id,
+      industryName: ind.name,
+      emoji: ind.emoji,
+      companyCount: ind.companies.length,
+      stageCount: cleaned.length,
+      totalOptionCount: cleaned.reduce((sum, s) => sum + s.options.length, 0),
+      source: "community",
+    });
     toast.success("Industry added");
     navigate({ to: "/studio/$industryId", params: { industryId: ind.id } });
   }
