@@ -15,12 +15,41 @@ import { WireframeRenderer } from "@/components/WireframeRenderer";
 import { SketchIcon } from "@/components/SketchIcons";
 
 export const Route = createFileRoute("/studio/$industryId")({
-  head: ({ params }) => ({
-    meta: [
-      { title: `Studio · ${params.industryId} - Product Genome Studio` },
-      { name: "description", content: "Pick UX patterns at every stage and watch a live phone preview." },
-    ],
-  }),
+  loader: async ({ params }) => {
+    const industry = await dataSource.getIndustry(params.industryId);
+    return { industryName: industry?.name ?? params.industryId };
+  },
+  head: ({ params, loaderData }) => {
+    const name = loaderData?.industryName ?? params.industryId;
+    const url = `https://productgenomestudio.lovable.app/studio/${params.industryId}`;
+    const title = `${name} studio - Product Genome Studio`;
+    const description = `Pick UX patterns across every stage of the ${name} funnel and watch a live phone preview.`;
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:url", content: url },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: `${name} studio - Product Genome Studio`,
+            applicationCategory: "DesignApplication",
+            operatingSystem: "Web",
+            url,
+            description,
+            offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          }),
+        },
+      ],
+    };
+  },
   component: Studio,
 });
 
