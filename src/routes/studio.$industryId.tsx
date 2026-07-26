@@ -238,6 +238,8 @@ function Studio() {
                 <button
                   key={s.stage}
                   onClick={() => setActiveStage(s.stage)}
+                  aria-label={`Show ${s.stage} stage options`}
+                  aria-pressed={active}
                   className={`px-3 h-8 rounded-full text-xs inline-flex items-center gap-1.5 transition-colors ${
                     active ? "bg-foreground text-background" : "hover:bg-accent"
                   }`}
@@ -259,6 +261,8 @@ function Studio() {
                 <button
                   key={opt.id}
                   onClick={() => pick(stage.stage, opt.id)}
+                  aria-label={`${isSelected ? "Deselect" : "Select"} ${opt.pattern} pattern from ${opt.company} for ${stage.stage}`}
+                  aria-pressed={isSelected}
                   className={`text-left p-4 rounded-2xl border transition-all ${
                     isSelected
                       ? "border-primary bg-primary/5"
