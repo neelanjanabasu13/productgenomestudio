@@ -67,7 +67,7 @@ function PatternPage() {
       <section className="mt-12">
         <h2 className="font-display text-2xl">Use cases</h2>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground list-disc pl-5">
-          {pattern.useCases.map((u) => (
+          {pattern.useCases.map((u: string) => (
             <li key={u}>{u}</li>
           ))}
         </ul>
@@ -77,7 +77,7 @@ function PatternPage() {
         <section className="rounded-2xl border border-border bg-card p-6">
           <h2 className="font-display text-xl text-primary">Pros</h2>
           <ul className="mt-3 space-y-2 text-sm list-disc pl-5">
-            {pattern.pros.map((p) => (
+            {pattern.pros.map((p: string) => (
               <li key={p}>{p}</li>
             ))}
           </ul>
@@ -85,7 +85,7 @@ function PatternPage() {
         <section className="rounded-2xl border border-border bg-card p-6">
           <h2 className="font-display text-xl">Cons</h2>
           <ul className="mt-3 space-y-2 text-sm list-disc pl-5">
-            {pattern.cons.map((c) => (
+            {pattern.cons.map((c: string) => (
               <li key={c}>{c}</li>
             ))}
           </ul>
@@ -99,7 +99,7 @@ function PatternPage() {
             This pattern most often shows up at these Studio stages:
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
-            {pattern.relatedStages.map((s) => (
+            {pattern.relatedStages.map((s: string) => (
               <span
                 key={s}
                 className="text-xs uppercase tracking-[0.18em] px-3 py-1 rounded-full border border-border"

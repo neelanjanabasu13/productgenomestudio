@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AddRouteImport } from './routes/add'
 import { Route as PatternsIndexRouteImport } from './routes/patterns.index'
+import { Route as PatternsSlugRouteImport } from './routes/patterns.$slug'
 import { Route as StudioIndustryIdRouteImport } from './routes/studio.$industryId'
 
 const IndexRoute = IndexRouteImport.update({
@@ -29,6 +30,11 @@ const PatternsIndexRoute = PatternsIndexRouteImport.update({
   path: '/patterns/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PatternsSlugRoute = PatternsSlugRouteImport.update({
+  id: '/patterns/$slug',
+  path: '/patterns/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StudioIndustryIdRoute = StudioIndustryIdRouteImport.update({
   id: '/studio/$industryId',
   path: '/studio/$industryId',
@@ -38,12 +44,14 @@ const StudioIndustryIdRoute = StudioIndustryIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/add': typeof AddRoute
+  '/patterns/$slug': typeof PatternsSlugRoute
   '/studio/$industryId': typeof StudioIndustryIdRoute
   '/patterns/': typeof PatternsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/add': typeof AddRoute
+  '/patterns/$slug': typeof PatternsSlugRoute
   '/studio/$industryId': typeof StudioIndustryIdRoute
   '/patterns': typeof PatternsIndexRoute
 }
@@ -51,20 +59,33 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/add': typeof AddRoute
+  '/patterns/$slug': typeof PatternsSlugRoute
   '/studio/$industryId': typeof StudioIndustryIdRoute
   '/patterns/': typeof PatternsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/add' | '/studio/$industryId' | '/patterns/'
+  fullPaths:
+    | '/'
+    | '/add'
+    | '/patterns/$slug'
+    | '/studio/$industryId'
+    | '/patterns/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/add' | '/studio/$industryId' | '/patterns'
-  id: '__root__' | '/' | '/add' | '/studio/$industryId' | '/patterns/'
+  to: '/' | '/add' | '/patterns/$slug' | '/studio/$industryId' | '/patterns'
+  id:
+    | '__root__'
+    | '/'
+    | '/add'
+    | '/patterns/$slug'
+    | '/studio/$industryId'
+    | '/patterns/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AddRoute: typeof AddRoute
+  PatternsSlugRoute: typeof PatternsSlugRoute
   StudioIndustryIdRoute: typeof StudioIndustryIdRoute
   PatternsIndexRoute: typeof PatternsIndexRoute
 }
@@ -92,6 +113,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PatternsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/patterns/$slug': {
+      id: '/patterns/$slug'
+      path: '/patterns/$slug'
+      fullPath: '/patterns/$slug'
+      preLoaderRoute: typeof PatternsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/studio/$industryId': {
       id: '/studio/$industryId'
       path: '/studio/$industryId'
@@ -105,6 +133,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AddRoute: AddRoute,
+  PatternsSlugRoute: PatternsSlugRoute,
   StudioIndustryIdRoute: StudioIndustryIdRoute,
   PatternsIndexRoute: PatternsIndexRoute,
 }
