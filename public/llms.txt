@@ -1,0 +1,28 @@
+# Product Genome Studio
+
+> A hands-on simulator to design a product by picking real UX patterns at every funnel stage, with tradeoffs, conflicts, and a goal-guided assist.
+
+Product Genome Studio lets you compose a product genome across acquisition, onboarding, core loop, retention, and monetization stages. Each choice comes from a real pattern used by a shipping company, with tradeoffs and a live phone preview.
+
+## Pages
+
+- [Home](/): Explore industries and start composing a product.
+- [Add industry](/add): Suggest or generate a new industry to simulate.
+
+## Optional
+
+- [Studio example - Travel](/studio/travel): Interactive studio for the travel industry.
+*** Add File: public/sitemap.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://productgenomestudio.lovable.app/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://productgenomestudio.lovable.app/add</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>

@@ -9,10 +9,14 @@ import { HexIndustryPicker } from "@/components/HexIndustryPicker";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Product Genome Studio - Design a product by choosing patterns" },
+      { title: "Product Genome Studio - UX Pattern Simulator" },
       { name: "description", content: "Hands-on product design simulator. Pick real UX patterns at every funnel stage and watch a live phone preview." },
-      { property: "og:title", content: "Product Genome Studio" },
-      { property: "og:description", content: "Design a product by choosing real UX patterns at every funnel stage." },
+      { property: "og:title", content: "Product Genome Studio - UX Pattern Simulator" },
+      { property: "og:description", content: "Pick real UX patterns at every funnel stage and watch a live phone preview build your product." },
+      { property: "og:url", content: "https://productgenomestudio.lovable.app/" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://productgenomestudio.lovable.app/" },
     ],
   }),
   component: Home,

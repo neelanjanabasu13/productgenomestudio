@@ -9,7 +9,13 @@ export const Route = createFileRoute("/add")({
   head: () => ({
     meta: [
       { title: "Add an industry - Product Genome Studio" },
-      { name: "description", content: "Contribute a new industry to Product Genome Studio." },
+      { name: "description", content: "Contribute a new industry with real UX patterns to the Product Genome Studio simulator." },
+      { property: "og:title", content: "Add an industry - Product Genome Studio" },
+      { property: "og:description", content: "Contribute a new industry with real UX patterns to the Product Genome Studio simulator." },
+      { property: "og:url", content: "https://productgenomestudio.lovable.app/add" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://productgenomestudio.lovable.app/add" },
     ],
   }),
   component: Add,
