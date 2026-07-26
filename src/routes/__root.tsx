@@ -183,6 +183,7 @@ function Shell() {
             <span className="font-display text-lg tracking-tight">Product Genome <span className="text-muted-foreground">Studio</span></span>
           </Link>
           <nav className="flex items-center gap-2">
+            <Link to="/patterns" className="text-sm px-3 py-1.5 rounded-full hover:bg-accent transition-colors">Patterns</Link>
             <Link to="/add" className="text-sm px-3 py-1.5 rounded-full hover:bg-accent transition-colors">Add industry</Link>
             <ThemeToggle />
           </nav>

@@ -8,6 +8,7 @@ Product Genome Studio lets you compose a product genome across acquisition, onbo
 
 - [Home](/): Explore industries and start composing a product.
 - [Add industry](/add): Suggest or generate a new industry to simulate.
+- [Pattern library](/patterns): UX pattern reference with use cases, pros, and cons.
 
 ## Optional
 
