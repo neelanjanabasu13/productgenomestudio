@@ -86,6 +86,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "Product Genome Studio" },
       { property: "og:description", content: "Design a product by choosing real UX patterns at every funnel stage." },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Product Genome Studio" },
+      { property: "og:url", content: "https://productgenomestudio.lovable.app/" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Product Genome Studio" },
@@ -103,6 +105,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Product Genome Studio",
+          url: "https://productgenomestudio.lovable.app/",
+          description: "Design a product by choosing real UX patterns at every funnel stage.",
+          publisher: {
+            "@type": "Organization",
+            name: "Product Genome Studio",
+            url: "https://productgenomestudio.lovable.app/",
+          },
+        }),
       },
     ],
   }),
