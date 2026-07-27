@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { Globe, Twitter } from "lucide-react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -193,8 +194,28 @@ function Shell() {
         <Outlet />
       </main>
       <footer className="border-t border-border mt-12">
-        <div className="max-w-6xl mx-auto px-5 py-6 text-xs text-muted-foreground">
-          {meta.data?.disclaimer ?? "Patterns reflect opinionated design judgment on observable UX."}
+        <div className="max-w-6xl mx-auto px-5 py-6 flex items-center justify-between gap-4 text-xs text-muted-foreground">
+          <span>{meta.data?.disclaimer ?? "Patterns reflect opinionated design judgment on observable UX."}</span>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://neelanjanabasu.lovable.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Neelanjana Basu portfolio"
+              className="p-2 rounded-full hover:bg-accent transition-colors"
+            >
+              <Globe className="w-4 h-4" />
+            </a>
+            <a
+              href="https://x.com/nee13njana"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X profile"
+              className="p-2 rounded-full hover:bg-accent transition-colors"
+            >
+              <Twitter className="w-4 h-4" />
+            </a>
+          </div>
         </div>
       </footer>
       <Toaster />
