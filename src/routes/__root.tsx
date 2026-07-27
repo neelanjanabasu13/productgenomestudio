@@ -215,6 +215,7 @@ function Shell() {
             >
               <Twitter className="w-4 h-4" />
             </a>
+            <span className="text-muted-foreground">Made by Neelanjana Basu</span>
           </div>
         </div>
       </footer>
